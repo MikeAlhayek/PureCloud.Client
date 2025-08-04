@@ -94,6 +94,7 @@
     <Compile Include="Apis\UtilitiesApi.cs" />
     <Compile Include="Apis\VoicemailApi.cs" />
     <Compile Include="Apis\WebChatApi.cs" />
+    <Compile Include="Apis\WebDeploymentsApi.cs" />
     <Compile Include="Apis\WebMessagingApi.cs" />
     <Compile Include="Apis\WidgetsApi.cs" />
     <Compile Include="Configuration.cs" />
@@ -174,6 +175,7 @@
     <Compile Include="Contracts\IUtilitiesApi.cs" />
     <Compile Include="Contracts\IVoicemailApi.cs" />
     <Compile Include="Contracts\IWebChatApi.cs" />
+    <Compile Include="Contracts\IWebDeploymentsApi.cs" />
     <Compile Include="Contracts\IWebMessagingApi.cs" />
     <Compile Include="Contracts\IWidgetsApi.cs" />
     <Compile Include="Extensions\AuthExtensions.cs" />
@@ -256,6 +258,7 @@
     <Compile Include="Models\Certificate.cs" />
     <Compile Include="Models\ClonedUser.cs" />
     <Compile Include="Models\ClonedUserEntityListing.cs" />
+    <Compile Include="Models\CobrowseWebMessagingSession.cs" />
     <Compile Include="Models\ActionConfig.cs" />
     <Compile Include="Models\ActionContractInput.cs" />
     <Compile Include="Models\ActionEntityListing.cs" />
@@ -4809,6 +4812,21 @@
     <Compile Include="Models\WebChatRoutingTarget.TargetType.cs" />
     <Compile Include="Models\WebChatSettings.cs" />
     <Compile Include="Models\WebChatTyping.cs" />
+    <Compile Include="Models\ExpandableWebDeployment.cs" />
+    <Compile Include="Models\ExpandableWebDeploymentEntityListing.cs" />
+    <Compile Include="Models\WebDeployment.cs" />
+    <Compile Include="Models\WebDeploymentActiveConfigurationOnDeployment.cs" />
+    <Compile Include="Models\WebDeploymentConfigurationVersion.cs" />
+    <Compile Include="Models\WebDeploymentConfigurationVersionEntityListing.cs" />
+    <Compile Include="Models\WebDeploymentConfigurationVersionEntityRef.cs" />
+    <Compile Include="Models\WebDeploymentConfigurationVersionResponse.cs" />
+    <Compile Include="Models\WebDeploymentFlowEntityRef.cs" />
+    <Compile Include="Models\WebDeploymentHeadlessMode.cs" />
+    <Compile Include="Models\WebDeploymentsAuthorizationResponse.cs" />
+    <Compile Include="Models\WebDeploymentsJourneyContext.cs" />
+    <Compile Include="Models\WebDeploymentsOAuthExchangeRequest.cs" />
+    <Compile Include="Models\WebDeploymentsOAuthRequestParameters.cs" />
+    <Compile Include="Models\WebDeploymentsRefreshJWTRequest.cs" />
     <Compile Include="Models\WebDeploymentsConfigTopicWebMessagingConfigChangeEventBody.cs" />
     <Compile Include="Models\WebDeploymentsConfigTopicWebMessagingConfigChangeEventBody.Status.cs" />
     <Compile Include="Models\WebDeploymentsDeploymentTopicWebMessagingConfigChangeEventBody.cs" />

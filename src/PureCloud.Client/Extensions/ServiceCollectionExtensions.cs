@@ -223,6 +223,8 @@ public static class ServiceCollectionExtensions
 
         services.TryAddScoped<IWebMessagingApi, WebMessagingApi>();
 
+        services.TryAddScoped<IWebDeploymentsApi, WebDeploymentsApi>();
+
         services.TryAddScoped<IWidgetsApi, WidgetsApi>();
 
         return services;
