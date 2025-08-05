@@ -2382,20 +2382,6 @@ public sealed class RoutingApi : IRoutingApi
         return await response.Content.ReadFromJsonAsync<UserSkillEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-/// <inheritdoc />
-    public async Task<EmailOutboundDomainResult> PostRoutingEmailOutboundDomainsAsync(OutboundDomain body, CancellationToken cancellationToken = default)
-    {
-        ArgumentNullException.ThrowIfNull(body);
-
-        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-
-        var response = await client.PostAsJsonAsync("api/v2/routing/email/outbound/domains", body, _options.JsonSerializerOptions, cancellationToken);
-
-        response.EnsureSuccessStatusCode();
-
-        return await response.Content.ReadFromJsonAsync<EmailOutboundDomainResult>(_options.JsonSerializerOptions, cancellationToken);
-    }
-
     /// <inheritdoc />
     public async Task<InboundDomain> PatchRoutingEmailDomainAsync(string domainId, InboundDomainPatchRequest body, CancellationToken cancellationToken = default)
     {
