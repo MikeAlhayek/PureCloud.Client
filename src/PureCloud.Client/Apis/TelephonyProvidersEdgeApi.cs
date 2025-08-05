@@ -404,18 +404,18 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
     /// <inheritdoc />
 
-    public async Task<DomainLogicalInterface> GetEdgeLogicalinterfaceAsync(string edgeId, string interfaceId, IEnumerable<string> expand = null, CancellationToken cancellationToken = default)
+    public async Task<DomainLogicalInterface> GetEdgeLogicalinterfaceAsync(string edgeId, string interfaceId, IEnumerable<string> expands = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(edgeId);
         ArgumentException.ThrowIfNullOrEmpty(interfaceId);
 
         var parameters = new NameValueCollection();
 
-        if (expand != null)
+        if (expands != null)
         {
-            foreach (var expandItem in expand)
+            foreach (var expand in expands)
             {
-                parameters.Add("expand", expandItem);
+                parameters.Add("expand", expand);
             }
         }
 
@@ -430,17 +430,17 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
     /// <inheritdoc />
 
-    public async Task<LogicalInterfaceEntityListing> GetEdgeLogicalinterfacesAsync(string edgeId, IEnumerable<string> expand = null, CancellationToken cancellationToken = default)
+    public async Task<LogicalInterfaceEntityListing> GetEdgeLogicalinterfacesAsync(string edgeId, IEnumerable<string> expands = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(edgeId);
 
         var parameters = new NameValueCollection();
 
-        if (expand != null)
+        if (expands != null)
         {
-            foreach (var expandItem in expand)
+            foreach (var expand in expands)
             {
-                parameters.Add("expand", expandItem);
+                parameters.Add("expand", expand);
             }
         }
 
@@ -749,17 +749,17 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
     /// <inheritdoc />
 
-    public async Task<EdgeGroup> GetEdgeEdgegroupAsync(string edgeGroupId, IEnumerable<string> expand = null, CancellationToken cancellationToken = default)
+    public async Task<EdgeGroup> GetEdgeEdgegroupAsync(string edgeGroupId, IEnumerable<string> expands = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(edgeGroupId);
 
         var parameters = new NameValueCollection();
 
-        if (expand != null)
+        if (expands != null)
         {
-            foreach (var expandItem in expand)
+            foreach (var expand in expands)
             {
-                parameters.Add("expand", expandItem);
+                parameters.Add("expand", expand);
             }
         }
 
@@ -966,7 +966,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
     /// <inheritdoc />
 
-    public async Task<PhoneEntityListing> GetEdgePhonesAsync(int? pageNumber = null, int? pageSize = null, string sortBy = null, string sortOrder = null, string siteId = null, string webRtcUserId = null, string phoneBaseSettingsId = null, string linesLoggedInUserId = null, string linesDefaultForUserId = null, string phoneHardwareId = null, string linesId = null, string linesName = null, string name = null, string statusOperationalStatus = null, string secondaryStatusOperationalStatus = null, IEnumerable<string> expand = null, IEnumerable<string> fields = null, CancellationToken cancellationToken = default)
+    public async Task<PhoneEntityListing> GetEdgePhonesAsync(int? pageNumber = null, int? pageSize = null, string sortBy = null, string sortOrder = null, string siteId = null, string webRtcUserId = null, string phoneBaseSettingsId = null, string linesLoggedInUserId = null, string linesDefaultForUserId = null, string phoneHardwareId = null, string linesId = null, string linesName = null, string name = null, string statusOperationalStatus = null, string secondaryStatusOperationalStatus = null, IEnumerable<string> expands = null, IEnumerable<string> fieldNames = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
 
@@ -1045,19 +1045,19 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
             parameters.Add("secondaryStatus.operationalStatus", secondaryStatusOperationalStatus);
         }
 
-        if (expand != null)
+        if (expands != null)
         {
-            foreach (var expandItem in expand)
+            foreach (var expand in expands)
             {
-                parameters.Add("expand", expandItem);
+                parameters.Add("expand", expand);
             }
         }
 
-        if (fields != null)
+        if (fieldNames != null)
         {
-            foreach (var fieldItem in fields)
+            foreach (var fieldName in fieldNames)
             {
-                parameters.Add("fields", fieldItem);
+                parameters.Add("fields", fieldName);
             }
         }
 
@@ -1086,7 +1086,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
     /// <inheritdoc />
 
-    public async Task<SiteEntityListing> GetEdgeSitesAsync(int? pageSize = null, int? pageNumber = null, string sortBy = null, string sortOrder = null, string name = null, string locationId = null, bool? managed = null, IEnumerable<string> expand = null, CancellationToken cancellationToken = default)
+    public async Task<SiteEntityListing> GetEdgeSitesAsync(int? pageSize = null, int? pageNumber = null, string sortBy = null, string sortOrder = null, string name = null, string locationId = null, bool? managed = null, IEnumerable<string> expands = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
 
@@ -1125,11 +1125,11 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
             parameters.Add("managed", managed.Value.ToString().ToLowerInvariant());
         }
 
-        if (expand != null)
+        if (expands != null)
         {
-            foreach (var expandItem in expand)
+            foreach (var expand in expands)
             {
-                parameters.Add("expand", expandItem);
+                parameters.Add("expand", expand);
             }
         }
 
@@ -1262,7 +1262,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
     /// <inheritdoc />
 
-    public async Task<TrunkBaseEntityListing> GetEdgeTrunkbasesettingsAsync(int? pageNumber = null, int? pageSize = null, string sortBy = null, string sortOrder = null, bool? recordingEnabled = null, bool? ignoreHidden = null, bool? managed = null, IEnumerable<string> expand = null, string name = null, CancellationToken cancellationToken = default)
+    public async Task<TrunkBaseEntityListing> GetEdgeTrunkbasesettingsAsync(int? pageNumber = null, int? pageSize = null, string sortBy = null, string sortOrder = null, bool? recordingEnabled = null, bool? ignoreHidden = null, bool? managed = null, IEnumerable<string> expands = null, string name = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
 
@@ -1301,11 +1301,11 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
             parameters.Add("managed", managed.Value.ToString().ToLowerInvariant());
         }
 
-        if (expand != null)
+        if (expands != null)
         {
-            foreach (var expandItem in expand)
+            foreach (var expand in expands)
             {
-                parameters.Add("expand", expandItem);
+                parameters.Add("expand", expand);
             }
         }
 
