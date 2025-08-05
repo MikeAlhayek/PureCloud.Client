@@ -85,7 +85,7 @@ public sealed class OutboundApi : IOutboundApi
         return await response.Content.ReadFromJsonAsync<AttemptLimitsEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<AttemptLimits> CreateOutboundAttemptlimitAsync(AttemptLimits body, CancellationToken cancellationToken = default)
+    public async Task<AttemptLimits> PostOutboundAttemptlimitsAsync(AttemptLimits body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
 
@@ -98,7 +98,7 @@ public sealed class OutboundApi : IOutboundApi
         return await response.Content.ReadFromJsonAsync<AttemptLimits>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<AttemptLimits> UpdateOutboundAttemptlimitAsync(string attemptLimitsId, AttemptLimits body, CancellationToken cancellationToken = default)
+    public async Task<AttemptLimits> PutOutboundAttemptlimitAsync(string attemptLimitsId, AttemptLimits body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(attemptLimitsId);
         ArgumentNullException.ThrowIfNull(body);
@@ -120,7 +120,9 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.DeleteAsync($"api/v2/outbound/attemptlimits/{attemptLimitsId}", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
+          
+        return true;
     }
 
     public async Task<CallableTimeSet> GetOutboundCallabletimesetAsync(string callableTimeSetId, CancellationToken cancellationToken = default)
@@ -186,7 +188,7 @@ public sealed class OutboundApi : IOutboundApi
         return await response.Content.ReadFromJsonAsync<CallableTimeSetEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<CallableTimeSet> CreateOutboundCallabletimesetAsync(CallableTimeSet body, CancellationToken cancellationToken = default)
+    public async Task<CallableTimeSet> PostOutboundCallabletimesetsAsync(CallableTimeSet body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
 
@@ -199,7 +201,7 @@ public sealed class OutboundApi : IOutboundApi
         return await response.Content.ReadFromJsonAsync<CallableTimeSet>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<CallableTimeSet> UpdateOutboundCallabletimesetAsync(string callableTimeSetId, CallableTimeSet body, CancellationToken cancellationToken = default)
+    public async Task<CallableTimeSet> PutOutboundCallabletimesetAsync(string callableTimeSetId, CallableTimeSet body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(callableTimeSetId);
         ArgumentNullException.ThrowIfNull(body);
@@ -221,7 +223,9 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.DeleteAsync($"api/v2/outbound/callabletimesets/{Uri.EscapeDataString(callableTimeSetId)}", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
+          
+        return true;
     }
 
     public async Task<Campaign> GetOutboundCampaignAsync(string campaignId, CancellationToken cancellationToken = default)
@@ -323,7 +327,7 @@ public sealed class OutboundApi : IOutboundApi
         return await response.Content.ReadFromJsonAsync<CampaignEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<Campaign> CreateOutboundCampaignAsync(Campaign body, CancellationToken cancellationToken = default)
+    public async Task<Campaign> PostOutboundCampaignsAsync(Campaign body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
 
@@ -336,7 +340,7 @@ public sealed class OutboundApi : IOutboundApi
         return await response.Content.ReadFromJsonAsync<Campaign>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<Campaign> UpdateOutboundCampaignAsync(string campaignId, Campaign body, CancellationToken cancellationToken = default)
+    public async Task<Campaign> PutOutboundCampaignAsync(string campaignId, Campaign body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(campaignId);
         ArgumentNullException.ThrowIfNull(body);
@@ -358,7 +362,9 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.DeleteAsync($"api/v2/outbound/campaigns/{Uri.EscapeDataString(campaignId)}", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
+          
+        return true;
     }
 
     public async Task<ResponseSet> GetOutboundCallanalysisresponsesetAsync(string callAnalysisSetId, CancellationToken cancellationToken = default)
@@ -424,7 +430,7 @@ public sealed class OutboundApi : IOutboundApi
         return await response.Content.ReadFromJsonAsync<ResponseSetEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<ResponseSet> CreateOutboundCallanalysisresponsesetAsync(ResponseSet body, CancellationToken cancellationToken = default)
+    public async Task<ResponseSet> PostOutboundCallanalysisresponsesetsAsync(ResponseSet body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
 
@@ -437,7 +443,7 @@ public sealed class OutboundApi : IOutboundApi
         return await response.Content.ReadFromJsonAsync<ResponseSet>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<ResponseSet> UpdateOutboundCallanalysisresponsesetAsync(string callAnalysisSetId, ResponseSet body, CancellationToken cancellationToken = default)
+    public async Task<ResponseSet> PutOutboundCallanalysisresponsesetAsync(string callAnalysisSetId, ResponseSet body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(callAnalysisSetId);
         ArgumentNullException.ThrowIfNull(body);
@@ -459,7 +465,9 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.DeleteAsync($"api/v2/outbound/callanalysisresponsesets/{Uri.EscapeDataString(callAnalysisSetId)}", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
+          
+        return true;
     }
 
     public async Task<bool> DeleteOutboundCampaignProgressAsync(string campaignId, CancellationToken cancellationToken = default)
@@ -470,7 +478,9 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.DeleteAsync($"api/v2/outbound/campaigns/{Uri.EscapeDataString(campaignId)}/progress", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
+          
+        return true;
     }
 
     public async Task<bool> DeleteOutboundCampaignruleAsync(string campaignRuleId, CancellationToken cancellationToken = default)
@@ -481,7 +491,9 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.DeleteAsync($"api/v2/outbound/campaignrules/{Uri.EscapeDataString(campaignRuleId)}", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
+          
+        return true;
     }
 
     public async Task<bool> DeleteOutboundContactlistAsync(string contactListId, CancellationToken cancellationToken = default)
@@ -492,7 +504,9 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.DeleteAsync($"api/v2/outbound/contactlists/{Uri.EscapeDataString(contactListId)}", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
+          
+        return true;
     }
 
     public async Task<bool> DeleteOutboundContactlistContactAsync(string contactListId, string contactId, CancellationToken cancellationToken = default)
@@ -504,7 +518,9 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.DeleteAsync($"api/v2/outbound/contactlists/{Uri.EscapeDataString(contactListId)}/contacts/{Uri.EscapeDataString(contactId)}", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
+          
+        return true;
     }
 
     public async Task<bool> DeleteOutboundContactlistContactsAsync(string contactListId, IEnumerable<string> contactIds, CancellationToken cancellationToken = default)
@@ -516,7 +532,9 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PostAsJsonAsync($"api/v2/outbound/contactlists/{Uri.EscapeDataString(contactListId)}/contacts/bulk/delete", contactIds, _options.JsonSerializerOptions, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
+          
+        return true;
     }
 
     public async Task<bool> DeleteOutboundContactlistfilterAsync(string contactListFilterId, CancellationToken cancellationToken = default)
@@ -527,7 +545,9 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.DeleteAsync($"api/v2/outbound/contactlistfilters/{Uri.EscapeDataString(contactListFilterId)}", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
+          
+        return true;
     }
 
     public async Task<bool> DeleteOutboundContactlistsAsync(IEnumerable<string> id, CancellationToken cancellationToken = default)
@@ -538,7 +558,9 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PostAsJsonAsync("api/v2/outbound/contactlists/bulk/delete", id, _options.JsonSerializerOptions, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
+          
+        return true;
     }
 
     public async Task<bool> DeleteOutboundContactlisttemplateAsync(string contactListTemplateId, CancellationToken cancellationToken = default)
@@ -549,7 +571,9 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.DeleteAsync($"api/v2/outbound/contactlisttemplates/{Uri.EscapeDataString(contactListTemplateId)}", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
+          
+        return true;
     }
 
     public async Task<bool> DeleteOutboundContactlisttemplatesAsync(IEnumerable<string> id, CancellationToken cancellationToken = default)
@@ -560,7 +584,9 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PostAsJsonAsync("api/v2/outbound/contactlisttemplates/bulk/delete", id, _options.JsonSerializerOptions, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
+          
+        return true;
     }
 
     public async Task<bool> DeleteOutboundDigitalrulesetAsync(string digitalRuleSetId, CancellationToken cancellationToken = default)
@@ -571,7 +597,9 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.DeleteAsync($"api/v2/outbound/digitalrulesets/{Uri.EscapeDataString(digitalRuleSetId)}", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
+          
+        return true;
     }
 
     public async Task<bool> DeleteOutboundDnclistAsync(string dncListId, CancellationToken cancellationToken = default)
@@ -582,7 +610,9 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.DeleteAsync($"api/v2/outbound/dnclists/{Uri.EscapeDataString(dncListId)}", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
+          
+        return true;
     }
 
     public async Task<bool> DeleteOutboundDnclistCustomexclusioncolumnsAsync(string dncListId, bool? expiredOnly = null, CancellationToken cancellationToken = default)
@@ -601,7 +631,9 @@ public sealed class OutboundApi : IOutboundApi
         var uri = UriHelper.GetUri($"api/v2/outbound/dnclists/{Uri.EscapeDataString(dncListId)}/customexclusioncolumns", parameters);
         var response = await client.DeleteAsync(uri, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
+          
+        return true;
     }
 
     public async Task<bool> DeleteOutboundDnclistEmailaddressesAsync(string dncListId, bool? expiredOnly = null, CancellationToken cancellationToken = default)
@@ -620,7 +652,9 @@ public sealed class OutboundApi : IOutboundApi
         var uri = UriHelper.GetUri($"api/v2/outbound/dnclists/{Uri.EscapeDataString(dncListId)}/emailaddresses", parameters);
         var response = await client.DeleteAsync(uri, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
+          
+        return true;
     }
 
     public async Task<bool> DeleteOutboundDnclistPhonenumbersAsync(string dncListId, bool? expiredOnly = null, CancellationToken cancellationToken = default)
@@ -639,7 +673,9 @@ public sealed class OutboundApi : IOutboundApi
         var uri = UriHelper.GetUri($"api/v2/outbound/dnclists/{Uri.EscapeDataString(dncListId)}/phonenumbers", parameters);
         var response = await client.DeleteAsync(uri, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
+          
+        return true;
     }
 
     public async Task<bool> DeleteOutboundDnclistWhatsappnumbersAsync(string dncListId, bool? expiredOnly = null, CancellationToken cancellationToken = default)
@@ -658,7 +694,9 @@ public sealed class OutboundApi : IOutboundApi
         var uri = UriHelper.GetUri($"api/v2/outbound/dnclists/{Uri.EscapeDataString(dncListId)}/whatsappnumbers", parameters);
         var response = await client.DeleteAsync(uri, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
+          
+        return true;
     }
 
     public async Task<bool> DeleteOutboundFilespecificationtemplateAsync(string fileSpecificationTemplateId, CancellationToken cancellationToken = default)
@@ -669,7 +707,9 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.DeleteAsync($"api/v2/outbound/filespecificationtemplates/{Uri.EscapeDataString(fileSpecificationTemplateId)}", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
+          
+        return true;
     }
 
     public async Task<bool> DeleteOutboundFilespecificationtemplatesBulkAsync(IEnumerable<string> id, CancellationToken cancellationToken = default)
@@ -680,7 +720,9 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PostAsJsonAsync("api/v2/outbound/filespecificationtemplates/bulk/delete", id, _options.JsonSerializerOptions, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
+          
+        return true;
     }
 
     public async Task<bool> DeleteOutboundImporttemplateAsync(string importTemplateId, CancellationToken cancellationToken = default)
@@ -691,7 +733,9 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.DeleteAsync($"api/v2/outbound/importtemplates/{Uri.EscapeDataString(importTemplateId)}", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
+          
+        return true;
     }
 
     public async Task<bool> DeleteOutboundImporttemplatesAsync(IEnumerable<string> id, CancellationToken cancellationToken = default)
@@ -702,7 +746,9 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PostAsJsonAsync("api/v2/outbound/importtemplates/bulk/delete", id, _options.JsonSerializerOptions, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
+          
+        return true;
     }
 
     public async Task<bool> DeleteOutboundMessagingcampaignAsync(string messagingCampaignId, CancellationToken cancellationToken = default)
@@ -713,7 +759,9 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.DeleteAsync($"api/v2/outbound/messagingcampaigns/{Uri.EscapeDataString(messagingCampaignId)}", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
+          
+        return true;
     }
 
     public async Task<bool> DeleteOutboundMessagingcampaignProgressAsync(string messagingCampaignId, CancellationToken cancellationToken = default)
@@ -724,7 +772,9 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.DeleteAsync($"api/v2/outbound/messagingcampaigns/{Uri.EscapeDataString(messagingCampaignId)}/progress", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
+          
+        return true;
     }
 
     public async Task<bool> DeleteOutboundRulesetAsync(string ruleSetId, CancellationToken cancellationToken = default)
@@ -735,7 +785,9 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.DeleteAsync($"api/v2/outbound/rulesets/{Uri.EscapeDataString(ruleSetId)}", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
+          
+        return true;
     }
 
     public async Task<bool> DeleteOutboundSchedulesCampaignAsync(string campaignId, CancellationToken cancellationToken = default)
@@ -746,7 +798,9 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.DeleteAsync($"api/v2/outbound/schedules/campaigns/{Uri.EscapeDataString(campaignId)}", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
+          
+        return true;
     }
 
     public async Task<bool> DeleteOutboundSchedulesEmailcampaignAsync(string emailCampaignId, CancellationToken cancellationToken = default)
@@ -757,7 +811,9 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.DeleteAsync($"api/v2/outbound/schedules/emailcampaigns/{Uri.EscapeDataString(emailCampaignId)}", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
+          
+        return true;
     }
 
     public async Task<bool> DeleteOutboundSchedulesMessagingcampaignAsync(string messagingCampaignId, CancellationToken cancellationToken = default)
@@ -768,7 +824,9 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.DeleteAsync($"api/v2/outbound/schedules/messagingcampaigns/{Uri.EscapeDataString(messagingCampaignId)}", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
+          
+        return true;
     }
 
     public async Task<bool> DeleteOutboundSchedulesSequenceAsync(string sequenceId, CancellationToken cancellationToken = default)
@@ -779,7 +837,9 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.DeleteAsync($"api/v2/outbound/schedules/sequences/{Uri.EscapeDataString(sequenceId)}", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
+          
+        return true;
     }
 
     public async Task<bool> DeleteOutboundSequenceAsync(string sequenceId, CancellationToken cancellationToken = default)
@@ -790,7 +850,9 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.DeleteAsync($"api/v2/outbound/sequences/{Uri.EscapeDataString(sequenceId)}", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
+          
+        return true;
     }
 
     // TODO: Add remaining GET methods - some model types need to be resolved first
@@ -3385,4 +3447,3 @@ public sealed class OutboundApi : IOutboundApi
         return await response.Content.ReadFromJsonAsync<CampaignSchedule>(_options.JsonSerializerOptions, cancellationToken);
     }
 }
-
