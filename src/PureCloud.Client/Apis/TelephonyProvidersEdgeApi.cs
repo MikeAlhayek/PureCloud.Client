@@ -413,9 +413,9 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         if (expand != null)
         {
-            foreach (var item in expand)
+            foreach (var expandItem in expand)
             {
-                parameters.Add("expand", item);
+                parameters.Add("expand", expandItem);
             }
         }
 
@@ -438,9 +438,9 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         if (expand != null)
         {
-            foreach (var item in expand)
+            foreach (var expandItem in expand)
             {
-                parameters.Add("expand", item);
+                parameters.Add("expand", expandItem);
             }
         }
 
@@ -757,9 +757,9 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         if (expand != null)
         {
-            foreach (var item in expand)
+            foreach (var expandItem in expand)
             {
-                parameters.Add("expand", item);
+                parameters.Add("expand", expandItem);
             }
         }
 
@@ -1047,17 +1047,17 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         if (expand != null)
         {
-            foreach (var item in expand)
+            foreach (var expandItem in expand)
             {
-                parameters.Add("expand", item);
+                parameters.Add("expand", expandItem);
             }
         }
 
         if (fields != null)
         {
-            foreach (var item in fields)
+            foreach (var fieldItem in fields)
             {
-                parameters.Add("fields", item);
+                parameters.Add("fields", fieldItem);
             }
         }
 
@@ -1127,9 +1127,9 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         if (expand != null)
         {
-            foreach (var item in expand)
+            foreach (var expandItem in expand)
             {
-                parameters.Add("expand", item);
+                parameters.Add("expand", expandItem);
             }
         }
 
@@ -1303,9 +1303,9 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         if (expand != null)
         {
-            foreach (var item in expand)
+            foreach (var expandItem in expand)
             {
-                parameters.Add("expand", item);
+                parameters.Add("expand", expandItem);
             }
         }
 
