@@ -1313,15 +1313,6 @@ public interface IOutboundApi
     Task<AgentOwnedMappingPreviewListing> PostOutboundCampaignAgentownedmappingpreviewAsync(string campaignId, CancellationToken cancellationToken = default);
 
     /// <summary>
-    /// Create campaigncallbackschedule
-    /// </summary>
-    /// <param name="campaignId">The campaignId</param>
-    /// <param name="body">The body</param>
-    /// <param name="cancellationToken">Cancellation token</param>
-    /// <returns>Task result</returns>
-    Task PostOutboundCampaignCallbackScheduleAsync(string campaignId, ContactCallbackRequest body, CancellationToken cancellationToken = default);
-
-    /// <summary>
     /// Create campaignstart
     /// </summary>
     /// <param name="campaignId">The campaignId</param>
@@ -1456,14 +1447,6 @@ public interface IOutboundApi
     Task<ContactListTemplateEntityListing> PostOutboundContactlisttemplatesBulkRetrieveAsync(ContactListTemplateBulkRetrieveBody body, CancellationToken cancellationToken = default);
 
     /// <summary>
-    /// Create conversationdnc
-    /// </summary>
-    /// <param name="conversationId">The conversationId</param>
-    /// <param name="cancellationToken">Cancellation token</param>
-    /// <returns>Task result</returns>
-    Task PostOutboundConversationDncAsync(string conversationId, CancellationToken cancellationToken = default);
-
-    /// <summary>
     /// Create digitalrulesets
     /// </summary>
     /// <param name="body">The body</param>
@@ -1498,20 +1481,6 @@ public interface IOutboundApi
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Task result</returns>
     Task<MessagingCampaign> PostOutboundMessagingcampaignsAsync(MessagingCampaign body, CancellationToken cancellationToken = default);
-
-    /// <summary>
-    /// Create rulesets
-    /// </summary>
-    /// <param name="body">The body</param>
-    /// <param name="cancellationToken">Cancellation token</param>
-    /// <returns>Task result</returns>
-    /// <param name="cancellationToken">Cancellation token</param>
-    /// <returns>Task result</returns>
-    /// <param name="userId">The userId</param>
-    /// <param name="body">The body</param>
-    /// <param name="cancellationToken">Cancellation token</param>
-    /// <returns>Task result</returns>
-    Task PutOutboundCampaignAgentAsync(string campaignId, string userId, Agent body, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Update campaign
@@ -1655,3 +1624,4 @@ public interface IOutboundApi
     /// <returns>Task result</returns>
     Task<IEnumerable<CampaignProgress>> PostOutboundMessagingcampaignsProgressAsync(IEnumerable<string> body, CancellationToken cancellationToken = default);
 }
+
