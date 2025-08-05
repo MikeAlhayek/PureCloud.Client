@@ -8,7 +8,7 @@ public interface ITelephonyProvidersEdgeApi
     Task<Edge> GetEdgeAsync(string edgeId, CancellationToken cancellationToken = default);
 
     /// <inheritdoc />
-    Task DeleteEdgeAsync(string edgeId, CancellationToken cancellationToken = default);
+    Task<bool> DeleteEdgeAsync(string edgeId, CancellationToken cancellationToken = default);
 
     /// <inheritdoc />
     Task<Edge> CreateEdgeAsync(Edge body, CancellationToken cancellationToken = default);
@@ -26,7 +26,7 @@ public interface ITelephonyProvidersEdgeApi
     Task<DIDPool> UpdateDidPoolAsync(string didPoolId, DIDPool body, CancellationToken cancellationToken = default);
 
     /// <inheritdoc />
-    Task DeleteDidPoolAsync(string didPoolId, CancellationToken cancellationToken = default);
+    Task<bool> DeleteDidPoolAsync(string didPoolId, CancellationToken cancellationToken = default);
 
     /// <inheritdoc />
     Task<Site> GetSiteAsync(string siteId, CancellationToken cancellationToken = default);
@@ -38,7 +38,7 @@ public interface ITelephonyProvidersEdgeApi
     Task<Site> UpdateSiteAsync(string siteId, Site body, CancellationToken cancellationToken = default);
 
     /// <inheritdoc />
-    Task DeleteSiteAsync(string siteId, CancellationToken cancellationToken = default);
+    Task<bool> DeleteSiteAsync(string siteId, CancellationToken cancellationToken = default);
 
     /// <inheritdoc />
     Task<DomainCertificateAuthority> GetCertificateAuthorityAsync(string certificateId, CancellationToken cancellationToken = default);
@@ -50,7 +50,7 @@ public interface ITelephonyProvidersEdgeApi
     Task<DomainCertificateAuthority> UpdateCertificateAuthorityAsync(string certificateId, DomainCertificateAuthority body, CancellationToken cancellationToken = default);
 
     /// <inheritdoc />
-    Task DeleteCertificateAuthorityAsync(string certificateId, CancellationToken cancellationToken = default);
+    Task<bool> DeleteCertificateAuthorityAsync(string certificateId, CancellationToken cancellationToken = default);
 
     /// <inheritdoc />
     Task<ExtensionPool> GetExtensionPoolAsync(string extensionPoolId, CancellationToken cancellationToken = default);
@@ -62,7 +62,7 @@ public interface ITelephonyProvidersEdgeApi
     Task<ExtensionPool> UpdateExtensionPoolAsync(string extensionPoolId, ExtensionPool body, CancellationToken cancellationToken = default);
 
     /// <inheritdoc />
-    Task DeleteExtensionPoolAsync(string extensionPoolId, CancellationToken cancellationToken = default);
+    Task<bool> DeleteExtensionPoolAsync(string extensionPoolId, CancellationToken cancellationToken = default);
 
     /// <inheritdoc />
     Task<EdgeEntityListing> GetEdgesAsync(int? pageSize = null, int? pageNumber = null, string name = null, string siteId = null, string edgeGroupId = null, string sortBy = null, bool? managed = null, CancellationToken cancellationToken = default);
@@ -86,7 +86,7 @@ public interface ITelephonyProvidersEdgeApi
     Task<LogicalInterfaceEntityListing> GetEdgeLogicalinterfacesAsync(string edgeId, IEnumerable<string> expands = null, CancellationToken cancellationToken = default);
 
     /// <inheritdoc />
-    Task DeleteEdgeLogicalinterfaceAsync(string edgeId, string interfaceId, CancellationToken cancellationToken = default);
+    Task<bool> DeleteEdgeLogicalinterfaceAsync(string edgeId, string interfaceId, CancellationToken cancellationToken = default);
 
     /// <inheritdoc />
     Task<EdgeLogsJob> GetEdgeLogsJobAsync(string edgeId, string jobId, CancellationToken cancellationToken = default);
@@ -101,7 +101,7 @@ public interface ITelephonyProvidersEdgeApi
     Task<PhysicalInterfaceEntityListing> GetEdgePhysicalinterfacesAsync(string edgeId, CancellationToken cancellationToken = default);
 
     /// <inheritdoc />
-    Task DeleteEdgeSoftwareupdateAsync(string edgeId, CancellationToken cancellationToken = default);
+    Task<bool> DeleteEdgeSoftwareupdateAsync(string edgeId, CancellationToken cancellationToken = default);
 
     /// <inheritdoc />
     Task<DomainEdgeSoftwareUpdateDto> GetEdgeSoftwareupdateAsync(string edgeId, CancellationToken cancellationToken = default);
@@ -116,7 +116,7 @@ public interface ITelephonyProvidersEdgeApi
     Task<LineEntityListing> GetEdgeLinesAsync(string edgeId, int? pageSize = null, int? pageNumber = null, CancellationToken cancellationToken = default);
 
     /// <inheritdoc />
-    Task DeleteEdgeAlertablepresencesAsync(CancellationToken cancellationToken = default);
+    Task<bool> DeleteEdgeAlertablepresencesAsync(CancellationToken cancellationToken = default);
 
     /// <inheritdoc />
     Task<VmPairingInfo> GetEdgeSetuppackageAsync(string edgeId, CancellationToken cancellationToken = default);
@@ -200,19 +200,19 @@ public interface ITelephonyProvidersEdgeApi
     Task<TrunkRecordingEnabledCount> GetEdgeTrunksMetricsAsync(string trunkIds, CancellationToken cancellationToken = default);
 
     /// <inheritdoc />
-    Task DeleteEdgeGroupAsync(string edgeGroupId, CancellationToken cancellationToken = default);
+    Task<bool> DeleteEdgeGroupAsync(string edgeGroupId, CancellationToken cancellationToken = default);
 
     /// <inheritdoc />
-    Task DeletePhoneAsync(string phoneId, CancellationToken cancellationToken = default);
+    Task<bool> DeletePhoneAsync(string phoneId, CancellationToken cancellationToken = default);
 
     /// <inheritdoc />
-    Task DeletePhoneBasesettingAsync(string phoneBaseId, CancellationToken cancellationToken = default);
+    Task<bool> DeletePhoneBasesettingAsync(string phoneBaseId, CancellationToken cancellationToken = default);
 
     /// <inheritdoc />
-    Task DeleteSiteOutboundrouteAsync(string siteId, string outboundRouteId, CancellationToken cancellationToken = default);
+    Task<bool> DeleteSiteOutboundrouteAsync(string siteId, string outboundRouteId, CancellationToken cancellationToken = default);
 
     /// <inheritdoc />
-    Task DeleteTrunkbasesettingAsync(string trunkBaseSettingsId, CancellationToken cancellationToken = default);
+    Task<bool> DeleteTrunkbasesettingAsync(string trunkBaseSettingsId, CancellationToken cancellationToken = default);
 
     /// <inheritdoc />
     Task<EdgeVersionReport> GetEdgeversionreportAsync(CancellationToken cancellationToken = default);
