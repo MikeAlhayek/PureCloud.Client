@@ -32,7 +32,9 @@ public sealed class RoutingApi : IRoutingApi
 
         var response = await client.DeleteAsync($"api/v2/routing/assessments/{assessmentId}", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
+
+        return true;
     }
 
     /// <inheritdoc />
@@ -108,7 +110,9 @@ public sealed class RoutingApi : IRoutingApi
 
         var response = await client.DeleteAsync($"api/v2/routing/email/domains/{Uri.EscapeDataString(domainName)}/routes/{Uri.EscapeDataString(routeId)}", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
+
+        return true;
     }
 
     /// <inheritdoc />
@@ -1745,18 +1749,6 @@ public sealed class RoutingApi : IRoutingApi
     /// <inheritdoc />
 
     /// <inheritdoc />
-
-    /// <inheritdoc />
-
-    /// <inheritdoc />
-
-    /// <inheritdoc />
-
-    /// <inheritdoc />
-
-    /// <inheritdoc />
-
-    /// <inheritdoc />
     public async Task<SmsAddress> CreateRoutingSmsAddressAsync(SmsAddressProvision body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
@@ -2999,13 +2991,13 @@ public sealed class RoutingApi : IRoutingApi
     }
 
     /// <inheritdoc />
-    public async Task<EmailOutboundDomainResult> PutRoutingEmailOutboundDomainActivationAsync(string domainId, object body = null, CancellationToken cancellationToken = default)
+    public async Task<EmailOutboundDomainResult> PutRoutingEmailOutboundDomainActivationAsync(string domainId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(domainId);
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.PutAsJsonAsync($"api/v2/routing/email/outbound/domains/{Uri.EscapeDataString(domainId)}/activation", body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PutAsync($"api/v2/routing/email/outbound/domains/{Uri.EscapeDataString(domainId)}/activation", null, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 

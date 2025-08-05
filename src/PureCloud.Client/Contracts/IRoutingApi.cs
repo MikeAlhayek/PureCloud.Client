@@ -1672,10 +1672,9 @@ public interface IRoutingApi
     /// Request activation of the outbound domain
     /// </summary>
     /// <param name="domainId">Domain ID</param>
-    /// <param name="body">Request body</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Email outbound domain result</returns>
-    Task<EmailOutboundDomainResult> PutRoutingEmailOutboundDomainActivationAsync(string domainId, object body = null, CancellationToken cancellationToken = default);
+    Task<EmailOutboundDomainResult> PutRoutingEmailOutboundDomainActivationAsync(string domainId, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Update a recipient
