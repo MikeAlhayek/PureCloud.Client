@@ -321,4 +321,91 @@ public interface IRoutingApi
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>User skill group entity listing</returns>
     Task<UserSkillGroupEntityListing> GetUserSkillgroupsAsync(string userId, int? pageSize = null, string after = null, string before = null, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get SMS phone number
+    /// </summary>
+    /// <param name="phoneNumberId">Phone number ID</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>SMS phone number</returns>
+    Task<SmsPhoneNumber> GetRoutingSmsPhoneNumberAsync(string phoneNumberId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get SMS phone numbers
+    /// </summary>
+    /// <param name="phoneNumber">Phone number</param>
+    /// <param name="phoneNumberType">Phone number type</param>
+    /// <param name="phoneNumberStatus">Phone number status</param>
+    /// <param name="pageSize">Page size</param>
+    /// <param name="pageNumber">Page number</param>
+    /// <param name="sortBy">Sort by</param>
+    /// <param name="sortOrder">Sort order</param>
+    /// <param name="language">Language</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>SMS phone number entity listing</returns>
+    Task<SmsPhoneNumberEntityListing> GetRoutingSmsPhoneNumbersAsync(string phoneNumber = null, string phoneNumberType = null, string phoneNumberStatus = null, int? pageSize = null, int? pageNumber = null, string sortBy = null, string sortOrder = null, string language = null, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Create a benefit assessment
+    /// </summary>
+    /// <param name="body">Assessment</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Benefit assessment</returns>
+    Task<BenefitAssessment> CreateRoutingAssessmentAsync(CreateBenefitAssessmentRequest body, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Test domain connectivity
+    /// </summary>
+    /// <param name="domainId">Domain ID</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Test message</returns>
+    Task<TestMessage> TestRoutingEmailDomainConnectionAsync(string domainId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Create email domain
+    /// </summary>
+    /// <param name="body">Domain</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Inbound domain</returns>
+    Task<InboundDomain> CreateRoutingEmailDomainAsync(InboundDomain body, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Create queue
+    /// </summary>
+    /// <param name="body">Queue</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Queue</returns>
+    Task<Queue> CreateRoutingQueueAsync(CreateQueueRequest body, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Create skill group
+    /// </summary>
+    /// <param name="body">Skill group</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Skill group</returns>
+    Task<SkillGroup> CreateRoutingSkillgroupAsync(SkillGroup body, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Create skill
+    /// </summary>
+    /// <param name="body">Skill</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Routing skill</returns>
+    Task<RoutingSkill> CreateRoutingSkillAsync(RoutingSkill body, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Create SMS address
+    /// </summary>
+    /// <param name="body">SMS address</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>SMS address</returns>
+    Task<SmsAddress> CreateRoutingSmsAddressAsync(SmsAddress body, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Provision SMS phone number
+    /// </summary>
+    /// <param name="body">SMS phone number provision</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>SMS phone number</returns>
+    Task<SmsPhoneNumber> CreateRoutingSmsPhoneNumberAsync(SmsPhoneNumberProvision body, CancellationToken cancellationToken = default);
 }
