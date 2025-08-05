@@ -85,7 +85,7 @@ public sealed class OutboundApi : IOutboundApi
         return await response.Content.ReadFromJsonAsync<AttemptLimitsEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<AttemptLimits> PostOutboundAttemptlimitsAsync(AttemptLimits body, CancellationToken cancellationToken = default)
+    public async Task<AttemptLimits> CreateOutboundAttemptlimitAsync(AttemptLimits body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
 
@@ -98,7 +98,7 @@ public sealed class OutboundApi : IOutboundApi
         return await response.Content.ReadFromJsonAsync<AttemptLimits>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<AttemptLimits> PutOutboundAttemptlimitAsync(string attemptLimitsId, AttemptLimits body, CancellationToken cancellationToken = default)
+    public async Task<AttemptLimits> UpdateOutboundAttemptlimitAsync(string attemptLimitsId, AttemptLimits body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(attemptLimitsId);
         ArgumentNullException.ThrowIfNull(body);
@@ -186,7 +186,7 @@ public sealed class OutboundApi : IOutboundApi
         return await response.Content.ReadFromJsonAsync<CallableTimeSetEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<CallableTimeSet> PostOutboundCallabletimesetsAsync(CallableTimeSet body, CancellationToken cancellationToken = default)
+    public async Task<CallableTimeSet> CreateOutboundCallabletimesetAsync(CallableTimeSet body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
 
@@ -199,7 +199,7 @@ public sealed class OutboundApi : IOutboundApi
         return await response.Content.ReadFromJsonAsync<CallableTimeSet>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<CallableTimeSet> PutOutboundCallabletimesetAsync(string callableTimeSetId, CallableTimeSet body, CancellationToken cancellationToken = default)
+    public async Task<CallableTimeSet> UpdateOutboundCallabletimesetAsync(string callableTimeSetId, CallableTimeSet body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(callableTimeSetId);
         ArgumentNullException.ThrowIfNull(body);
@@ -323,7 +323,7 @@ public sealed class OutboundApi : IOutboundApi
         return await response.Content.ReadFromJsonAsync<CampaignEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<Campaign> PostOutboundCampaignsAsync(Campaign body, CancellationToken cancellationToken = default)
+    public async Task<Campaign> CreateOutboundCampaignAsync(Campaign body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
 
@@ -336,7 +336,7 @@ public sealed class OutboundApi : IOutboundApi
         return await response.Content.ReadFromJsonAsync<Campaign>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<Campaign> PutOutboundCampaignAsync(string campaignId, Campaign body, CancellationToken cancellationToken = default)
+    public async Task<Campaign> UpdateOutboundCampaignAsync(string campaignId, Campaign body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(campaignId);
         ArgumentNullException.ThrowIfNull(body);
@@ -424,7 +424,7 @@ public sealed class OutboundApi : IOutboundApi
         return await response.Content.ReadFromJsonAsync<ResponseSetEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<ResponseSet> PostOutboundCallanalysisresponsesetsAsync(ResponseSet body, CancellationToken cancellationToken = default)
+    public async Task<ResponseSet> CreateOutboundCallanalysisresponsesetAsync(ResponseSet body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
 
@@ -437,7 +437,7 @@ public sealed class OutboundApi : IOutboundApi
         return await response.Content.ReadFromJsonAsync<ResponseSet>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<ResponseSet> PutOutboundCallanalysisresponsesetAsync(string callAnalysisSetId, ResponseSet body, CancellationToken cancellationToken = default)
+    public async Task<ResponseSet> UpdateOutboundCallanalysisresponsesetAsync(string callAnalysisSetId, ResponseSet body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(callAnalysisSetId);
         ArgumentNullException.ThrowIfNull(body);
@@ -3385,3 +3385,4 @@ public sealed class OutboundApi : IOutboundApi
         return await response.Content.ReadFromJsonAsync<CampaignSchedule>(_options.JsonSerializerOptions, cancellationToken);
     }
 }
+
