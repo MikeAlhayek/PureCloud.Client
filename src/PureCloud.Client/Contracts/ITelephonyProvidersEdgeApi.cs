@@ -201,4 +201,46 @@ public interface ITelephonyProvidersEdgeApi
 
     /// <inheritdoc />
     Task<TrunkRecordingEnabledCount> GetEdgeTrunksMetricsAsync(string trunkIds, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task DeleteEdgeGroupAsync(string edgeGroupId, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task DeletePhoneAsync(string phoneId, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task DeletePhoneBasesettingAsync(string phoneBaseId, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task DeleteSiteOutboundrouteAsync(string siteId, string outboundRouteId, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task DeleteTrunkbasesettingAsync(string trunkBaseSettingsId, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task<EdgeVersionReport> GetEdgeversionreportAsync(CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task<ExpiredEdgeListing> GetExpiredAsync(CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task<Extension> GetExtensionAsync(string extensionId, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task<Line> GetLineAsync(string lineId, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task<Line> GetLinesTemplateAsync(string lineMetabaseId, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task<MediaStatisticsListing> GetMediastatisticsConversationAsync(string conversationId, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task<IEnumerable<EdgeMetrics>> GetEdgesMetricsAsync(string edgeIds, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task<PhoneBase> GetPhonebasesettingsTemplateAsync(string phoneMetabaseId, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task<PhysicalInterfaceEntityListing> GetPhysicalinterfacesAsync(string edgeIds, CancellationToken cancellationToken = default);
 }

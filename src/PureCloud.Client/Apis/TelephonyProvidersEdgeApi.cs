@@ -1396,4 +1396,189 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return await response.Content.ReadFromJsonAsync<TrunkRecordingEnabledCount>(_options.JsonSerializerOptions, cancellationToken);
     }
+
+    /// <inheritdoc />
+
+    public async Task DeleteEdgeGroupAsync(string edgeGroupId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(edgeGroupId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.DeleteAsync($"/api/v2/telephony/providers/edges/edgegroups/{Uri.EscapeDataString(edgeGroupId)}", cancellationToken);
+        response.EnsureSuccessStatusCode();
+    }
+
+    /// <inheritdoc />
+
+    public async Task DeletePhoneAsync(string phoneId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(phoneId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.DeleteAsync($"/api/v2/telephony/providers/edges/phones/{Uri.EscapeDataString(phoneId)}", cancellationToken);
+        response.EnsureSuccessStatusCode();
+    }
+
+    /// <inheritdoc />
+
+    public async Task DeletePhoneBasesettingAsync(string phoneBaseId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(phoneBaseId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.DeleteAsync($"/api/v2/telephony/providers/edges/phonebasesettings/{Uri.EscapeDataString(phoneBaseId)}", cancellationToken);
+        response.EnsureSuccessStatusCode();
+    }
+
+    /// <inheritdoc />
+
+    public async Task DeleteSiteOutboundrouteAsync(string siteId, string outboundRouteId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(siteId);
+        ArgumentException.ThrowIfNullOrEmpty(outboundRouteId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.DeleteAsync($"/api/v2/telephony/providers/edges/sites/{Uri.EscapeDataString(siteId)}/outboundroutes/{Uri.EscapeDataString(outboundRouteId)}", cancellationToken);
+        response.EnsureSuccessStatusCode();
+    }
+
+    /// <inheritdoc />
+
+    public async Task DeleteTrunkbasesettingAsync(string trunkBaseSettingsId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(trunkBaseSettingsId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.DeleteAsync($"/api/v2/telephony/providers/edges/trunkbasesettings/{Uri.EscapeDataString(trunkBaseSettingsId)}", cancellationToken);
+        response.EnsureSuccessStatusCode();
+    }
+
+    /// <inheritdoc />
+
+    public async Task<EdgeVersionReport> GetEdgeversionreportAsync(CancellationToken cancellationToken = default)
+    {
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.GetAsync("/api/v2/telephony/providers/edges/edgeversionreport", cancellationToken);
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<EdgeVersionReport>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
+
+    public async Task<ExpiredEdgeListing> GetExpiredAsync(CancellationToken cancellationToken = default)
+    {
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.GetAsync("/api/v2/telephony/providers/edges/expired", cancellationToken);
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<ExpiredEdgeListing>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
+
+    public async Task<Extension> GetExtensionAsync(string extensionId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(extensionId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.GetAsync($"/api/v2/telephony/providers/edges/extensions/{Uri.EscapeDataString(extensionId)}", cancellationToken);
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<Extension>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
+
+    public async Task<Line> GetLineAsync(string lineId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(lineId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.GetAsync($"/api/v2/telephony/providers/edges/lines/{Uri.EscapeDataString(lineId)}", cancellationToken);
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<Line>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
+
+    public async Task<Line> GetLinesTemplateAsync(string lineMetabaseId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(lineMetabaseId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.GetAsync($"/api/v2/telephony/providers/edges/lines/template?lineMetabaseId={Uri.EscapeDataString(lineMetabaseId)}", cancellationToken);
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<Line>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
+
+    public async Task<MediaStatisticsListing> GetMediastatisticsConversationAsync(string conversationId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(conversationId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.GetAsync($"/api/v2/telephony/providers/edges/mediastatistics/conversations/{Uri.EscapeDataString(conversationId)}", cancellationToken);
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<MediaStatisticsListing>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
+
+    public async Task<IEnumerable<EdgeMetrics>> GetEdgesMetricsAsync(string edgeIds, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(edgeIds);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.GetAsync($"/api/v2/telephony/providers/edges/metrics?edgeIds={Uri.EscapeDataString(edgeIds)}", cancellationToken);
+        response.EnsureSuccessStatusCode();
+
+        var result = await response.Content.ReadFromJsonAsync<IEnumerable<EdgeMetrics>>(_options.JsonSerializerOptions, cancellationToken);
+
+        return result ?? Array.Empty<EdgeMetrics>();
+    }
+
+    /// <inheritdoc />
+
+    public async Task<PhoneBase> GetPhonebasesettingsTemplateAsync(string phoneMetabaseId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(phoneMetabaseId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.GetAsync($"/api/v2/telephony/providers/edges/phonebasesettings/template?phoneMetabaseId={Uri.EscapeDataString(phoneMetabaseId)}", cancellationToken);
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<PhoneBase>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
+
+    public async Task<PhysicalInterfaceEntityListing> GetPhysicalinterfacesAsync(string edgeIds, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(edgeIds);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.GetAsync($"/api/v2/telephony/providers/edges/physicalinterfaces?edgeIds={Uri.EscapeDataString(edgeIds)}", cancellationToken);
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<PhysicalInterfaceEntityListing>(_options.JsonSerializerOptions, cancellationToken);
+    }
 }
