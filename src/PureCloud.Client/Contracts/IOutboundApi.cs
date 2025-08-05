@@ -540,24 +540,18 @@ public interface IOutboundApi
     /// <param name="body">The body</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Task result</returns>
-    Task<AttemptLimits> PostOutboundAttemptlimitsAsync(AttemptLimits body, CancellationToken cancellationToken = default);
-
     /// <summary>
     /// Create callabletimesets
     /// </summary>
     /// <param name="body">The body</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Task result</returns>
-    Task<CallableTimeSet> PostOutboundCallabletimesetsAsync(CallableTimeSet body, CancellationToken cancellationToken = default);
-
     /// <summary>
     /// Create callanalysisresponsesets
     /// </summary>
     /// <param name="body">The body</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Task result</returns>
-    Task<ResponseSet> PostOutboundCallanalysisresponsesetsAsync(ResponseSet body, CancellationToken cancellationToken = default);
-
     /// <summary>
     /// Update attemptlimit
     /// </summary>
@@ -565,8 +559,6 @@ public interface IOutboundApi
     /// <param name="body">The body</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Task result</returns>
-    Task<AttemptLimits> PutOutboundAttemptlimitAsync(string attemptLimitsId, AttemptLimits body, CancellationToken cancellationToken = default);
-
     /// <summary>
     /// Update callabletimeset
     /// </summary>
@@ -574,8 +566,6 @@ public interface IOutboundApi
     /// <param name="body">The body</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Task result</returns>
-    Task<CallableTimeSet> PutOutboundCallabletimesetAsync(string callableTimeSetId, CallableTimeSet body, CancellationToken cancellationToken = default);
-
     /// <summary>
     /// Update callanalysisresponseset
     /// </summary>
@@ -583,8 +573,6 @@ public interface IOutboundApi
     /// <param name="body">The body</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Task result</returns>
-    Task<ResponseSet> PutOutboundCallanalysisresponsesetAsync(string callAnalysisSetId, ResponseSet body, CancellationToken cancellationToken = default);
-
     /// <summary>
     /// Get contactlists
     /// </summary>
@@ -1363,8 +1351,6 @@ public interface IOutboundApi
     /// <param name="body">The body</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Task result</returns>
-    Task<Campaign> PostOutboundCampaignsAsync(Campaign body, CancellationToken cancellationToken = default);
-
     /// <summary>
     /// Create contactlistcontacts
     /// </summary>
@@ -1483,20 +1469,8 @@ public interface IOutboundApi
     /// <param name="body">The body</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Task result</returns>
-    Task<DigitalRuleSet> PostOutboundDigitalrulesetsAsync(DigitalRuleSet body, CancellationToken cancellationToken = default);
-
-    /// <summary>
-    /// Create dnclists
-    /// </summary>
-    /// <param name="body">The body</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Task result</returns>
-    Task<DncList> PostOutboundDnclistsAsync(DncListCreate body, CancellationToken cancellationToken = default);
-
-    /// <summary>
-    /// Create importtemplatesbulkadd
-    /// </summary>
-    /// <param name="body">The body</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Task result</returns>
     Task<ImportTemplate> PostOutboundImporttemplatesBulkAddAsync(IEnumerable<ImportTemplate> body, CancellationToken cancellationToken = default);
@@ -1531,20 +1505,8 @@ public interface IOutboundApi
     /// <param name="body">The body</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Task result</returns>
-    Task<RuleSet> PostOutboundRulesetsAsync(RuleSet body, CancellationToken cancellationToken = default);
-
-    /// <summary>
-    /// Create sequences
-    /// </summary>
-    /// <param name="body">The body</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Task result</returns>
-    Task<CampaignSequence> PostOutboundSequencesAsync(CampaignSequence body, CancellationToken cancellationToken = default);
-
-    /// <summary>
-    /// Update campaignagent
-    /// </summary>
-    /// <param name="campaignId">The campaignId</param>
     /// <param name="userId">The userId</param>
     /// <param name="body">The body</param>
     /// <param name="cancellationToken">Cancellation token</param>
@@ -1558,8 +1520,6 @@ public interface IOutboundApi
     /// <param name="body">The body</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Task result</returns>
-    Task<Campaign> PutOutboundCampaignAsync(string campaignId, Campaign body, CancellationToken cancellationToken = default);
-
     /// <summary>
     /// Update campaignrule
     /// </summary>
