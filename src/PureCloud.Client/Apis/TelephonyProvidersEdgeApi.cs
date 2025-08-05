@@ -49,18 +49,6 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
     /// <inheritdoc />
 
-    public async Task<EdgeEntityListing> GetEdgesAsync(CancellationToken cancellationToken = default)
-    {
-        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-
-        var response = await client.GetAsync("/api/v2/telephony/providers/edges", cancellationToken);
-        response.EnsureSuccessStatusCode();
-
-        return await response.Content.ReadFromJsonAsync<EdgeEntityListing>(_options.JsonSerializerOptions, cancellationToken);
-    }
-
-    /// <inheritdoc />
-
     public async Task<Edge> CreateEdgeAsync(Edge body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);

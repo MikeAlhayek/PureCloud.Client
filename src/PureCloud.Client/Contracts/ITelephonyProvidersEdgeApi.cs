@@ -11,9 +11,6 @@ public interface ITelephonyProvidersEdgeApi
     Task DeleteEdgeAsync(string edgeId, CancellationToken cancellationToken = default);
 
     /// <inheritdoc />
-    Task<EdgeEntityListing> GetEdgesAsync(CancellationToken cancellationToken = default);  
-
-    /// <inheritdoc />
     Task<Edge> CreateEdgeAsync(Edge body, CancellationToken cancellationToken = default);
 
     /// <inheritdoc />
