@@ -827,7 +827,7 @@ public interface IOutboundApi
     /// <param name="body">The body</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Task result</returns>
-    Task<DncList> PostOutboundDnclistAsync(DncListCreate body, CancellationToken cancellationToken = default);
+    Task<DncList> CreateOutboundDnclistAsync(DncListCreate body, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Create filespecificationtemplates
@@ -859,7 +859,7 @@ public interface IOutboundApi
     /// <param name="body">The body</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Task result</returns>
-    Task<CampaignSequence> PostOutboundSequenceAsync(CampaignSequence body, CancellationToken cancellationToken = default);
+    Task<CampaignSequence> CreateOutboundSequenceAsync(CampaignSequence body, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Update digitalruleset
@@ -868,7 +868,7 @@ public interface IOutboundApi
     /// <param name="body">The body</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Task result</returns>
-    Task<DigitalRuleSet> PutOutboundDigitalrulesetAsync(string digitalRuleSetId, DigitalRuleSet body, CancellationToken cancellationToken = default);
+    Task<DigitalRuleSet> UpdateOutboundDigitalrulesetAsync(string digitalRuleSetId, DigitalRuleSet body, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Update dnclist

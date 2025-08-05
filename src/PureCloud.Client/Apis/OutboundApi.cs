@@ -1860,7 +1860,7 @@ public sealed class OutboundApi : IOutboundApi
         return await response.Content.ReadFromJsonAsync<DigitalRuleSet>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<DncList> PostOutboundDnclistAsync(DncListCreate body, CancellationToken cancellationToken = default)
+    public async Task<DncList> CreateOutboundDnclistAsync(DncListCreate body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
 
@@ -1912,7 +1912,7 @@ public sealed class OutboundApi : IOutboundApi
         return await response.Content.ReadFromJsonAsync<RuleSet>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<CampaignSequence> PostOutboundSequenceAsync(CampaignSequence body, CancellationToken cancellationToken = default)
+    public async Task<CampaignSequence> CreateOutboundSequenceAsync(CampaignSequence body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
 
@@ -1925,7 +1925,7 @@ public sealed class OutboundApi : IOutboundApi
         return await response.Content.ReadFromJsonAsync<CampaignSequence>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<DigitalRuleSet> PutOutboundDigitalrulesetAsync(string digitalRuleSetId, DigitalRuleSet body, CancellationToken cancellationToken = default)
+    public async Task<DigitalRuleSet> UpdateOutboundDigitalrulesetAsync(string digitalRuleSetId, DigitalRuleSet body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(digitalRuleSetId);
         ArgumentNullException.ThrowIfNull(body);
