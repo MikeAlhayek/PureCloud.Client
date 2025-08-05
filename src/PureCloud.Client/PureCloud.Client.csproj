@@ -316,6 +316,7 @@
     <Compile Include="Models\EdgeEntityListing.cs" />
     <Compile Include="Models\EdgeGroup.cs" />
     <Compile Include="Models\EdgeInterface.cs" />
+    <Compile Include="Models\EdgeNetworkDiagnosticResponse.cs" />
     <Compile Include="Models\EdgeVersionReport.cs" />
     <Compile Include="Models\EdgeVersionInformation.cs" />
     <Compile Include="Models\ExpiredEdgeListing.cs" />
@@ -334,6 +335,7 @@
     <Compile Include="Models\NotificationTemplateHeader.cs" />
     <Compile Include="Models\NotificationTemplateHeader.Type.cs" />
     <Compile Include="Models\NotificationTemplateParameter.cs" />
+    <Compile Include="Models\NumberPlan.cs" />
     <Compile Include="Models\OpenContentAttachment.cs" />
     <Compile Include="Models\OpenContentAttachment.MediaType.cs" />
     <Compile Include="Models\RecipientAdditionalIdentifier.cs" />
@@ -4360,6 +4362,7 @@
     <Compile Include="Models\TrunkInstanceTopicTrunkMetricsNetworkTypeIp.cs" />
     <Compile Include="Models\TrunkInstanceTopicTrunkMetricsOptions.cs" />
     <Compile Include="Models\TrunkInstanceTopicTrunkMetricsRegisters.cs" />
+    <Compile Include="Models\TrunkMetrics.cs" />
     <Compile Include="Models\TrunkMetricsTopicTrunkMetrics.cs" />
     <Compile Include="Models\TrunkMetricsTopicTrunkMetricsCalls.cs" />
     <Compile Include="Models\TrunkMetricsTopicTrunkMetricsQoS.cs" />

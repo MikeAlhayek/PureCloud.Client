@@ -243,4 +243,19 @@ public interface ITelephonyProvidersEdgeApi
 
     /// <inheritdoc />
     Task<PhysicalInterfaceEntityListing> GetPhysicalinterfacesAsync(string edgeIds, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task<IEnumerable<NumberPlan>> GetSiteNumberplansAsync(string siteId, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task<SiteConnections> GetSiteSiteconnectionsAsync(string siteId, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task<TrunkMetrics> GetTrunkMetricsAsync(string trunkId, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task<TrunkBase> GetTrunkbasesettingsTemplateAsync(string trunkMetabaseId, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task<TrunkRecordingEnabledCount> GetTrunkswithrecordingAsync(string trunkType = null, CancellationToken cancellationToken = default);
 }
