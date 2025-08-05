@@ -120,8 +120,6 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.DeleteAsync($"api/v2/outbound/attemptlimits/{attemptLimitsId}", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-          
         return true;
     }
 
@@ -223,8 +221,6 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.DeleteAsync($"api/v2/outbound/callabletimesets/{Uri.EscapeDataString(callableTimeSetId)}", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-          
         return true;
     }
 
@@ -362,8 +358,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.DeleteAsync($"api/v2/outbound/campaigns/{Uri.EscapeDataString(campaignId)}", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-          
+        
         return true;
     }
 
@@ -465,8 +460,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.DeleteAsync($"api/v2/outbound/callanalysisresponsesets/{Uri.EscapeDataString(callAnalysisSetId)}", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-          
+        
         return true;
     }
 
@@ -478,8 +472,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.DeleteAsync($"api/v2/outbound/campaigns/{Uri.EscapeDataString(campaignId)}/progress", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-          
+        
         return true;
     }
 
@@ -491,8 +484,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.DeleteAsync($"api/v2/outbound/campaignrules/{Uri.EscapeDataString(campaignRuleId)}", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-          
+        
         return true;
     }
 
@@ -504,8 +496,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.DeleteAsync($"api/v2/outbound/contactlists/{Uri.EscapeDataString(contactListId)}", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-          
+        
         return true;
     }
 
@@ -518,8 +509,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.DeleteAsync($"api/v2/outbound/contactlists/{Uri.EscapeDataString(contactListId)}/contacts/{Uri.EscapeDataString(contactId)}", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-          
+        
         return true;
     }
 
@@ -532,8 +522,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PostAsJsonAsync($"api/v2/outbound/contactlists/{Uri.EscapeDataString(contactListId)}/contacts/bulk/delete", contactIds, _options.JsonSerializerOptions, cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-          
+        
         return true;
     }
 
@@ -545,8 +534,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.DeleteAsync($"api/v2/outbound/contactlistfilters/{Uri.EscapeDataString(contactListFilterId)}", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-          
+        
         return true;
     }
 
@@ -558,8 +546,6 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PostAsJsonAsync("api/v2/outbound/contactlists/bulk/delete", id, _options.JsonSerializerOptions, cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-          
         return true;
     }
 
@@ -571,8 +557,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.DeleteAsync($"api/v2/outbound/contactlisttemplates/{Uri.EscapeDataString(contactListTemplateId)}", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-          
+        
         return true;
     }
 
@@ -584,8 +569,6 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PostAsJsonAsync("api/v2/outbound/contactlisttemplates/bulk/delete", id, _options.JsonSerializerOptions, cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-          
         return true;
     }
 
@@ -597,8 +580,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.DeleteAsync($"api/v2/outbound/digitalrulesets/{Uri.EscapeDataString(digitalRuleSetId)}", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-          
+        
         return true;
     }
 
@@ -610,8 +592,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.DeleteAsync($"api/v2/outbound/dnclists/{Uri.EscapeDataString(dncListId)}", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-          
+        
         return true;
     }
 
@@ -631,8 +612,7 @@ public sealed class OutboundApi : IOutboundApi
         var uri = UriHelper.GetUri($"api/v2/outbound/dnclists/{Uri.EscapeDataString(dncListId)}/customexclusioncolumns", parameters);
         var response = await client.DeleteAsync(uri, cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-          
+        
         return true;
     }
 
@@ -652,8 +632,7 @@ public sealed class OutboundApi : IOutboundApi
         var uri = UriHelper.GetUri($"api/v2/outbound/dnclists/{Uri.EscapeDataString(dncListId)}/emailaddresses", parameters);
         var response = await client.DeleteAsync(uri, cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-          
+        
         return true;
     }
 
@@ -673,8 +652,7 @@ public sealed class OutboundApi : IOutboundApi
         var uri = UriHelper.GetUri($"api/v2/outbound/dnclists/{Uri.EscapeDataString(dncListId)}/phonenumbers", parameters);
         var response = await client.DeleteAsync(uri, cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-          
+        
         return true;
     }
 
@@ -694,8 +672,7 @@ public sealed class OutboundApi : IOutboundApi
         var uri = UriHelper.GetUri($"api/v2/outbound/dnclists/{Uri.EscapeDataString(dncListId)}/whatsappnumbers", parameters);
         var response = await client.DeleteAsync(uri, cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-          
+        
         return true;
     }
 
@@ -707,8 +684,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.DeleteAsync($"api/v2/outbound/filespecificationtemplates/{Uri.EscapeDataString(fileSpecificationTemplateId)}", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-          
+        
         return true;
     }
 
@@ -720,8 +696,6 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PostAsJsonAsync("api/v2/outbound/filespecificationtemplates/bulk/delete", id, _options.JsonSerializerOptions, cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-          
         return true;
     }
 
@@ -733,8 +707,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.DeleteAsync($"api/v2/outbound/importtemplates/{Uri.EscapeDataString(importTemplateId)}", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-          
+        
         return true;
     }
 
@@ -746,8 +719,6 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.PostAsJsonAsync("api/v2/outbound/importtemplates/bulk/delete", id, _options.JsonSerializerOptions, cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-          
         return true;
     }
 
@@ -759,8 +730,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.DeleteAsync($"api/v2/outbound/messagingcampaigns/{Uri.EscapeDataString(messagingCampaignId)}", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-          
+        
         return true;
     }
 
@@ -772,8 +742,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.DeleteAsync($"api/v2/outbound/messagingcampaigns/{Uri.EscapeDataString(messagingCampaignId)}/progress", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-          
+        
         return true;
     }
 
@@ -785,8 +754,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.DeleteAsync($"api/v2/outbound/rulesets/{Uri.EscapeDataString(ruleSetId)}", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-          
+        
         return true;
     }
 
@@ -798,8 +766,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.DeleteAsync($"api/v2/outbound/schedules/campaigns/{Uri.EscapeDataString(campaignId)}", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-          
+        
         return true;
     }
 
@@ -811,8 +778,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.DeleteAsync($"api/v2/outbound/schedules/emailcampaigns/{Uri.EscapeDataString(emailCampaignId)}", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-          
+        
         return true;
     }
 
@@ -824,8 +790,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.DeleteAsync($"api/v2/outbound/schedules/messagingcampaigns/{Uri.EscapeDataString(messagingCampaignId)}", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-          
+        
         return true;
     }
 
@@ -837,8 +802,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.DeleteAsync($"api/v2/outbound/schedules/sequences/{Uri.EscapeDataString(sequenceId)}", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-          
+        
         return true;
     }
 
@@ -850,8 +814,7 @@ public sealed class OutboundApi : IOutboundApi
 
         var response = await client.DeleteAsync($"api/v2/outbound/sequences/{Uri.EscapeDataString(sequenceId)}", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-          
+        
         return true;
     }
 
