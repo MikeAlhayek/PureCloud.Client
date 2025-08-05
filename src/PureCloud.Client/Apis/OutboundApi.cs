@@ -85,7 +85,7 @@ public sealed class OutboundApi : IOutboundApi
         return await response.Content.ReadFromJsonAsync<AttemptLimitsEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<AttemptLimits> PostOutboundAttemptlimitsAsync(AttemptLimits body, CancellationToken cancellationToken = default)
+    public async Task<AttemptLimits> CreateOutboundAttemptlimitAsync(AttemptLimits body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
 
@@ -98,7 +98,7 @@ public sealed class OutboundApi : IOutboundApi
         return await response.Content.ReadFromJsonAsync<AttemptLimits>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<AttemptLimits> PutOutboundAttemptlimitAsync(string attemptLimitsId, AttemptLimits body, CancellationToken cancellationToken = default)
+    public async Task<AttemptLimits> UpdateOutboundAttemptlimitAsync(string attemptLimitsId, AttemptLimits body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(attemptLimitsId);
         ArgumentNullException.ThrowIfNull(body);
@@ -818,9 +818,6 @@ public sealed class OutboundApi : IOutboundApi
         return true;
     }
 
-    // TODO: Add remaining GET methods - some model types need to be resolved first
-    // Temporarily commenting out methods with missing model references
-    
     public async Task<AgentOwnedMappingPreviewListing> GetOutboundCampaignAgentownedmappingpreviewResultsAsync(string campaignId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(campaignId);
@@ -1136,15 +1133,6 @@ public sealed class OutboundApi : IOutboundApi
         return await response.Content.ReadFromJsonAsync<CommonCampaignDivisionViewEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    // All GET methods successfully migrated - models were available
-
-    // Working POST methods using existing models
-
-
-
-
-    // Working PUT methods using existing models
-    // GET methods for ContactLists operations
     public async Task<ContactListEntityListing> GetOutboundContactlistsAsync(bool? includeImportStatus = null, bool? includeSize = null, int? pageSize = null, int? pageNumber = null, bool? allowEmptyResult = null, string filterType = null, string name = null, IEnumerable<string> ids = null, IEnumerable<string> divisionIds = null, string sortBy = null, string sortOrder = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
@@ -1349,7 +1337,6 @@ public sealed class OutboundApi : IOutboundApi
         return await response.Content.ReadFromJsonAsync<ContactListTemplateEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    // GET methods for DigitalRuleset operations  
     public async Task<DigitalRuleSet> GetOutboundDigitalrulesetAsync(string digitalRuleSetId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(digitalRuleSetId);
@@ -1412,7 +1399,6 @@ public sealed class OutboundApi : IOutboundApi
         return await response.Content.ReadFromJsonAsync<DigitalRuleSetEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    // GET methods for DncList operations
     public async Task<DncList> GetOutboundDnclistAsync(string dncListId, bool? includeImportStatus = null, bool? includeSize = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(dncListId);
@@ -1511,7 +1497,6 @@ public sealed class OutboundApi : IOutboundApi
         return await response.Content.ReadFromJsonAsync<DncListEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    // GET methods for Event operations
     public async Task<EventLog> GetOutboundEventAsync(string eventId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(eventId);
@@ -1574,7 +1559,6 @@ public sealed class OutboundApi : IOutboundApi
         return await response.Content.ReadFromJsonAsync<DialerEventEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    // GET methods for FileSpecificationTemplate operations
     public async Task<FileSpecificationTemplate> GetOutboundFilespecificationtemplateAsync(string fileSpecificationTemplateId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(fileSpecificationTemplateId);
@@ -1637,7 +1621,6 @@ public sealed class OutboundApi : IOutboundApi
         return await response.Content.ReadFromJsonAsync<FileSpecificationTemplateEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    // GET methods for ImportTemplate operations
     public async Task<ImportTemplate> GetOutboundImporttemplateAsync(string importTemplateId, bool? includeImportStatus = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(importTemplateId);
@@ -1718,7 +1701,6 @@ public sealed class OutboundApi : IOutboundApi
         return await response.Content.ReadFromJsonAsync<ImportTemplateEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    // GET methods for RuleSet operations
     public async Task<RuleSet> GetOutboundRulesetAsync(string ruleSetId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(ruleSetId);
@@ -1781,7 +1763,6 @@ public sealed class OutboundApi : IOutboundApi
         return await response.Content.ReadFromJsonAsync<RuleSetEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    // GET methods for Sequence operations
     public async Task<CampaignSequence> GetOutboundSequenceAsync(string sequenceId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(sequenceId);
@@ -1844,7 +1825,6 @@ public sealed class OutboundApi : IOutboundApi
         return await response.Content.ReadFromJsonAsync<CampaignSequenceEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    // GET methods for Settings operations
     public async Task<OutboundSettings> GetOutboundSettingsAsync(CancellationToken cancellationToken = default)
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
@@ -1856,7 +1836,6 @@ public sealed class OutboundApi : IOutboundApi
         return await response.Content.ReadFromJsonAsync<OutboundSettings>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    // GET methods for WrapUpCodeMapping operations
     public async Task<WrapUpCodeMapping> GetOutboundWrapupcodemappingsAsync(CancellationToken cancellationToken = default)
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
@@ -1868,7 +1847,6 @@ public sealed class OutboundApi : IOutboundApi
         return await response.Content.ReadFromJsonAsync<WrapUpCodeMapping>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    // POST methods for creating entities
     public async Task<DigitalRuleSet> PostOutboundDigitalrulesetAsync(DigitalRuleSet body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
@@ -1947,7 +1925,6 @@ public sealed class OutboundApi : IOutboundApi
         return await response.Content.ReadFromJsonAsync<CampaignSequence>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    // PUT methods for updating entities
     public async Task<DigitalRuleSet> PutOutboundDigitalrulesetAsync(string digitalRuleSetId, DigitalRuleSet body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(digitalRuleSetId);
@@ -2058,7 +2035,6 @@ public sealed class OutboundApi : IOutboundApi
         return await response.Content.ReadFromJsonAsync<WrapUpCodeMapping>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    // Specialized GET methods that return basic types
     public async Task<string> GetOutboundContactlistExportAsync(string contactListId, string download = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(contactListId);
@@ -2151,7 +2127,6 @@ public sealed class OutboundApi : IOutboundApi
         return await response.Content.ReadFromJsonAsync<ImportStatus>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    // POST methods for specialized operations  
     public async Task<string> PostOutboundContactlistClearAsync(string contactListId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(contactListId);
