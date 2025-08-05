@@ -1766,14 +1766,7 @@ public interface IRoutingApi
     /// <returns>User skill entity listing</returns>
     Task<UserSkillEntityListing> PutUserRoutingskillsBulkAsync(string userId, IEnumerable<UserRoutingSkillPost> body, CancellationToken cancellationToken = default);
 
-    /// <summary>
-    /// Delete a queue
-    /// </summary>
-    /// <param name="queueId">Queue ID</param>
-    /// <param name="forceDelete">Force delete queue</param>
-    /// <param name="cancellationToken">Cancellation token</param>
-    /// <returns>Success status</returns>
-    Task<bool> DeleteRoutingQueueAsync(string queueId, bool? forceDelete = null, CancellationToken cancellationToken = default);
+
 
     /// <summary>
     /// Retrieve assessments for queueIds
@@ -2031,31 +2024,6 @@ public interface IRoutingApi
     Task<LabelUtilizationEntityListing> GetRoutingUtilizationLabelsAsync(int? pageSize = null, int? pageNumber = null, string sortOrder = null, string name = null, CancellationToken cancellationToken = default);
 
     /// <summary>
-    /// Get utilization tags
-    /// </summary>
-    /// <param name="pageSize">Page size</param>
-    /// <param name="pageNumber">Page number</param>
-    /// <param name="sortOrder">Sort order</param>
-    /// <param name="name">Name</param>
-    /// <param name="cancellationToken">Cancellation token</param>
-    /// <returns>Utilization tag entity listing</returns>
-    Task<UtilizationTagEntityListing> GetRoutingUtilizationTagsAsync(int? pageSize = null, int? pageNumber = null, string sortOrder = null, string name = null, CancellationToken cancellationToken = default);
-
-    /// <summary>
-    /// Get wrapup codes
-    /// </summary>
-    /// <param name="pageSize">Page size</param>
-    /// <param name="pageNumber">Page number</param>
-    /// <param name="sortBy">Sort by</param>
-    /// <param name="sortOrder">Sort order</param>
-    /// <param name="name">Name</param>
-    /// <param name="ids">IDs</param>
-    /// <param name="divisionIds">Division IDs</param>
-    /// <param name="cancellationToken">Cancellation token</param>
-    /// <returns>Wrapup code entity listing</returns>
-    Task<WrapupCodeEntityListing> GetRoutingWrapupcodesAsync(int? pageSize = null, int? pageNumber = null, string sortBy = null, string sortOrder = null, string name = null, IEnumerable<string> ids = null, IEnumerable<string> divisionIds = null, CancellationToken cancellationToken = default);
-
-    /// <summary>
     /// Get wrapup code division view
     /// </summary>
     /// <param name="codeId">Code ID</param>
@@ -2077,35 +2045,11 @@ public interface IRoutingApi
     Task<WrapupCodeEntityListing> GetRoutingWrapupcodesDivisionviewsAsync(int? pageSize = null, int? pageNumber = null, string name = null, IEnumerable<string> ids = null, IEnumerable<string> divisionIds = null, bool? includeState = null, CancellationToken cancellationToken = default);
 
     /// <summary>
-    /// Get user queues
-    /// </summary>
-    /// <param name="userId">User ID</param>
-    /// <param name="pageSize">Page size</param>
-    /// <param name="pageNumber">Page number</param>
-    /// <param name="joined">Joined</param>
-    /// <param name="divisionIds">Division IDs</param>
-    /// <param name="cancellationToken">Cancellation token</param>
-    /// <returns>User queue entity listing</returns>
-    Task<UserQueueEntityListing> GetUserQueuesAsync(string userId, int? pageSize = null, int? pageNumber = null, bool? joined = null, IEnumerable<string> divisionIds = null, CancellationToken cancellationToken = default);
-
-    /// <summary>
     /// Get user routing languages
     /// </summary>
     /// <param name="userId">User ID</param>
     /// <param name="pageSize">Page size</param>
     /// <param name="pageNumber">Page number</param>
-    /// <param name="sortOrder">Sort order</param>
-    /// <param name="cancellationToken">Cancellation token</param>
-    /// <returns>User language entity listing</returns>
-    Task<UserLanguageEntityListing> GetUserRoutinglanguagesAsync(string userId, int? pageSize = null, int? pageNumber = null, string sortOrder = null, CancellationToken cancellationToken = default);
-
-    /// <summary>
-    /// Get user routing skills
-    /// </summary>
-    /// <param name="userId">User ID</param>
-    /// <param name="pageSize">Page size</param>
-    /// <param name="pageNumber">Page number</param>
-    /// <param name="sortOrder">Sort order</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>User skill entity listing</returns>
     Task<UserSkillEntityListing> GetUserRoutingskillsAsync(string userId, int? pageSize = null, int? pageNumber = null, string sortOrder = null, CancellationToken cancellationToken = default);

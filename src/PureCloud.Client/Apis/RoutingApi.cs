@@ -1953,29 +1953,7 @@ public sealed class RoutingApi : IRoutingApi
         return await response.Content.ReadFromJsonAsync<SkillGroup>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    /// <inheritdoc />
-    public async Task<SkillGroupMemberDivisions> GetRoutingSkillgroupMembersDivisionsAsync(string skillGroupId, IEnumerable<string> expands = null, CancellationToken cancellationToken = default)
-    {
-        ArgumentException.ThrowIfNullOrEmpty(skillGroupId);
 
-        var parameters = new NameValueCollection();
-
-        if (expands != null)
-        {
-            foreach (var expand in expands)
-            {
-                parameters.Add("expand", expand);
-            }
-        }
-
-        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-
-        var response = await client.GetAsync(UriHelper.GetUri($"api/v2/routing/skillgroups/{skillGroupId}/members/divisions", parameters), cancellationToken);
-
-        response.EnsureSuccessStatusCode();
-
-        return await response.Content.ReadFromJsonAsync<SkillGroupMemberDivisions>(_options.JsonSerializerOptions, cancellationToken);
-    }
 
     /// <inheritdoc />
     public async Task<SmsAddress> GetRoutingSmsAddressAsync(string addressId, CancellationToken cancellationToken = default)
@@ -2125,26 +2103,7 @@ public sealed class RoutingApi : IRoutingApi
         return await response.Content.ReadFromJsonAsync<ComparisonPeriodListing>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    /// <inheritdoc />
-    public async Task<EstimatedWaitTimePredictions> GetRoutingQueueEstimatedwaittimeAsync(string queueId, string conversationId = null, CancellationToken cancellationToken = default)
-    {
-        ArgumentException.ThrowIfNullOrEmpty(queueId);
 
-        var parameters = new NameValueCollection();
-
-        if (!string.IsNullOrEmpty(conversationId))
-        {
-            parameters.Add("conversationId", conversationId);
-        }
-
-        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-
-        var response = await client.GetAsync(UriHelper.GetUri($"api/v2/routing/queues/{queueId}/estimatedwaittime", parameters), cancellationToken);
-
-        response.EnsureSuccessStatusCode();
-
-        return await response.Content.ReadFromJsonAsync<EstimatedWaitTimePredictions>(_options.JsonSerializerOptions, cancellationToken);
-    }
 
     /// <inheritdoc />
     public async Task<IdentityResolutionQueueConfig> GetRoutingQueueIdentityresolutionAsync(string queueId, CancellationToken cancellationToken = default)
@@ -2289,98 +2248,11 @@ public sealed class RoutingApi : IRoutingApi
         return await response.Content.ReadFromJsonAsync<WrapupCodeDivisionViewEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    /// <inheritdoc />
-    public async Task<UserRoutingLanguageEntityListing> GetUserRoutinglanguagesAsync(string userId, int? pageSize = null, int? pageNumber = null, string sortOrder = null, CancellationToken cancellationToken = default)
-    {
-        ArgumentException.ThrowIfNullOrEmpty(userId);
 
-        var parameters = new NameValueCollection();
 
-        if (pageSize.HasValue)
-        {
-            parameters.Add("pageSize", pageSize.Value.ToString());
-        }
 
-        if (pageNumber.HasValue)
-        {
-            parameters.Add("pageNumber", pageNumber.Value.ToString());
-        }
 
-        if (!string.IsNullOrEmpty(sortOrder))
-        {
-            parameters.Add("sortOrder", sortOrder);
-        }
 
-        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-
-        var response = await client.GetAsync(UriHelper.GetUri($"api/v2/users/{userId}/routinglanguages", parameters), cancellationToken);
-
-        response.EnsureSuccessStatusCode();
-
-        return await response.Content.ReadFromJsonAsync<UserRoutingLanguageEntityListing>(_options.JsonSerializerOptions, cancellationToken);
-    }
-
-    /// <inheritdoc />
-    public async Task<UserSkillEntityListing> GetUserRoutingskillsAsync(string userId, int? pageSize = null, int? pageNumber = null, string sortOrder = null, CancellationToken cancellationToken = default)
-    {
-        ArgumentException.ThrowIfNullOrEmpty(userId);
-
-        var parameters = new NameValueCollection();
-
-        if (pageSize.HasValue)
-        {
-            parameters.Add("pageSize", pageSize.Value.ToString());
-        }
-
-        if (pageNumber.HasValue)
-        {
-            parameters.Add("pageNumber", pageNumber.Value.ToString());
-        }
-
-        if (!string.IsNullOrEmpty(sortOrder))
-        {
-            parameters.Add("sortOrder", sortOrder);
-        }
-
-        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-
-        var response = await client.GetAsync(UriHelper.GetUri($"api/v2/users/{userId}/routingskills", parameters), cancellationToken);
-
-        response.EnsureSuccessStatusCode();
-
-        return await response.Content.ReadFromJsonAsync<UserSkillEntityListing>(_options.JsonSerializerOptions, cancellationToken);
-    }
-
-    /// <inheritdoc />
-    public async Task<UserSkillGroupEntityListing> GetUserSkillgroupsAsync(string userId, int? pageSize = null, int? pageNumber = null, string sortOrder = null, CancellationToken cancellationToken = default)
-    {
-        ArgumentException.ThrowIfNullOrEmpty(userId);
-
-        var parameters = new NameValueCollection();
-
-        if (pageSize.HasValue)
-        {
-            parameters.Add("pageSize", pageSize.Value.ToString());
-        }
-
-        if (pageNumber.HasValue)
-        {
-            parameters.Add("pageNumber", pageNumber.Value.ToString());
-        }
-
-        if (!string.IsNullOrEmpty(sortOrder))
-        {
-            parameters.Add("sortOrder", sortOrder);
-        }
-
-        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-
-        var response = await client.GetAsync(UriHelper.GetUri($"api/v2/users/{userId}/skillgroups", parameters), cancellationToken);
-
-        response.EnsureSuccessStatusCode();
-
-        return await response.Content.ReadFromJsonAsync<UserSkillGroupEntityListing>(_options.JsonSerializerOptions, cancellationToken);
-    }
 
     /// <inheritdoc />
     public async Task<IdentityResolutionConfig> GetRoutingSmsIdentityresolutionPhonenumberAsync(string addressId, CancellationToken cancellationToken = default)
@@ -2396,41 +2268,7 @@ public sealed class RoutingApi : IRoutingApi
         return await response.Content.ReadFromJsonAsync<IdentityResolutionConfig>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    /// <inheritdoc />
-    public async Task<UserQueueEntityListing> GetUserQueuesAsync(string userId, int? pageSize = null, int? pageNumber = null, bool? joined = null, IEnumerable<string> divisionIds = null, CancellationToken cancellationToken = default)
-    {
-        ArgumentException.ThrowIfNullOrEmpty(userId);
 
-        var parameters = new NameValueCollection();
-
-        if (pageSize.HasValue)
-        {
-            parameters.Add("pageSize", pageSize.Value.ToString());
-        }
-        if (pageNumber.HasValue)
-        {
-            parameters.Add("pageNumber", pageNumber.Value.ToString());
-        }
-        if (joined.HasValue)
-        {
-            parameters.Add("joined", joined.Value.ToString().ToLower());
-        }
-        if (divisionIds != null)
-        {
-            foreach (var divisionId in divisionIds)
-            {
-                parameters.Add("divisionId", divisionId);
-            }
-        }
-
-        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-
-        var response = await client.GetAsync(UriHelper.GetUri($"api/v2/users/{Uri.EscapeDataString(userId)}/queues", parameters), cancellationToken);
-
-        response.EnsureSuccessStatusCode();
-
-        return await response.Content.ReadFromJsonAsync<UserQueueEntityListing>(_options.JsonSerializerOptions, cancellationToken);
-    }
 
     /// <inheritdoc />
     public async Task<bool> PatchRoutingQueueMemberAsync(string queueId, string memberId, QueueMember body, CancellationToken cancellationToken = default)
