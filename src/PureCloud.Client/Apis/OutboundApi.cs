@@ -2852,7 +2852,7 @@ public sealed class OutboundApi : IOutboundApi
         var uri = UriHelper.GetUri($"api/v2/outbound/dnclists/{dncListId}/customexclusioncolumns", parameters);
         var response = await client.PatchAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
     }
 
     public async Task PatchOutboundDnclistEmailaddressesAsync(string dncListId, DncPatchEmailsRequest body, bool? expiredOnly = null, CancellationToken cancellationToken = default)
@@ -2872,7 +2872,7 @@ public sealed class OutboundApi : IOutboundApi
         var uri = UriHelper.GetUri($"api/v2/outbound/dnclists/{dncListId}/emailaddresses", parameters);
         var response = await client.PatchAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
     }
 
     public async Task PatchOutboundDnclistPhonenumbersAsync(string dncListId, DncPatchPhoneNumbersRequest body, bool? expiredOnly = null, CancellationToken cancellationToken = default)
@@ -2892,7 +2892,7 @@ public sealed class OutboundApi : IOutboundApi
         var uri = UriHelper.GetUri($"api/v2/outbound/dnclists/{dncListId}/phonenumbers", parameters);
         var response = await client.PatchAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
     }
 
     public async Task PatchOutboundDnclistWhatsappnumbersAsync(string dncListId, DncPatchEmailsRequest body, bool? expiredOnly = null, CancellationToken cancellationToken = default)
@@ -2912,7 +2912,7 @@ public sealed class OutboundApi : IOutboundApi
         var uri = UriHelper.GetUri($"api/v2/outbound/dnclists/{dncListId}/whatsappnumbers", parameters);
         var response = await client.PatchAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
     }
 
     public async Task<OutboundSettings> PatchOutboundSettingsAsync(OutboundSettings body, CancellationToken cancellationToken = default)
@@ -3423,7 +3423,203 @@ public sealed class OutboundApi : IOutboundApi
 
 
 
-    // Missing GET endpoints
+    // Missing POST methods that match old naming
+    public async Task<AttemptLimits> PostOutboundAttemptlimitsAsync(AttemptLimits body, CancellationToken cancellationToken = default)
+    {
+        ArgumentNullException.ThrowIfNull(body);
 
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
+        var response = await client.PostAsJsonAsync("api/v2/outbound/attemptlimits", body, _options.JsonSerializerOptions, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<AttemptLimits>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<CallableTimeSet> PostOutboundCallabletimesetsAsync(CallableTimeSet body, CancellationToken cancellationToken = default)
+    {
+        ArgumentNullException.ThrowIfNull(body);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PostAsJsonAsync("api/v2/outbound/callabletimesets", body, _options.JsonSerializerOptions, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<CallableTimeSet>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<ResponseSet> PostOutboundCallanalysisresponsesetsAsync(ResponseSet body, CancellationToken cancellationToken = default)
+    {
+        ArgumentNullException.ThrowIfNull(body);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PostAsJsonAsync("api/v2/outbound/callanalysisresponsesets", body, _options.JsonSerializerOptions, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<ResponseSet>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<Campaign> PostOutboundCampaignsAsync(Campaign body, CancellationToken cancellationToken = default)
+    {
+        ArgumentNullException.ThrowIfNull(body);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PostAsJsonAsync("api/v2/outbound/campaigns", body, _options.JsonSerializerOptions, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<Campaign>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<DigitalRuleSet> PostOutboundDigitalrulesetsAsync(DigitalRuleSet body, CancellationToken cancellationToken = default)
+    {
+        ArgumentNullException.ThrowIfNull(body);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PostAsJsonAsync("api/v2/outbound/digitalrulesets", body, _options.JsonSerializerOptions, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<DigitalRuleSet>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<DncList> PostOutboundDnclistsAsync(DncList body, CancellationToken cancellationToken = default)
+    {
+        ArgumentNullException.ThrowIfNull(body);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PostAsJsonAsync("api/v2/outbound/dnclists", body, _options.JsonSerializerOptions, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<DncList>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<RuleSet> PostOutboundRulesetsAsync(RuleSet body, CancellationToken cancellationToken = default)
+    {
+        ArgumentNullException.ThrowIfNull(body);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PostAsJsonAsync("api/v2/outbound/rulesets", body, _options.JsonSerializerOptions, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<RuleSet>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<CampaignSequence> PostOutboundSequencesAsync(CampaignSequence body, CancellationToken cancellationToken = default)
+    {
+        ArgumentNullException.ThrowIfNull(body);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PostAsJsonAsync("api/v2/outbound/sequences", body, _options.JsonSerializerOptions, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<CampaignSequence>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    // Missing PUT methods that match old naming
+    public async Task<AttemptLimits> PutOutboundAttemptlimitAsync(string attemptLimitsId, AttemptLimits body, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(attemptLimitsId);
+        ArgumentNullException.ThrowIfNull(body);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PutAsJsonAsync($"api/v2/outbound/attemptlimits/{attemptLimitsId}", body, _options.JsonSerializerOptions, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<AttemptLimits>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<CallableTimeSet> PutOutboundCallabletimesetAsync(string callableTimeSetId, CallableTimeSet body, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(callableTimeSetId);
+        ArgumentNullException.ThrowIfNull(body);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PutAsJsonAsync($"api/v2/outbound/callabletimesets/{callableTimeSetId}", body, _options.JsonSerializerOptions, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<CallableTimeSet>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<ResponseSet> PutOutboundCallanalysisresponsesetAsync(string callAnalysisSetId, ResponseSet body, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(callAnalysisSetId);
+        ArgumentNullException.ThrowIfNull(body);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PutAsJsonAsync($"api/v2/outbound/callanalysisresponsesets/{callAnalysisSetId}", body, _options.JsonSerializerOptions, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<ResponseSet>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<Campaign> PutOutboundCampaignAsync(string campaignId, Campaign body, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(campaignId);
+        ArgumentNullException.ThrowIfNull(body);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PutAsJsonAsync($"api/v2/outbound/campaigns/{campaignId}", body, _options.JsonSerializerOptions, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<Campaign>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    // Remaining missing methods
+    public async Task PostOutboundCampaignCallbackScheduleAsync(string campaignId, ContactCallbackRequest body, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(campaignId);
+        ArgumentNullException.ThrowIfNull(body);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PostAsJsonAsync($"api/v2/outbound/campaigns/{campaignId}/callback/schedule", body, _options.JsonSerializerOptions, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+    }
+
+    public async Task PostOutboundConversationDncAsync(string conversationId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(conversationId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PostAsync($"api/v2/outbound/conversations/{conversationId}/dnc", null, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+    }
+
+    public async Task PutOutboundCampaignAgentAsync(string campaignId, string userId, Agent body, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(campaignId);
+        ArgumentException.ThrowIfNullOrEmpty(userId);
+        ArgumentNullException.ThrowIfNull(body);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PutAsJsonAsync($"api/v2/outbound/campaigns/{campaignId}/agents/{userId}", body, _options.JsonSerializerOptions, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+    }
 }
+
