@@ -1610,4 +1610,48 @@ public interface IOutboundApi
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Task result</returns>
     Task<CampaignSchedule> PutOutboundSchedulesSequenceAsync(string sequenceId, CampaignSchedule body, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get schedulescampaigns
+    /// </summary>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Task result</returns>
+    Task<IEnumerable<CampaignSchedule>> GetOutboundSchedulesCampaignsAsync(CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get schedulesemailcampaigns
+    /// </summary>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Task result</returns>
+    Task<IEnumerable<EmailCampaignSchedule>> GetOutboundSchedulesEmailcampaignsAsync(CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get schedulesmessagingcampaigns
+    /// </summary>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Task result</returns>
+    Task<IEnumerable<MessagingCampaignSchedule>> GetOutboundSchedulesMessagingcampaignsAsync(CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get schedulessequences
+    /// </summary>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Task result</returns>
+    Task<IEnumerable<CampaignSchedule>> GetOutboundSchedulesSequencesAsync(CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Create campaignsprogress
+    /// </summary>
+    /// <param name="body">The body</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Task result</returns>
+    Task<IEnumerable<CampaignProgress>> PostOutboundCampaignsProgressAsync(IEnumerable<string> body, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Create messagingcampaignsprogress
+    /// </summary>
+    /// <param name="body">The body</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Task result</returns>
+    Task<IEnumerable<CampaignProgress>> PostOutboundMessagingcampaignsProgressAsync(IEnumerable<string> body, CancellationToken cancellationToken = default);
 }
