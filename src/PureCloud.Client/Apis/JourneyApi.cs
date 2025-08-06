@@ -28,7 +28,7 @@ public sealed class JourneyApi : IJourneyApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.DeleteAsync($"api/v2/journey/actionmaps/{actionMapId}", cancellationToken);
+        var response = await client.DeleteAsync($"api/v2/journey/actionmaps/{Uri.EscapeDataString(actionMapId)}", cancellationToken);
 
         response.EnsureSuccessStatusCode();
     }
@@ -47,7 +47,7 @@ public sealed class JourneyApi : IJourneyApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/journey/actiontemplates/{actionTemplateId}", parameters);
+        var uri = UriHelper.GetUri($"api/v2/journey/actiontemplates/{Uri.EscapeDataString(actionTemplateId)}", parameters);
 
         var response = await client.DeleteAsync(uri, cancellationToken);
 
@@ -61,7 +61,7 @@ public sealed class JourneyApi : IJourneyApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.DeleteAsync($"api/v2/journey/outcomes/{outcomeId}", cancellationToken);
+        var response = await client.DeleteAsync($"api/v2/journey/outcomes/{Uri.EscapeDataString(outcomeId)}", cancellationToken);
 
         response.EnsureSuccessStatusCode();
     }
@@ -73,7 +73,7 @@ public sealed class JourneyApi : IJourneyApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.DeleteAsync($"api/v2/journey/outcomes/predictors/{predictorId}", cancellationToken);
+        var response = await client.DeleteAsync($"api/v2/journey/outcomes/predictors/{Uri.EscapeDataString(predictorId)}", cancellationToken);
 
         response.EnsureSuccessStatusCode();
     }
@@ -85,7 +85,7 @@ public sealed class JourneyApi : IJourneyApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.DeleteAsync($"api/v2/journey/segments/{segmentId}", cancellationToken);
+        var response = await client.DeleteAsync($"api/v2/journey/segments/{Uri.EscapeDataString(segmentId)}", cancellationToken);
 
         response.EnsureSuccessStatusCode();
     }
@@ -97,7 +97,7 @@ public sealed class JourneyApi : IJourneyApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.DeleteAsync($"api/v2/journey/views/{viewId}", cancellationToken);
+        var response = await client.DeleteAsync($"api/v2/journey/views/{Uri.EscapeDataString(viewId)}", cancellationToken);
 
         response.EnsureSuccessStatusCode();
     }
@@ -109,7 +109,7 @@ public sealed class JourneyApi : IJourneyApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.DeleteAsync($"api/v2/journey/views/{viewId}/schedules", cancellationToken);
+        var response = await client.DeleteAsync($"api/v2/journey/views/{Uri.EscapeDataString(viewId)}/schedules", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -123,7 +123,7 @@ public sealed class JourneyApi : IJourneyApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync($"api/v2/analytics/journeys/aggregates/jobs/{jobId}", cancellationToken);
+        var response = await client.GetAsync($"api/v2/analytics/journeys/aggregates/jobs/{Uri.EscapeDataString(jobId)}", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -144,7 +144,7 @@ public sealed class JourneyApi : IJourneyApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/analytics/journeys/aggregates/jobs/{jobId}/results", parameters);
+        var uri = UriHelper.GetUri($"api/v2/analytics/journeys/aggregates/jobs/{Uri.EscapeDataString(jobId)}/results", parameters);
 
         var response = await client.GetAsync(uri, cancellationToken);
 
@@ -177,7 +177,7 @@ public sealed class JourneyApi : IJourneyApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/externalcontacts/contacts/{contactId}/journey/sessions", parameters);
+        var uri = UriHelper.GetUri($"api/v2/externalcontacts/contacts/{Uri.EscapeDataString(contactId)}/journey/sessions", parameters);
 
         var response = await client.GetAsync(uri, cancellationToken);
 
@@ -193,7 +193,7 @@ public sealed class JourneyApi : IJourneyApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync($"api/v2/journey/actionmaps/{actionMapId}", cancellationToken);
+        var response = await client.GetAsync($"api/v2/journey/actionmaps/{Uri.EscapeDataString(actionMapId)}", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -269,7 +269,7 @@ public sealed class JourneyApi : IJourneyApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync($"api/v2/journey/actionmaps/estimates/jobs/{jobId}", cancellationToken);
+        var response = await client.GetAsync($"api/v2/journey/actionmaps/estimates/jobs/{Uri.EscapeDataString(jobId)}", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -283,7 +283,7 @@ public sealed class JourneyApi : IJourneyApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync($"api/v2/journey/actionmaps/estimates/jobs/{jobId}/results", cancellationToken);
+        var response = await client.GetAsync($"api/v2/journey/actionmaps/estimates/jobs/{Uri.EscapeDataString(jobId)}/results", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -297,7 +297,7 @@ public sealed class JourneyApi : IJourneyApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync($"api/v2/journey/actiontargets/{actionTargetId}", cancellationToken);
+        var response = await client.GetAsync($"api/v2/journey/actiontargets/{Uri.EscapeDataString(actionTargetId)}", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -337,7 +337,7 @@ public sealed class JourneyApi : IJourneyApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync($"api/v2/journey/actiontemplates/{actionTemplateId}", cancellationToken);
+        var response = await client.GetAsync($"api/v2/journey/actiontemplates/{Uri.EscapeDataString(actionTemplateId)}", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -433,7 +433,7 @@ public sealed class JourneyApi : IJourneyApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/journey/deployments/{deploymentId}/customers/{customerCookieId}/ping", parameters);
+        var uri = UriHelper.GetUri($"api/v2/journey/deployments/{Uri.EscapeDataString(deploymentId)}/customers/{customerCookieId}/ping", parameters);
 
         var response = await client.GetAsync(uri, cancellationToken);
 
@@ -449,7 +449,7 @@ public sealed class JourneyApi : IJourneyApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync($"api/v2/journey/outcomes/{outcomeId}", cancellationToken);
+        var response = await client.GetAsync($"api/v2/journey/outcomes/{Uri.EscapeDataString(outcomeId)}", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -515,7 +515,7 @@ public sealed class JourneyApi : IJourneyApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync($"api/v2/journey/outcomes/attributions/jobs/{jobId}", cancellationToken);
+        var response = await client.GetAsync($"api/v2/journey/outcomes/attributions/jobs/{Uri.EscapeDataString(jobId)}", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -529,7 +529,7 @@ public sealed class JourneyApi : IJourneyApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync($"api/v2/journey/outcomes/attributions/jobs/{jobId}/results", cancellationToken);
+        var response = await client.GetAsync($"api/v2/journey/outcomes/attributions/jobs/{Uri.EscapeDataString(jobId)}/results", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -543,7 +543,7 @@ public sealed class JourneyApi : IJourneyApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync($"api/v2/journey/outcomes/predictors/{predictorId}", cancellationToken);
+        var response = await client.GetAsync($"api/v2/journey/outcomes/predictors/{Uri.EscapeDataString(predictorId)}", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -569,7 +569,7 @@ public sealed class JourneyApi : IJourneyApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync($"api/v2/journey/segments/{segmentId}", cancellationToken);
+        var response = await client.GetAsync($"api/v2/journey/segments/{Uri.EscapeDataString(segmentId)}", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -640,7 +640,7 @@ public sealed class JourneyApi : IJourneyApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync($"api/v2/journey/sessions/{sessionId}", cancellationToken);
+        var response = await client.GetAsync($"api/v2/journey/sessions/{Uri.EscapeDataString(sessionId)}", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -671,7 +671,7 @@ public sealed class JourneyApi : IJourneyApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/journey/sessions/{sessionId}/events", parameters);
+        var uri = UriHelper.GetUri($"api/v2/journey/sessions/{Uri.EscapeDataString(sessionId)}/events", parameters);
 
         var response = await client.GetAsync(uri, cancellationToken);
 
@@ -687,7 +687,7 @@ public sealed class JourneyApi : IJourneyApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync($"api/v2/journey/sessions/{sessionId}/outcomescores", cancellationToken);
+        var response = await client.GetAsync($"api/v2/journey/sessions/{Uri.EscapeDataString(sessionId)}/outcomescores", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -701,7 +701,7 @@ public sealed class JourneyApi : IJourneyApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync($"api/v2/journey/views/{viewId}", cancellationToken);
+        var response = await client.GetAsync($"api/v2/journey/views/{Uri.EscapeDataString(viewId)}", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -715,7 +715,7 @@ public sealed class JourneyApi : IJourneyApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync($"api/v2/journey/views/{viewId}/schedules", cancellationToken);
+        var response = await client.GetAsync($"api/v2/journey/views/{Uri.EscapeDataString(viewId)}/schedules", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -730,7 +730,7 @@ public sealed class JourneyApi : IJourneyApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync($"api/v2/journey/views/{viewId}/versions/{versionId}", cancellationToken);
+        var response = await client.GetAsync($"api/v2/journey/views/{Uri.EscapeDataString(viewId)}/versions/{versionId}", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -746,7 +746,7 @@ public sealed class JourneyApi : IJourneyApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync($"api/v2/journey/views/{viewId}/versions/{journeyViewVersion}/charts/{chartId}", cancellationToken);
+        var response = await client.GetAsync($"api/v2/journey/views/{Uri.EscapeDataString(viewId)}/versions/{journeyViewVersion}/charts/{chartId}", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -763,7 +763,7 @@ public sealed class JourneyApi : IJourneyApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync($"api/v2/journey/views/{viewId}/versions/{journeyViewVersion}/charts/{chartId}/versions/{chartVersion}", cancellationToken);
+        var response = await client.GetAsync($"api/v2/journey/views/{Uri.EscapeDataString(viewId)}/versions/{journeyViewVersion}/charts/{chartId}/versions/{chartVersion}", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -779,7 +779,7 @@ public sealed class JourneyApi : IJourneyApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync($"api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs/{jobId}", cancellationToken);
+        var response = await client.GetAsync($"api/v2/journey/views/{Uri.EscapeDataString(viewId)}/versions/{journeyVersionId}/jobs/{jobId}", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -795,7 +795,7 @@ public sealed class JourneyApi : IJourneyApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync($"api/v2/journey/views/{viewId}/versions/{journeyViewVersion}/jobs/{jobId}/results", cancellationToken);
+        var response = await client.GetAsync($"api/v2/journey/views/{Uri.EscapeDataString(viewId)}/versions/{journeyViewVersion}/jobs/{jobId}/results", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -812,7 +812,7 @@ public sealed class JourneyApi : IJourneyApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync($"api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs/{jobId}/results/charts/{chartId}", cancellationToken);
+        var response = await client.GetAsync($"api/v2/journey/views/{Uri.EscapeDataString(viewId)}/versions/{journeyVersionId}/jobs/{jobId}/results/charts/{chartId}", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -827,7 +827,7 @@ public sealed class JourneyApi : IJourneyApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync($"api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs/latest", cancellationToken);
+        var response = await client.GetAsync($"api/v2/journey/views/{Uri.EscapeDataString(viewId)}/versions/{journeyVersionId}/jobs/latest", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -894,7 +894,7 @@ public sealed class JourneyApi : IJourneyApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync($"api/v2/journey/views/eventdefinitions/{eventDefinitionId}", cancellationToken);
+        var response = await client.GetAsync($"api/v2/journey/views/eventdefinitions/{Uri.EscapeDataString(eventDefinitionId)}", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -982,7 +982,7 @@ public sealed class JourneyApi : IJourneyApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.PatchAsJsonAsync($"api/v2/journey/actionmaps/{actionMapId}", body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PatchAsJsonAsync($"api/v2/journey/actionmaps/{Uri.EscapeDataString(actionMapId)}", body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -996,7 +996,7 @@ public sealed class JourneyApi : IJourneyApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.PatchAsJsonAsync($"api/v2/journey/actiontargets/{actionTargetId}", body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PatchAsJsonAsync($"api/v2/journey/actiontargets/{Uri.EscapeDataString(actionTargetId)}", body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -1010,7 +1010,7 @@ public sealed class JourneyApi : IJourneyApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.PatchAsJsonAsync($"api/v2/journey/actiontemplates/{actionTemplateId}", body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PatchAsJsonAsync($"api/v2/journey/actiontemplates/{Uri.EscapeDataString(actionTemplateId)}", body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -1024,7 +1024,7 @@ public sealed class JourneyApi : IJourneyApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.PatchAsJsonAsync($"api/v2/journey/outcomes/{outcomeId}", body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PatchAsJsonAsync($"api/v2/journey/outcomes/{Uri.EscapeDataString(outcomeId)}", body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -1038,7 +1038,7 @@ public sealed class JourneyApi : IJourneyApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.PatchAsJsonAsync($"api/v2/journey/segments/{segmentId}", body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PatchAsJsonAsync($"api/v2/journey/segments/{Uri.EscapeDataString(segmentId)}", body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -1055,7 +1055,7 @@ public sealed class JourneyApi : IJourneyApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.PatchAsJsonAsync($"api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs/{jobId}", body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PatchAsJsonAsync($"api/v2/journey/views/{Uri.EscapeDataString(viewId)}/versions/{journeyVersionId}/jobs/{jobId}", body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -1136,7 +1136,7 @@ public sealed class JourneyApi : IJourneyApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.PostAsJsonAsync($"api/v2/journey/deployments/{deploymentId}/actionevent", body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PostAsJsonAsync($"api/v2/journey/deployments/{Uri.EscapeDataString(deploymentId)}/actionevent", body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
     }
@@ -1148,7 +1148,7 @@ public sealed class JourneyApi : IJourneyApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.PostAsJsonAsync($"api/v2/journey/deployments/{deploymentId}/appevents", body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PostAsJsonAsync($"api/v2/journey/deployments/{Uri.EscapeDataString(deploymentId)}/appevents", body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -1162,7 +1162,7 @@ public sealed class JourneyApi : IJourneyApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.PostAsJsonAsync($"api/v2/journey/deployments/{deploymentId}/webevents", body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PostAsJsonAsync($"api/v2/journey/deployments/{Uri.EscapeDataString(deploymentId)}/webevents", body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -1237,7 +1237,7 @@ public sealed class JourneyApi : IJourneyApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.PostAsJsonAsync($"api/v2/journey/views/{viewId}/schedules", body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PostAsJsonAsync($"api/v2/journey/views/{Uri.EscapeDataString(viewId)}/schedules", body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -1252,7 +1252,7 @@ public sealed class JourneyApi : IJourneyApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.PostAsJsonAsync($"api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs", _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PostAsJsonAsync($"api/v2/journey/views/{Uri.EscapeDataString(viewId)}/versions/{journeyVersionId}/jobs", _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -1267,7 +1267,7 @@ public sealed class JourneyApi : IJourneyApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.PostAsJsonAsync($"api/v2/journey/views/{viewId}/versions", body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PostAsJsonAsync($"api/v2/journey/views/{Uri.EscapeDataString(viewId)}/versions", body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -1308,7 +1308,7 @@ public sealed class JourneyApi : IJourneyApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.PutAsJsonAsync($"api/v2/journey/views/{viewId}/schedules", body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PutAsJsonAsync($"api/v2/journey/views/{Uri.EscapeDataString(viewId)}/schedules", body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -1324,7 +1324,7 @@ public sealed class JourneyApi : IJourneyApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.PutAsJsonAsync($"api/v2/journey/views/{viewId}/versions/{versionId}", body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PutAsJsonAsync($"api/v2/journey/views/{Uri.EscapeDataString(viewId)}/versions/{versionId}", body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
