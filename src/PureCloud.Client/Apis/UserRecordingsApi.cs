@@ -37,17 +37,17 @@ public sealed class UserRecordingsApi : IUserRecordingsApi
     }
 
     /// <inheritdoc />
-    public async Task<UserRecording> GetUserRecordingAsync(string recordingId, IEnumerable<string> expand = null, CancellationToken cancellationToken = default)
+    public async Task<UserRecording> GetUserRecordingAsync(string recordingId, IEnumerable<string> expands = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(recordingId);
 
         var parameters = new NameValueCollection();
 
-        if (expand != null)
+        if (expands != null)
         {
-            foreach (var item in expand)
+            foreach (var expand in expands)
             {
-                parameters.Add("expand", UriHelper.ParameterToString(item));
+                parameters.Add("expand", UriHelper.ParameterToString(expand));
             }
         }
 
@@ -86,7 +86,7 @@ public sealed class UserRecordingsApi : IUserRecordingsApi
     }
 
     /// <inheritdoc />
-    public async Task<UserRecordingEntityListing> GetUserRecordingsAsync(int? pageSize = null, int? pageNumber = null, IEnumerable<string> expand = null, CancellationToken cancellationToken = default)
+    public async Task<UserRecordingEntityListing> GetUserRecordingsAsync(int? pageSize = null, int? pageNumber = null, IEnumerable<string> expands = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
 
@@ -100,11 +100,11 @@ public sealed class UserRecordingsApi : IUserRecordingsApi
             parameters.Add("pageNumber", UriHelper.ParameterToString(pageNumber.Value));
         }
 
-        if (expand != null)
+        if (expands != null)
         {
-            foreach (var item in expand)
+            foreach (var expand in expands)
             {
-                parameters.Add("expand", UriHelper.ParameterToString(item));
+                parameters.Add("expand", UriHelper.ParameterToString(expand));
             }
         }
 
@@ -132,7 +132,7 @@ public sealed class UserRecordingsApi : IUserRecordingsApi
     }
 
     /// <inheritdoc />
-    public async Task<UserRecording> UpdateUserRecordingAsync(string recordingId, UserRecording body, IEnumerable<string> expand = null, CancellationToken cancellationToken = default)
+    public async Task<UserRecording> UpdateUserRecordingAsync(string recordingId, UserRecording body, IEnumerable<string> expands = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(recordingId);
 
@@ -140,11 +140,11 @@ public sealed class UserRecordingsApi : IUserRecordingsApi
 
         var parameters = new NameValueCollection();
 
-        if (expand != null)
+        if (expands != null)
         {
-            foreach (var item in expand)
+            foreach (var expand in expands)
             {
-                parameters.Add("expand", UriHelper.ParameterToString(item));
+                parameters.Add("expand", UriHelper.ParameterToString(expand));
             }
         }
 

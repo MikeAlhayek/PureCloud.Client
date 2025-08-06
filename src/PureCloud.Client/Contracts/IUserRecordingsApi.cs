@@ -12,7 +12,7 @@ public interface IUserRecordingsApi
     /// <summary>
     /// Get a user recording
     /// </summary>
-    Task<UserRecording> GetUserRecordingAsync(string recordingId, IEnumerable<string> expand = null, CancellationToken cancellationToken = default);
+    Task<UserRecording> GetUserRecordingAsync(string recordingId, IEnumerable<string> expands = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Download a user recording
@@ -22,7 +22,7 @@ public interface IUserRecordingsApi
     /// <summary>
     /// Get a list of user recordings
     /// </summary>
-    Task<UserRecordingEntityListing> GetUserRecordingsAsync(int? pageSize = null, int? pageNumber = null, IEnumerable<string> expand = null, CancellationToken cancellationToken = default);
+    Task<UserRecordingEntityListing> GetUserRecordingsAsync(int? pageSize = null, int? pageNumber = null, IEnumerable<string> expands = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Get user recording summary
@@ -32,5 +32,5 @@ public interface IUserRecordingsApi
     /// <summary>
     /// Update a user recording
     /// </summary>
-    Task<UserRecording> UpdateUserRecordingAsync(string recordingId, UserRecording body, IEnumerable<string> expand = null, CancellationToken cancellationToken = default);
+    Task<UserRecording> UpdateUserRecordingAsync(string recordingId, UserRecording body, IEnumerable<string> expands = null, CancellationToken cancellationToken = default);
 }
