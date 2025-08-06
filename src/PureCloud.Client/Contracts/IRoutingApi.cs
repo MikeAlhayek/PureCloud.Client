@@ -287,9 +287,6 @@ public interface IRoutingApi
     /// <param name="pageSize">Page size</param>
     /// <param name="pageNumber">Page number</param>
     /// <param name="cancellationToken">Cancellation token</param>
-    /// <returns>SMS phone number entity listing</returns>
-    Task<SmsPhoneNumberEntityListing> GetRoutingSmsPhonenumbersAsync(string phoneNumber = null, string phoneNumberType = null, string phoneNumberStatus = null, int? pageSize = null, int? pageNumber = null, CancellationToken cancellationToken = default);
-
     /// <summary>
     /// Get utilization labels
     /// </summary>
