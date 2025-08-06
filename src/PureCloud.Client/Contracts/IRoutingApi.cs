@@ -408,4 +408,93 @@ public interface IRoutingApi
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>SMS phone number</returns>
     Task<SmsPhoneNumber> CreateRoutingSmsPhoneNumberAsync(SmsPhoneNumberProvision body, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Delete a benefit assessment
+    /// </summary>
+    /// <param name="assessmentId">Assessment ID</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Success</returns>
+    Task<bool> DeleteRoutingAssessmentAsync(string assessmentId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get a benefit assessment
+    /// </summary>
+    /// <param name="assessmentId">Assessment ID</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Benefit assessment</returns>
+    Task<BenefitAssessment> GetRoutingAssessmentAsync(string assessmentId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get an inbound domain
+    /// </summary>
+    /// <param name="domainId">Domain ID</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Inbound domain</returns>
+    Task<InboundDomain> GetRoutingEmailDomainAsync(string domainId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Create a benefit assessment
+    /// </summary>
+    /// <param name="body">Assessment request</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Benefit assessment</returns>
+    Task<BenefitAssessment> CreateRoutingAssessmentAsync(CreateBenefitAssessmentRequest body = null, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Delete direct routing backup settings
+    /// </summary>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Success</returns>
+    Task<bool> DeleteRoutingDirectroutingbackupSettingsMeAsync(CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Delete an email domain
+    /// </summary>
+    /// <param name="domainId">Domain ID</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Success</returns>
+    Task<bool> DeleteRoutingEmailDomainAsync(string domainId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Delete a route
+    /// </summary>
+    /// <param name="domainName">Domain name</param>
+    /// <param name="routeId">Route ID</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Success</returns>
+    Task<bool> DeleteRoutingEmailDomainRouteAsync(string domainName, string routeId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Delete an outbound email domain
+    /// </summary>
+    /// <param name="domainId">Domain ID</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Success</returns>
+    Task<bool> DeleteRoutingEmailOutboundDomainAsync(string domainId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Delete a language
+    /// </summary>
+    /// <param name="languageId">Language ID</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Success</returns>
+    Task<bool> DeleteRoutingLanguageAsync(string languageId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Delete a queue
+    /// </summary>
+    /// <param name="queueId">Queue ID</param>
+    /// <param name="forceDelete">Force delete</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Success</returns>
+    Task<bool> DeleteRoutingQueueAsync(string queueId, bool? forceDelete = null, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Delete a skill
+    /// </summary>
+    /// <param name="skillId">Skill ID</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Success</returns>
+    Task<bool> DeleteRoutingSkillAsync(string skillId, CancellationToken cancellationToken = default);
 }
