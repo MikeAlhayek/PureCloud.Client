@@ -80,7 +80,9 @@ public sealed class TokensApi : ITokensApi
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.DeleteAsync("api/v2/tokens/me", cancellationToken);
+        var uri = UriHelper.GetUri("api/v2/tokens/me", null);
+
+        var response = await client.DeleteAsync(uri, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -92,7 +94,9 @@ public sealed class TokensApi : ITokensApi
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync("api/v2/tokens/timeout", cancellationToken);
+        var uri = UriHelper.GetUri("api/v2/tokens/timeout", null);
+
+        var response = await client.GetAsync(uri, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -104,7 +108,10 @@ public sealed class TokensApi : ITokensApi
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var request = new HttpRequestMessage(HttpMethod.Head, "api/v2/tokens/me");
+        var uri = UriHelper.GetUri("api/v2/tokens/me", null);
+
+        var request = new HttpRequestMessage(HttpMethod.Head, uri);
+
         var response = await client.SendAsync(request, cancellationToken);
 
         response.EnsureSuccessStatusCode();
