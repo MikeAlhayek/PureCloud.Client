@@ -1,5 +1,3 @@
-using System.Runtime.Serialization;
-
 namespace PureCloud.Client.Models;
 
 /// <summary>
@@ -11,52 +9,7 @@ public sealed class ExpandableWebDeployment
     /// The current status of the deployment
     /// </summary>
     /// <value>The current status of the deployment</value>
-    public enum StatusEnum
-    {
-        /// <summary>
-        /// Your SDK version is out of date and an unknown enum value was encountered. 
-        /// Please upgrade the SDK using the command "Upgrade-Package PureCloudApiSdk" 
-        /// in the Package Manager Console
-        /// </summary>
-        [EnumMember(Value = "OUTDATED_SDK_VERSION")]
-        OutdatedSdkVersion,
-
-        /// <summary>
-        /// Enum Pending for "Pending"
-        /// </summary>
-        [EnumMember(Value = "Pending")]
-        Pending,
-
-        /// <summary>
-        /// Enum Active for "Active"
-        /// </summary>
-        [EnumMember(Value = "Active")]
-        Active,
-
-        /// <summary>
-        /// Enum Inactive for "Inactive"
-        /// </summary>
-        [EnumMember(Value = "Inactive")]
-        Inactive,
-
-        /// <summary>
-        /// Enum Error for "Error"
-        /// </summary>
-        [EnumMember(Value = "Error")]
-        Error,
-
-        /// <summary>
-        /// Enum Deleting for "Deleting"
-        /// </summary>
-        [EnumMember(Value = "Deleting")]
-        Deleting
-    }
-
-    /// <summary>
-    /// The current status of the deployment
-    /// </summary>
-    /// <value>The current status of the deployment</value>
-    public StatusEnum? Status { get; set; }
+    public ExpandableWebDeploymentStatus? Status { get; set; }
 
     /// <summary>
     /// The deployment ID
@@ -86,7 +39,7 @@ public sealed class ExpandableWebDeployment
     /// The list of domains that are approved to use this deployment; the list will be added to CORS headers for ease of web use.
     /// </summary>
     /// <value>The list of domains that are approved to use this deployment; the list will be added to CORS headers for ease of web use.</value>
-    public List<string> AllowedDomains { get; set; }
+    public IEnumerable<string> AllowedDomains { get; set; }
 
     /// <summary>
     /// The supported content profile for a deployment
