@@ -3140,4 +3140,317 @@ public sealed class RoutingApi : IRoutingApi
 
         return await response.Content.ReadFromJsonAsync<UserSkillGroupEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
+
+    /// <inheritdoc />
+    public async Task<SmsPhoneNumber> GetRoutingSmsPhonenumberAsync(string phoneNumberId, string expand = null, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(phoneNumberId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var parameters = new NameValueCollection();
+
+        if (!string.IsNullOrEmpty(expand))
+        {
+            parameters.Add("expand", UriHelper.ParameterToString(expand));
+        }
+
+        var uri = UriHelper.GetUri($"api/v2/routing/sms/phonenumbers/{Uri.EscapeDataString(phoneNumberId)}", parameters);
+
+        var response = await client.GetAsync(uri, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<SmsPhoneNumber>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
+    public async Task<SmsPhoneNumberEntityListing> GetRoutingSmsPhonenumbersAsync(string phoneNumber = null, IEnumerable<string> phoneNumberType = null, IEnumerable<string> phoneNumberStatus = null, IEnumerable<string> countryCode = null, int? pageSize = null, int? pageNumber = null, string sortBy = null, string sortOrder = null, string language = null, string integrationId = null, string supportedContentId = null, CancellationToken cancellationToken = default)
+    {
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var parameters = new NameValueCollection();
+
+        if (!string.IsNullOrEmpty(phoneNumber))
+        {
+            parameters.Add("phoneNumber", UriHelper.ParameterToString(phoneNumber));
+        }
+
+        if (phoneNumberType != null)
+        {
+            foreach (var item in phoneNumberType)
+            {
+                parameters.Add("phoneNumberType", UriHelper.ParameterToString(item));
+            }
+        }
+
+        if (phoneNumberStatus != null)
+        {
+            foreach (var item in phoneNumberStatus)
+            {
+                parameters.Add("phoneNumberStatus", UriHelper.ParameterToString(item));
+            }
+        }
+
+        if (countryCode != null)
+        {
+            foreach (var item in countryCode)
+            {
+                parameters.Add("countryCode", UriHelper.ParameterToString(item));
+            }
+        }
+
+        if (pageSize.HasValue)
+        {
+            parameters.Add("pageSize", UriHelper.ParameterToString(pageSize.Value));
+        }
+
+        if (pageNumber.HasValue)
+        {
+            parameters.Add("pageNumber", UriHelper.ParameterToString(pageNumber.Value));
+        }
+
+        if (!string.IsNullOrEmpty(sortBy))
+        {
+            parameters.Add("sortBy", UriHelper.ParameterToString(sortBy));
+        }
+
+        if (!string.IsNullOrEmpty(sortOrder))
+        {
+            parameters.Add("sortOrder", UriHelper.ParameterToString(sortOrder));
+        }
+
+        if (!string.IsNullOrEmpty(language))
+        {
+            parameters.Add("language", UriHelper.ParameterToString(language));
+        }
+
+        if (!string.IsNullOrEmpty(integrationId))
+        {
+            parameters.Add("integrationId", UriHelper.ParameterToString(integrationId));
+        }
+
+        if (!string.IsNullOrEmpty(supportedContentId))
+        {
+            parameters.Add("supportedContentId", UriHelper.ParameterToString(supportedContentId));
+        }
+
+        var uri = UriHelper.GetUri("api/v2/routing/sms/phonenumbers", parameters);
+
+        var response = await client.GetAsync(uri, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<SmsPhoneNumberEntityListing>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
+    public async Task<BenefitAssessment> PostRoutingAssessmentsAsync(CreateBenefitAssessmentRequest body = null, CancellationToken cancellationToken = default)
+    {
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PostAsJsonAsync("api/v2/routing/assessments", body, _options.JsonSerializerOptions, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<BenefitAssessment>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
+    public async Task<TestMessage> PostRoutingEmailDomainTestconnectionAsync(string domainId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(domainId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PostAsync($"api/v2/routing/email/domains/{Uri.EscapeDataString(domainId)}/testconnection", null, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<TestMessage>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
+    public async Task<InboundDomain> PostRoutingEmailDomainsAsync(InboundDomain body, CancellationToken cancellationToken = default)
+    {
+        ArgumentNullException.ThrowIfNull(body);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PostAsJsonAsync("api/v2/routing/email/domains", body, _options.JsonSerializerOptions, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<InboundDomain>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
+    public async Task<OutboundDomain> PostRoutingEmailOutboundDomainsAsync(OutboundDomain body, CancellationToken cancellationToken = default)
+    {
+        ArgumentNullException.ThrowIfNull(body);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PostAsJsonAsync("api/v2/routing/email/outbound/domains", body, _options.JsonSerializerOptions, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<OutboundDomain>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
+    public async Task<Language> PostRoutingLanguagesAsync(Language body, CancellationToken cancellationToken = default)
+    {
+        ArgumentNullException.ThrowIfNull(body);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PostAsJsonAsync("api/v2/routing/languages", body, _options.JsonSerializerOptions, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<Language>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
+    public async Task<Queue> PostRoutingQueuesAsync(CreateQueueRequest body, CancellationToken cancellationToken = default)
+    {
+        ArgumentNullException.ThrowIfNull(body);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PostAsJsonAsync("api/v2/routing/queues", body, _options.JsonSerializerOptions, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<Queue>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
+    public async Task<SkillGroup> PostRoutingSkillgroupsAsync(SkillGroup body, CancellationToken cancellationToken = default)
+    {
+        ArgumentNullException.ThrowIfNull(body);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PostAsJsonAsync("api/v2/routing/skillgroups", body, _options.JsonSerializerOptions, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<SkillGroup>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
+    public async Task<RoutingSkill> PostRoutingSkillsAsync(RoutingSkill body, CancellationToken cancellationToken = default)
+    {
+        ArgumentNullException.ThrowIfNull(body);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PostAsJsonAsync("api/v2/routing/skills", body, _options.JsonSerializerOptions, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<RoutingSkill>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
+    public async Task<SmsAddress> PostRoutingSmsAddressesAsync(SmsAddressProvision body, CancellationToken cancellationToken = default)
+    {
+        ArgumentNullException.ThrowIfNull(body);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PostAsJsonAsync("api/v2/routing/sms/addresses", body, _options.JsonSerializerOptions, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<SmsAddress>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
+    public async Task<SmsPhoneNumber> PostRoutingSmsPhonenumbersAsync(SmsPhoneNumberProvision body, CancellationToken cancellationToken = default)
+    {
+        ArgumentNullException.ThrowIfNull(body);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PostAsJsonAsync("api/v2/routing/sms/phonenumbers", body, _options.JsonSerializerOptions, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<SmsPhoneNumber>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
+    public async Task<WrapupCode> PostRoutingWrapupcodesAsync(WrapupCode body, CancellationToken cancellationToken = default)
+    {
+        ArgumentNullException.ThrowIfNull(body);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PostAsJsonAsync("api/v2/routing/wrapupcodes", body, _options.JsonSerializerOptions, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<WrapupCode>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
+    public async Task<AgentDirectRoutingBackupSettings> PutRoutingDirectroutingbackupSettingsMeAsync(AgentDirectRoutingBackupSettings body, CancellationToken cancellationToken = default)
+    {
+        ArgumentNullException.ThrowIfNull(body);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PutAsJsonAsync("api/v2/routing/directroutingbackup/settings/me", body, _options.JsonSerializerOptions, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<AgentDirectRoutingBackupSettings>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
+    public async Task<Queue> PutRoutingQueueAsync(string queueId, QueueRequest body, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(queueId);
+        ArgumentNullException.ThrowIfNull(body);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PutAsJsonAsync($"api/v2/routing/queues/{Uri.EscapeDataString(queueId)}", body, _options.JsonSerializerOptions, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<Queue>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
+    public async Task<UtilizationResponse> PutRoutingUtilizationAsync(UtilizationRequest body, CancellationToken cancellationToken = default)
+    {
+        ArgumentNullException.ThrowIfNull(body);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PutAsJsonAsync("api/v2/routing/utilization", body, _options.JsonSerializerOptions, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<UtilizationResponse>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
+    public async Task<WrapupCode> PutRoutingWrapupcodeAsync(string codeId, WrapupCodeRequest body, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(codeId);
+        ArgumentNullException.ThrowIfNull(body);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PutAsJsonAsync($"api/v2/routing/wrapupcodes/{Uri.EscapeDataString(codeId)}", body, _options.JsonSerializerOptions, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<WrapupCode>(_options.JsonSerializerOptions, cancellationToken);
+    }
 }
