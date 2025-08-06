@@ -7,11 +7,11 @@ public interface IIntegrationsApi
 {
     Task<Integration> DeleteIntegrationAsync(string integrationId, CancellationToken cancellationToken = default);
 
-    Task<object> DeleteIntegrationsActionAsync(string actionId, CancellationToken cancellationToken = default);
+    Task<bool> DeleteIntegrationsActionAsync(string actionId, CancellationToken cancellationToken = default);
 
-    Task<object> DeleteIntegrationsActionDraftAsync(string actionId, CancellationToken cancellationToken = default);
+    Task<bool> DeleteIntegrationsActionDraftAsync(string actionId, CancellationToken cancellationToken = default);
 
-    Task<object> DeleteIntegrationsCredentialAsync(string credentialId, CancellationToken cancellationToken = default);
+    Task<bool> DeleteIntegrationsCredentialAsync(string credentialId, CancellationToken cancellationToken = default);
 
     Task<Integration> GetIntegrationAsync(string integrationId, int? pageSize = null, int? pageNumber = null, string sortBy = null, IList<string> expand = null, string nextPage = null, string previousPage = null, CancellationToken cancellationToken = default);
 

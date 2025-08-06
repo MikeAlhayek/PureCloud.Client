@@ -40,55 +40,43 @@ public sealed class IntegrationsApi : IIntegrationsApi
         return await response.Content.ReadFromJsonAsync<Integration>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<object> DeleteIntegrationsActionAsync(string actionId, CancellationToken cancellationToken = default)
+    public async Task<bool> DeleteIntegrationsActionAsync(string actionId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(actionId);
 
-        var parameters = new NameValueCollection();
-
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/integrations/actions/{actionId}", parameters);
-
-        var response = await client.DeleteAsync(uri, cancellationToken);
+        var response = await client.DeleteAsync($"api/v2/integrations/actions/{Uri.EscapeDataString(actionId)}", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<object>(_options.JsonSerializerOptions, cancellationToken);
+        return true;
     }
 
-    public async Task<object> DeleteIntegrationsActionDraftAsync(string actionId, CancellationToken cancellationToken = default)
+    public async Task<bool> DeleteIntegrationsActionDraftAsync(string actionId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(actionId);
 
-        var parameters = new NameValueCollection();
-
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/integrations/actions/{actionId}/draft", parameters);
-
-        var response = await client.DeleteAsync(uri, cancellationToken);
+        var response = await client.DeleteAsync($"api/v2/integrations/actions/{Uri.EscapeDataString(actionId)}/draft", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<object>(_options.JsonSerializerOptions, cancellationToken);
+        return true;
     }
 
-    public async Task<object> DeleteIntegrationsCredentialAsync(string credentialId, CancellationToken cancellationToken = default)
+    public async Task<bool> DeleteIntegrationsCredentialAsync(string credentialId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(credentialId);
 
-        var parameters = new NameValueCollection();
-
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/integrations/credentials/{credentialId}", parameters);
-
-        var response = await client.DeleteAsync(uri, cancellationToken);
+        var response = await client.DeleteAsync($"api/v2/integrations/credentials/{Uri.EscapeDataString(credentialId)}", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<object>(_options.JsonSerializerOptions, cancellationToken);
+        return true;
     }
 
     public async Task<Integration> GetIntegrationAsync(string integrationId, int? pageSize = null, int? pageNumber = null, string sortBy = null, IList<string> expand = null, string nextPage = null, string previousPage = null, CancellationToken cancellationToken = default)
