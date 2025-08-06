@@ -84,7 +84,9 @@ public sealed class RoutingApi : IRoutingApi
 
         var response = await client.DeleteAsync("api/v2/routing/directroutingbackup/settings/me", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
+
+        return true;
     }
 
     /// <inheritdoc />
@@ -96,7 +98,9 @@ public sealed class RoutingApi : IRoutingApi
 
         var response = await client.DeleteAsync($"api/v2/routing/email/domains/{Uri.EscapeDataString(domainId)}", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
+
+        return true;
     }
 
     /// <inheritdoc />
@@ -124,7 +128,9 @@ public sealed class RoutingApi : IRoutingApi
 
         var response = await client.DeleteAsync($"api/v2/routing/email/outbound/domains/{Uri.EscapeDataString(domainId)}", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
+
+        return true;
     }
 
     /// <inheritdoc />
@@ -136,7 +142,9 @@ public sealed class RoutingApi : IRoutingApi
 
         var response = await client.DeleteAsync($"api/v2/routing/languages/{Uri.EscapeDataString(languageId)}", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
+
+        return true;
     }
 
     /// <inheritdoc />
@@ -157,7 +165,9 @@ public sealed class RoutingApi : IRoutingApi
 
         var response = await client.DeleteAsync(uri, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
+
+        return true;
     }
 
     /// <inheritdoc />
@@ -169,7 +179,9 @@ public sealed class RoutingApi : IRoutingApi
 
         var response = await client.DeleteAsync($"api/v2/routing/skills/{Uri.EscapeDataString(skillId)}", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
+
+        return true;
     }
 
     /// <inheritdoc />
@@ -227,7 +239,9 @@ public sealed class RoutingApi : IRoutingApi
 
         var response = await client.DeleteAsync($"api/v2/routing/queues/{Uri.EscapeDataString(queueId)}/members/{Uri.EscapeDataString(memberId)}", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
+
+        return true;
     }
 
     /// <inheritdoc />
@@ -241,7 +255,9 @@ public sealed class RoutingApi : IRoutingApi
 
         var response = await client.DeleteAsync($"api/v2/routing/queues/{Uri.EscapeDataString(queueId)}/users/{Uri.EscapeDataString(memberId)}", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
+
+        return true;
     }
 
     /// <inheritdoc />
@@ -255,7 +271,9 @@ public sealed class RoutingApi : IRoutingApi
 
         var response = await client.DeleteAsync($"api/v2/routing/queues/{Uri.EscapeDataString(queueId)}/wrapupcodes/{Uri.EscapeDataString(codeId)}", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
+
+        return true;
     }
 
     /// <inheritdoc />
@@ -267,7 +285,9 @@ public sealed class RoutingApi : IRoutingApi
 
         var response = await client.DeleteAsync($"api/v2/routing/predictors/{Uri.EscapeDataString(predictorId)}", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
+
+        return true;
     }
 
     /// <inheritdoc />
@@ -277,7 +297,9 @@ public sealed class RoutingApi : IRoutingApi
 
         var response = await client.DeleteAsync("api/v2/routing/settings", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
+
+        return true;
     }
 
     /// <inheritdoc />
@@ -289,7 +311,9 @@ public sealed class RoutingApi : IRoutingApi
 
         var response = await client.DeleteAsync($"api/v2/routing/skillgroups/{Uri.EscapeDataString(skillGroupId)}", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
+
+        return true;
     }
 
     /// <inheritdoc />
@@ -301,7 +325,9 @@ public sealed class RoutingApi : IRoutingApi
 
         var response = await client.DeleteAsync($"api/v2/routing/sms/addresses/{Uri.EscapeDataString(addressId)}", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
+
+        return true;
     }
 
     /// <inheritdoc />
@@ -313,7 +339,9 @@ public sealed class RoutingApi : IRoutingApi
 
         var response = await client.DeleteAsync($"api/v2/routing/sms/phonenumbers/{Uri.EscapeDataString(phoneNumberId)}", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
+
+        return true;
     }
 
     /// <inheritdoc />
@@ -325,7 +353,9 @@ public sealed class RoutingApi : IRoutingApi
 
         var response = await client.DeleteAsync($"api/v2/routing/users/{Uri.EscapeDataString(userId)}/directroutingbackup/settings", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
+
+        return true;
     }
 
     /// <inheritdoc />
@@ -337,7 +367,9 @@ public sealed class RoutingApi : IRoutingApi
 
         var response = await client.DeleteAsync($"api/v2/routing/users/{Uri.EscapeDataString(userId)}/utilization", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
+
+        return true;
     }
 
     /// <inheritdoc />
@@ -347,7 +379,9 @@ public sealed class RoutingApi : IRoutingApi
 
         var response = await client.DeleteAsync("api/v2/routing/utilization", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
+
+        return true;
     }
 
     /// <inheritdoc />
@@ -359,7 +393,9 @@ public sealed class RoutingApi : IRoutingApi
 
         var response = await client.DeleteAsync($"api/v2/routing/utilization/labels/{Uri.EscapeDataString(labelId)}", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
+
+        return true;
     }
 
     /// <inheritdoc />
@@ -371,7 +407,9 @@ public sealed class RoutingApi : IRoutingApi
 
         var response = await client.DeleteAsync($"api/v2/routing/utilization/tags/{Uri.EscapeDataString(tagId)}", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
+
+        return true;
     }
 
     /// <inheritdoc />
@@ -383,7 +421,9 @@ public sealed class RoutingApi : IRoutingApi
 
         var response = await client.DeleteAsync($"api/v2/routing/wrapupcodes/{Uri.EscapeDataString(codeId)}", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
+
+        return true;
     }
 
     /// <inheritdoc />
@@ -397,7 +437,9 @@ public sealed class RoutingApi : IRoutingApi
 
         var response = await client.DeleteAsync($"api/v2/users/{Uri.EscapeDataString(userId)}/routinglanguages/{Uri.EscapeDataString(languageId)}", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
+
+        return true;
     }
 
     /// <inheritdoc />
@@ -411,7 +453,9 @@ public sealed class RoutingApi : IRoutingApi
 
         var response = await client.DeleteAsync($"api/v2/users/{Uri.EscapeDataString(userId)}/routingskills/{Uri.EscapeDataString(skillId)}", cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
+
+        return true;
     }
 
     /// <inheritdoc />
@@ -2219,7 +2263,9 @@ public sealed class RoutingApi : IRoutingApi
 
         var response = await client.PatchAsJsonAsync($"api/v2/routing/queues/{Uri.EscapeDataString(queueId)}/members/{Uri.EscapeDataString(memberId)}", body, _options.JsonSerializerOptions, cancellationToken);
 
-        return response.IsSuccessStatusCode;
+        response.EnsureSuccessStatusCode();
+
+        return true;
     }
 
     /// <inheritdoc />
