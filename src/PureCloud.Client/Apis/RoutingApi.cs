@@ -1699,7 +1699,7 @@ public sealed class RoutingApi : IRoutingApi
 
 
     /// <inheritdoc />
-    public async Task<InboundDomain> PatchRoutingEmailDomainValidateAsync(string domainId, InboundDomainPatchRequest body, CancellationToken cancellationToken = default)
+    public async Task<InboundDomain> UpdateRoutingEmailDomainValidateAsync(string domainId, InboundDomainPatchRequest body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(domainId);
         ArgumentNullException.ThrowIfNull(body);
@@ -2253,7 +2253,7 @@ public sealed class RoutingApi : IRoutingApi
 
 
     /// <inheritdoc />
-    public async Task<bool> PatchRoutingQueueMemberAsync(string queueId, string memberId, QueueMember body, CancellationToken cancellationToken = default)
+    public async Task<bool> UpdateRoutingQueueMemberAsync(string queueId, string memberId, QueueMember body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(queueId);
         ArgumentException.ThrowIfNullOrEmpty(memberId);
@@ -2269,7 +2269,7 @@ public sealed class RoutingApi : IRoutingApi
     }
 
     /// <inheritdoc />
-    public async Task<QueueMemberEntityListing> PatchRoutingQueueMembersAsync(string queueId, IEnumerable<QueueMember> body, CancellationToken cancellationToken = default)
+    public async Task<QueueMemberEntityListing> UpdateRoutingQueueMembersAsync(string queueId, IEnumerable<QueueMember> body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(queueId);
         ArgumentNullException.ThrowIfNull(body);
@@ -2284,7 +2284,7 @@ public sealed class RoutingApi : IRoutingApi
     }
 
     /// <inheritdoc />
-    public async Task<RoutingSettings> PutRoutingSettingsAsync(RoutingSettings body, CancellationToken cancellationToken = default)
+    public async Task<RoutingSettings> UpdateRoutingSettingsAsync(RoutingSettings body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
 
@@ -2298,7 +2298,7 @@ public sealed class RoutingApi : IRoutingApi
     }
 
     /// <inheritdoc />
-    public async Task<UserQueue> PatchUserQueueAsync(string queueId, string userId, UserQueue body, CancellationToken cancellationToken = default)
+    public async Task<UserQueue> UpdateUserQueueAsync(string queueId, string userId, UserQueue body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(queueId);
         ArgumentException.ThrowIfNullOrEmpty(userId);
@@ -2314,7 +2314,7 @@ public sealed class RoutingApi : IRoutingApi
     }
 
     /// <inheritdoc />
-    public async Task<UserQueueEntityListing> PatchUserQueuesAsync(string userId, IEnumerable<UserQueue> body, CancellationToken cancellationToken = default)
+    public async Task<UserQueueEntityListing> UpdateUserQueuesAsync(string userId, IEnumerable<UserQueue> body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(userId);
         ArgumentNullException.ThrowIfNull(body);
@@ -2329,7 +2329,7 @@ public sealed class RoutingApi : IRoutingApi
     }
 
     /// <inheritdoc />
-    public async Task<UserRoutingLanguage> PatchUserRoutinglanguageAsync(string userId, string languageId, UserRoutingLanguage body, CancellationToken cancellationToken = default)
+    public async Task<UserRoutingLanguage> UpdateUserRoutinglanguageAsync(string userId, string languageId, UserRoutingLanguage body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(userId);
         ArgumentException.ThrowIfNullOrEmpty(languageId);
@@ -2345,7 +2345,7 @@ public sealed class RoutingApi : IRoutingApi
     }
 
     /// <inheritdoc />
-    public async Task<UserLanguageEntityListing> PostUserRoutinglanguagesAsync(string userId, UserRoutingLanguagePost body, CancellationToken cancellationToken = default)
+    public async Task<UserLanguageEntityListing> CreateUserRoutinglanguagesAsync(string userId, UserRoutingLanguagePost body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(userId);
         ArgumentNullException.ThrowIfNull(body);
@@ -2360,7 +2360,7 @@ public sealed class RoutingApi : IRoutingApi
     }
 
     /// <inheritdoc />
-    public async Task<UserSkillEntityListing> PostUserRoutingskillsAsync(string userId, UserRoutingSkillPost body, CancellationToken cancellationToken = default)
+    public async Task<UserSkillEntityListing> CreateUserRoutingskillsAsync(string userId, UserRoutingSkillPost body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(userId);
         ArgumentNullException.ThrowIfNull(body);
@@ -2372,21 +2372,6 @@ public sealed class RoutingApi : IRoutingApi
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<UserSkillEntityListing>(_options.JsonSerializerOptions, cancellationToken);
-    }
-
-    /// <inheritdoc />
-    public async Task<InboundDomain> PatchRoutingEmailDomainAsync(string domainId, InboundDomainPatchRequest body, CancellationToken cancellationToken = default)
-    {
-        ArgumentException.ThrowIfNullOrEmpty(domainId);
-        ArgumentNullException.ThrowIfNull(body);
-
-        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-
-        var response = await client.PatchAsJsonAsync($"api/v2/routing/email/domains/{Uri.EscapeDataString(domainId)}", body, _options.JsonSerializerOptions, cancellationToken);
-
-        response.EnsureSuccessStatusCode();
-
-        return await response.Content.ReadFromJsonAsync<InboundDomain>(_options.JsonSerializerOptions, cancellationToken);
     }
 
 /// <inheritdoc />
@@ -2418,7 +2403,7 @@ public sealed class RoutingApi : IRoutingApi
     }
 
     /// <inheritdoc />
-    public async Task<Conversation> PatchRoutingConversationAsync(string conversationId, Conversation body, CancellationToken cancellationToken = default)
+    public async Task<Conversation> UpdateRoutingConversationAsync(string conversationId, Conversation body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(conversationId);
         ArgumentNullException.ThrowIfNull(body);
@@ -2433,7 +2418,7 @@ public sealed class RoutingApi : IRoutingApi
     }
 
     /// <inheritdoc />
-    public async Task<Predictor> PatchRoutingPredictorAsync(string predictorId, CreatePredictorRequest body, CancellationToken cancellationToken = default)
+    public async Task<Predictor> UpdateRoutingPredictorAsync(string predictorId, CreatePredictorRequest body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(predictorId);
         ArgumentNullException.ThrowIfNull(body);
@@ -2448,7 +2433,7 @@ public sealed class RoutingApi : IRoutingApi
     }
 
     /// <inheritdoc />
-    public async Task<QueueMember> PatchRoutingQueueUserAsync(string queueId, string memberId, QueueMember body, CancellationToken cancellationToken = default)
+    public async Task<QueueMember> UpdateRoutingQueueUserAsync(string queueId, string memberId, QueueMember body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(queueId);
         ArgumentException.ThrowIfNullOrEmpty(memberId);
@@ -2464,7 +2449,7 @@ public sealed class RoutingApi : IRoutingApi
     }
 
     /// <inheritdoc />
-    public async Task<QueueMemberEntityListing> PatchRoutingQueueUsersAsync(string queueId, IEnumerable<QueueMember> body, CancellationToken cancellationToken = default)
+    public async Task<QueueMemberEntityListing> UpdateRoutingQueueUsersAsync(string queueId, IEnumerable<QueueMember> body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(queueId);
         ArgumentNullException.ThrowIfNull(body);
@@ -2479,7 +2464,7 @@ public sealed class RoutingApi : IRoutingApi
     }
 
     /// <inheritdoc />
-    public async Task<ContactCenterSettings> PatchRoutingSettingsContactcenterAsync(ContactCenterSettings body, CancellationToken cancellationToken = default)
+    public async Task<ContactCenterSettings> UpdateRoutingSettingsContactcenterAsync(ContactCenterSettings body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
 
@@ -2493,7 +2478,7 @@ public sealed class RoutingApi : IRoutingApi
     }
 
     /// <inheritdoc />
-    public async Task<TranscriptionSettings> PatchRoutingSettingsTranscriptionAsync(TranscriptionSettings body, CancellationToken cancellationToken = default)
+    public async Task<TranscriptionSettings> UpdateRoutingSettingsTranscriptionAsync(TranscriptionSettings body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
 
@@ -2507,7 +2492,7 @@ public sealed class RoutingApi : IRoutingApi
     }
 
     /// <inheritdoc />
-    public async Task<SkillGroup> PatchRoutingSkillgroupAsync(string skillGroupId, SkillGroup body, CancellationToken cancellationToken = default)
+    public async Task<SkillGroup> UpdateRoutingSkillgroupAsync(string skillGroupId, SkillGroup body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(skillGroupId);
         ArgumentNullException.ThrowIfNull(body);
@@ -2522,7 +2507,7 @@ public sealed class RoutingApi : IRoutingApi
     }
 
     /// <inheritdoc />
-    public async Task<UserRoutingLanguageEntityListing> PatchUserRoutinglanguagesBulkAsync(string userId, IEnumerable<UserRoutingLanguage> body, CancellationToken cancellationToken = default)
+    public async Task<UserRoutingLanguageEntityListing> UpdateUserRoutinglanguagesBulkAsync(string userId, IEnumerable<UserRoutingLanguage> body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(userId);
         ArgumentNullException.ThrowIfNull(body);
@@ -2537,7 +2522,7 @@ public sealed class RoutingApi : IRoutingApi
     }
 
     /// <inheritdoc />
-    public async Task<UserSkillEntityListing> PatchUserRoutingskillsBulkAsync(string userId, IEnumerable<UserRoutingSkillPost> body, CancellationToken cancellationToken = default)
+    public async Task<UserSkillEntityListing> UpdateUserRoutingskillsBulkAsync(string userId, IEnumerable<UserRoutingSkillPost> body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(userId);
         ArgumentNullException.ThrowIfNull(body);
@@ -2552,7 +2537,7 @@ public sealed class RoutingApi : IRoutingApi
     }
 
     /// <inheritdoc />
-    public async Task<AnalyticsQueryResponse> PostAnalyticsQueuesObservationsQueryAsync(QueueObservationQuery body, CancellationToken cancellationToken = default)
+    public async Task<AnalyticsQueryResponse> CreateAnalyticsQueuesObservationsQueryAsync(QueueObservationQuery body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
 
@@ -2566,7 +2551,7 @@ public sealed class RoutingApi : IRoutingApi
     }
 
     /// <inheritdoc />
-    public async Task<RoutingActivityResponse> PostAnalyticsRoutingActivityQueryAsync(RoutingActivityQuery body, CancellationToken cancellationToken = default)
+    public async Task<RoutingActivityResponse> CreateAnalyticsRoutingActivityQueryAsync(RoutingActivityQuery body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
 
@@ -2580,7 +2565,7 @@ public sealed class RoutingApi : IRoutingApi
     }
 
     /// <inheritdoc />
-    public async Task<BenefitAssessmentJob> PostRoutingAssessmentsJobsAsync(CreateBenefitAssessmentJobRequest body, CancellationToken cancellationToken = default)
+    public async Task<BenefitAssessmentJob> CreateRoutingAssessmentsJobsAsync(CreateBenefitAssessmentJobRequest body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
 
@@ -2594,7 +2579,7 @@ public sealed class RoutingApi : IRoutingApi
     }
 
     /// <inheritdoc />
-    public async Task<InboundRoute> PostRoutingEmailDomainRoutesAsync(string domainName, InboundRoute body, CancellationToken cancellationToken = default)
+    public async Task<InboundRoute> CreateRoutingEmailDomainRoutesAsync(string domainName, InboundRoute body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(domainName);
         ArgumentNullException.ThrowIfNull(body);
@@ -2609,7 +2594,7 @@ public sealed class RoutingApi : IRoutingApi
     }
 
     /// <inheritdoc />
-    public async Task<EmailOutboundDomainResult> PostRoutingEmailOutboundDomainsSimulatedAsync(OutboundDomain body, CancellationToken cancellationToken = default)
+    public async Task<EmailOutboundDomainResult> CreateRoutingEmailOutboundDomainsSimulatedAsync(OutboundDomain body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
 
@@ -2623,7 +2608,7 @@ public sealed class RoutingApi : IRoutingApi
     }
 
     /// <inheritdoc />
-    public async Task<Predictor> PostRoutingPredictorsAsync(CreatePredictorRequest body, CancellationToken cancellationToken = default)
+    public async Task<Predictor> CreateRoutingPredictorsAsync(CreatePredictorRequest body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
 
@@ -2637,7 +2622,7 @@ public sealed class RoutingApi : IRoutingApi
     }
 
     /// <inheritdoc />
-    public async Task<QueueMember> PostRoutingQueueMembersAsync(string queueId, IEnumerable<WritableEntity> body, CancellationToken cancellationToken = default)
+    public async Task<QueueMember> CreateRoutingQueueMembersAsync(string queueId, IEnumerable<WritableEntity> body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(queueId);
         ArgumentNullException.ThrowIfNull(body);
@@ -2652,7 +2637,7 @@ public sealed class RoutingApi : IRoutingApi
     }
 
     /// <inheritdoc />
-    public async Task<QueueMember> PostRoutingQueueUsersAsync(string queueId, IEnumerable<WritableEntity> body, CancellationToken cancellationToken = default)
+    public async Task<QueueMember> CreateRoutingQueueUsersAsync(string queueId, IEnumerable<WritableEntity> body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(queueId);
         ArgumentNullException.ThrowIfNull(body);
@@ -2667,7 +2652,7 @@ public sealed class RoutingApi : IRoutingApi
     }
 
     /// <inheritdoc />
-    public async Task<WrapupCode[]> PostRoutingQueueWrapupcodesAsync(string queueId, IEnumerable<WrapupCodeReference> body, CancellationToken cancellationToken = default)
+    public async Task<WrapupCode[]> CreateRoutingQueueWrapupcodesAsync(string queueId, IEnumerable<WrapupCodeReference> body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(queueId);
         ArgumentNullException.ThrowIfNull(body);
@@ -2682,7 +2667,7 @@ public sealed class RoutingApi : IRoutingApi
     }
 
     /// <inheritdoc />
-    public async Task<SkillGroupMemberDivisionListing> PostRoutingSkillgroupMembersDivisionsAsync(string skillGroupId, SkillGroupMemberDivisions body = null, CancellationToken cancellationToken = default)
+    public async Task<SkillGroupMemberDivisionListing> CreateRoutingSkillgroupMembersDivisionsAsync(string skillGroupId, SkillGroupMemberDivisions body = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(skillGroupId);
 
@@ -2696,7 +2681,7 @@ public sealed class RoutingApi : IRoutingApi
     }
 
 /// <inheritdoc />
-    public async Task<SmsAlphanumericConfig> PostRoutingSmsPhonenumbersAlphanumericAsync(SmsAlphanumericConfig body, CancellationToken cancellationToken = default)
+    public async Task<SmsAlphanumericConfig> CreateRoutingSmsPhonenumbersAlphanumericAsync(SmsAlphanumericConfig body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
 
@@ -2710,7 +2695,7 @@ public sealed class RoutingApi : IRoutingApi
     }
 
     /// <inheritdoc />
-    public async Task<SmsPhoneNumberImportJobResponse> PostRoutingSmsPhonenumbersImportAsync(SmsPhoneNumberImportJobRequest body, CancellationToken cancellationToken = default)
+    public async Task<SmsPhoneNumberImportJobResponse> CreateRoutingSmsPhonenumbersImportAsync(SmsPhoneNumberImportJobRequest body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
 
@@ -2724,7 +2709,7 @@ public sealed class RoutingApi : IRoutingApi
     }
 
     /// <inheritdoc />
-    public async Task<UtilizationLabel> PostRoutingUtilizationLabelsAsync(CreateUtilizationLabelRequest body, CancellationToken cancellationToken = default)
+    public async Task<UtilizationLabel> CreateRoutingUtilizationLabelsAsync(CreateUtilizationLabelRequest body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
 
@@ -2738,7 +2723,7 @@ public sealed class RoutingApi : IRoutingApi
     }
 
     /// <inheritdoc />
-    public async Task<UtilizationTag> PostRoutingUtilizationTagsAsync(CreateUtilizationTagRequest body, CancellationToken cancellationToken = default)
+    public async Task<UtilizationTag> CreateRoutingUtilizationTagsAsync(CreateUtilizationTagRequest body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
 
@@ -2752,7 +2737,7 @@ public sealed class RoutingApi : IRoutingApi
     }
 
 /// <inheritdoc />
-    public async Task<InboundRoute> PutRoutingEmailDomainRouteAsync(string domainName, string routeId, InboundRoute body, CancellationToken cancellationToken = default)
+    public async Task<InboundRoute> UpdateRoutingEmailDomainRouteAsync(string domainName, string routeId, InboundRoute body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(domainName);
         ArgumentException.ThrowIfNullOrEmpty(routeId);
@@ -2768,7 +2753,7 @@ public sealed class RoutingApi : IRoutingApi
     }
 
     /// <inheritdoc />
-    public async Task<IdentityResolutionConfig> PutRoutingEmailDomainRouteIdentityresolutionAsync(string domainName, string routeId, IdentityResolutionConfig body, CancellationToken cancellationToken = default)
+    public async Task<IdentityResolutionConfig> UpdateRoutingEmailDomainRouteIdentityresolutionAsync(string domainName, string routeId, IdentityResolutionConfig body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(domainName);
         ArgumentException.ThrowIfNullOrEmpty(routeId);
@@ -2784,7 +2769,7 @@ public sealed class RoutingApi : IRoutingApi
     }
 
     /// <inheritdoc />
-    public async Task<EmailOutboundDomainResult> PutRoutingEmailOutboundDomainActivationAsync(string domainId, CancellationToken cancellationToken = default)
+    public async Task<EmailOutboundDomainResult> UpdateRoutingEmailOutboundDomainActivationAsync(string domainId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(domainId);
 
@@ -2798,7 +2783,7 @@ public sealed class RoutingApi : IRoutingApi
     }
 
     /// <inheritdoc />
-    public async Task<Recipient> PutRoutingMessageRecipientAsync(string recipientId, Recipient body, CancellationToken cancellationToken = default)
+    public async Task<Recipient> UpdateRoutingMessageRecipientAsync(string recipientId, Recipient body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(recipientId);
         ArgumentNullException.ThrowIfNull(body);
@@ -2813,7 +2798,7 @@ public sealed class RoutingApi : IRoutingApi
     }
 
     /// <inheritdoc />
-    public async Task<IdentityResolutionQueueConfig> PutRoutingQueueIdentityresolutionAsync(string queueId, IdentityResolutionQueueConfig body, CancellationToken cancellationToken = default)
+    public async Task<IdentityResolutionQueueConfig> UpdateRoutingQueueIdentityresolutionAsync(string queueId, IdentityResolutionQueueConfig body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(queueId);
         ArgumentNullException.ThrowIfNull(body);
@@ -2828,21 +2813,7 @@ public sealed class RoutingApi : IRoutingApi
     }
 
     /// <inheritdoc />
-    public async Task<TranscriptionSettings> PutRoutingSettingsTranscriptionAsync(TranscriptionSettings body, CancellationToken cancellationToken = default)
-    {
-        ArgumentNullException.ThrowIfNull(body);
-
-        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-
-        var response = await client.PutAsJsonAsync("api/v2/routing/settings/transcription", body, _options.JsonSerializerOptions, cancellationToken);
-
-        response.EnsureSuccessStatusCode();
-
-        return await response.Content.ReadFromJsonAsync<TranscriptionSettings>(_options.JsonSerializerOptions, cancellationToken);
-    }
-
-    /// <inheritdoc />
-    public async Task<IdentityResolutionConfig> PutRoutingSmsIdentityresolutionPhonenumberAsync(string phoneNumberId, IdentityResolutionConfig body, CancellationToken cancellationToken = default)
+    public async Task<IdentityResolutionConfig> UpdateRoutingSmsIdentityresolutionPhonenumberAsync(string phoneNumberId, IdentityResolutionConfig body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(phoneNumberId);
         ArgumentNullException.ThrowIfNull(body);
@@ -2857,7 +2828,7 @@ public sealed class RoutingApi : IRoutingApi
     }
 
     /// <inheritdoc />
-    public async Task<AgentDirectRoutingBackupSettings> PutRoutingUserDirectroutingbackupSettingsAsync(string userId, AgentDirectRoutingBackupSettings body, CancellationToken cancellationToken = default)
+    public async Task<AgentDirectRoutingBackupSettings> UpdateRoutingUserDirectroutingbackupSettingsAsync(string userId, AgentDirectRoutingBackupSettings body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(userId);
         ArgumentNullException.ThrowIfNull(body);
@@ -2872,7 +2843,7 @@ public sealed class RoutingApi : IRoutingApi
     }
 
     /// <inheritdoc />
-    public async Task<UserUtilization> PutRoutingUserUtilizationAsync(string userId, UtilizationRequest body, CancellationToken cancellationToken = default)
+    public async Task<UserUtilization> UpdateRoutingUserUtilizationAsync(string userId, UtilizationRequest body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(userId);
         ArgumentNullException.ThrowIfNull(body);
@@ -2887,7 +2858,7 @@ public sealed class RoutingApi : IRoutingApi
     }
 
 /// <inheritdoc />
-    public async Task<UtilizationLabel> PutRoutingUtilizationLabelAsync(string labelId, UpdateUtilizationLabelRequest body, CancellationToken cancellationToken = default)
+    public async Task<UtilizationLabel> UpdateRoutingUtilizationLabelAsync(string labelId, UpdateUtilizationLabelRequest body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(labelId);
         ArgumentNullException.ThrowIfNull(body);
@@ -2902,7 +2873,7 @@ public sealed class RoutingApi : IRoutingApi
     }
 
     /// <inheritdoc />
-    public async Task<UserRoutingSkill> PutUserRoutingskillAsync(string userId, string skillId, UserRoutingSkill body, CancellationToken cancellationToken = default)
+    public async Task<UserRoutingSkill> UpdateUserRoutingskillAsync(string userId, string skillId, UserRoutingSkill body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(userId);
         ArgumentException.ThrowIfNullOrEmpty(skillId);
@@ -2918,7 +2889,7 @@ public sealed class RoutingApi : IRoutingApi
     }
 
     /// <inheritdoc />
-    public async Task<UserSkillEntityListing> PutUserRoutingskillsBulkAsync(string userId, IEnumerable<UserRoutingSkillPost> body, CancellationToken cancellationToken = default)
+    public async Task<UserSkillEntityListing> UpdateUserRoutingskillsBulkAsync(string userId, IEnumerable<UserRoutingSkillPost> body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(userId);
         ArgumentNullException.ThrowIfNull(body);
@@ -3245,19 +3216,7 @@ public sealed class RoutingApi : IRoutingApi
     }
 
     /// <inheritdoc />
-    public async Task<BenefitAssessment> PostRoutingAssessmentsAsync(CreateBenefitAssessmentRequest body = null, CancellationToken cancellationToken = default)
-    {
-        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-
-        var response = await client.PostAsJsonAsync("api/v2/routing/assessments", body, _options.JsonSerializerOptions, cancellationToken);
-
-        response.EnsureSuccessStatusCode();
-
-        return await response.Content.ReadFromJsonAsync<BenefitAssessment>(_options.JsonSerializerOptions, cancellationToken);
-    }
-
-    /// <inheritdoc />
-    public async Task<TestMessage> PostRoutingEmailDomainTestconnectionAsync(string domainId, CancellationToken cancellationToken = default)
+    public async Task<TestMessage> CreateRoutingEmailDomainTestconnectionAsync(string domainId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(domainId);
 
@@ -3390,64 +3349,6 @@ public sealed class RoutingApi : IRoutingApi
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
         var response = await client.PostAsJsonAsync("api/v2/routing/wrapupcodes", body, _options.JsonSerializerOptions, cancellationToken);
-
-        response.EnsureSuccessStatusCode();
-
-        return await response.Content.ReadFromJsonAsync<WrapupCode>(_options.JsonSerializerOptions, cancellationToken);
-    }
-
-    /// <inheritdoc />
-    public async Task<AgentDirectRoutingBackupSettings> PutRoutingDirectroutingbackupSettingsMeAsync(AgentDirectRoutingBackupSettings body, CancellationToken cancellationToken = default)
-    {
-        ArgumentNullException.ThrowIfNull(body);
-
-        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-
-        var response = await client.PutAsJsonAsync("api/v2/routing/directroutingbackup/settings/me", body, _options.JsonSerializerOptions, cancellationToken);
-
-        response.EnsureSuccessStatusCode();
-
-        return await response.Content.ReadFromJsonAsync<AgentDirectRoutingBackupSettings>(_options.JsonSerializerOptions, cancellationToken);
-    }
-
-    /// <inheritdoc />
-    public async Task<Queue> PutRoutingQueueAsync(string queueId, QueueRequest body, CancellationToken cancellationToken = default)
-    {
-        ArgumentException.ThrowIfNullOrEmpty(queueId);
-        ArgumentNullException.ThrowIfNull(body);
-
-        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-
-        var response = await client.PutAsJsonAsync($"api/v2/routing/queues/{Uri.EscapeDataString(queueId)}", body, _options.JsonSerializerOptions, cancellationToken);
-
-        response.EnsureSuccessStatusCode();
-
-        return await response.Content.ReadFromJsonAsync<Queue>(_options.JsonSerializerOptions, cancellationToken);
-    }
-
-    /// <inheritdoc />
-    public async Task<UtilizationResponse> PutRoutingUtilizationAsync(UtilizationRequest body, CancellationToken cancellationToken = default)
-    {
-        ArgumentNullException.ThrowIfNull(body);
-
-        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-
-        var response = await client.PutAsJsonAsync("api/v2/routing/utilization", body, _options.JsonSerializerOptions, cancellationToken);
-
-        response.EnsureSuccessStatusCode();
-
-        return await response.Content.ReadFromJsonAsync<UtilizationResponse>(_options.JsonSerializerOptions, cancellationToken);
-    }
-
-    /// <inheritdoc />
-    public async Task<WrapupCode> PutRoutingWrapupcodeAsync(string codeId, WrapupCodeRequest body, CancellationToken cancellationToken = default)
-    {
-        ArgumentException.ThrowIfNullOrEmpty(codeId);
-        ArgumentNullException.ThrowIfNull(body);
-
-        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-
-        var response = await client.PutAsJsonAsync($"api/v2/routing/wrapupcodes/{Uri.EscapeDataString(codeId)}", body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
