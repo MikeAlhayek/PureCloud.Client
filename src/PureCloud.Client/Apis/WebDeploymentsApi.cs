@@ -76,7 +76,7 @@ public sealed class WebDeploymentsApi : IWebDeploymentsApi
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var request = new HttpRequestMessage(HttpMethod.Delete, "api/v2/webdeployments/token/revoke");
+        var request = new HttpRequestMessage(HttpMethod.Delete, UriHelper.GetUri("api/v2/webdeployments/token/revoke"));
 
         if (!string.IsNullOrEmpty(xJourneySessionId))
         {
