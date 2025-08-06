@@ -25,16 +25,20 @@ public sealed class TokensApi : ITokensApi
     /// <inheritdoc />
     public async Task<TokenInfo> GetTokensMeAsync(bool? preserveIdleTTL = null, CancellationToken cancellationToken = default)
     {
-        var parameters = new NameValueCollection();
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        string uri;
 
         if (preserveIdleTTL.HasValue)
         {
+            var parameters = new NameValueCollection();
             parameters.Add("preserveIdleTTL", UriHelper.ParameterToString(preserveIdleTTL.Value));
+            uri = UriHelper.GetUri("api/v2/tokens/me", parameters);
         }
-
-        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-
-        var uri = UriHelper.GetUri("api/v2/tokens/me", parameters);
+        else
+        {
+            uri = "api/v2/tokens/me";
+        }
 
         var response = await client.GetAsync(uri, cancellationToken);
 
@@ -50,7 +54,7 @@ public sealed class TokensApi : ITokensApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/tokens/{Uri.EscapeDataString(userId)}", null);
+        var uri = $"api/v2/tokens/{Uri.EscapeDataString(userId)}";
 
         var response = await client.DeleteAsync(uri, cancellationToken);
 
@@ -66,7 +70,7 @@ public sealed class TokensApi : ITokensApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri("api/v2/tokens/timeout", null);
+        var uri = "api/v2/tokens/timeout";
 
         var response = await client.PutAsJsonAsync(uri, body, _options, cancellationToken);
 
@@ -80,7 +84,7 @@ public sealed class TokensApi : ITokensApi
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri("api/v2/tokens/me", null);
+        var uri = "api/v2/tokens/me";
 
         var response = await client.DeleteAsync(uri, cancellationToken);
 
@@ -94,7 +98,7 @@ public sealed class TokensApi : ITokensApi
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri("api/v2/tokens/timeout", null);
+        var uri = "api/v2/tokens/timeout";
 
         var response = await client.GetAsync(uri, cancellationToken);
 
@@ -108,7 +112,7 @@ public sealed class TokensApi : ITokensApi
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri("api/v2/tokens/me", null);
+        var uri = "api/v2/tokens/me";
 
         var request = new HttpRequestMessage(HttpMethod.Head, uri);
 
