@@ -52,8 +52,6 @@ public sealed class VoicemailApi : IVoicemailApi
 
         var response = await client.DeleteAsync($"api/v2/voicemail/messages/{Uri.EscapeDataString(messageId)}", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-
         return response.IsSuccessStatusCode;
     }
 
@@ -104,9 +102,7 @@ public sealed class VoicemailApi : IVoicemailApi
 
         var response = await client.DeleteAsync("api/v2/voicemail/messages", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-
-        return true;
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
