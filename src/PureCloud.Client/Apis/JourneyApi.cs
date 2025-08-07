@@ -232,17 +232,17 @@ public sealed class JourneyApi : IJourneyApi
 
         if (actionMapIds != null)
         {
-            foreach (var value in actionMapIds)
+            foreach (var actionMapId in actionMapIds)
             {
-                parameters.Add("actionMapIds", UriHelper.ParameterToString(value));
+                parameters.Add("actionMapIds", UriHelper.ParameterToString(actionMapId));
             }
         }
 
         if (queryFields != null)
         {
-            foreach (var value in queryFields)
+            foreach (var queryField in queryFields)
             {
-                parameters.Add("queryFields", UriHelper.ParameterToString(value));
+                parameters.Add("queryFields", UriHelper.ParameterToString(queryField));
             }
         }
 
@@ -376,9 +376,9 @@ public sealed class JourneyApi : IJourneyApi
 
         if (queryFields != null)
         {
-            foreach (var value in queryFields)
+            foreach (var queryField in queryFields)
             {
-                parameters.Add("queryFields", UriHelper.ParameterToString(value));
+                parameters.Add("queryFields", UriHelper.ParameterToString(queryField));
             }
         }
 
@@ -478,17 +478,17 @@ public sealed class JourneyApi : IJourneyApi
 
         if (outcomeIds != null)
         {
-            foreach (var value in outcomeIds)
+            foreach (var outcomeId in outcomeIds)
             {
-                parameters.Add("outcomeIds", UriHelper.ParameterToString(value));
+                parameters.Add("outcomeIds", UriHelper.ParameterToString(outcomeId));
             }
         }
 
         if (queryFields != null)
         {
-            foreach (var value in queryFields)
+            foreach (var queryField in queryFields)
             {
-                parameters.Add("queryFields", UriHelper.ParameterToString(value));
+                parameters.Add("queryFields", UriHelper.ParameterToString(queryField));
             }
         }
 
@@ -603,17 +603,17 @@ public sealed class JourneyApi : IJourneyApi
 
         if (segmentIds != null)
         {
-            foreach (var value in segmentIds)
+            foreach (var segmentId in segmentIds)
             {
-                parameters.Add("segmentIds", UriHelper.ParameterToString(value));
+                parameters.Add("segmentIds", UriHelper.ParameterToString(segmentId));
             }
         }
 
         if (queryFields != null)
         {
-            foreach (var value in queryFields)
+            foreach (var queryField in queryFields)
             {
-                parameters.Add("queryFields", UriHelper.ParameterToString(value));
+                parameters.Add("queryFields", UriHelper.ParameterToString(queryField));
             }
         }
 
