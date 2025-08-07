@@ -1379,7 +1379,7 @@ public interface IOutboundApi
     /// <param name="body">The body</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Task result</returns>
-    Task<ContactsBulkOperationJob> PostOutboundContactlistContactsBulkRemoveAsync(string contactListId, ContactBulkSearchParameters body, CancellationToken cancellationToken = default);
+    Task<ContactsBulkOperationJob> CreateOutboundContactlistContactsBulkRemoveAsync(string contactListId, ContactBulkSearchParameters body, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Create contactlistcontactsbulkupdate
@@ -1515,7 +1515,7 @@ public interface IOutboundApi
     /// <param name="body">The body</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Task result</returns>
-    Task<string> PutOutboundCampaignAgentAsync(string campaignId, string userId, Agent body, CancellationToken cancellationToken = default);
+    Task<string> UpdateOutboundCampaignAgentAsync(string campaignId, string userId, Agent body, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Update contactlist

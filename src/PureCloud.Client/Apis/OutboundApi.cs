@@ -360,7 +360,7 @@ public sealed class OutboundApi : IOutboundApi
         return await response.Content.ReadFromJsonAsync<Campaign>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<string> PutOutboundCampaignAgentAsync(string campaignId, string userId, Agent body, CancellationToken cancellationToken = default)
+    public async Task<string> UpdateOutboundCampaignAgentAsync(string campaignId, string userId, Agent body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(campaignId);
         ArgumentException.ThrowIfNullOrEmpty(userId);
@@ -3080,7 +3080,7 @@ public sealed class OutboundApi : IOutboundApi
         return await response.Content.ReadFromJsonAsync<ContactsBulkOperationJob>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<ContactsBulkOperationJob> PostOutboundContactlistContactsBulkRemoveAsync(string contactListId, ContactBulkSearchParameters body, CancellationToken cancellationToken = default)
+    public async Task<ContactsBulkOperationJob> CreateOutboundContactlistContactsBulkRemoveAsync(string contactListId, ContactBulkSearchParameters body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(contactListId);
         ArgumentNullException.ThrowIfNull(body);
