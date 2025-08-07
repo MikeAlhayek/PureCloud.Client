@@ -402,8 +402,10 @@
     <Compile Include="Models\DocumentBodyBlock.cs" />
     <Compile Include="Models\DocumentBodyResponse.cs" />
     <Compile Include="Models\DocumentFaq.cs" />
+    <Compile Include="Models\DocumentVariationRequest.cs" />
     <Compile Include="Models\DocumentVariationResponse.cs" />
     <Compile Include="Models\DocumentVariationResponseListing.cs" />
+    <Compile Include="Models\DocumentVersionListing.cs" />
     <Compile Include="Models\EdgeConnectionInfo.cs" />
     <Compile Include="Models\EmpathyScore.cs" />
     <Compile Include="Models\Endpoint.State.cs" />
@@ -2658,9 +2660,18 @@
     <Compile Include="Models\KnowledgeCategory.cs" />
     <Compile Include="Models\KnowledgeDocumentAlternative.cs" />
     <Compile Include="Models\KnowledgeDocumentCreateRequest.cs" />
+    <Compile Include="Models\KnowledgeDocumentBulkRemoveRequest.cs" />
+    <Compile Include="Models\KnowledgeDocumentBulkUpdateRequest.cs" />
+    <Compile Include="Models\KnowledgeDocumentBulkVersionAddRequest.cs" />
+    <Compile Include="Models\KnowledgeDocumentSearchRequest.cs" />
+    <Compile Include="Models\KnowledgeDocumentSearchResult.cs" />
+    <Compile Include="Models\KnowledgeDocumentSuggestion.cs" />
+    <Compile Include="Models\KnowledgeDocumentSuggestionRequest.cs" />
     <Compile Include="Models\KnowledgeDocumentReq.cs" />
     <Compile Include="Models\KnowledgeDocumentResponse.cs" />
     <Compile Include="Models\KnowledgeDocumentResponseListing.cs" />
+    <Compile Include="Models\KnowledgeDocumentSearchResponse.cs" />
+    <Compile Include="Models\KnowledgeDocumentSuggestionResponse.cs" />
     <Compile Include="Models\KnowledgeDocumentFeedbackResponse.cs" />
     <Compile Include="Models\KnowledgeDocumentFeedbackResponseListing.cs" />
     <Compile Include="Models\KnowledgeDocumentVersion.cs" />
@@ -2675,6 +2686,9 @@
     <Compile Include="Models\KnowledgeGuestDocumentResponseListing.cs" />
     <Compile Include="Models\KnowledgeGuestDocumentVariation.cs" />
     <Compile Include="Models\KnowledgeGuestDocumentVariationContext.cs" />
+    <Compile Include="Models\KnowledgeParseJobRequestPatch.cs" />
+    <Compile Include="Models\KnowledgeParseJobResponse.cs" />
+    <Compile Include="Models\KnowledgeTraining.cs" />
     <Compile Include="Models\KnowledgeImportJobError.cs" />
     <Compile Include="Models\KnowledgeImportJobReport.cs" />
     <Compile Include="Models\KnowledgeImportJobRequest.cs" />
@@ -4083,6 +4097,8 @@
     <Compile Include="Models\SourceLastSync.cs" />
     <Compile Include="Models\SourcePlanningGroupRequest.cs" />
     <Compile Include="Models\SourceSyncResponse.cs" />
+    <Compile Include="Models\SynchronizeJob.cs" />
+    <Compile Include="Models\SynchronizeRequest.cs" />
     <Compile Include="Models\WfmVersionedEntityMetadata.cs" />
     <Compile Include="Models\StatEventCampaignTopicIntervalMetrics.cs" />
     <Compile Include="Models\StatEventCampaignTopicMetricStats.cs" />
@@ -4444,6 +4460,7 @@
     <Compile Include="Models\UploadUrlResponse.cs" />
     <Compile Include="Models\GetUploadSourceUrlJobStatusResponse.cs" />
     <Compile Include="Models\GetUploadSourceUrlJobStatusResponse.Status.cs" />
+    <Compile Include="Models\GetUploadSourceUrlRequest.cs" />
     <Compile Include="Models\CreateUploadSourceUrlJobRequest.cs" />
     <Compile Include="Models\CreateUploadSourceUrlJobResponse.cs" />
     <Compile Include="Models\LearningCoverArtUploadUrlRequest.cs" />
@@ -5388,6 +5405,7 @@
     <Compile Include="Notifications\NotificationClientResilienceOptions.cs" />
     <Compile Include="Notifications\NotificationData.cs" />
     <Compile Include="Notifications\SubscriptionBuilder.cs" />
+    <Compile Include="Models\SearchUpdateRequest.cs" />
     <Compile Include="Services\MemoryTokenStore.cs" />
     <Compile Include="Services\PureCloudOptionsConfigurations.cs" />
     <Compile Include="Services\TokenService.cs" />
