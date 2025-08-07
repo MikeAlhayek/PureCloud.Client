@@ -4,11 +4,11 @@ namespace PureCloud.Client.Contracts;
 
 public interface IMessagingApi
 {
-    Task DeleteMessagingSettingAsync(string messageSettingId, CancellationToken cancellationToken = default);
+    Task<bool> DeleteMessagingSettingAsync(string messageSettingId, CancellationToken cancellationToken = default);
 
-    Task DeleteMessagingSettingsDefaultAsync(CancellationToken cancellationToken = default);
+    Task<bool> DeleteMessagingSettingsDefaultAsync(CancellationToken cancellationToken = default);
 
-    Task DeleteMessagingSupportedContentAsync(string supportedContentId, CancellationToken cancellationToken = default);
+    Task<bool> DeleteMessagingSupportedContentAsync(string supportedContentId, CancellationToken cancellationToken = default);
 
     Task<MessagingSetting> GetMessagingSettingAsync(string messageSettingId, CancellationToken cancellationToken = default);
 
