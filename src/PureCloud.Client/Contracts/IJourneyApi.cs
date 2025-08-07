@@ -9,8 +9,8 @@ public interface IJourneyApi
     /// </summary>
     /// <param name="actionMapId">ID of the action map.</param>
     /// <param name="cancellationToken">Cancellation token.</param>
-    /// <returns></returns>
-    Task DeleteJourneyActionmapAsync(string actionMapId, CancellationToken cancellationToken = default);
+    /// <returns>True if the deletion was successful, false otherwise.</returns>
+    Task<bool> DeleteJourneyActionmapAsync(string actionMapId, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Delete a single action template.
@@ -18,40 +18,40 @@ public interface IJourneyApi
     /// <param name="actionTemplateId">ID of the action template.</param>
     /// <param name="hardDelete">Determines whether Action Template should be soft-deleted (have its state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default.</param>
     /// <param name="cancellationToken">Cancellation token.</param>
-    /// <returns></returns>
-    Task DeleteJourneyActiontemplateAsync(string actionTemplateId, bool? hardDelete = null, CancellationToken cancellationToken = default);
+    /// <returns>True if the deletion was successful, false otherwise.</returns>
+    Task<bool> DeleteJourneyActiontemplateAsync(string actionTemplateId, bool? hardDelete = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Delete an outcome.
     /// </summary>
     /// <param name="outcomeId">ID of the outcome.</param>
     /// <param name="cancellationToken">Cancellation token.</param>
-    /// <returns></returns>
-    Task DeleteJourneyOutcomeAsync(string outcomeId, CancellationToken cancellationToken = default);
+    /// <returns>True if the deletion was successful, false otherwise.</returns>
+    Task<bool> DeleteJourneyOutcomeAsync(string outcomeId, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Delete an outcome predictor.
     /// </summary>
     /// <param name="predictorId">ID of predictor</param>
     /// <param name="cancellationToken">Cancellation token.</param>
-    /// <returns></returns>
-    Task DeleteJourneyOutcomesPredictorAsync(string predictorId, CancellationToken cancellationToken = default);
+    /// <returns>True if the deletion was successful, false otherwise.</returns>
+    Task<bool> DeleteJourneyOutcomesPredictorAsync(string predictorId, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Delete a segment.
     /// </summary>
     /// <param name="segmentId">ID of the segment.</param>
     /// <param name="cancellationToken">Cancellation token.</param>
-    /// <returns></returns>
-    Task DeleteJourneySegmentAsync(string segmentId, CancellationToken cancellationToken = default);
+    /// <returns>True if the deletion was successful, false otherwise.</returns>
+    Task<bool> DeleteJourneySegmentAsync(string segmentId, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Delete a Journey View by ID
     /// </summary>
     /// <param name="viewId">viewId</param>
     /// <param name="cancellationToken">Cancellation token.</param>
-    /// <returns></returns>
-    Task DeleteJourneyViewAsync(string viewId, CancellationToken cancellationToken = default);
+    /// <returns>True if the deletion was successful, false otherwise.</returns>
+    Task<bool> DeleteJourneyViewAsync(string viewId, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Delete the Schedule of a JourneyView
