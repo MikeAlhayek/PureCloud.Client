@@ -303,4 +303,34 @@ public interface ITelephonyProvidersEdgeApi
 
     /// <inheritdoc />
     Task<DomainLogicalInterface> UpdateEdgeLogicalinterfaceAsync(string edgeId, string interfaceId, DomainLogicalInterface body, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task<OutboundRouteBase> CreateSiteOutboundrouteAsync(string siteId, OutboundRouteBase body, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task<Phone> CreatePhoneAsync(Phone body, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task<PhoneBase> CreatePhonebasesettingAsync(PhoneBase body, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task<EdgeGroup> CreateEdgegroupAsync(EdgeGroup body, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task<TrunkBase> CreateTrunkbasesettingAsync(TrunkBase body, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task<EdgeGroup> UpdateEdgegroupAsync(string edgeGroupId, EdgeGroup body, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task<Phone> UpdatePhoneAsync(string phoneId, Phone body, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task<PhoneBase> UpdatePhonebasesettingAsync(string phoneBaseId, PhoneBase body, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task<OutboundRouteBase> UpdateSiteOutboundrouteAsync(string siteId, string outboundRouteId, OutboundRouteBase body, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task<TrunkBase> UpdateTrunkbasesettingAsync(string trunkBaseSettingsId, TrunkBase body, CancellationToken cancellationToken = default);
 }
