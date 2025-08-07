@@ -2537,7 +2537,7 @@ public sealed class RoutingApi : IRoutingApi
     }
 
     /// <inheritdoc />
-    public async Task<AnalyticsQueryResponse> CreateAnalyticsQueuesObservationsQueryAsync(QueueObservationQuery body, CancellationToken cancellationToken = default)
+    public async Task<QueueObservationQueryResponse> CreateAnalyticsQueuesObservationsQueryAsync(QueueObservationQuery body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
 
@@ -2547,7 +2547,7 @@ public sealed class RoutingApi : IRoutingApi
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<AnalyticsQueryResponse>(_options.JsonSerializerOptions, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<QueueObservationQueryResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />

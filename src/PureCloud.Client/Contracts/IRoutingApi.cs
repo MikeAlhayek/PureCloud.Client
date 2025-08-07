@@ -6,22 +6,53 @@ namespace PureCloud.Client.Contracts;
 
 public interface IRoutingApi
 {
-    /// <inheritdoc />
-    Task<AnalyticsQueryResponse> CreateAnalyticsQueuesObservationsQueryAsync(QueueObservationQuery body, CancellationToken cancellationToken = default);
+    /// <summary>
+    /// Query for queue observations
+    /// </summary>
+    /// <param name="body">Query criteria</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Queue observation query response</returns>
+    Task<QueueObservationQueryResponse> CreateAnalyticsQueuesObservationsQueryAsync(QueueObservationQuery body, CancellationToken cancellationToken = default);
 
-    /// <inheritdoc />
+    /// <summary>
+    /// Query for user activity observations
+    /// </summary>
+    /// <param name="body">Query criteria</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Routing activity query response</returns>
     Task<RoutingActivityResponse> CreateAnalyticsRoutingActivityQueryAsync(RoutingActivityQuery body, CancellationToken cancellationToken = default);
 
-    /// <inheritdoc />
+    /// <summary>
+    /// Create a benefit assessment
+    /// </summary>
+    /// <param name="body">Benefit assessment request</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Benefit assessment</returns>
     Task<BenefitAssessment> CreateRoutingAssessmentAsync(CreateBenefitAssessmentRequest body = null, CancellationToken cancellationToken = default);
 
-    /// <inheritdoc />
+    /// <summary>
+    /// Submit a request to create a benefit assessment job
+    /// </summary>
+    /// <param name="body">Benefit assessment job request</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Benefit assessment job</returns>
     Task<BenefitAssessmentJob> CreateRoutingAssessmentsJobsAsync(CreateBenefitAssessmentJobRequest body, CancellationToken cancellationToken = default);
 
-    /// <inheritdoc />
+    /// <summary>
+    /// Create an email domain
+    /// </summary>
+    /// <param name="body">Inbound domain</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Inbound domain</returns>
     Task<InboundDomain> CreateRoutingEmailDomainAsync(InboundDomain body, CancellationToken cancellationToken = default);
 
-    /// <inheritdoc />
+    /// <summary>
+    /// Create a route for an email domain
+    /// </summary>
+    /// <param name="domainName">Domain name</param>
+    /// <param name="body">Inbound route</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Inbound route</returns>
     Task<InboundRoute> CreateRoutingEmailDomainRouteAsync(string domainName, InboundRoute body, CancellationToken cancellationToken = default);
 
     /// <inheritdoc />

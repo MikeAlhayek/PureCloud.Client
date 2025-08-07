@@ -372,7 +372,7 @@
     <Compile Include="Models\IdentityResolutionQueueConfig.cs" />
     <Compile Include="Models\UpdateUtilizationLabelRequest.cs" />
     <Compile Include="Models\UserRoutingSkillPost.cs" />
-    <Compile Include="Models\AnalyticsQueryResponse.cs" />
+
     <Compile Include="Models\QueueObservationQuery.cs" />
     <Compile Include="Models\RoutingActivityResponse.cs" />
     <Compile Include="Models\RoutingActivityQuery.cs" />
