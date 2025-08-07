@@ -1,6 +1,5 @@
 using System.Collections.Specialized;
 using System.Net.Http.Json;
-using System.Text.Json;
 using Microsoft.Extensions.Options;
 using PureCloud.Client.Contracts;
 using PureCloud.Client.Http;
@@ -12,39 +11,43 @@ namespace PureCloud.Client.Apis;
 /// <inheritdoc />
 public sealed class MobileDevicesApi : IMobileDevicesApi
 {
-    private readonly HttpClient _httpClient;
-    private readonly JsonSerializerOptions _options;
+    private readonly IHttpClientFactory _httpClientFactory;
+    private readonly PureCloudJsonSerializerOptions _options;
 
     public MobileDevicesApi(IHttpClientFactory httpClientFactory, IOptions<PureCloudJsonSerializerOptions> options)
     {
-        _httpClient = httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-        _options = options.Value.JsonSerializerOptions;
+        _httpClientFactory = httpClientFactory;
+        _options = options.Value;
     }
 
     /// <inheritdoc />
-    public async Task DeleteMobileDeviceAsync(string deviceId, CancellationToken cancellationToken = default)
+    public async Task<bool> DeleteMobileDeviceAsync(string deviceId, CancellationToken cancellationToken = default)
     {
-        ArgumentException.ThrowIfNullOrEmpty(nameof(deviceId), deviceId);
+        ArgumentException.ThrowIfNullOrEmpty(deviceId);
 
-        var uri = UriHelper.GetUri($"/api/v2/mobiledevices/{deviceId}", null);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await _httpClient.DeleteAsync(uri, cancellationToken);
+        var uri = UriHelper.GetUri($"api/v2/mobiledevices/{Uri.EscapeDataString(deviceId)}", null);
 
-        response.EnsureSuccessStatusCode();
+        var response = await client.DeleteAsync(uri, cancellationToken);
+
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
     public async Task<UserDevice> GetMobileDeviceAsync(string deviceId, CancellationToken cancellationToken = default)
     {
-        ArgumentException.ThrowIfNullOrEmpty(nameof(deviceId), deviceId);
+        ArgumentException.ThrowIfNullOrEmpty(deviceId);
 
-        var uri = UriHelper.GetUri($"/api/v2/mobiledevices/{deviceId}", null);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await _httpClient.GetAsync(uri, cancellationToken);
+        var uri = UriHelper.GetUri($"api/v2/mobiledevices/{Uri.EscapeDataString(deviceId)}", null);
+
+        var response = await client.GetAsync(uri, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<UserDevice>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<UserDevice>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
@@ -67,40 +70,46 @@ public sealed class MobileDevicesApi : IMobileDevicesApi
             parameters.Add("sortOrder", UriHelper.ParameterToString(sortOrder));
         }
 
-        var uri = UriHelper.GetUri("/api/v2/mobiledevices", parameters);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await _httpClient.GetAsync(uri, cancellationToken);
+        var uri = UriHelper.GetUri("api/v2/mobiledevices", parameters);
+
+        var response = await client.GetAsync(uri, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<DirectoryUserDevicesListing>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<DirectoryUserDevicesListing>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
     public async Task<UserDevice> CreateMobileDeviceAsync(UserDevice body, CancellationToken cancellationToken = default)
     {
-        ArgumentNullException.ThrowIfNull(body, nameof(body));
+        ArgumentNullException.ThrowIfNull(body);
 
-        var uri = UriHelper.GetUri("/api/v2/mobiledevices", null);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await _httpClient.PostAsJsonAsync(uri, body, _options, cancellationToken);
+        var uri = UriHelper.GetUri("api/v2/mobiledevices", null);
+
+        var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<UserDevice>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<UserDevice>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
     public async Task<UserDevice> UpdateMobileDeviceAsync(string deviceId, UserDevice body = null, CancellationToken cancellationToken = default)
     {
-        ArgumentException.ThrowIfNullOrEmpty(nameof(deviceId), deviceId);
+        ArgumentException.ThrowIfNullOrEmpty(deviceId);
 
-        var uri = UriHelper.GetUri($"/api/v2/mobiledevices/{deviceId}", null);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await _httpClient.PutAsJsonAsync(uri, body, _options, cancellationToken);
+        var uri = UriHelper.GetUri($"api/v2/mobiledevices/{Uri.EscapeDataString(deviceId)}", null);
+
+        var response = await client.PutAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<UserDevice>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<UserDevice>(_options.JsonSerializerOptions, cancellationToken);
     }
 }
