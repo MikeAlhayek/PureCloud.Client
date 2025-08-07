@@ -111,7 +111,6 @@ public sealed class WebChatApi : IWebChatApi
     public async Task<WebChatMessage> GetWebchatGuestConversationMessageAsync(string conversationId, string messageId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(conversationId);
-
         ArgumentException.ThrowIfNullOrEmpty(messageId);
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
@@ -165,7 +164,6 @@ public sealed class WebChatApi : IWebChatApi
     public async Task<WebChatGuestMediaRequest> GetWebchatGuestConversationMediaRequestAsync(string conversationId, string mediaRequestId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(conversationId);
-
         ArgumentException.ThrowIfNullOrEmpty(mediaRequestId);
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
@@ -223,9 +221,7 @@ public sealed class WebChatApi : IWebChatApi
     public async Task<WebChatMessage> CreateWebchatGuestConversationMemberMessageAsync(string conversationId, string memberId, CreateWebChatMessageRequest body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(conversationId);
-
         ArgumentException.ThrowIfNullOrEmpty(memberId);
-
         ArgumentNullException.ThrowIfNull(body);
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
@@ -241,7 +237,6 @@ public sealed class WebChatApi : IWebChatApi
     public async Task<WebChatTyping> CreateWebchatGuestConversationMemberTypingAsync(string conversationId, string memberId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(conversationId);
-
         ArgumentException.ThrowIfNullOrEmpty(memberId);
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
@@ -257,9 +252,7 @@ public sealed class WebChatApi : IWebChatApi
     public async Task<WebChatGuestMediaRequest> UpdateWebchatGuestConversationMediaRequestAsync(string conversationId, string mediaRequestId, WebChatGuestMediaRequest body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(conversationId);
-
         ArgumentException.ThrowIfNullOrEmpty(mediaRequestId);
-
         ArgumentNullException.ThrowIfNull(body);
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
@@ -309,9 +302,7 @@ public sealed class WebChatApi : IWebChatApi
 
         var response = await client.DeleteAsync($"api/v2/webchat/deployments/{Uri.EscapeDataString(deploymentId)}", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-
-        return true;
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
@@ -324,9 +315,7 @@ public sealed class WebChatApi : IWebChatApi
 
         var response = await client.DeleteAsync($"api/v2/webchat/guest/conversations/{Uri.EscapeDataString(conversationId)}/members/{Uri.EscapeDataString(memberId)}", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-
-        return true;
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
@@ -336,8 +325,6 @@ public sealed class WebChatApi : IWebChatApi
 
         var response = await client.DeleteAsync("api/v2/webchat/settings", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-
-        return true;
+        return response.IsSuccessStatusCode;
     }
 }
