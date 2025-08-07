@@ -22,7 +22,7 @@ public sealed class JourneyApi : IJourneyApi
     }
 
     /// <inheritdoc />
-    public async Task DeleteJourneyActionmapAsync(string actionMapId, CancellationToken cancellationToken = default)
+    public async Task<bool> DeleteJourneyActionmapAsync(string actionMapId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(actionMapId);
 
@@ -30,11 +30,11 @@ public sealed class JourneyApi : IJourneyApi
 
         var response = await client.DeleteAsync($"api/v2/journey/actionmaps/{Uri.EscapeDataString(actionMapId)}", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
-    public async Task DeleteJourneyActiontemplateAsync(string actionTemplateId, bool? hardDelete = null, CancellationToken cancellationToken = default)
+    public async Task<bool> DeleteJourneyActiontemplateAsync(string actionTemplateId, bool? hardDelete = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(actionTemplateId);
 
@@ -51,11 +51,11 @@ public sealed class JourneyApi : IJourneyApi
 
         var response = await client.DeleteAsync(uri, cancellationToken);
 
-        response.EnsureSuccessStatusCode();
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
-    public async Task DeleteJourneyOutcomeAsync(string outcomeId, CancellationToken cancellationToken = default)
+    public async Task<bool> DeleteJourneyOutcomeAsync(string outcomeId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(outcomeId);
 
@@ -63,11 +63,11 @@ public sealed class JourneyApi : IJourneyApi
 
         var response = await client.DeleteAsync($"api/v2/journey/outcomes/{Uri.EscapeDataString(outcomeId)}", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
-    public async Task DeleteJourneyOutcomesPredictorAsync(string predictorId, CancellationToken cancellationToken = default)
+    public async Task<bool> DeleteJourneyOutcomesPredictorAsync(string predictorId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(predictorId);
 
@@ -75,11 +75,11 @@ public sealed class JourneyApi : IJourneyApi
 
         var response = await client.DeleteAsync($"api/v2/journey/outcomes/predictors/{Uri.EscapeDataString(predictorId)}", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
-    public async Task DeleteJourneySegmentAsync(string segmentId, CancellationToken cancellationToken = default)
+    public async Task<bool> DeleteJourneySegmentAsync(string segmentId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(segmentId);
 
@@ -87,11 +87,11 @@ public sealed class JourneyApi : IJourneyApi
 
         var response = await client.DeleteAsync($"api/v2/journey/segments/{Uri.EscapeDataString(segmentId)}", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
-    public async Task DeleteJourneyViewAsync(string viewId, CancellationToken cancellationToken = default)
+    public async Task<bool> DeleteJourneyViewAsync(string viewId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(viewId);
 
@@ -99,7 +99,7 @@ public sealed class JourneyApi : IJourneyApi
 
         var response = await client.DeleteAsync($"api/v2/journey/views/{Uri.EscapeDataString(viewId)}", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
