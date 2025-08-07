@@ -33,9 +33,7 @@ public sealed class WebDeploymentsApi : IWebDeploymentsApi
 
         var response = await client.DeleteAsync(uri, cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-
-        return true;
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
@@ -49,9 +47,7 @@ public sealed class WebDeploymentsApi : IWebDeploymentsApi
 
         var response = await client.DeleteAsync(uri, cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-
-        return true;
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
@@ -66,9 +62,7 @@ public sealed class WebDeploymentsApi : IWebDeploymentsApi
 
         var response = await client.DeleteAsync(uri, cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-
-        return true;
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
@@ -76,7 +70,7 @@ public sealed class WebDeploymentsApi : IWebDeploymentsApi
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var request = new HttpRequestMessage(HttpMethod.Delete, UriHelper.GetUri("api/v2/webdeployments/token/revoke"));
+        var request = new HttpRequestMessage(HttpMethod.Delete, "api/v2/webdeployments/token/revoke");
 
         if (!string.IsNullOrEmpty(xJourneySessionId))
         {
@@ -90,9 +84,7 @@ public sealed class WebDeploymentsApi : IWebDeploymentsApi
 
         var response = await client.SendAsync(request, cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-
-        return true;
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
