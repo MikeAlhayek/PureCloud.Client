@@ -497,46 +497,120 @@ public interface IRoutingApi
     /// <inheritdoc />
     Task<AvailableMediaTypeEntityListing> GetRoutingAvailablemediatypesAsync(CancellationToken cancellationToken = default);
 
-    /// <inheritdoc />
+    /// <summary>
+    /// Get the logged-in user's direct routing backup settings
+    /// </summary>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Agent direct routing backup settings</returns>
     Task<AgentDirectRoutingBackupSettings> GetRoutingDirectroutingbackupSettingsMeAsync(CancellationToken cancellationToken = default);
 
-    /// <inheritdoc />
+    /// <summary>
+    /// Get an email domain
+    /// </summary>
+    /// <param name="domainId">Domain ID</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Inbound domain</returns>
     Task<InboundDomain> GetRoutingEmailDomainAsync(string domainId, CancellationToken cancellationToken = default);
 
-    /// <inheritdoc />
+    /// <summary>
+    /// Get a route for an email domain
+    /// </summary>
+    /// <param name="domainName">Domain name</param>
+    /// <param name="routeId">Route ID</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Inbound route</returns>
     Task<InboundRoute> GetRoutingEmailDomainRouteAsync(string domainName, string routeId, CancellationToken cancellationToken = default);
 
-    /// <inheritdoc />
+    /// <summary>
+    /// Get the identity resolution settings for an email domain route
+    /// </summary>
+    /// <param name="domainName">Domain name</param>
+    /// <param name="routeId">Route ID</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Inbound route</returns>
     Task<InboundRoute> GetRoutingEmailDomainRouteIdentityresolutionAsync(string domainName, string routeId, CancellationToken cancellationToken = default);
 
-    /// <inheritdoc />
+    /// <summary>
+    /// Get routes for an email domain
+    /// </summary>
+    /// <param name="domainName">Domain name</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Inbound route entity listing</returns>
     Task<InboundRouteEntityListing> GetRoutingEmailDomainRoutesAsync(string domainName, CancellationToken cancellationToken = default);
 
-    /// <inheritdoc />
+    /// <summary>
+    /// Get email domains
+    /// </summary>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Inbound domain entity listing</returns>
     Task<InboundDomainEntityListing> GetRoutingEmailDomainsAsync(CancellationToken cancellationToken = default);
 
-    /// <inheritdoc />
+    /// <summary>
+    /// Get the activation status for an outbound email domain
+    /// </summary>
+    /// <param name="domainId">Domain ID</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Email outbound domain result</returns>
     Task<EmailOutboundDomainResult> GetRoutingEmailOutboundDomainActivationAsync(string domainId, CancellationToken cancellationToken = default);
 
-    /// <inheritdoc />
+    /// <summary>
+    /// Get an outbound email domain
+    /// </summary>
+    /// <param name="domainId">Domain ID</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Inbound domain</returns>
     Task<InboundDomain> GetRoutingEmailOutboundDomainAsync(string domainId, CancellationToken cancellationToken = default);
 
-    /// <inheritdoc />
+    /// <summary>
+    /// Search for outbound email domains
+    /// </summary>
+    /// <param name="domainId">Domain ID</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Outbound domain</returns>
     Task<OutboundDomain> GetRoutingEmailOutboundDomainSearchAsync(string domainId, CancellationToken cancellationToken = default);
 
-    /// <inheritdoc />
+    /// <summary>
+    /// Get outbound email domains with pagination
+    /// </summary>
+    /// <param name="pageSize">Page size</param>
+    /// <param name="pageNumber">Page number</param>
+    /// <param name="filter">Filter to apply to search</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Outbound domain entity listing</returns>
     Task<OutboundDomainEntityListing> GetRoutingEmailOutboundDomainsAsync(int? pageSize = null, int? pageNumber = null, string filter = null, CancellationToken cancellationToken = default);
 
-    /// <inheritdoc />
+    /// <summary>
+    /// Get outbound email domains
+    /// </summary>
+    /// <param name="filter">Filter to apply to search</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Outbound domain entity listing</returns>
     Task<OutboundDomainEntityListing> GetRoutingEmailOutboundDomainsAsync(string filter = null, CancellationToken cancellationToken = default);
 
-    /// <inheritdoc />
+    /// <summary>
+    /// Get email setup configuration
+    /// </summary>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Email setup</returns>
     Task<EmailSetup> GetRoutingEmailSetupAsync(CancellationToken cancellationToken = default);
 
-    /// <inheritdoc />
+    /// <summary>
+    /// Get a routing language
+    /// </summary>
+    /// <param name="languageId">Language ID</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Language</returns>
     Task<Language> GetRoutingLanguageAsync(string languageId, CancellationToken cancellationToken = default);
 
-    /// <inheritdoc />
+    /// <summary>
+    /// Get routing languages
+    /// </summary>
+    /// <param name="pageSize">Page size</param>
+    /// <param name="pageNumber">Page number</param>
+    /// <param name="sortOrder">Sort order</param>
+    /// <param name="name">Name filter</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Language entity listing</returns>
     Task<LanguageEntityListing> GetRoutingLanguagesAsync(int? pageSize = null, int? pageNumber = null, string sortOrder = null, string name = null, CancellationToken cancellationToken = default);
 
     /// <inheritdoc />
@@ -563,46 +637,153 @@ public interface IRoutingApi
     /// <inheritdoc />
     Task<PredictorListing> GetRoutingPredictorsAsync(string before = null, string after = null, int? limit = null, IEnumerable<string> queueIds = null, CancellationToken cancellationToken = default);
 
-    /// <inheritdoc />
+    /// <summary>
+    /// Get predictors
+    /// </summary>
+    /// <param name="before">The cursor that points to the start of the set of entities to be returned</param>
+    /// <param name="after">The cursor that points to the end of the set of entities to be returned</param>
+    /// <param name="limit">Number of entities to return</param>
+    /// <param name="pageSize">Number of entities per page</param>
+    /// <param name="queueIds">List of queue IDs to filter predictors</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Predictor listing</returns>
     Task<PredictorListing> GetRoutingPredictorsAsync(string before = null, string after = null, string limit = null, string pageSize = null, IEnumerable<string> queueIds = null, CancellationToken cancellationToken = default);
 
-    /// <inheritdoc />
+    /// <summary>
+    /// Get key performance indicators for predictors
+    /// </summary>
+    /// <param name="kpiIds">List of KPI IDs to filter</param>
+    /// <param name="expands">Fields to expand</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Key performance indicator listing</returns>
     Task<KeyPerformanceIndicatorListing> GetRoutingPredictorsKeyperformanceindicatorsAsync(IEnumerable<string> kpiIds = null, IEnumerable<string> expands = null, CancellationToken cancellationToken = default);
 
-    /// <inheritdoc />
+    /// <summary>
+    /// Get queue assistant configuration
+    /// </summary>
+    /// <param name="queueId">Queue ID</param>
+    /// <param name="expand">Which fields to expand</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Assistant queue</returns>
     Task<AssistantQueue> GetRoutingQueueAssistantAsync(string queueId, string expand = null, CancellationToken cancellationToken = default);
 
-    /// <inheritdoc />
+    /// <summary>
+    /// Get queue assistant configuration
+    /// </summary>
+    /// <param name="queueId">Queue ID</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Assistant queue</returns>
     Task<AssistantQueue> GetRoutingQueueAssistantAsync(string queueId, CancellationToken cancellationToken = default);
 
-    /// <inheritdoc />
+    /// <summary>
+    /// Get details about a queue
+    /// </summary>
+    /// <param name="queueId">Queue ID</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Queue</returns>
     Task<Queue> GetRoutingQueueAsync(string queueId, CancellationToken cancellationToken = default);
 
-    /// <inheritdoc />
+    /// <summary>
+    /// Get comparison period for a queue
+    /// </summary>
+    /// <param name="queueId">Queue ID</param>
+    /// <param name="comparisonPeriodId">Comparison period ID</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Comparison period</returns>
     Task<ComparisonPeriod> GetRoutingQueueComparisonperiodAsync(string queueId, string comparisonPeriodId, CancellationToken cancellationToken = default);
 
-    /// <inheritdoc />
+    /// <summary>
+    /// Get comparison periods for a queue
+    /// </summary>
+    /// <param name="queueId">Queue ID</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Comparison period listing</returns>
     Task<ComparisonPeriodListing> GetRoutingQueueComparisonperiodsAsync(string queueId, CancellationToken cancellationToken = default);
 
-    /// <inheritdoc />
+    /// <summary>
+    /// Get estimated wait time for a queue
+    /// </summary>
+    /// <param name="queueId">Queue ID</param>
+    /// <param name="conversationId">Conversation ID</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Estimated wait time predictions</returns>
     Task<EstimatedWaitTimePredictions> GetRoutingQueueEstimatedwaittimeAsync(string queueId, string conversationId = null, CancellationToken cancellationToken = default);
 
-    /// <inheritdoc />
+    /// <summary>
+    /// Get identity resolution settings for a queue
+    /// </summary>
+    /// <param name="queueId">Queue ID</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Identity resolution queue config</returns>
     Task<IdentityResolutionQueueConfig> GetRoutingQueueIdentityresolutionAsync(string queueId, CancellationToken cancellationToken = default);
 
-    /// <inheritdoc />
+    /// <summary>
+    /// Get estimated wait time for a queue by media type with label
+    /// </summary>
+    /// <param name="queueId">Queue ID</param>
+    /// <param name="mediaType">Media type</param>
+    /// <param name="labelId">Label ID</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Estimated wait time predictions</returns>
     Task<EstimatedWaitTimePredictions> GetRoutingQueueMediatypeEstimatedwaittimeAsync(string queueId, string mediaType, string labelId = null, CancellationToken cancellationToken = default);
 
-    /// <inheritdoc />
+    /// <summary>
+    /// Get estimated wait time for a queue by media type
+    /// </summary>
+    /// <param name="queueId">Queue ID</param>
+    /// <param name="mediaType">Media type</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Estimated wait time predictions</returns>
     Task<EstimatedWaitTimePredictions> GetRoutingQueueMediatypeEstimatedwaittimeAsync(string queueId, string mediaType, CancellationToken cancellationToken = default);
 
-    /// <inheritdoc />
+    /// <summary>
+    /// Get queue members with extended filters
+    /// </summary>
+    /// <param name="queueId">Queue ID</param>
+    /// <param name="pageNumber">Page number</param>
+    /// <param name="pageSize">Page size</param>
+    /// <param name="sortOrder">Sort order</param>
+    /// <param name="expands">Fields to expand</param>
+    /// <param name="joined">Filter by joined status</param>
+    /// <param name="name">Name filter</param>
+    /// <param name="profileSkills">Profile skills filter</param>
+    /// <param name="skills">Skills filter</param>
+    /// <param name="languages">Languages filter</param>
+    /// <param name="routingStatus">Routing status filter</param>
+    /// <param name="presence">Presence filter</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Queue member entity listing</returns>
     Task<QueueMemberEntityListing> GetRoutingQueueMembersAsync(string queueId, int? pageNumber = null, int? pageSize = null, string sortOrder = null, IEnumerable<string> expands = null, bool? joined = null, string name = null, IEnumerable<string> profileSkills = null, IEnumerable<string> skills = null, IEnumerable<string> languages = null, IEnumerable<string> routingStatus = null, IEnumerable<string> presence = null, CancellationToken cancellationToken = default);
 
-    /// <inheritdoc />
+    /// <summary>
+    /// Get queue members
+    /// </summary>
+    /// <param name="queueId">Queue ID</param>
+    /// <param name="pageNumber">Page number</param>
+    /// <param name="pageSize">Page size</param>
+    /// <param name="sortOrder">Sort order</param>
+    /// <param name="expands">Fields to expand</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Queue member entity listing</returns>
     Task<QueueMemberEntityListing> GetRoutingQueueMembersAsync(string queueId, int? pageNumber = null, int? pageSize = null, string sortOrder = null, IEnumerable<string> expands = null, CancellationToken cancellationToken = default);
 
-    /// <inheritdoc />
+    /// <summary>
+    /// Get queue users
+    /// </summary>
+    /// <param name="queueId">Queue ID</param>
+    /// <param name="pageNumber">Page number</param>
+    /// <param name="pageSize">Page size</param>
+    /// <param name="sortOrder">Sort order</param>
+    /// <param name="expands">Fields to expand</param>
+    /// <param name="joined">Filter by joined status</param>
+    /// <param name="name">Name filter</param>
+    /// <param name="profileSkills">Profile skills filter</param>
+    /// <param name="skills">Skills filter</param>
+    /// <param name="languages">Languages filter</param>
+    /// <param name="routingStatus">Routing status filter</param>
+    /// <param name="presence">Presence filter</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Queue member entity listing V1</returns>
     Task<QueueMemberEntityListingV1> GetRoutingQueueUsersAsync(string queueId, int? pageNumber = null, int? pageSize = null, string sortOrder = null, IEnumerable<string> expands = null, bool? joined = null, string name = null, IEnumerable<string> profileSkills = null, IEnumerable<string> skills = null, IEnumerable<string> languages = null, IEnumerable<string> routingStatus = null, IEnumerable<string> presence = null, CancellationToken cancellationToken = default);
 
     /// <inheritdoc />
