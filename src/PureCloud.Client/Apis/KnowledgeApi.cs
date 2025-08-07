@@ -611,4 +611,431 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         return await response.Content.ReadFromJsonAsync<KnowledgeGuestDocumentResponseListing>(_options.JsonSerializerOptions, cancellationToken);
     }
+
+    /// <inheritdoc />
+    public async Task<GuestCategoryResponseListing> GetKnowledgeGuestSessionCategoriesAsync(string sessionId, string before = null, string after = null, string pageSize = null, string parentId = null, bool? isRoot = null, string name = null, string sortBy = null, string expand = null, bool? includeDocumentCount = null, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(sessionId);
+
+        var parameters = new NameValueCollection();
+
+        if (!string.IsNullOrEmpty(before))
+        {
+            parameters.Add("before", UriHelper.ParameterToString(before));
+        }
+
+        if (!string.IsNullOrEmpty(after))
+        {
+            parameters.Add("after", UriHelper.ParameterToString(after));
+        }
+
+        if (!string.IsNullOrEmpty(pageSize))
+        {
+            parameters.Add("pageSize", UriHelper.ParameterToString(pageSize));
+        }
+
+        if (!string.IsNullOrEmpty(parentId))
+        {
+            parameters.Add("parentId", UriHelper.ParameterToString(parentId));
+        }
+
+        if (isRoot.HasValue)
+        {
+            parameters.Add("isRoot", UriHelper.ParameterToString(isRoot.Value));
+        }
+
+        if (!string.IsNullOrEmpty(name))
+        {
+            parameters.Add("name", UriHelper.ParameterToString(name));
+        }
+
+        if (!string.IsNullOrEmpty(sortBy))
+        {
+            parameters.Add("sortBy", UriHelper.ParameterToString(sortBy));
+        }
+
+        if (!string.IsNullOrEmpty(expand))
+        {
+            parameters.Add("expand", UriHelper.ParameterToString(expand));
+        }
+
+        if (includeDocumentCount.HasValue)
+        {
+            parameters.Add("includeDocumentCount", UriHelper.ParameterToString(includeDocumentCount.Value));
+        }
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var uri = UriHelper.GetUri($"api/v2/knowledge/guest/sessions/{Uri.EscapeDataString(sessionId)}/categories", parameters);
+
+        var response = await client.GetAsync(uri, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<GuestCategoryResponseListing>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
+    public async Task<KnowledgeGuestDocumentResponse> GetKnowledgeGuestSessionDocumentAsync(string sessionId, string documentId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(sessionId);
+
+        ArgumentException.ThrowIfNullOrEmpty(documentId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var uri = UriHelper.GetUri($"api/v2/knowledge/guest/sessions/{Uri.EscapeDataString(sessionId)}/documents/{Uri.EscapeDataString(documentId)}", null);
+
+        var response = await client.GetAsync(uri, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<KnowledgeGuestDocumentResponse>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
+    public async Task<CategoryResponse> GetKnowledgeKnowledgebaseCategoryAsync(string knowledgeBaseId, string categoryId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(knowledgeBaseId);
+
+        ArgumentException.ThrowIfNullOrEmpty(categoryId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/categories/{Uri.EscapeDataString(categoryId)}", null);
+
+        var response = await client.GetAsync(uri, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<CategoryResponse>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
+    public async Task<LabelResponse> GetKnowledgeKnowledgebaseLabelAsync(string knowledgeBaseId, string labelId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(knowledgeBaseId);
+
+        ArgumentException.ThrowIfNullOrEmpty(labelId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/labels/{Uri.EscapeDataString(labelId)}", null);
+
+        var response = await client.GetAsync(uri, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<LabelResponse>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
+    public async Task<KnowledgeDocumentFeedbackResponseListing> GetKnowledgeKnowledgebaseDocumentFeedbackAsync(string knowledgeBaseId, string documentId, string before = null, string after = null, string pageSize = null, bool? onlyCommented = null, string documentVersionId = null, string documentVariationId = null, string appType = null, string queryType = null, string userId = null, string queueId = null, string state = null, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(knowledgeBaseId);
+
+        ArgumentException.ThrowIfNullOrEmpty(documentId);
+
+        var parameters = new NameValueCollection();
+
+        if (!string.IsNullOrEmpty(before))
+        {
+            parameters.Add("before", UriHelper.ParameterToString(before));
+        }
+
+        if (!string.IsNullOrEmpty(after))
+        {
+            parameters.Add("after", UriHelper.ParameterToString(after));
+        }
+
+        if (!string.IsNullOrEmpty(pageSize))
+        {
+            parameters.Add("pageSize", UriHelper.ParameterToString(pageSize));
+        }
+
+        if (onlyCommented.HasValue)
+        {
+            parameters.Add("onlyCommented", UriHelper.ParameterToString(onlyCommented.Value));
+        }
+
+        if (!string.IsNullOrEmpty(documentVersionId))
+        {
+            parameters.Add("documentVersionId", UriHelper.ParameterToString(documentVersionId));
+        }
+
+        if (!string.IsNullOrEmpty(documentVariationId))
+        {
+            parameters.Add("documentVariationId", UriHelper.ParameterToString(documentVariationId));
+        }
+
+        if (!string.IsNullOrEmpty(appType))
+        {
+            parameters.Add("appType", UriHelper.ParameterToString(appType));
+        }
+
+        if (!string.IsNullOrEmpty(queryType))
+        {
+            parameters.Add("queryType", UriHelper.ParameterToString(queryType));
+        }
+
+        if (!string.IsNullOrEmpty(userId))
+        {
+            parameters.Add("userId", UriHelper.ParameterToString(userId));
+        }
+
+        if (!string.IsNullOrEmpty(queueId))
+        {
+            parameters.Add("queueId", UriHelper.ParameterToString(queueId));
+        }
+
+        if (!string.IsNullOrEmpty(state))
+        {
+            parameters.Add("state", UriHelper.ParameterToString(state));
+        }
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/documents/{Uri.EscapeDataString(documentId)}/feedback", parameters);
+
+        var response = await client.GetAsync(uri, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<KnowledgeDocumentFeedbackResponseListing>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
+    public async Task<KnowledgeDocumentFeedbackResponse> GetKnowledgeKnowledgebaseDocumentFeedbackFeedbackIdAsync(string knowledgeBaseId, string documentId, string feedbackId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(knowledgeBaseId);
+
+        ArgumentException.ThrowIfNullOrEmpty(documentId);
+
+        ArgumentException.ThrowIfNullOrEmpty(feedbackId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/documents/{Uri.EscapeDataString(documentId)}/feedback/{Uri.EscapeDataString(feedbackId)}", null);
+
+        var response = await client.GetAsync(uri, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<KnowledgeDocumentFeedbackResponse>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
+    public async Task<DocumentVariationResponse> GetKnowledgeKnowledgebaseDocumentVariationAsync(string documentVariationId, string documentId, string knowledgeBaseId, string documentState = null, IEnumerable<string> expand = null, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(documentVariationId);
+
+        ArgumentException.ThrowIfNullOrEmpty(documentId);
+
+        ArgumentException.ThrowIfNullOrEmpty(knowledgeBaseId);
+
+        var parameters = new NameValueCollection();
+
+        if (!string.IsNullOrEmpty(documentState))
+        {
+            parameters.Add("documentState", UriHelper.ParameterToString(documentState));
+        }
+
+        if (expand != null)
+        {
+            foreach (var item in expand)
+            {
+                parameters.Add("expand", UriHelper.ParameterToString(item));
+            }
+        }
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/documents/{Uri.EscapeDataString(documentId)}/variations/{Uri.EscapeDataString(documentVariationId)}", parameters);
+
+        var response = await client.GetAsync(uri, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<DocumentVariationResponse>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
+    public async Task<DocumentVariationResponseListing> GetKnowledgeKnowledgebaseDocumentVariationsAsync(string knowledgeBaseId, string documentId, string before = null, string after = null, string pageSize = null, string documentState = null, IEnumerable<string> expand = null, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(knowledgeBaseId);
+
+        ArgumentException.ThrowIfNullOrEmpty(documentId);
+
+        var parameters = new NameValueCollection();
+
+        if (!string.IsNullOrEmpty(before))
+        {
+            parameters.Add("before", UriHelper.ParameterToString(before));
+        }
+
+        if (!string.IsNullOrEmpty(after))
+        {
+            parameters.Add("after", UriHelper.ParameterToString(after));
+        }
+
+        if (!string.IsNullOrEmpty(pageSize))
+        {
+            parameters.Add("pageSize", UriHelper.ParameterToString(pageSize));
+        }
+
+        if (!string.IsNullOrEmpty(documentState))
+        {
+            parameters.Add("documentState", UriHelper.ParameterToString(documentState));
+        }
+
+        if (expand != null)
+        {
+            foreach (var item in expand)
+            {
+                parameters.Add("expand", UriHelper.ParameterToString(item));
+            }
+        }
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/documents/{Uri.EscapeDataString(documentId)}/variations", parameters);
+
+        var response = await client.GetAsync(uri, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<DocumentVariationResponseListing>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
+    public async Task<KnowledgeDocumentVersion> GetKnowledgeKnowledgebaseDocumentVersionAsync(string knowledgeBaseId, string documentId, string versionId, IEnumerable<string> expand = null, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(knowledgeBaseId);
+
+        ArgumentException.ThrowIfNullOrEmpty(documentId);
+
+        ArgumentException.ThrowIfNullOrEmpty(versionId);
+
+        var parameters = new NameValueCollection();
+
+        if (expand != null)
+        {
+            foreach (var item in expand)
+            {
+                parameters.Add("expand", UriHelper.ParameterToString(item));
+            }
+        }
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/documents/{Uri.EscapeDataString(documentId)}/versions/{Uri.EscapeDataString(versionId)}", parameters);
+
+        var response = await client.GetAsync(uri, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<KnowledgeDocumentVersion>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
+    public async Task<KnowledgeDocumentVersionVariation> GetKnowledgeKnowledgebaseDocumentVersionVariationAsync(string knowledgeBaseId, string documentId, string versionId, string variationId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(knowledgeBaseId);
+
+        ArgumentException.ThrowIfNullOrEmpty(documentId);
+
+        ArgumentException.ThrowIfNullOrEmpty(versionId);
+
+        ArgumentException.ThrowIfNullOrEmpty(variationId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/documents/{Uri.EscapeDataString(documentId)}/versions/{Uri.EscapeDataString(versionId)}/variations/{Uri.EscapeDataString(variationId)}", null);
+
+        var response = await client.GetAsync(uri, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<KnowledgeDocumentVersionVariation>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
+    public async Task<KnowledgeDocumentVersionVariationListing> GetKnowledgeKnowledgebaseDocumentVersionVariationsAsync(string knowledgeBaseId, string documentId, string versionId, string before = null, string after = null, string pageSize = null, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(knowledgeBaseId);
+
+        ArgumentException.ThrowIfNullOrEmpty(documentId);
+
+        ArgumentException.ThrowIfNullOrEmpty(versionId);
+
+        var parameters = new NameValueCollection();
+
+        if (!string.IsNullOrEmpty(before))
+        {
+            parameters.Add("before", UriHelper.ParameterToString(before));
+        }
+
+        if (!string.IsNullOrEmpty(after))
+        {
+            parameters.Add("after", UriHelper.ParameterToString(after));
+        }
+
+        if (!string.IsNullOrEmpty(pageSize))
+        {
+            parameters.Add("pageSize", UriHelper.ParameterToString(pageSize));
+        }
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/documents/{Uri.EscapeDataString(documentId)}/versions/{Uri.EscapeDataString(versionId)}/variations", parameters);
+
+        var response = await client.GetAsync(uri, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<KnowledgeDocumentVersionVariationListing>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
+    public async Task<KnowledgeDocumentVersionListing> GetKnowledgeKnowledgebaseDocumentVersionsAsync(string knowledgeBaseId, string documentId, string before = null, string after = null, string pageSize = null, IEnumerable<string> expand = null, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(knowledgeBaseId);
+
+        ArgumentException.ThrowIfNullOrEmpty(documentId);
+
+        var parameters = new NameValueCollection();
+
+        if (!string.IsNullOrEmpty(before))
+        {
+            parameters.Add("before", UriHelper.ParameterToString(before));
+        }
+
+        if (!string.IsNullOrEmpty(after))
+        {
+            parameters.Add("after", UriHelper.ParameterToString(after));
+        }
+
+        if (!string.IsNullOrEmpty(pageSize))
+        {
+            parameters.Add("pageSize", UriHelper.ParameterToString(pageSize));
+        }
+
+        if (expand != null)
+        {
+            foreach (var item in expand)
+            {
+                parameters.Add("expand", UriHelper.ParameterToString(item));
+            }
+        }
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/documents/{Uri.EscapeDataString(documentId)}/versions", parameters);
+
+        var response = await client.GetAsync(uri, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<KnowledgeDocumentVersionListing>(_options.JsonSerializerOptions, cancellationToken);
+    }
 }
