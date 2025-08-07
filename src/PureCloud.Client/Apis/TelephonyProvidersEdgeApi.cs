@@ -22,7 +22,6 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     }
 
     /// <inheritdoc />
-
     public async Task<Edge> GetEdgeAsync(string edgeId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(edgeId);
@@ -36,7 +35,6 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     }
 
     /// <inheritdoc />
-
     public async Task<bool> DeleteEdgeAsync(string edgeId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(edgeId);
@@ -44,13 +42,11 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
         var response = await client.DeleteAsync($"/api/v2/telephony/providers/edges/{Uri.EscapeDataString(edgeId)}", cancellationToken);
-        response.EnsureSuccessStatusCode();
 
-        return true;
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
-
     public async Task<Edge> CreateEdgeAsync(Edge body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
@@ -64,7 +60,6 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     }
 
     /// <inheritdoc />
-
     public async Task<Edge> UpdateEdgeAsync(string edgeId, Edge body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(edgeId);
@@ -79,7 +74,6 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     }
 
     /// <inheritdoc />
-
     public async Task<DIDPool> GetDidPoolAsync(string didPoolId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(didPoolId);
@@ -93,7 +87,6 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     }
 
     /// <inheritdoc />
-
     public async Task<DIDPool> CreateDidPoolAsync(DIDPool body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
@@ -107,7 +100,6 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     }
 
     /// <inheritdoc />
-
     public async Task<DIDPool> UpdateDidPoolAsync(string didPoolId, DIDPool body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(didPoolId);
@@ -122,7 +114,6 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     }
 
     /// <inheritdoc />
-
     public async Task<bool> DeleteDidPoolAsync(string didPoolId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(didPoolId);
@@ -130,13 +121,11 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
         var response = await client.DeleteAsync($"/api/v2/telephony/providers/edges/didpools/{Uri.EscapeDataString(didPoolId)}", cancellationToken);
-        response.EnsureSuccessStatusCode();
 
-        return true;
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
-
     public async Task<Site> GetSiteAsync(string siteId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(siteId);
@@ -150,7 +139,6 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     }
 
     /// <inheritdoc />
-
     public async Task<Site> CreateSiteAsync(Site body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
@@ -164,7 +152,6 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     }
 
     /// <inheritdoc />
-
     public async Task<Site> UpdateSiteAsync(string siteId, Site body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(siteId);
@@ -179,7 +166,6 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     }
 
     /// <inheritdoc />
-
     public async Task<bool> DeleteSiteAsync(string siteId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(siteId);
@@ -187,13 +173,11 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
         var response = await client.DeleteAsync($"/api/v2/telephony/providers/edges/sites/{Uri.EscapeDataString(siteId)}", cancellationToken);
-        response.EnsureSuccessStatusCode();
 
-        return true;
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
-
     public async Task<DomainCertificateAuthority> GetCertificateAuthorityAsync(string certificateId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(certificateId);
@@ -207,7 +191,6 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     }
 
     /// <inheritdoc />
-
     public async Task<DomainCertificateAuthority> CreateCertificateAuthorityAsync(DomainCertificateAuthority body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
@@ -221,7 +204,6 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     }
 
     /// <inheritdoc />
-
     public async Task<DomainCertificateAuthority> UpdateCertificateAuthorityAsync(string certificateId, DomainCertificateAuthority body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(certificateId);
@@ -236,7 +218,6 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     }
 
     /// <inheritdoc />
-
     public async Task<bool> DeleteCertificateAuthorityAsync(string certificateId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(certificateId);
@@ -244,13 +225,11 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
         var response = await client.DeleteAsync($"/api/v2/telephony/providers/edges/certificateauthorities/{Uri.EscapeDataString(certificateId)}", cancellationToken);
-        response.EnsureSuccessStatusCode();
 
-        return true;
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
-
     public async Task<ExtensionPool> GetExtensionPoolAsync(string extensionPoolId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(extensionPoolId);
@@ -264,7 +243,6 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     }
 
     /// <inheritdoc />
-
     public async Task<ExtensionPool> CreateExtensionPoolAsync(ExtensionPool body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
@@ -278,7 +256,6 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     }
 
     /// <inheritdoc />
-
     public async Task<ExtensionPool> UpdateExtensionPoolAsync(string extensionPoolId, ExtensionPool body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(extensionPoolId);
@@ -293,7 +270,6 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     }
 
     /// <inheritdoc />
-
     public async Task<bool> DeleteExtensionPoolAsync(string extensionPoolId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(extensionPoolId);
@@ -301,13 +277,11 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
         var response = await client.DeleteAsync($"/api/v2/telephony/providers/edges/extensionpools/{Uri.EscapeDataString(extensionPoolId)}", cancellationToken);
-        response.EnsureSuccessStatusCode();
 
-        return true;
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
-
     public async Task<EdgeEntityListing> GetEdgesAsync(int? pageSize = null, int? pageNumber = null, string name = null, string siteId = null, string edgeGroupId = null, string sortBy = null, bool? managed = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
@@ -357,7 +331,6 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     }
 
     /// <inheritdoc />
-
     public async Task<EdgeNetworkDiagnosticResponse> GetEdgeDiagnosticNslookupAsync(string edgeId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(edgeId);
@@ -371,7 +344,6 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     }
 
     /// <inheritdoc />
-
     public async Task<EdgeNetworkDiagnosticResponse> GetEdgeDiagnosticPingAsync(string edgeId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(edgeId);
@@ -385,7 +357,6 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     }
 
     /// <inheritdoc />
-
     public async Task<EdgeNetworkDiagnosticResponse> GetEdgeDiagnosticRouteAsync(string edgeId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(edgeId);
@@ -399,7 +370,6 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     }
 
     /// <inheritdoc />
-
     public async Task<EdgeNetworkDiagnosticResponse> GetEdgeDiagnosticTracepathAsync(string edgeId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(edgeId);
@@ -413,7 +383,6 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     }
 
     /// <inheritdoc />
-
     public async Task<DomainLogicalInterface> GetEdgeLogicalinterfaceAsync(string edgeId, string interfaceId, IEnumerable<string> expands = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(edgeId);
@@ -439,7 +408,6 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     }
 
     /// <inheritdoc />
-
     public async Task<LogicalInterfaceEntityListing> GetEdgeLogicalinterfacesAsync(string edgeId, IEnumerable<string> expands = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(edgeId);
@@ -464,7 +432,6 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     }
 
     /// <inheritdoc />
-
     public async Task<bool> DeleteEdgeLogicalinterfaceAsync(string edgeId, string interfaceId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(edgeId);
@@ -473,13 +440,11 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
         var response = await client.DeleteAsync($"/api/v2/telephony/providers/edges/{Uri.EscapeDataString(edgeId)}/logicalinterfaces/{Uri.EscapeDataString(interfaceId)}", cancellationToken);
-        response.EnsureSuccessStatusCode();
 
-        return true;
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
-
     public async Task<EdgeLogsJob> GetEdgeLogsJobAsync(string edgeId, string jobId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(edgeId);
@@ -494,7 +459,6 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     }
 
     /// <inheritdoc />
-
     public async Task<EdgeMetrics> GetEdgeMetricsAsync(string edgeId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(edgeId);
@@ -508,7 +472,6 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     }
 
     /// <inheritdoc />
-
     public async Task<DomainPhysicalInterface> GetEdgePhysicalinterfaceAsync(string edgeId, string interfaceId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(edgeId);
@@ -523,7 +486,6 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     }
 
     /// <inheritdoc />
-
     public async Task<PhysicalInterfaceEntityListing> GetEdgePhysicalinterfacesAsync(string edgeId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(edgeId);
@@ -537,7 +499,6 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     }
 
     /// <inheritdoc />
-
     public async Task<bool> DeleteEdgeSoftwareupdateAsync(string edgeId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(edgeId);
@@ -545,13 +506,11 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
         var response = await client.DeleteAsync($"/api/v2/telephony/providers/edges/{Uri.EscapeDataString(edgeId)}/softwareupdate", cancellationToken);
-        response.EnsureSuccessStatusCode();
 
-        return true;
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
-
     public async Task<DomainEdgeSoftwareUpdateDto> GetEdgeSoftwareupdateAsync(string edgeId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(edgeId);
@@ -565,7 +524,6 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     }
 
     /// <inheritdoc />
-
     public async Task<DomainEdgeSoftwareVersionDtoEntityListing> GetEdgeSoftwareversionsAsync(string edgeId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(edgeId);
@@ -579,7 +537,6 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     }
 
     /// <inheritdoc />
-
     public async Task<Line> GetEdgeLineAsync(string edgeId, string lineId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(edgeId);
@@ -594,7 +551,6 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     }
 
     /// <inheritdoc />
-
     public async Task<LineEntityListing> GetEdgeLinesAsync(string edgeId, int? pageSize = null, int? pageNumber = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(edgeId);
@@ -621,19 +577,16 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     }
 
     /// <inheritdoc />
-
     public async Task<bool> DeleteEdgeAlertablepresencesAsync(CancellationToken cancellationToken = default)
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
         var response = await client.DeleteAsync("/api/v2/telephony/providers/edges/alertablepresences", cancellationToken);
-        response.EnsureSuccessStatusCode();
 
-        return true;
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
-
     public async Task<VmPairingInfo> GetEdgeSetuppackageAsync(string edgeId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(edgeId);
@@ -647,7 +600,6 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     }
 
     /// <inheritdoc />
-
     public async Task<TrunkEntityListing> GetEdgeTrunksAsync(string edgeId, int? pageNumber = null, int? pageSize = null, string sortBy = null, string sortOrder = null, string trunkBaseId = null, string trunkType = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(edgeId);
@@ -694,7 +646,6 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     }
 
     /// <inheritdoc />
-
     public async Task<AlertablePresences> GetEdgeAlertablepresencesAsync(string type = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
@@ -714,7 +665,6 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     }
 
     /// <inheritdoc />
-
     public async Task<CertificateAuthorityEntityListing> GetEdgeCertificateauthoritiesAsync(CancellationToken cancellationToken = default)
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
@@ -726,7 +676,6 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     }
 
     /// <inheritdoc />
-
     public async Task<DID> GetEdgeDidAsync(string didId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(didId);
@@ -740,7 +689,6 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     }
 
     /// <inheritdoc />
-
     public async Task<DIDEntityListing> GetEdgeDidsAsync(CancellationToken cancellationToken = default)
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
@@ -752,7 +700,6 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     }
 
     /// <inheritdoc />
-
     public async Task<DIDPoolEntityListing> GetEdgeDidpoolsAsync(CancellationToken cancellationToken = default)
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
@@ -764,7 +711,6 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     }
 
     /// <inheritdoc />
-
     public async Task<EdgeGroup> GetEdgeEdgegroupAsync(string edgeGroupId, IEnumerable<string> expands = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(edgeGroupId);
@@ -789,7 +735,6 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     }
 
     /// <inheritdoc />
-
     public async Task<EdgeGroupEntityListing> GetEdgeEdgegroupsAsync(int? pageSize = null, int? pageNumber = null, string name = null, string sortBy = null, bool? managed = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
@@ -829,7 +774,6 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     }
 
     /// <inheritdoc />
-
     public async Task<ExtensionPoolEntityListing> GetEdgeExtensionpoolsAsync(int? pageSize = null, int? pageNumber = null, string sortBy = null, string sortOrder = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
@@ -864,7 +808,6 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     }
 
     /// <inheritdoc />
-
     public async Task<LineBase> GetEdgeLinebasesettingAsync(string lineBaseId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(lineBaseId);
@@ -878,7 +821,6 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     }
 
     /// <inheritdoc />
-
     public async Task<LineBaseEntityListing> GetEdgeLinebasesettingsAsync(int? pageNumber = null, int? pageSize = null, string sortBy = null, string sortOrder = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
@@ -913,7 +855,6 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     }
 
     /// <inheritdoc />
-
     public async Task<Phone> GetEdgePhoneAsync(string phoneId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(phoneId);
@@ -927,7 +868,6 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     }
 
     /// <inheritdoc />
-
     public async Task<PhoneBase> GetEdgePhonebasesettingAsync(string phoneBaseId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(phoneBaseId);
@@ -941,7 +881,6 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     }
 
     /// <inheritdoc />
-
     public async Task<PhoneBaseEntityListing> GetEdgePhonebasesettingsAsync(int? pageSize = null, int? pageNumber = null, string sortBy = null, string sortOrder = null, string name = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
@@ -981,7 +920,6 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     }
 
     /// <inheritdoc />
-
     public async Task<PhoneEntityListing> GetEdgePhonesAsync(int? pageNumber = null, int? pageSize = null, string sortBy = null, string sortOrder = null, string siteId = null, string webRtcUserId = null, string phoneBaseSettingsId = null, string linesLoggedInUserId = null, string linesDefaultForUserId = null, string phoneHardwareId = null, string linesId = null, string linesName = null, string name = null, string statusOperationalStatus = null, string secondaryStatusOperationalStatus = null, IEnumerable<string> expands = null, IEnumerable<string> fieldNames = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
@@ -1087,7 +1025,6 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     }
 
     /// <inheritdoc />
-
     public async Task<PhoneMetaBaseEntityListing> GetEdgePhonesTemplateAsync(string phoneMetabaseId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(phoneMetabaseId);
@@ -1101,7 +1038,6 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     }
 
     /// <inheritdoc />
-
     public async Task<SiteEntityListing> GetEdgeSitesAsync(int? pageSize = null, int? pageNumber = null, string sortBy = null, string sortOrder = null, string name = null, string locationId = null, bool? managed = null, IEnumerable<string> expands = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
@@ -1159,7 +1095,6 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     }
 
     /// <inheritdoc />
-
     public async Task<OutboundRouteBase> GetEdgeSiteOutboundrouteAsync(string siteId, string outboundRouteId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(siteId);
@@ -1174,7 +1109,6 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     }
 
     /// <inheritdoc />
-
     public async Task<OutboundRouteBaseEntityListing> GetEdgeSiteOutboundroutesAsync(string siteId, int? pageSize = null, int? pageNumber = null, string name = null, string externalTrunkBaseIds = null, string sortBy = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(siteId);
@@ -1216,7 +1150,6 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     }
 
     /// <inheritdoc />
-
     public async Task<TimeZoneEntityListing> GetEdgeTimezonesAsync(int? pageSize = null, int? pageNumber = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
@@ -1241,7 +1174,6 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     }
 
     /// <inheritdoc />
-
     public async Task<Trunk> GetEdgeTrunkAsync(string trunkId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(trunkId);
@@ -1255,7 +1187,6 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     }
 
     /// <inheritdoc />
-
     public async Task<TrunkBase> GetEdgeTrunkbasesettingAsync(string trunkBaseSettingsId, bool? ignoreHidden = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(trunkBaseSettingsId);
@@ -1277,7 +1208,6 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     }
 
     /// <inheritdoc />
-
     public async Task<TrunkBaseEntityListing> GetEdgeTrunkbasesettingsAsync(int? pageNumber = null, int? pageSize = null, string sortBy = null, string sortOrder = null, bool? recordingEnabled = null, bool? ignoreHidden = null, bool? managed = null, IEnumerable<string> expands = null, string name = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
@@ -1340,7 +1270,6 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     }
 
     /// <inheritdoc />
-
     public async Task<TrunkMetabaseEntityListing> GetEdgeTrunkbasesettingsAvailablemetabasesAsync(string type = null, int? pageSize = null, int? pageNumber = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
@@ -1370,7 +1299,6 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     }
 
     /// <inheritdoc />
-
     public async Task<TrunkMetrics> GetEdgeTrunkbasesettingsTemplateAsync(string trunkMetabaseId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(trunkMetabaseId);
@@ -1384,7 +1312,6 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     }
 
     /// <inheritdoc />
-
     public async Task<TrunkRecordingEnabledCount> GetEdgeTrunksMetricsAsync(string trunkIds, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(trunkIds);
@@ -1402,7 +1329,6 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     }
 
     /// <inheritdoc />
-
     public async Task<bool> DeleteEdgeGroupAsync(string edgeGroupId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(edgeGroupId);
@@ -1410,13 +1336,11 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
         var response = await client.DeleteAsync($"/api/v2/telephony/providers/edges/edgegroups/{Uri.EscapeDataString(edgeGroupId)}", cancellationToken);
-        response.EnsureSuccessStatusCode();
 
-        return true;
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
-
     public async Task<bool> DeletePhoneAsync(string phoneId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(phoneId);
@@ -1424,13 +1348,11 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
         var response = await client.DeleteAsync($"/api/v2/telephony/providers/edges/phones/{Uri.EscapeDataString(phoneId)}", cancellationToken);
-        response.EnsureSuccessStatusCode();
 
-        return true;
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
-
     public async Task<bool> DeletePhoneBasesettingAsync(string phoneBaseId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(phoneBaseId);
@@ -1438,13 +1360,11 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
         var response = await client.DeleteAsync($"/api/v2/telephony/providers/edges/phonebasesettings/{Uri.EscapeDataString(phoneBaseId)}", cancellationToken);
-        response.EnsureSuccessStatusCode();
 
-        return true;
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
-
     public async Task<bool> DeleteSiteOutboundrouteAsync(string siteId, string outboundRouteId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(siteId);
@@ -1453,13 +1373,11 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
         var response = await client.DeleteAsync($"/api/v2/telephony/providers/edges/sites/{Uri.EscapeDataString(siteId)}/outboundroutes/{Uri.EscapeDataString(outboundRouteId)}", cancellationToken);
-        response.EnsureSuccessStatusCode();
 
-        return true;
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
-
     public async Task<bool> DeleteTrunkbasesettingAsync(string trunkBaseSettingsId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(trunkBaseSettingsId);
@@ -1467,13 +1385,11 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
         var response = await client.DeleteAsync($"/api/v2/telephony/providers/edges/trunkbasesettings/{Uri.EscapeDataString(trunkBaseSettingsId)}", cancellationToken);
-        response.EnsureSuccessStatusCode();
 
-        return true;
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
-
     public async Task<EdgeVersionReport> GetEdgeversionreportAsync(CancellationToken cancellationToken = default)
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
@@ -1485,7 +1401,6 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     }
 
     /// <inheritdoc />
-
     public async Task<ExpiredEdgeListing> GetExpiredAsync(CancellationToken cancellationToken = default)
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
@@ -1497,7 +1412,6 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     }
 
     /// <inheritdoc />
-
     public async Task<Extension> GetExtensionAsync(string extensionId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(extensionId);
@@ -1511,7 +1425,6 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     }
 
     /// <inheritdoc />
-
     public async Task<Line> GetLineAsync(string lineId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(lineId);
@@ -1525,7 +1438,6 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     }
 
     /// <inheritdoc />
-
     public async Task<Line> GetLinesTemplateAsync(string lineMetabaseId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(lineMetabaseId);
@@ -1539,7 +1451,6 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     }
 
     /// <inheritdoc />
-
     public async Task<MediaStatisticsListing> GetMediastatisticsConversationAsync(string conversationId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(conversationId);
@@ -1553,7 +1464,6 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     }
 
     /// <inheritdoc />
-
     public async Task<IEnumerable<EdgeMetrics>> GetEdgesMetricsAsync(string edgeIds, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(edgeIds);
@@ -1569,7 +1479,6 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     }
 
     /// <inheritdoc />
-
     public async Task<PhoneBase> GetPhonebasesettingsTemplateAsync(string phoneMetabaseId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(phoneMetabaseId);
@@ -1583,7 +1492,6 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     }
 
     /// <inheritdoc />
-
     public async Task<PhysicalInterfaceEntityListing> GetPhysicalinterfacesAsync(string edgeIds, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(edgeIds);
@@ -1597,7 +1505,6 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     }
 
     /// <inheritdoc />
-
     public async Task<IEnumerable<NumberPlan>> GetSiteNumberplansAsync(string siteId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(siteId);
@@ -1613,7 +1520,6 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     }
 
     /// <inheritdoc />
-
     public async Task<SiteConnections> GetSiteSiteconnectionsAsync(string siteId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(siteId);
@@ -1627,7 +1533,6 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     }
 
     /// <inheritdoc />
-
     public async Task<TrunkMetrics> GetTrunkMetricsAsync(string trunkId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(trunkId);
@@ -1641,7 +1546,6 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     }
 
     /// <inheritdoc />
-
     public async Task<TrunkBase> GetTrunkbasesettingsTemplateAsync(string trunkMetabaseId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(trunkMetabaseId);
@@ -1655,7 +1559,6 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     }
 
     /// <inheritdoc />
-
     public async Task<TrunkRecordingEnabledCount> GetTrunkswithrecordingAsync(string trunkType = null, CancellationToken cancellationToken = default)
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
