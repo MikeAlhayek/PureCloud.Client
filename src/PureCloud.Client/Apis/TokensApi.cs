@@ -50,9 +50,7 @@ public sealed class TokensApi : ITokensApi
 
         var response = await client.DeleteAsync($"api/v2/tokens/{Uri.EscapeDataString(userId)}", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-
-        return true;
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
@@ -76,9 +74,7 @@ public sealed class TokensApi : ITokensApi
 
         var response = await client.DeleteAsync("api/v2/tokens/me", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-
-        return true;
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
@@ -98,14 +94,10 @@ public sealed class TokensApi : ITokensApi
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = "api/v2/tokens/me";
-
-        var request = new HttpRequestMessage(HttpMethod.Head, uri);
+        var request = new HttpRequestMessage(HttpMethod.Head, "api/v2/tokens/me");
 
         var response = await client.SendAsync(request, cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-
-        return true;
+        return response.IsSuccessStatusCode;
     }
 }
