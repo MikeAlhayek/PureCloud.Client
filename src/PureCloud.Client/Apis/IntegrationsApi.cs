@@ -48,9 +48,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
 
         var response = await client.DeleteAsync($"api/v2/integrations/actions/{Uri.EscapeDataString(actionId)}", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-
-        return true;
+        return response.IsSuccessStatusCode;
     }
 
     public async Task<bool> DeleteIntegrationsActionDraftAsync(string actionId, CancellationToken cancellationToken = default)
@@ -61,9 +59,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
 
         var response = await client.DeleteAsync($"api/v2/integrations/actions/{Uri.EscapeDataString(actionId)}/draft", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-
-        return true;
+        return response.IsSuccessStatusCode;
     }
 
     public async Task<bool> DeleteIntegrationsCredentialAsync(string credentialId, CancellationToken cancellationToken = default)
@@ -74,9 +70,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
 
         var response = await client.DeleteAsync($"api/v2/integrations/credentials/{Uri.EscapeDataString(credentialId)}", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-
-        return true;
+        return response.IsSuccessStatusCode;
     }
 
     public async Task<Integration> GetIntegrationAsync(string integrationId, int? pageSize = null, int? pageNumber = null, string sortBy = null, IList<string> expand = null, string nextPage = null, string previousPage = null, CancellationToken cancellationToken = default)
