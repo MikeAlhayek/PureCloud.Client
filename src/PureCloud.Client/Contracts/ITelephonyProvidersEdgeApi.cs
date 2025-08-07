@@ -276,4 +276,31 @@ public interface ITelephonyProvidersEdgeApi
 
     /// <inheritdoc />
     Task<string> ChangeEdgeStatusAsync(string edgeId, EdgeServiceStateRequest body = null, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task<string> UnpairEdgeAsync(string edgeId, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task<EdgeNetworkDiagnostic> CreateEdgeDiagnosticNslookupAsync(string edgeId, EdgeNetworkDiagnosticRequest body, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task<EdgeNetworkDiagnostic> CreateEdgeDiagnosticPingAsync(string edgeId, EdgeNetworkDiagnosticRequest body, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task<EdgeNetworkDiagnostic> CreateEdgeDiagnosticRouteAsync(string edgeId, EdgeNetworkDiagnosticRequest body, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task<EdgeNetworkDiagnostic> CreateEdgeDiagnosticTracepathAsync(string edgeId, EdgeNetworkDiagnosticRequest body, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task RebootPhonesAsync(PhonesReboot body, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task<SitesSearchResponse> SearchSitesAsync(SiteSearchRequest body, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task<DomainLogicalInterface> CreateEdgeLogicalinterfaceAsync(string edgeId, DomainLogicalInterface body, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task<DomainLogicalInterface> UpdateEdgeLogicalinterfaceAsync(string edgeId, string interfaceId, DomainLogicalInterface body, CancellationToken cancellationToken = default);
 }
