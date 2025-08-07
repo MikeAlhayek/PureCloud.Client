@@ -1329,6 +1329,15 @@ public interface IOutboundApi
     Task<Campaign> PostOutboundCampaignStopAsync(string campaignId, CancellationToken cancellationToken = default);
 
     /// <summary>
+    /// Schedule callback for a campaign
+    /// </summary>
+    /// <param name="campaignId">The campaignId</param>
+    /// <param name="body">The body</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Task result</returns>
+    Task<ContactCallbackRequest> PostOutboundCampaignCallbackScheduleAsync(string campaignId, ContactCallbackRequest body, CancellationToken cancellationToken = default);
+
+    /// <summary>
     /// Create campaignrules
     /// </summary>
     /// <param name="body">The body</param>
@@ -1370,7 +1379,7 @@ public interface IOutboundApi
     /// <param name="body">The body</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Task result</returns>
-    Task<ContactsBulkOperationJob> PostOutboundContactlistContactsBulkRemoveAsync(string contactListId, ContactBulkDeleteRequest body, CancellationToken cancellationToken = default);
+    Task<ContactsBulkOperationJob> PostOutboundContactlistContactsBulkRemoveAsync(string contactListId, ContactBulkSearchParameters body, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Create contactlistcontactsbulkupdate
@@ -1499,6 +1508,16 @@ public interface IOutboundApi
     Task<CampaignRule> PutOutboundCampaignruleAsync(string campaignRuleId, CampaignRule body, CancellationToken cancellationToken = default);
 
     /// <summary>
+    /// Update campaign agent
+    /// </summary>
+    /// <param name="campaignId">The campaignId</param>
+    /// <param name="userId">The userId</param>
+    /// <param name="body">The body</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Task result</returns>
+    Task<string> PutOutboundCampaignAgentAsync(string campaignId, string userId, Agent body, CancellationToken cancellationToken = default);
+
+    /// <summary>
     /// Update contactlist
     /// </summary>
     /// <param name="contactListId">The contactListId</param>
@@ -1623,5 +1642,13 @@ public interface IOutboundApi
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Task result</returns>
     Task<IEnumerable<CampaignProgress>> PostOutboundMessagingcampaignsProgressAsync(IEnumerable<string> body, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Add phone number to conversation DNC list
+    /// </summary>
+    /// <param name="conversationId">The conversationId</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Task result</returns>
+    Task PostOutboundConversationDncAsync(string conversationId, CancellationToken cancellationToken = default);
 }
 

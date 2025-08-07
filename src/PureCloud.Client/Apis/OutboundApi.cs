@@ -199,6 +199,11 @@ public sealed class OutboundApi : IOutboundApi
         return await response.Content.ReadFromJsonAsync<CallableTimeSet>(_options.JsonSerializerOptions, cancellationToken);
     }
 
+    public async Task<CallableTimeSet> CreateOutboundCallabletimesetAsync(CallableTimeSet body, CancellationToken cancellationToken = default)
+    {
+        return await PostOutboundCallabletimesetsAsync(body, cancellationToken);
+    }
+
     public async Task<CallableTimeSet> PutOutboundCallabletimesetAsync(string callableTimeSetId, CallableTimeSet body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(callableTimeSetId);
@@ -211,6 +216,11 @@ public sealed class OutboundApi : IOutboundApi
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<CallableTimeSet>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<CallableTimeSet> UpdateOutboundCallabletimesetAsync(string callableTimeSetId, CallableTimeSet body, CancellationToken cancellationToken = default)
+    {
+        return await PutOutboundCallabletimesetAsync(callableTimeSetId, body, cancellationToken);
     }
 
     public async Task<bool> DeleteOutboundCallabletimesetAsync(string callableTimeSetId, CancellationToken cancellationToken = default)
@@ -348,6 +358,21 @@ public sealed class OutboundApi : IOutboundApi
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<Campaign>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    public async Task<string> PutOutboundCampaignAgentAsync(string campaignId, string userId, Agent body, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(campaignId);
+        ArgumentException.ThrowIfNullOrEmpty(userId);
+        ArgumentNullException.ThrowIfNull(body);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PutAsJsonAsync($"api/v2/outbound/campaigns/{Uri.EscapeDataString(campaignId)}/agents/{Uri.EscapeDataString(userId)}", body, _options.JsonSerializerOptions, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadAsStringAsync(cancellationToken);
     }
 
     public async Task<bool> DeleteOutboundCampaignAsync(string campaignId, CancellationToken cancellationToken = default)
@@ -2969,6 +2994,20 @@ public sealed class OutboundApi : IOutboundApi
         return await response.Content.ReadFromJsonAsync<Campaign>(_options.JsonSerializerOptions, cancellationToken);
     }
 
+    public async Task<ContactCallbackRequest> PostOutboundCampaignCallbackScheduleAsync(string campaignId, ContactCallbackRequest body, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(campaignId);
+        ArgumentNullException.ThrowIfNull(body);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PostAsJsonAsync($"api/v2/outbound/campaigns/{Uri.EscapeDataString(campaignId)}/callback/schedule", body, _options.JsonSerializerOptions, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<ContactCallbackRequest>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
     public async Task<CampaignRule> PostOutboundCampaignrulesAsync(CampaignRule body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
@@ -3041,7 +3080,7 @@ public sealed class OutboundApi : IOutboundApi
         return await response.Content.ReadFromJsonAsync<ContactsBulkOperationJob>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<ContactsBulkOperationJob> PostOutboundContactlistContactsBulkRemoveAsync(string contactListId, ContactBulkDeleteRequest body, CancellationToken cancellationToken = default)
+    public async Task<ContactsBulkOperationJob> PostOutboundContactlistContactsBulkRemoveAsync(string contactListId, ContactBulkSearchParameters body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(contactListId);
         ArgumentNullException.ThrowIfNull(body);
@@ -3241,7 +3280,15 @@ public sealed class OutboundApi : IOutboundApi
         return await response.Content.ReadFromJsonAsync<List<CampaignProgress>>(_options.JsonSerializerOptions, cancellationToken);
     }
 
+    public async Task PostOutboundConversationDncAsync(string conversationId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(conversationId);
 
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PostAsync($"api/v2/outbound/conversations/{Uri.EscapeDataString(conversationId)}/dnc", null, cancellationToken);
+
+        response.EnsureSuccessStatusCode();
     }
 
     public async Task<CampaignRule> PutOutboundCampaignruleAsync(string campaignRuleId, CampaignRule body, CancellationToken cancellationToken = default)
