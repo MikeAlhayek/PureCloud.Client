@@ -21,37 +21,37 @@ public sealed class MessagingApi : IMessagingApi
     }
 
     /// <inheritdoc />
-    public async Task DeleteMessagingSettingAsync(string messageSettingId, CancellationToken cancellationToken = default)
+    public async Task<bool> DeleteMessagingSettingAsync(string messageSettingId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(messageSettingId);
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.DeleteAsync($"api/v2/messaging/settings/{messageSettingId}", cancellationToken);
+        var response = await client.DeleteAsync($"api/v2/messaging/settings/{Uri.EscapeDataString(messageSettingId)}", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
-    public async Task DeleteMessagingSettingsDefaultAsync(CancellationToken cancellationToken = default)
+    public async Task<bool> DeleteMessagingSettingsDefaultAsync(CancellationToken cancellationToken = default)
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
         var response = await client.DeleteAsync("api/v2/messaging/settings/default", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
-    public async Task DeleteMessagingSupportedContentAsync(string supportedContentId, CancellationToken cancellationToken = default)
+    public async Task<bool> DeleteMessagingSupportedContentAsync(string supportedContentId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(supportedContentId);
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.DeleteAsync($"api/v2/messaging/supportedcontent/{supportedContentId}", cancellationToken);
+        var response = await client.DeleteAsync($"api/v2/messaging/supportedcontent/{Uri.EscapeDataString(supportedContentId)}", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
@@ -61,11 +61,11 @@ public sealed class MessagingApi : IMessagingApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync($"api/v2/messaging/settings/{messageSettingId}", cancellationToken);
+        var response = await client.GetAsync($"api/v2/messaging/settings/{Uri.EscapeDataString(messageSettingId)}", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<MessagingSetting>(_options.JsonSerializerOptions, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<MessagingSetting>(_options, cancellationToken);
     }
 
     /// <inheritdoc />
@@ -91,7 +91,7 @@ public sealed class MessagingApi : IMessagingApi
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<MessagingConfigListing>(_options.JsonSerializerOptions, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<MessagingConfigListing>(_options, cancellationToken);
     }
 
     /// <inheritdoc />
@@ -103,7 +103,7 @@ public sealed class MessagingApi : IMessagingApi
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<MessagingSetting>(_options.JsonSerializerOptions, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<MessagingSetting>(_options, cancellationToken);
     }
 
     /// <inheritdoc />
@@ -129,7 +129,7 @@ public sealed class MessagingApi : IMessagingApi
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<SupportedContentListing>(_options.JsonSerializerOptions, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<SupportedContentListing>(_options, cancellationToken);
     }
 
     /// <inheritdoc />
@@ -139,11 +139,11 @@ public sealed class MessagingApi : IMessagingApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync($"api/v2/messaging/supportedcontent/{supportedContentId}", cancellationToken);
+        var response = await client.GetAsync($"api/v2/messaging/supportedcontent/{Uri.EscapeDataString(supportedContentId)}", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<SupportedContent>(_options.JsonSerializerOptions, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<SupportedContent>(_options, cancellationToken);
     }
 
     /// <inheritdoc />
@@ -154,11 +154,11 @@ public sealed class MessagingApi : IMessagingApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.PatchAsJsonAsync($"api/v2/messaging/settings/{messageSettingId}", body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PatchAsJsonAsync($"api/v2/messaging/settings/{Uri.EscapeDataString(messageSettingId)}", body, _options, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<MessagingSetting>(_options.JsonSerializerOptions, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<MessagingSetting>(_options, cancellationToken);
     }
 
     /// <inheritdoc />
@@ -169,11 +169,11 @@ public sealed class MessagingApi : IMessagingApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.PatchAsJsonAsync($"api/v2/messaging/supportedcontent/{supportedContentId}", body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PatchAsJsonAsync($"api/v2/messaging/supportedcontent/{Uri.EscapeDataString(supportedContentId)}", body, _options, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<SupportedContent>(_options.JsonSerializerOptions, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<SupportedContent>(_options, cancellationToken);
     }
 
     /// <inheritdoc />
@@ -183,11 +183,11 @@ public sealed class MessagingApi : IMessagingApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.PostAsJsonAsync("api/v2/messaging/settings", body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PostAsJsonAsync("api/v2/messaging/settings", body, _options, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<MessagingSetting>(_options.JsonSerializerOptions, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<MessagingSetting>(_options, cancellationToken);
     }
 
     /// <inheritdoc />
@@ -197,11 +197,11 @@ public sealed class MessagingApi : IMessagingApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.PostAsJsonAsync("api/v2/messaging/supportedcontent", body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PostAsJsonAsync("api/v2/messaging/supportedcontent", body, _options, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<SupportedContent>(_options.JsonSerializerOptions, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<SupportedContent>(_options, cancellationToken);
     }
 
     /// <inheritdoc />
@@ -211,10 +211,10 @@ public sealed class MessagingApi : IMessagingApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.PutAsJsonAsync("api/v2/messaging/settings/default", body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PutAsJsonAsync("api/v2/messaging/settings/default", body, _options, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<MessagingSetting>(_options.JsonSerializerOptions, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<MessagingSetting>(_options, cancellationToken);
     }
 }
