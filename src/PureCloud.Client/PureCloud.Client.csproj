@@ -265,6 +265,7 @@
     <Compile Include="Models\CardAction.Type.cs" />
     <Compile Include="Models\CategoryRequest.cs" />
     <Compile Include="Models\CategoryRequest.InteractionType.cs" />
+    <Compile Include="Models\CategoryListing.cs" />
     <Compile Include="Models\ConnectedEdge.cs" />
     <Compile Include="Models\ContentActions.cs" />
     <Compile Include="Models\ContentAttachment.cs" />
