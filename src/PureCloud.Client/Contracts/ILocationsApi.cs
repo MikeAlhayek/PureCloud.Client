@@ -9,7 +9,7 @@ public interface ILocationsApi
     /// </summary>
     /// <param name="locationId">Location ID</param>
     /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
-    Task DeleteLocationAsync(string locationId, CancellationToken cancellationToken = default);
+    Task<bool> DeleteLocationAsync(string locationId, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Get Location by ID
