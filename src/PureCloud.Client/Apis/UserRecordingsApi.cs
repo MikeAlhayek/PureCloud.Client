@@ -31,9 +31,7 @@ public sealed class UserRecordingsApi : IUserRecordingsApi
 
         var response = await client.DeleteAsync($"api/v2/userrecordings/{Uri.EscapeDataString(recordingId)}", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-
-        return true;
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
