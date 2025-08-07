@@ -31,7 +31,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/integrations/{integrationId}", parameters);
+        var uri = UriHelper.GetUri($"api/v2/integrations/{Uri.EscapeDataString(integrationId)}", parameters);
 
         var response = await client.DeleteAsync(uri, cancellationToken);
 
@@ -40,55 +40,37 @@ public sealed class IntegrationsApi : IIntegrationsApi
         return await response.Content.ReadFromJsonAsync<Integration>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<object> DeleteIntegrationsActionAsync(string actionId, CancellationToken cancellationToken = default)
+    public async Task<bool> DeleteIntegrationsActionAsync(string actionId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(actionId);
 
-        var parameters = new NameValueCollection();
-
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/integrations/actions/{actionId}", parameters);
+        var response = await client.DeleteAsync($"api/v2/integrations/actions/{Uri.EscapeDataString(actionId)}", cancellationToken);
 
-        var response = await client.DeleteAsync(uri, cancellationToken);
-
-        response.EnsureSuccessStatusCode();
-
-        return await response.Content.ReadFromJsonAsync<object>(_options.JsonSerializerOptions, cancellationToken);
+        return response.IsSuccessStatusCode;
     }
 
-    public async Task<object> DeleteIntegrationsActionDraftAsync(string actionId, CancellationToken cancellationToken = default)
+    public async Task<bool> DeleteIntegrationsActionDraftAsync(string actionId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(actionId);
 
-        var parameters = new NameValueCollection();
-
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/integrations/actions/{actionId}/draft", parameters);
+        var response = await client.DeleteAsync($"api/v2/integrations/actions/{Uri.EscapeDataString(actionId)}/draft", cancellationToken);
 
-        var response = await client.DeleteAsync(uri, cancellationToken);
-
-        response.EnsureSuccessStatusCode();
-
-        return await response.Content.ReadFromJsonAsync<object>(_options.JsonSerializerOptions, cancellationToken);
+        return response.IsSuccessStatusCode;
     }
 
-    public async Task<object> DeleteIntegrationsCredentialAsync(string credentialId, CancellationToken cancellationToken = default)
+    public async Task<bool> DeleteIntegrationsCredentialAsync(string credentialId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(credentialId);
 
-        var parameters = new NameValueCollection();
-
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/integrations/credentials/{credentialId}", parameters);
+        var response = await client.DeleteAsync($"api/v2/integrations/credentials/{Uri.EscapeDataString(credentialId)}", cancellationToken);
 
-        var response = await client.DeleteAsync(uri, cancellationToken);
-
-        response.EnsureSuccessStatusCode();
-
-        return await response.Content.ReadFromJsonAsync<object>(_options.JsonSerializerOptions, cancellationToken);
+        return response.IsSuccessStatusCode;
     }
 
     public async Task<Integration> GetIntegrationAsync(string integrationId, int? pageSize = null, int? pageNumber = null, string sortBy = null, IList<string> expand = null, string nextPage = null, string previousPage = null, CancellationToken cancellationToken = default)
@@ -132,7 +114,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/integrations/{integrationId}", parameters);
+        var uri = UriHelper.GetUri($"api/v2/integrations/{Uri.EscapeDataString(integrationId)}", parameters);
 
         var response = await client.GetAsync(uri, cancellationToken);
 
@@ -149,7 +131,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/integrations/{integrationId}/config/current", parameters);
+        var uri = UriHelper.GetUri($"api/v2/integrations/{Uri.EscapeDataString(integrationId)}/config/current", parameters);
 
         var response = await client.GetAsync(uri, cancellationToken);
 
@@ -229,7 +211,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/integrations/actions/{actionId}", parameters);
+        var uri = UriHelper.GetUri($"api/v2/integrations/actions/{Uri.EscapeDataString(actionId)}", parameters);
 
         var response = await client.GetAsync(uri, cancellationToken);
 
@@ -261,7 +243,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/integrations/actions/{actionId}/draft", parameters);
+        var uri = UriHelper.GetUri($"api/v2/integrations/actions/{Uri.EscapeDataString(actionId)}/draft", parameters);
 
         var response = await client.GetAsync(uri, cancellationToken);
 
@@ -278,7 +260,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/integrations/actions/{actionId}/draft/function", parameters);
+        var uri = UriHelper.GetUri($"api/v2/integrations/actions/{Uri.EscapeDataString(actionId)}/draft/function", parameters);
 
         var response = await client.GetAsync(uri, cancellationToken);
 
@@ -302,7 +284,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/integrations/actions/{actionId}/draft/schemas/{fileName}", parameters);
+        var uri = UriHelper.GetUri($"api/v2/integrations/actions/{Uri.EscapeDataString(actionId)}/draft/schemas/{Uri.EscapeDataString(fileName)}", parameters);
 
         var response = await client.GetAsync(uri, cancellationToken);
 
@@ -321,7 +303,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/integrations/actions/{actionId}/draft/templates/{fileName}", parameters);
+        var uri = UriHelper.GetUri($"api/v2/integrations/actions/{Uri.EscapeDataString(actionId)}/draft/templates/{Uri.EscapeDataString(fileName)}", parameters);
 
         var response = await client.GetAsync(uri, cancellationToken);
 
@@ -338,7 +320,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/integrations/actions/{actionId}/draft/validation", parameters);
+        var uri = UriHelper.GetUri($"api/v2/integrations/actions/{Uri.EscapeDataString(actionId)}/draft/validation", parameters);
 
         var response = await client.GetAsync(uri, cancellationToken);
 
@@ -355,7 +337,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/integrations/actions/{actionId}/function", parameters);
+        var uri = UriHelper.GetUri($"api/v2/integrations/actions/{Uri.EscapeDataString(actionId)}/function", parameters);
 
         var response = await client.GetAsync(uri, cancellationToken);
 
@@ -379,7 +361,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/integrations/actions/{actionId}/schemas/{fileName}", parameters);
+        var uri = UriHelper.GetUri($"api/v2/integrations/actions/{Uri.EscapeDataString(actionId)}/schemas/{Uri.EscapeDataString(fileName)}", parameters);
 
         var response = await client.GetAsync(uri, cancellationToken);
 
@@ -398,7 +380,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/integrations/actions/{actionId}/templates/{fileName}", parameters);
+        var uri = UriHelper.GetUri($"api/v2/integrations/actions/{Uri.EscapeDataString(actionId)}/templates/{Uri.EscapeDataString(fileName)}", parameters);
 
         var response = await client.GetAsync(uri, cancellationToken);
 
@@ -667,7 +649,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/integrations/botconnector/{integrationId}/bots/{botId}", parameters);
+        var uri = UriHelper.GetUri($"api/v2/integrations/botconnector/{Uri.EscapeDataString(integrationId)}/bots/{Uri.EscapeDataString(botId)}", parameters);
 
         var response = await client.GetAsync(uri, cancellationToken);
 
@@ -696,7 +678,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/integrations/botconnector/{integrationId}/bots/{botId}/versions", parameters);
+        var uri = UriHelper.GetUri($"api/v2/integrations/botconnector/{Uri.EscapeDataString(integrationId)}/bots/{Uri.EscapeDataString(botId)}/versions", parameters);
 
         var response = await client.GetAsync(uri, cancellationToken);
 
@@ -713,7 +695,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/integrations/botconnector/{integrationId}/bots", parameters);
+        var uri = UriHelper.GetUri($"api/v2/integrations/botconnector/{Uri.EscapeDataString(integrationId)}/bots", parameters);
 
         var response = await client.GetAsync(uri, cancellationToken);
 
@@ -740,7 +722,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/integrations/botconnector/{integrationId}/bots/summaries", parameters);
+        var uri = UriHelper.GetUri($"api/v2/integrations/botconnector/{Uri.EscapeDataString(integrationId)}/bots/summaries", parameters);
 
         var response = await client.GetAsync(uri, cancellationToken);
 
@@ -853,7 +835,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/integrations/credentials/{credentialId}", parameters);
+        var uri = UriHelper.GetUri($"api/v2/integrations/credentials/{Uri.EscapeDataString(credentialId)}", parameters);
 
         var response = await client.GetAsync(uri, cancellationToken);
 
@@ -935,7 +917,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/integrations/speech/audioconnector/{integrationId}", parameters);
+        var uri = UriHelper.GetUri($"api/v2/integrations/speech/audioconnector/{Uri.EscapeDataString(integrationId)}", parameters);
 
         var response = await client.GetAsync(uri, cancellationToken);
 
@@ -952,7 +934,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/integrations/speech/dialogflow/agents/{agentId}", parameters);
+        var uri = UriHelper.GetUri($"api/v2/integrations/speech/dialogflow/agents/{Uri.EscapeDataString(agentId)}", parameters);
 
         var response = await client.GetAsync(uri, cancellationToken);
 
@@ -999,7 +981,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/integrations/speech/dialogflowcx/agents/{agentId}", parameters);
+        var uri = UriHelper.GetUri($"api/v2/integrations/speech/dialogflowcx/agents/{Uri.EscapeDataString(agentId)}", parameters);
 
         var response = await client.GetAsync(uri, cancellationToken);
 
@@ -1046,7 +1028,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/integrations/speech/lex/bot/alias/{aliasId}", parameters);
+        var uri = UriHelper.GetUri($"api/v2/integrations/speech/lex/bot/alias/{Uri.EscapeDataString(aliasId)}", parameters);
 
         var response = await client.GetAsync(uri, cancellationToken);
 
@@ -1083,7 +1065,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/integrations/speech/lex/bot/{botId}/aliases", parameters);
+        var uri = UriHelper.GetUri($"api/v2/integrations/speech/lex/bot/{Uri.EscapeDataString(botId)}/aliases", parameters);
 
         var response = await client.GetAsync(uri, cancellationToken);
 
@@ -1130,7 +1112,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/integrations/speech/lexv2/bot/alias/{aliasId}", parameters);
+        var uri = UriHelper.GetUri($"api/v2/integrations/speech/lexv2/bot/alias/{Uri.EscapeDataString(aliasId)}", parameters);
 
         var response = await client.GetAsync(uri, cancellationToken);
 
@@ -1166,7 +1148,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
         }
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-        var uri = UriHelper.GetUri($"api/v2/integrations/speech/lexv2/bot/{botId}/aliases", parameters);
+        var uri = UriHelper.GetUri($"api/v2/integrations/speech/lexv2/bot/{Uri.EscapeDataString(botId)}/aliases", parameters);
 
         var response = await client.GetAsync(uri, cancellationToken);
 
@@ -1228,7 +1210,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/{botId}", parameters);
+        var uri = UriHelper.GetUri($"api/v2/integrations/speech/nuance/{Uri.EscapeDataString(nuanceIntegrationId)}/bots/{Uri.EscapeDataString(botId)}", parameters);
 
         var response = await client.GetAsync(uri, cancellationToken);
 
@@ -1249,7 +1231,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/{botId}/jobs/{jobId}", parameters);
+        var uri = UriHelper.GetUri($"api/v2/integrations/speech/nuance/{Uri.EscapeDataString(nuanceIntegrationId)}/bots/{Uri.EscapeDataString(botId)}/jobs/{Uri.EscapeDataString(jobId)}", parameters);
 
         var response = await client.GetAsync(uri, cancellationToken);
 
@@ -1270,7 +1252,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/{botId}/jobs/{jobId}/results", parameters);
+        var uri = UriHelper.GetUri($"api/v2/integrations/speech/nuance/{Uri.EscapeDataString(nuanceIntegrationId)}/bots/{Uri.EscapeDataString(botId)}/jobs/{Uri.EscapeDataString(jobId)}/results", parameters);
 
         var response = await client.GetAsync(uri, cancellationToken);
 
@@ -1302,7 +1284,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots", parameters);
+        var uri = UriHelper.GetUri($"api/v2/integrations/speech/nuance/{Uri.EscapeDataString(nuanceIntegrationId)}/bots", parameters);
 
         var response = await client.GetAsync(uri, cancellationToken);
 
@@ -1321,7 +1303,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/jobs/{jobId}", parameters);
+        var uri = UriHelper.GetUri($"api/v2/integrations/speech/nuance/{Uri.EscapeDataString(nuanceIntegrationId)}/bots/jobs/{Uri.EscapeDataString(jobId)}", parameters);
 
         var response = await client.GetAsync(uri, cancellationToken);
 
@@ -1340,7 +1322,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/jobs/{jobId}/results", parameters);
+        var uri = UriHelper.GetUri($"api/v2/integrations/speech/nuance/{Uri.EscapeDataString(nuanceIntegrationId)}/bots/jobs/{Uri.EscapeDataString(jobId)}/results", parameters);
 
         var response = await client.GetAsync(uri, cancellationToken);
 
@@ -1357,7 +1339,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/integrations/speech/stt/engines/{engineId}", parameters);
+        var uri = UriHelper.GetUri($"api/v2/integrations/speech/stt/engines/{Uri.EscapeDataString(engineId)}", parameters);
 
         var response = await client.GetAsync(uri, cancellationToken);
 
@@ -1409,7 +1391,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/integrations/speech/tts/engines/{engineId}", parameters);
+        var uri = UriHelper.GetUri($"api/v2/integrations/speech/tts/engines/{Uri.EscapeDataString(engineId)}", parameters);
 
         var response = await client.GetAsync(uri, cancellationToken);
 
@@ -1428,7 +1410,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/integrations/speech/tts/engines/{engineId}/voices/{voiceId}", parameters);
+        var uri = UriHelper.GetUri($"api/v2/integrations/speech/tts/engines/{Uri.EscapeDataString(engineId)}/voices/{Uri.EscapeDataString(voiceId)}", parameters);
 
         var response = await client.GetAsync(uri, cancellationToken);
 
@@ -1455,7 +1437,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/integrations/speech/tts/engines/{engineId}/voices", parameters);
+        var uri = UriHelper.GetUri($"api/v2/integrations/speech/tts/engines/{Uri.EscapeDataString(engineId)}/voices", parameters);
 
         var response = await client.GetAsync(uri, cancellationToken);
 
@@ -1527,7 +1509,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/integrations/types/{typeId}", parameters);
+        var uri = UriHelper.GetUri($"api/v2/integrations/types/{Uri.EscapeDataString(typeId)}", parameters);
 
         var response = await client.GetAsync(uri, cancellationToken);
 
@@ -1546,7 +1528,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/integrations/types/{typeId}/configschemas/{configType}", parameters);
+        var uri = UriHelper.GetUri($"api/v2/integrations/types/{Uri.EscapeDataString(typeId)}/configschemas/{Uri.EscapeDataString(configType)}", parameters);
 
         var response = await client.GetAsync(uri, cancellationToken);
 
@@ -1611,7 +1593,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/integrations/unifiedcommunications/clientapps/{ucIntegrationId}", parameters);
+        var uri = UriHelper.GetUri($"api/v2/integrations/unifiedcommunications/clientapps/{Uri.EscapeDataString(ucIntegrationId)}", parameters);
 
         var response = await client.GetAsync(uri, cancellationToken);
 
@@ -1764,7 +1746,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/integrations/{integrationId}", parameters);
+        var uri = UriHelper.GetUri($"api/v2/integrations/{Uri.EscapeDataString(integrationId)}", parameters);
 
         var response = await client.PatchAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -1773,7 +1755,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
         return await response.Content.ReadFromJsonAsync<Integration>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<ActionModel> PatchIntegrationsActionAsync(string actionId, UpdateActionInput body, CancellationToken cancellationToken = default)
+    public async Task<ActionModel> UpdateIntegrationsActionAsync(string actionId, UpdateActionInput body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(actionId);
 
@@ -1783,7 +1765,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/integrations/actions/{actionId}", parameters);
+        var uri = UriHelper.GetUri($"api/v2/integrations/actions/{Uri.EscapeDataString(actionId)}", parameters);
 
         var response = await client.PatchAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -1792,7 +1774,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
         return await response.Content.ReadFromJsonAsync<ActionModel>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<ActionModel> PatchIntegrationsActionDraftAsync(string actionId, UpdateDraftInput body, CancellationToken cancellationToken = default)
+    public async Task<ActionModel> UpdateIntegrationsActionDraftAsync(string actionId, UpdateDraftInput body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(actionId);
 
@@ -1802,7 +1784,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/integrations/actions/{actionId}/draft", parameters);
+        var uri = UriHelper.GetUri($"api/v2/integrations/actions/{Uri.EscapeDataString(actionId)}/draft", parameters);
 
         var response = await client.PatchAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -1824,7 +1806,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
         return await response.Content.ReadFromJsonAsync<Integration>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<ActionModel> PostIntegrationsActionDraftAsync(string actionId, CancellationToken cancellationToken = default)
+    public async Task<ActionModel> CreateIntegrationsActionDraftAsync(string actionId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(actionId);
 
@@ -1832,7 +1814,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/integrations/actions/{actionId}/draft", parameters);
+        var uri = UriHelper.GetUri($"api/v2/integrations/actions/{Uri.EscapeDataString(actionId)}/draft", parameters);
 
         var response = await client.PostAsync(uri, null, cancellationToken);
         response.EnsureSuccessStatusCode();
@@ -1840,7 +1822,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
         return await response.Content.ReadFromJsonAsync<ActionModel>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<FunctionUploadResponse> PostIntegrationsActionDraftFunctionUploadAsync(string actionId, FunctionUploadRequest body, CancellationToken cancellationToken = default)
+    public async Task<FunctionUploadResponse> CreateIntegrationsActionDraftFunctionUploadAsync(string actionId, FunctionUploadRequest body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(actionId);
 
@@ -1850,7 +1832,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/integrations/actions/{actionId}/draft/function/upload", parameters);
+        var uri = UriHelper.GetUri($"api/v2/integrations/actions/{Uri.EscapeDataString(actionId)}/draft/function/upload", parameters);
 
         var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
         response.EnsureSuccessStatusCode();
@@ -1858,7 +1840,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
         return await response.Content.ReadFromJsonAsync<FunctionUploadResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<ActionModel> PostIntegrationsActionDraftPublishAsync(string actionId, PublishDraftInput body, CancellationToken cancellationToken = default)
+    public async Task<ActionModel> CreateIntegrationsActionDraftPublishAsync(string actionId, PublishDraftInput body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(actionId);
 
@@ -1868,7 +1850,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/integrations/actions/{actionId}/draft/publish", parameters);
+        var uri = UriHelper.GetUri($"api/v2/integrations/actions/{Uri.EscapeDataString(actionId)}/draft/publish", parameters);
 
         var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -1892,7 +1874,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/integrations/actions/{actionId}/draft/test", parameters);
+        var uri = UriHelper.GetUri($"api/v2/integrations/actions/{Uri.EscapeDataString(actionId)}/draft/test", parameters);
 
         var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -1917,7 +1899,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
         var uri = UriHelper.GetUri(
-            $"api/v2/integrations/actions/{actionId}/execute",
+            $"api/v2/integrations/actions/{Uri.EscapeDataString(actionId)}/execute",
             parameters);
 
         var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
@@ -1942,7 +1924,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/integrations/actions/{actionId}/test", parameters);
+        var uri = UriHelper.GetUri($"api/v2/integrations/actions/{Uri.EscapeDataString(actionId)}/test", parameters);
 
         var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -2008,7 +1990,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/{botId}/jobs", parameters);
+        var uri = UriHelper.GetUri($"api/v2/integrations/speech/nuance/{Uri.EscapeDataString(nuanceIntegrationId)}/bots/{Uri.EscapeDataString(botId)}/jobs", parameters);
 
         var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -2040,7 +2022,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/jobs", parameters);
+        var uri = UriHelper.GetUri($"api/v2/integrations/speech/nuance/{Uri.EscapeDataString(nuanceIntegrationId)}/bots/jobs", parameters);
 
         var response = await client.PostAsync(uri, null, cancellationToken);
 
@@ -2059,7 +2041,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/launch/validate", parameters);
+        var uri = UriHelper.GetUri($"api/v2/integrations/speech/nuance/{Uri.EscapeDataString(nuanceIntegrationId)}/bots/launch/validate", parameters);
 
         var response = await client.PostAsJsonAsync(uri, settings, _options.JsonSerializerOptions, cancellationToken);
 
@@ -2078,7 +2060,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/integrations/webhooks/{tokenId}/events", parameters);
+        var uri = UriHelper.GetUri($"api/v2/integrations/webhooks/{Uri.EscapeDataString(tokenId)}/events", parameters);
 
         var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -2097,7 +2079,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/integrations/{integrationId}/config/current", parameters);
+        var uri = UriHelper.GetUri($"api/v2/integrations/{Uri.EscapeDataString(integrationId)}/config/current", parameters);
 
         var response = await client.PutAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -2116,7 +2098,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/integrations/actions/{actionId}/draft/function", parameters);
+        var uri = UriHelper.GetUri($"api/v2/integrations/actions/{Uri.EscapeDataString(actionId)}/draft/function", parameters);
 
         var response = await client.PutAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -2135,7 +2117,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/integrations/botconnector/{integrationId}/bots", parameters);
+        var uri = UriHelper.GetUri($"api/v2/integrations/botconnector/{Uri.EscapeDataString(integrationId)}/bots", parameters);
 
         var response = await client.PutAsJsonAsync(uri, botList, _options.JsonSerializerOptions, cancellationToken);
 
@@ -2154,7 +2136,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/integrations/credentials/{credentialId}", parameters);
+        var uri = UriHelper.GetUri($"api/v2/integrations/credentials/{Uri.EscapeDataString(credentialId)}", parameters);
 
         var response = await client.PutAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -2173,7 +2155,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/launch/settings", parameters);
+        var uri = UriHelper.GetUri($"api/v2/integrations/speech/nuance/{Uri.EscapeDataString(nuanceIntegrationId)}/bots/launch/settings", parameters);
 
         var response = await client.PutAsJsonAsync(uri, settings, _options.JsonSerializerOptions, cancellationToken);
 
@@ -2205,7 +2187,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/integrations/unifiedcommunications/{ucIntegrationId}/thirdpartypresences", parameters);
+        var uri = UriHelper.GetUri($"api/v2/integrations/unifiedcommunications/{Uri.EscapeDataString(ucIntegrationId)}/thirdpartypresences", parameters);
 
         var response = await client.PutAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
