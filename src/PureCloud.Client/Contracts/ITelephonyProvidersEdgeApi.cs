@@ -255,4 +255,25 @@ public interface ITelephonyProvidersEdgeApi
 
     /// <inheritdoc />
     Task<TrunkRecordingEnabledCount> GetTrunkswithrecordingAsync(string trunkType = null, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task<ValidateAddressResponse> ValidateAddressAsync(ValidateAddressRequest body, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task<string> RebootEdgeAsync(string edgeId, EdgeRebootParameters body = null, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task RebootPhoneAsync(string phoneId, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task UploadEdgeLogsJobAsync(string edgeId, string jobId, EdgeLogsJobUploadRequest body, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task<EdgeLogsJobResponse> CreateEdgeLogsJobAsync(string edgeId, EdgeLogsJobRequest body, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task<DomainEdgeSoftwareUpdateDto> CreateEdgeSoftwareupdateAsync(string edgeId, DomainEdgeSoftwareUpdateDto body, CancellationToken cancellationToken = default);
+
+    /// <inheritdoc />
+    Task<string> ChangeEdgeStatusAsync(string edgeId, EdgeServiceStateRequest body = null, CancellationToken cancellationToken = default);
 }

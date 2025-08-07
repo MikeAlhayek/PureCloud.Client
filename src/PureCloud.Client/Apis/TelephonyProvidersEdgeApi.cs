@@ -1574,4 +1574,95 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         return await response.Content.ReadFromJsonAsync<TrunkRecordingEnabledCount>(_options.JsonSerializerOptions, cancellationToken);
     }
+
+    /// <inheritdoc />
+    public async Task<ValidateAddressResponse> ValidateAddressAsync(ValidateAddressRequest body, CancellationToken cancellationToken = default)
+    {
+        ArgumentNullException.ThrowIfNull(body);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PostAsJsonAsync("/api/v2/telephony/providers/edges/addressvalidation", body, _options.JsonSerializerOptions, cancellationToken);
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<ValidateAddressResponse>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
+    public async Task<string> RebootEdgeAsync(string edgeId, EdgeRebootParameters body = null, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(edgeId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PostAsJsonAsync($"/api/v2/telephony/providers/edges/{Uri.EscapeDataString(edgeId)}/reboot", body, _options.JsonSerializerOptions, cancellationToken);
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadAsStringAsync(cancellationToken);
+    }
+
+    /// <inheritdoc />
+    public async Task RebootPhoneAsync(string phoneId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(phoneId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PostAsync($"/api/v2/telephony/providers/edges/phones/{Uri.EscapeDataString(phoneId)}/reboot", null, cancellationToken);
+        response.EnsureSuccessStatusCode();
+    }
+
+    /// <inheritdoc />
+    public async Task UploadEdgeLogsJobAsync(string edgeId, string jobId, EdgeLogsJobUploadRequest body, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(edgeId);
+        ArgumentException.ThrowIfNullOrEmpty(jobId);
+        ArgumentNullException.ThrowIfNull(body);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PostAsJsonAsync($"/api/v2/telephony/providers/edges/{Uri.EscapeDataString(edgeId)}/logs/jobs/{Uri.EscapeDataString(jobId)}/upload", body, _options.JsonSerializerOptions, cancellationToken);
+        response.EnsureSuccessStatusCode();
+    }
+
+    /// <inheritdoc />
+    public async Task<EdgeLogsJobResponse> CreateEdgeLogsJobAsync(string edgeId, EdgeLogsJobRequest body, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(edgeId);
+        ArgumentNullException.ThrowIfNull(body);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PostAsJsonAsync($"/api/v2/telephony/providers/edges/{Uri.EscapeDataString(edgeId)}/logs/jobs", body, _options.JsonSerializerOptions, cancellationToken);
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<EdgeLogsJobResponse>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
+    public async Task<DomainEdgeSoftwareUpdateDto> CreateEdgeSoftwareupdateAsync(string edgeId, DomainEdgeSoftwareUpdateDto body, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(edgeId);
+        ArgumentNullException.ThrowIfNull(body);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PostAsJsonAsync($"/api/v2/telephony/providers/edges/{Uri.EscapeDataString(edgeId)}/softwareupdate", body, _options.JsonSerializerOptions, cancellationToken);
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadFromJsonAsync<DomainEdgeSoftwareUpdateDto>(_options.JsonSerializerOptions, cancellationToken);
+    }
+
+    /// <inheritdoc />
+    public async Task<string> ChangeEdgeStatusAsync(string edgeId, EdgeServiceStateRequest body = null, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(edgeId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PostAsJsonAsync($"/api/v2/telephony/providers/edges/{Uri.EscapeDataString(edgeId)}/statuscode", body, _options.JsonSerializerOptions, cancellationToken);
+        response.EnsureSuccessStatusCode();
+
+        return await response.Content.ReadAsStringAsync(cancellationToken);
+    }
 }
