@@ -1755,7 +1755,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
         return await response.Content.ReadFromJsonAsync<Integration>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<ActionModel> PatchIntegrationsActionAsync(string actionId, UpdateActionInput body, CancellationToken cancellationToken = default)
+    public async Task<ActionModel> UpdateIntegrationsActionAsync(string actionId, UpdateActionInput body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(actionId);
 
@@ -1774,7 +1774,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
         return await response.Content.ReadFromJsonAsync<ActionModel>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<ActionModel> PatchIntegrationsActionDraftAsync(string actionId, UpdateDraftInput body, CancellationToken cancellationToken = default)
+    public async Task<ActionModel> UpdateIntegrationsActionDraftAsync(string actionId, UpdateDraftInput body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(actionId);
 
@@ -1806,7 +1806,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
         return await response.Content.ReadFromJsonAsync<Integration>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<ActionModel> PostIntegrationsActionDraftAsync(string actionId, CancellationToken cancellationToken = default)
+    public async Task<ActionModel> CreateIntegrationsActionDraftAsync(string actionId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(actionId);
 
@@ -1822,7 +1822,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
         return await response.Content.ReadFromJsonAsync<ActionModel>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<FunctionUploadResponse> PostIntegrationsActionDraftFunctionUploadAsync(string actionId, FunctionUploadRequest body, CancellationToken cancellationToken = default)
+    public async Task<FunctionUploadResponse> CreateIntegrationsActionDraftFunctionUploadAsync(string actionId, FunctionUploadRequest body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(actionId);
 
@@ -1840,7 +1840,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
         return await response.Content.ReadFromJsonAsync<FunctionUploadResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task<ActionModel> PostIntegrationsActionDraftPublishAsync(string actionId, PublishDraftInput body, CancellationToken cancellationToken = default)
+    public async Task<ActionModel> CreateIntegrationsActionDraftPublishAsync(string actionId, PublishDraftInput body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(actionId);
 
