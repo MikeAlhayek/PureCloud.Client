@@ -55,31 +55,78 @@ public interface IRoutingApi
     /// <returns>Inbound route</returns>
     Task<InboundRoute> CreateRoutingEmailDomainRouteAsync(string domainName, InboundRoute body, CancellationToken cancellationToken = default);
 
-    /// <inheritdoc />
+    /// <summary>
+    /// Create routes for an email domain
+    /// </summary>
+    /// <param name="domainName">Domain name</param>
+    /// <param name="body">Inbound route</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Inbound route</returns>
     Task<InboundRoute> CreateRoutingEmailDomainRoutesAsync(string domainName, InboundRoute body, CancellationToken cancellationToken = default);
 
-    /// <inheritdoc />
+    /// <summary>
+    /// Test the connection settings for an email domain
+    /// </summary>
+    /// <param name="domainId">Domain ID</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Test message</returns>
     Task<TestMessage> CreateRoutingEmailDomainTestconnectionAsync(string domainId, CancellationToken cancellationToken = default);
 
-    /// <inheritdoc />
+    /// <summary>
+    /// Create an outbound email domain
+    /// </summary>
+    /// <param name="body">Inbound domain</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Inbound domain</returns>
     Task<InboundDomain> CreateRoutingEmailOutboundDomainAsync(InboundDomain body, CancellationToken cancellationToken = default);
 
-    /// <inheritdoc />
+    /// <summary>
+    /// Create a simulated outbound email domain
+    /// </summary>
+    /// <param name="body">Outbound domain</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Email outbound domain result</returns>
     Task<EmailOutboundDomainResult> CreateRoutingEmailOutboundDomainsSimulatedAsync(OutboundDomain body, CancellationToken cancellationToken = default);
 
-    /// <inheritdoc />
+    /// <summary>
+    /// Create a language
+    /// </summary>
+    /// <param name="body">Language</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Language</returns>
     Task<Language> CreateRoutingLanguageAsync(Language body, CancellationToken cancellationToken = default);
 
-    /// <inheritdoc />
+    /// <summary>
+    /// Create a predictor
+    /// </summary>
+    /// <param name="body">Predictor request</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Predictor</returns>
     Task<Predictor> CreateRoutingPredictorsAsync(CreatePredictorRequest body, CancellationToken cancellationToken = default);
 
-    /// <inheritdoc />
+    /// <summary>
+    /// Create a queue
+    /// </summary>
+    /// <param name="body">Queue request</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Queue</returns>
     Task<Queue> CreateRoutingQueueAsync(QueueRequest body, CancellationToken cancellationToken = default);
 
-    /// <inheritdoc />
+    /// <summary>
+    /// Create a queue
+    /// </summary>
+    /// <param name="body">Create queue request</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Queue</returns>
     Task<Queue> CreateRoutingQueueAsync(CreateQueueRequest body, CancellationToken cancellationToken = default);
 
-    /// <inheritdoc />
+    /// <summary>
+    /// Bulk add queue members
+    /// </summary>
+    /// <param name="queueId">Queue ID</param>
+    /// <param name="body">Queue members</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Queue member</returns>
     Task<QueueMember> CreateRoutingQueueMembersAsync(string queueId, IEnumerable<WritableEntity> body, CancellationToken cancellationToken = default);
 
     /// <inheritdoc />
