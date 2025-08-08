@@ -7,8 +7,7 @@ namespace PureCloud.Client.Models;
 /// <summary>
 /// Object representing the guest model of a media request of a chat conversation.
 /// </summary>
-
-public partial class WebChatGuestMediaRequest : IEquatable<WebChatGuestMediaRequest>
+public sealed class WebChatGuestMediaRequest
 {
     /// <summary>
     /// Gets or Sets Types
@@ -94,11 +93,6 @@ public partial class WebChatGuestMediaRequest : IEquatable<WebChatGuestMediaRequ
     [JsonPropertyName("state")]
     public StateEnum? State { get; set; }
 
-    /// <summary>
-    /// Initializes a new instance of the <see cref="WebChatGuestMediaRequest" /> class.
-    /// </summary>
-    [JsonConstructorAttribute]
-    protected WebChatGuestMediaRequest() { }
     /// <summary>
     /// Initializes a new instance of the <see cref="WebChatGuestMediaRequest" /> class.
     /// </summary>
@@ -191,118 +185,5 @@ public partial class WebChatGuestMediaRequest : IEquatable<WebChatGuestMediaRequ
         sb.Append("  SelfUri: ").Append(SelfUri).Append("\n");
         sb.Append("}\n");
         return sb.ToString();
-    }
-
-
-    /// <summary>
-    /// Returns true if objects are equal
-    /// </summary>
-    /// <param name="obj">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object obj)
-    {
-        // credit: http://stackoverflow.com/a/10454552/677735
-        return Equals(obj as WebChatGuestMediaRequest);
-    }
-
-    /// <summary>
-    /// Returns true if WebChatGuestMediaRequest instances are equal
-    /// </summary>
-    /// <param name="other">Instance of WebChatGuestMediaRequest to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(WebChatGuestMediaRequest other)
-    {
-        // credit: http://stackoverflow.com/a/10454552/677735
-        if (other == null)
-        {
-            return false;
-        }
-
-        return true &&
-            (
-                Id == other.Id ||
-                Id != null &&
-                Id.Equals(other.Id)
-            ) &&
-            (
-                Name == other.Name ||
-                Name != null &&
-                Name.Equals(other.Name)
-            ) &&
-            (
-                Types == other.Types ||
-                Types != null &&
-                Types.SequenceEqual(other.Types)
-            ) &&
-            (
-                State == other.State ||
-                State != null &&
-                State.Equals(other.State)
-            ) &&
-            (
-                CommunicationId == other.CommunicationId ||
-                CommunicationId != null &&
-                CommunicationId.Equals(other.CommunicationId)
-            ) &&
-            (
-                SecurityKey == other.SecurityKey ||
-                SecurityKey != null &&
-                SecurityKey.Equals(other.SecurityKey)
-            ) &&
-            (
-                SelfUri == other.SelfUri ||
-                SelfUri != null &&
-                SelfUri.Equals(other.SelfUri)
-            );
-    }
-
-    /// <summary>
-    /// Gets the hash code
-    /// </summary>
-    /// <returns>Hash code</returns>
-    public override int GetHashCode()
-    {
-        // credit: http://stackoverflow.com/a/263416/677735
-        unchecked // Overflow is fine, just wrap
-        {
-            int hash = 41;
-            // Suitable nullity checks etc, of course :)
-            if (Id != null)
-            {
-                hash = hash * 59 + Id.GetHashCode();
-            }
-
-            if (Name != null)
-            {
-                hash = hash * 59 + Name.GetHashCode();
-            }
-
-            if (Types != null)
-            {
-                hash = hash * 59 + Types.GetHashCode();
-            }
-
-            if (State != null)
-            {
-                hash = hash * 59 + State.GetHashCode();
-            }
-
-            if (CommunicationId != null)
-            {
-                hash = hash * 59 + CommunicationId.GetHashCode();
-            }
-
-            if (SecurityKey != null)
-            {
-                hash = hash * 59 + SecurityKey.GetHashCode();
-            }
-
-            if (SelfUri != null)
-            {
-                hash = hash * 59 + SelfUri.GetHashCode();
-            }
-
-            return hash;
-        }
     }
 }

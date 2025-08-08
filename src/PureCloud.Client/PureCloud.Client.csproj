@@ -4896,6 +4896,8 @@
     <Compile Include="Models\WebChatConversation.cs" />
     <Compile Include="Models\WebChatDeployment.cs" />
     <Compile Include="Models\WebChatDeploymentEntityListing.cs" />
+    <Compile Include="Models\WebChatGuestMediaRequest.cs" />
+    <Compile Include="Models\WebChatGuestMediaRequestEntityList.cs" />
     <Compile Include="Models\WebEventResponse.cs" />
     <Compile Include="Models\WebEventRequest.cs" />
     <Compile Include="Models\WebChatMemberInfo.cs" />
