@@ -391,6 +391,7 @@
     <Compile Include="Models\Conversations\ConversationReason.cs" />
     <Compile Include="Models\Conversations\ConversationRecipientAdditionalIdentifier.cs" />
     <Compile Include="Models\Conversations\ConversationRecipientAdditionalIdentifier.Type.cs" />
+    <Compile Include="Models\CopyVoicemailMessage.cs" />
     <Compile Include="Models\CreateResponseAssetRequest.cs" />
     <Compile Include="Models\CreateResponseAssetResponse.cs" />
     <Compile Include="Models\DocumentationResult.cs" />
@@ -2231,6 +2232,8 @@
     <Compile Include="Models\GDPRRequestEntityListing.cs" />
     <Compile Include="Models\GDPRSubject.cs" />
     <Compile Include="Models\GDPRSubjectEntityListing.cs" />
+    <Compile Include="Models\Group.cs" />
+    <Compile Include="Models\GroupEmailPolicy.cs" />
     <Compile Include="Models\GenericSAML.cs" />
     <Compile Include="Models\GenericSAML.SsoBinding.cs" />
     <Compile Include="Models\GenericSAML.NameIdentifierFormat.cs" />
@@ -3152,6 +3155,7 @@
     <Compile Include="Models\PhoneNumberColumn.cs" />
     <Compile Include="Models\PhoneTransferEvent.cs" />
     <Compile Include="Models\PhoneTransferEvent.TransferType.cs" />
+    <Compile Include="Models\PINConfiguration.cs" />
     <Compile Include="Models\PingIdentity.cs" />
     <Compile Include="Models\PingIdentity.SsoBinding.cs" />
     <Compile Include="Models\PingIdentity.NameIdentifierFormat.cs" />
@@ -4289,7 +4293,6 @@
     <Compile Include="Models\ConjunctionEnum.cs" />
     <Compile Include="Models\DomainRole.cs" />
     <Compile Include="Models\Geolocation.cs" />
-    <Compile Include="Models\Groups\Group.cs" />
     <Compile Include="Models\Groups\GroupContact.cs" />
     <Compile Include="Models\Groups\GroupContactMediaType.cs" />
     <Compile Include="Models\Groups\GroupContactType.cs" />
@@ -4876,8 +4879,11 @@
     <Compile Include="Models\VoicemailEndDetailEventTopicVoicemailEndEvent.DisconnectType.cs" />
     <Compile Include="Models\VoicemailEndDetailEventTopicVoicemailEndEvent.MediaType.cs" />
     <Compile Include="Models\VoicemailEndDetailEventTopicVoicemailEndEvent.Direction.cs" />
+    <Compile Include="Models\VoicemailGroupPolicy.cs" />
     <Compile Include="Models\VoicemailMailboxInfo.cs" />
+    <Compile Include="Models\VoicemailMediaInfo.cs" />
     <Compile Include="Models\VoicemailMessage.cs" />
+    <Compile Include="Models\VoicemailMessageEntityListing.cs" />
     <Compile Include="Models\VoicemailMessagesTopicOwner.cs" />
     <Compile Include="Models\VoicemailMessagesTopicVoicemailCopyRecord.cs" />
     <Compile Include="Models\VoicemailMessagesTopicVoicemailMessage.cs" />
@@ -4888,6 +4894,7 @@
     <Compile Include="Models\VoicemailStartDetailEventTopicVoicemailStartEvent.Direction.cs" />
     <Compile Include="Models\VoicemailUploadStatus.cs" />
     <Compile Include="Models\VoicemailSearchRequestSortOrder.cs" />
+    <Compile Include="Models\VoicemailOrganizationPolicy.cs" />
     <Compile Include="Models\VoicemailUserPolicy.cs" />
     <Compile Include="Models\Warning.cs" />
     <Compile Include="Models\Warning.RangeType.cs" />
