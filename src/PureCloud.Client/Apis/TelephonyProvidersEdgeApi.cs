@@ -323,7 +323,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = parameters.ToQueryString("/api/v2/telephony/providers/edges");
+        var uri = UriHelper.GetUri("/api/v2/telephony/providers/edges", parameters);
         var response = await client.GetAsync(uri, cancellationToken);
         response.EnsureSuccessStatusCode();
 
@@ -400,7 +400,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = parameters.ToQueryString($"/api/v2/telephony/providers/edges/{Uri.EscapeDataString(edgeId)}/logicalinterfaces/{Uri.EscapeDataString(interfaceId)}");
+        var uri = UriHelper.GetUri($"/api/v2/telephony/providers/edges/{Uri.EscapeDataString(edgeId)}/logicalinterfaces/{Uri.EscapeDataString(interfaceId)}", parameters);
         var response = await client.GetAsync(uri, cancellationToken);
         response.EnsureSuccessStatusCode();
 
@@ -424,7 +424,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = parameters.ToQueryString($"/api/v2/telephony/providers/edges/{Uri.EscapeDataString(edgeId)}/logicalinterfaces");
+        var uri = UriHelper.GetUri($"/api/v2/telephony/providers/edges/{Uri.EscapeDataString(edgeId)}/logicalinterfaces", parameters);
         var response = await client.GetAsync(uri, cancellationToken);
         response.EnsureSuccessStatusCode();
 
@@ -569,7 +569,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = parameters.ToQueryString($"/api/v2/telephony/providers/edges/{Uri.EscapeDataString(edgeId)}/lines");
+        var uri = UriHelper.GetUri($"/api/v2/telephony/providers/edges/{Uri.EscapeDataString(edgeId)}/lines", parameters);
         var response = await client.GetAsync(uri, cancellationToken);
         response.EnsureSuccessStatusCode();
 
@@ -638,7 +638,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = parameters.ToQueryString($"/api/v2/telephony/providers/edges/{Uri.EscapeDataString(edgeId)}/trunks");
+        var uri = UriHelper.GetUri($"/api/v2/telephony/providers/edges/{Uri.EscapeDataString(edgeId)}/trunks", parameters);
         var response = await client.GetAsync(uri, cancellationToken);
         response.EnsureSuccessStatusCode();
 
@@ -657,7 +657,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = parameters.ToQueryString("/api/v2/telephony/providers/edges/alertablepresences");
+        var uri = UriHelper.GetUri("/api/v2/telephony/providers/edges/alertablepresences", parameters);
         var response = await client.GetAsync(uri, cancellationToken);
         response.EnsureSuccessStatusCode();
 
@@ -727,7 +727,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = parameters.ToQueryString($"/api/v2/telephony/providers/edges/edgegroups/{Uri.EscapeDataString(edgeGroupId)}");
+        var uri = UriHelper.GetUri($"/api/v2/telephony/providers/edges/edgegroups/{Uri.EscapeDataString(edgeGroupId)}", parameters);
         var response = await client.GetAsync(uri, cancellationToken);
         response.EnsureSuccessStatusCode();
 
@@ -766,7 +766,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = parameters.ToQueryString("/api/v2/telephony/providers/edges/edgegroups");
+        var uri = UriHelper.GetUri("/api/v2/telephony/providers/edges/edgegroups", parameters);
         var response = await client.GetAsync(uri, cancellationToken);
         response.EnsureSuccessStatusCode();
 
@@ -800,7 +800,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = parameters.ToQueryString("/api/v2/telephony/providers/edges/extensionpools");
+        var uri = UriHelper.GetUri("/api/v2/telephony/providers/edges/extensionpools", parameters);
         var response = await client.GetAsync(uri, cancellationToken);
         response.EnsureSuccessStatusCode();
 
@@ -847,7 +847,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = parameters.ToQueryString("/api/v2/telephony/providers/edges/linebasesettings");
+        var uri = UriHelper.GetUri("/api/v2/telephony/providers/edges/linebasesettings", parameters);
         var response = await client.GetAsync(uri, cancellationToken);
         response.EnsureSuccessStatusCode();
 
@@ -912,7 +912,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = parameters.ToQueryString("/api/v2/telephony/providers/edges/phonebasesettings");
+        var uri = UriHelper.GetUri("/api/v2/telephony/providers/edges/phonebasesettings", parameters);
         var response = await client.GetAsync(uri, cancellationToken);
         response.EnsureSuccessStatusCode();
 
@@ -1017,7 +1017,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = parameters.ToQueryString("/api/v2/telephony/providers/edges/phones");
+        var uri = UriHelper.GetUri("/api/v2/telephony/providers/edges/phones", parameters);
         var response = await client.GetAsync(uri, cancellationToken);
         response.EnsureSuccessStatusCode();
 
@@ -1087,7 +1087,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = parameters.ToQueryString("/api/v2/telephony/providers/edges/sites");
+        var uri = UriHelper.GetUri("/api/v2/telephony/providers/edges/sites", parameters);
         var response = await client.GetAsync(uri, cancellationToken);
         response.EnsureSuccessStatusCode();
 
@@ -1142,7 +1142,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = parameters.ToQueryString($"/api/v2/telephony/providers/edges/sites/{Uri.EscapeDataString(siteId)}/outboundroutes");
+        var uri = UriHelper.GetUri($"/api/v2/telephony/providers/edges/sites/{Uri.EscapeDataString(siteId)}/outboundroutes", parameters);
         var response = await client.GetAsync(uri, cancellationToken);
         response.EnsureSuccessStatusCode();
 
@@ -1166,7 +1166,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = parameters.ToQueryString("/api/v2/telephony/providers/edges/timezones");
+        var uri = UriHelper.GetUri("/api/v2/telephony/providers/edges/timezones", parameters);
         var response = await client.GetAsync(uri, cancellationToken);
         response.EnsureSuccessStatusCode();
 
@@ -1200,7 +1200,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = parameters.ToQueryString($"/api/v2/telephony/providers/edges/trunkbasesettings/{Uri.EscapeDataString(trunkBaseSettingsId)}");
+        var uri = UriHelper.GetUri($"/api/v2/telephony/providers/edges/trunkbasesettings/{Uri.EscapeDataString(trunkBaseSettingsId)}", parameters);
         var response = await client.GetAsync(uri, cancellationToken);
         response.EnsureSuccessStatusCode();
 
@@ -1262,7 +1262,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = parameters.ToQueryString("/api/v2/telephony/providers/edges/trunkbasesettings");
+        var uri = UriHelper.GetUri("/api/v2/telephony/providers/edges/trunkbasesettings", parameters);
         var response = await client.GetAsync(uri, cancellationToken);
         response.EnsureSuccessStatusCode();
 
@@ -1291,7 +1291,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = parameters.ToQueryString("/api/v2/telephony/providers/edges/trunkbasesettings/availablemetabases");
+        var uri = UriHelper.GetUri("/api/v2/telephony/providers/edges/trunkbasesettings/availablemetabases", parameters);
         var response = await client.GetAsync(uri, cancellationToken);
         response.EnsureSuccessStatusCode();
 
@@ -1321,7 +1321,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = parameters.ToQueryString("/api/v2/telephony/providers/edges/trunks/metrics");
+        var uri = UriHelper.GetUri("/api/v2/telephony/providers/edges/trunks/metrics", parameters);
         var response = await client.GetAsync(uri, cancellationToken);
         response.EnsureSuccessStatusCode();
 
