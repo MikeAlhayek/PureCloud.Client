@@ -29,9 +29,7 @@ public sealed class LogCaptureApi : ILogCaptureApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/diagnostics/logcapture/browser/users/{Uri.EscapeDataString(userId)}", null);
-
-        var response = await client.DeleteAsync(uri, cancellationToken);
+        var response = await client.DeleteAsync($"api/v2/diagnostics/logcapture/browser/users/{Uri.EscapeDataString(userId)}", cancellationToken);
 
         return response.IsSuccessStatusCode;
     }
@@ -43,9 +41,7 @@ public sealed class LogCaptureApi : ILogCaptureApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/diagnostics/logcapture/browser/entries/download/jobs/{Uri.EscapeDataString(jobId)}", null);
-
-        var response = await client.GetAsync(uri, cancellationToken);
+        var response = await client.GetAsync($"api/v2/diagnostics/logcapture/browser/entries/download/jobs/{Uri.EscapeDataString(jobId)}", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -59,9 +55,7 @@ public sealed class LogCaptureApi : ILogCaptureApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/diagnostics/logcapture/browser/users/{Uri.EscapeDataString(userId)}", null);
-
-        var response = await client.GetAsync(uri, cancellationToken);
+        var response = await client.GetAsync($"api/v2/diagnostics/logcapture/browser/users/{Uri.EscapeDataString(userId)}", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -94,9 +88,7 @@ public sealed class LogCaptureApi : ILogCaptureApi
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri("api/v2/diagnostics/logcapture/browser/entries/download/jobs", null);
-
-        var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PostAsJsonAsync("api/v2/diagnostics/logcapture/browser/entries/download/jobs", body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -141,9 +133,7 @@ public sealed class LogCaptureApi : ILogCaptureApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/diagnostics/logcapture/browser/users/{Uri.EscapeDataString(userId)}", null);
-
-        var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PostAsJsonAsync($"api/v2/diagnostics/logcapture/browser/users/{Uri.EscapeDataString(userId)}", body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
