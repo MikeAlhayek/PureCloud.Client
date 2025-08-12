@@ -3838,6 +3838,7 @@
     <Compile Include="Models\ReportingTurnKnowledgeSearchEvent.cs" />
     <Compile Include="Models\ReportingTurnsResponse.cs" />
     <Compile Include="Models\RequestConfig.cs" />
+    <Compile Include="Models\RequestScoredAgent.cs" />
     <Compile Include="Models\ResolutionAggregateDataContainer.cs" />
     <Compile Include="Models\ResolutionAggregateQueryClause.cs" />
     <Compile Include="Models\ResolutionAggregateQueryClause.Type.cs" />
@@ -3898,6 +3899,8 @@
     <Compile Include="Models\RoutingActivityQueryPredicate.Dimension.cs" />
     <Compile Include="Models\RoutingActivityQueryPredicate.Operator.cs" />
     <Compile Include="Models\RoutingActivityResponse.EntityIdDimension.cs" />
+    <Compile Include="Models\RoutingConversationAttributesRequest.cs" />
+    <Compile Include="Models\RoutingConversationAttributesResponse.cs" />
     <Compile Include="Models\RoutingEstablishedEvent.cs" />
     <Compile Include="Models\RoutingRule.cs" />
     <Compile Include="Models\RoutingRuleOperator.cs" />

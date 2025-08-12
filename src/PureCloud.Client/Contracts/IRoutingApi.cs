@@ -925,7 +925,14 @@ public interface IRoutingApi
     Task<TestMessage> TestRoutingEmailDomainConnectionAsync(string domainId, CancellationToken cancellationToken = default);
 
     /// <inheritdoc />
-    Task<Conversation> UpdateRoutingConversationAsync(string conversationId, Conversation body, CancellationToken cancellationToken = default);
+    /// <summary>
+    /// Update attributes of an in-queue conversation
+    /// </summary>
+    /// <param name="conversationId">Conversation ID</param>
+    /// <param name="body">Conversation Attributes</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>RoutingConversationAttributesResponse</returns>
+    Task<RoutingConversationAttributesResponse> UpdateRoutingConversationAsync(string conversationId, RoutingConversationAttributesRequest body, CancellationToken cancellationToken = default);
 
     /// <inheritdoc />
     Task<AgentDirectRoutingBackupSettings> UpdateRoutingDirectroutingbackupSettingsMeAsync(AgentDirectRoutingBackupSettings body, CancellationToken cancellationToken = default);

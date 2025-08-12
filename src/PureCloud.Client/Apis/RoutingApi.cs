@@ -2403,7 +2403,7 @@ public sealed class RoutingApi : IRoutingApi
     }
 
     /// <inheritdoc />
-    public async Task<Conversation> UpdateRoutingConversationAsync(string conversationId, Conversation body, CancellationToken cancellationToken = default)
+    public async Task<RoutingConversationAttributesResponse> UpdateRoutingConversationAsync(string conversationId, RoutingConversationAttributesRequest body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(conversationId);
         ArgumentNullException.ThrowIfNull(body);
@@ -2414,7 +2414,7 @@ public sealed class RoutingApi : IRoutingApi
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<Conversation>(_options.JsonSerializerOptions, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<RoutingConversationAttributesResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
