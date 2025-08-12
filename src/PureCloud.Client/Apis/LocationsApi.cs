@@ -33,25 +33,23 @@ public sealed class LocationsApi : ILocationsApi
     }
 
     /// <inheritdoc />
-    public async Task<LocationDefinition> GetLocationAsync(string locationId, IEnumerable<string> expand = null, CancellationToken cancellationToken = default)
+    public async Task<LocationDefinition> GetLocationAsync(string locationId, IEnumerable<string> expands = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(locationId);
 
         var parameters = new NameValueCollection();
 
-        if (expand != null)
+        if (expands != null)
         {
-            foreach (var item in expand)
+            foreach (var expand in expands)
             {
-                parameters.Add("expand", UriHelper.ParameterToString(item));
+                parameters.Add("expand", UriHelper.ParameterToString(expand));
             }
         }
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = parameters.Count > 0 
-            ? UriHelper.GetUri($"api/v2/locations/{Uri.EscapeDataString(locationId)}", parameters)
-            : $"api/v2/locations/{Uri.EscapeDataString(locationId)}";
+        var uri = UriHelper.GetUri($"api/v2/locations/{Uri.EscapeDataString(locationId)}", parameters);
 
         var response = await client.GetAsync(uri, cancellationToken);
 
@@ -104,9 +102,7 @@ public sealed class LocationsApi : ILocationsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = parameters.Count > 0 
-            ? UriHelper.GetUri("api/v2/locations", parameters)
-            : "api/v2/locations";
+        var uri = UriHelper.GetUri("api/v2/locations", parameters);
 
         var response = await client.GetAsync(uri, cancellationToken);
 
@@ -116,7 +112,7 @@ public sealed class LocationsApi : ILocationsApi
     }
 
     /// <inheritdoc />
-    public async Task<LocationsSearchResponse> GetLocationsSearchAsync(string q64, IEnumerable<string> expand = null, CancellationToken cancellationToken = default)
+    public async Task<LocationsSearchResponse> GetLocationsSearchAsync(string q64, IEnumerable<string> expands = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(q64);
 
@@ -124,11 +120,11 @@ public sealed class LocationsApi : ILocationsApi
 
         parameters.Add("q64", UriHelper.ParameterToString(q64));
 
-        if (expand != null)
+        if (expands != null)
         {
-            foreach (var item in expand)
+            foreach (var expand in expands)
             {
-                parameters.Add("expand", UriHelper.ParameterToString(item));
+                parameters.Add("expand", UriHelper.ParameterToString(expand));
             }
         }
 
