@@ -26,7 +26,7 @@ public sealed class OAuthApi : IOAuthApi
     {
         ArgumentException.ThrowIfNullOrEmpty(clientId);
 
-        var response = await _httpClient.DeleteAsync($"api/v2/oauth/clients/{clientId}", cancellationToken);
+        var response = await _httpClient.DeleteAsync($"api/v2/oauth/clients/{Uri.EscapeDataString(clientId)}", cancellationToken);
 
         response.EnsureSuccessStatusCode();
     }
@@ -36,7 +36,14 @@ public sealed class OAuthApi : IOAuthApi
     {
         ArgumentException.ThrowIfNullOrEmpty(clientId);
 
-        var response = await _httpClient.GetAsync($"api/v2/oauth/authorizations/{clientId}", cancellationToken);
+        using var request = new HttpRequestMessage(HttpMethod.Get, $"api/v2/oauth/authorizations/{Uri.EscapeDataString(clientId)}");
+        
+        if (!string.IsNullOrEmpty(acceptLanguage))
+        {
+            request.Headers.Add("Accept-Language", acceptLanguage);
+        }
+
+        var response = await _httpClient.SendAsync(request, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -46,7 +53,14 @@ public sealed class OAuthApi : IOAuthApi
     /// <inheritdoc />
     public async Task<OAuthAuthorizationListing> GetOauthAuthorizationsAsync(string acceptLanguage = null, CancellationToken cancellationToken = default)
     {
-        var response = await _httpClient.GetAsync("api/v2/oauth/authorizations", cancellationToken);
+        using var request = new HttpRequestMessage(HttpMethod.Get, "api/v2/oauth/authorizations");
+        
+        if (!string.IsNullOrEmpty(acceptLanguage))
+        {
+            request.Headers.Add("Accept-Language", acceptLanguage);
+        }
+
+        var response = await _httpClient.SendAsync(request, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -58,7 +72,7 @@ public sealed class OAuthApi : IOAuthApi
     {
         ArgumentException.ThrowIfNullOrEmpty(clientId);
 
-        var response = await _httpClient.GetAsync($"api/v2/oauth/clients/{clientId}", cancellationToken);
+        var response = await _httpClient.GetAsync($"api/v2/oauth/clients/{Uri.EscapeDataString(clientId)}", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -71,7 +85,7 @@ public sealed class OAuthApi : IOAuthApi
         ArgumentException.ThrowIfNullOrEmpty(executionId);
         ArgumentException.ThrowIfNullOrEmpty(clientId);
 
-        var response = await _httpClient.GetAsync($"api/v2/oauth/clients/{clientId}/usage/query/{executionId}", cancellationToken);
+        var response = await _httpClient.GetAsync($"api/v2/oauth/clients/{Uri.EscapeDataString(clientId)}/usage/query/results/{Uri.EscapeDataString(executionId)}", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -87,10 +101,10 @@ public sealed class OAuthApi : IOAuthApi
 
         if (!string.IsNullOrEmpty(days))
         {
-            parameters.Add("days", days);
+            parameters.Add("days", UriHelper.ParameterToString(days));
         }
 
-        var uri = UriHelper.GetUri($"api/v2/oauth/clients/{clientId}/usage/summary", parameters);
+        var uri = UriHelper.GetUri($"api/v2/oauth/clients/{Uri.EscapeDataString(clientId)}/usage/summary", parameters);
 
         var response = await _httpClient.GetAsync(uri, cancellationToken);
 
@@ -114,7 +128,14 @@ public sealed class OAuthApi : IOAuthApi
     {
         ArgumentException.ThrowIfNullOrEmpty(scopeId);
 
-        var response = await _httpClient.GetAsync($"api/v2/oauth/scopes/{scopeId}", cancellationToken);
+        using var request = new HttpRequestMessage(HttpMethod.Get, $"api/v2/oauth/scopes/{Uri.EscapeDataString(scopeId)}");
+        
+        if (!string.IsNullOrEmpty(acceptLanguage))
+        {
+            request.Headers.Add("Accept-Language", acceptLanguage);
+        }
+
+        var response = await _httpClient.SendAsync(request, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -124,7 +145,14 @@ public sealed class OAuthApi : IOAuthApi
     /// <inheritdoc />
     public async Task<OAuthScopeListing> GetOauthScopesAsync(string acceptLanguage = null, CancellationToken cancellationToken = default)
     {
-        var response = await _httpClient.GetAsync("api/v2/oauth/scopes", cancellationToken);
+        using var request = new HttpRequestMessage(HttpMethod.Get, "api/v2/oauth/scopes");
+        
+        if (!string.IsNullOrEmpty(acceptLanguage))
+        {
+            request.Headers.Add("Accept-Language", acceptLanguage);
+        }
+
+        var response = await _httpClient.SendAsync(request, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -136,7 +164,7 @@ public sealed class OAuthApi : IOAuthApi
     {
         ArgumentException.ThrowIfNullOrEmpty(clientId);
 
-        var response = await _httpClient.PostAsync($"api/v2/oauth/clients/{clientId}/secret", null, cancellationToken);
+        var response = await _httpClient.PostAsync($"api/v2/oauth/clients/{Uri.EscapeDataString(clientId)}/secret", null, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -149,7 +177,7 @@ public sealed class OAuthApi : IOAuthApi
         ArgumentException.ThrowIfNullOrEmpty(clientId);
         ArgumentNullException.ThrowIfNull(body);
 
-        var response = await _httpClient.PostAsJsonAsync($"api/v2/oauth/clients/{clientId}/usage/query", body, _options, cancellationToken);
+        var response = await _httpClient.PostAsJsonAsync($"api/v2/oauth/clients/{Uri.EscapeDataString(clientId)}/usage/query", body, _options, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -174,7 +202,7 @@ public sealed class OAuthApi : IOAuthApi
         ArgumentException.ThrowIfNullOrEmpty(clientId);
         ArgumentNullException.ThrowIfNull(body);
 
-        var response = await _httpClient.PutAsJsonAsync($"api/v2/oauth/clients/{clientId}", body, _options, cancellationToken);
+        var response = await _httpClient.PutAsJsonAsync($"api/v2/oauth/clients/{Uri.EscapeDataString(clientId)}", body, _options, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
