@@ -489,14 +489,14 @@ public interface IIntegrationsApi
     /// </summary>
     /// <param name="actionId">The action ID</param>
     /// <param name="body">Request body</param>
-    Task<ActionModel> PatchIntegrationsActionAsync(string actionId, UpdateActionInput body, CancellationToken cancellationToken = default);
+    Task<ActionModel> UpdateIntegrationsActionAsync(string actionId, UpdateActionInput body, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Update ActionDraft.
     /// </summary>
     /// <param name="actionId">The action ID</param>
     /// <param name="body">Request body</param>
-    Task<ActionModel> PatchIntegrationsActionDraftAsync(string actionId, UpdateDraftInput body, CancellationToken cancellationToken = default);
+    Task<ActionModel> UpdateIntegrationsActionDraftAsync(string actionId, UpdateDraftInput body, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Create Integration.
@@ -508,7 +508,7 @@ public interface IIntegrationsApi
     /// Create ActionDraft.
     /// </summary>
     /// <param name="actionId">The action ID</param>
-    Task<ActionModel> PostIntegrationsActionDraftAsync(string actionId, CancellationToken cancellationToken = default);
+    Task<ActionModel> CreateIntegrationsActionDraftAsync(string actionId, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Create ActionDraftFunctionUpload.
