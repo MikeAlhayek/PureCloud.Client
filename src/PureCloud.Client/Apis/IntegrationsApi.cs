@@ -76,7 +76,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
     }
 
     /// <inheritdoc />
-    public async Task<Integration> GetIntegrationAsync(string integrationId, int? pageSize = null, int? pageNumber = null, string sortBy = null, IList<string> expand = null, string nextPage = null, string previousPage = null, CancellationToken cancellationToken = default)
+    public async Task<Integration> GetIntegrationAsync(string integrationId, int? pageSize = null, int? pageNumber = null, string sortBy = null, IList<string> expands = null, string nextPage = null, string previousPage = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(integrationId);
 
@@ -97,11 +97,11 @@ public sealed class IntegrationsApi : IIntegrationsApi
             parameters.Add("sortBy", UriHelper.ParameterToString(sortBy));
         }
 
-        if (expand != null)
+        if (expands != null)
         {
-            foreach (var expandItem in expand)
+            foreach (var expand in expands)
             {
-                parameters.Add("expand", UriHelper.ParameterToString(expandItem));
+                parameters.Add("expand", UriHelper.ParameterToString(expand));
             }
         }
 
@@ -143,7 +143,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
     }
 
     /// <inheritdoc />
-    public async Task<IntegrationEntityListing> GetIntegrationsAsync(int? pageSize = null, int? pageNumber = null, string sortBy = null, IList<string> expand = null, string nextPage = null, string previousPage = null, CancellationToken cancellationToken = default)
+    public async Task<IntegrationEntityListing> GetIntegrationsAsync(int? pageSize = null, int? pageNumber = null, string sortBy = null, IList<string> expands = null, string nextPage = null, string previousPage = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
 
@@ -162,11 +162,11 @@ public sealed class IntegrationsApi : IIntegrationsApi
             parameters.Add("sortBy", UriHelper.ParameterToString(sortBy));
         }
 
-        if (expand != null)
+        if (expands != null)
         {
-            foreach (var expandItem in expand)
+            foreach (var expand in expands)
             {
-                parameters.Add("expand", UriHelper.ParameterToString(expandItem));
+                parameters.Add("expand", UriHelper.ParameterToString(expand));
             }
         }
 
@@ -742,7 +742,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
     }
 
     /// <inheritdoc />
-    public async Task<ClientAppEntityListing> GetIntegrationsClientAppsAsync(int? pageSize = null, int? pageNumber = null, string sortBy = null, IList<string> expand = null, string nextPage = null, string previousPage = null, CancellationToken cancellationToken = default)
+    public async Task<ClientAppEntityListing> GetIntegrationsClientAppsAsync(int? pageSize = null, int? pageNumber = null, string sortBy = null, IList<string> expands = null, string nextPage = null, string previousPage = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
 
@@ -761,11 +761,11 @@ public sealed class IntegrationsApi : IIntegrationsApi
             parameters.Add("sortBy", UriHelper.ParameterToString(sortBy));
         }
 
-        if (expand != null)
+        if (expands != null)
         {
-            foreach (var expandItem in expand)
+            foreach (var expand in expands)
             {
-                parameters.Add("expand", UriHelper.ParameterToString(expandItem));
+                parameters.Add("expand", UriHelper.ParameterToString(expand));
             }
         }
 
@@ -791,7 +791,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
     }
 
     /// <inheritdoc />
-    public async Task<UCIntegrationListing> GetIntegrationsClientAppsUnifiedCommunicationsAsync(int? pageSize = null, int? pageNumber = null, string sortBy = null, IList<string> expand = null, string nextPage = null, string previousPage = null, CancellationToken cancellationToken = default)
+    public async Task<UCIntegrationListing> GetIntegrationsClientAppsUnifiedCommunicationsAsync(int? pageSize = null, int? pageNumber = null, string sortBy = null, IList<string> expands = null, string nextPage = null, string previousPage = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
 
@@ -810,11 +810,11 @@ public sealed class IntegrationsApi : IIntegrationsApi
             parameters.Add("sortBy", UriHelper.ParameterToString(sortBy));
         }
 
-        if (expand != null)
+        if (expands != null)
         {
-            foreach (var expandItem in expand)
+            foreach (var expand in expands)
             {
-                parameters.Add("expand", UriHelper.ParameterToString(expandItem));
+                parameters.Add("expand", UriHelper.ParameterToString(expand));
             }
         }
 
@@ -1203,7 +1203,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
     }
 
     /// <inheritdoc />
-    public async Task<NuanceBot> GetIntegrationsSpeechNuanceIntegrationIdBotAsync(string nuanceIntegrationId, string botId, IList<string> expand = null, string targetChannel = null, CancellationToken cancellationToken = default)
+    public async Task<NuanceBot> GetIntegrationsSpeechNuanceIntegrationIdBotAsync(string nuanceIntegrationId, string botId, IList<string> expands = null, string targetChannel = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(nuanceIntegrationId);
 
@@ -1211,11 +1211,11 @@ public sealed class IntegrationsApi : IIntegrationsApi
 
         var parameters = new NameValueCollection();
 
-        if (expand != null)
+        if (expands != null)
         {
-            foreach (var expandItem in expand)
+            foreach (var expand in expands)
             {
-                parameters.Add("expand", UriHelper.ParameterToString(expandItem));
+                parameters.Add("expand", UriHelper.ParameterToString(expand));
             }
         }
 
@@ -1552,7 +1552,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
     }
 
     /// <inheritdoc />
-    public async Task<IntegrationTypeEntityListing> GetIntegrationsTypesAsync(int? pageSize = null, int? pageNumber = null, string sortBy = null, IList<string> expand = null, string nextPage = null, string previousPage = null, CancellationToken cancellationToken = default)
+    public async Task<IntegrationTypeEntityListing> GetIntegrationsTypesAsync(int? pageSize = null, int? pageNumber = null, string sortBy = null, IList<string> expands = null, string nextPage = null, string previousPage = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
 
@@ -1571,11 +1571,11 @@ public sealed class IntegrationsApi : IIntegrationsApi
             parameters.Add("sortBy", UriHelper.ParameterToString(sortBy));
         }
 
-        if (expand != null)
+        if (expands != null)
         {
-            foreach (var expandItem in expand)
+            foreach (var expand in expands)
             {
-                parameters.Add("expand", UriHelper.ParameterToString(expandItem));
+                parameters.Add("expand", UriHelper.ParameterToString(expand));
             }
         }
 
@@ -1617,7 +1617,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
     }
 
     /// <inheritdoc />
-    public async Task<UnifiedCommunicationsIntegrationListing> GetIntegrationsUnifiedcommunicationsClientappsAsync(int? pageSize = null, int? pageNumber = null, string sortBy = null, IList<string> expand = null, string nextPage = null, string previousPage = null, CancellationToken cancellationToken = default)
+    public async Task<UnifiedCommunicationsIntegrationListing> GetIntegrationsUnifiedcommunicationsClientappsAsync(int? pageSize = null, int? pageNumber = null, string sortBy = null, IList<string> expands = null, string nextPage = null, string previousPage = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
 
@@ -1636,11 +1636,11 @@ public sealed class IntegrationsApi : IIntegrationsApi
             parameters.Add("sortBy", UriHelper.ParameterToString(sortBy));
         }
 
-        if (expand != null)
+        if (expands != null)
         {
-            foreach (var expandItem in expand)
+            foreach (var expand in expands)
             {
-                parameters.Add("expand", UriHelper.ParameterToString(expandItem));
+                parameters.Add("expand", UriHelper.ParameterToString(expand));
             }
         }
 
@@ -1666,7 +1666,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
     }
 
     /// <inheritdoc />
-    public async Task<UserAppEntityListing> GetIntegrationsUserappsAsync(int? pageSize = null, int? pageNumber = null, string sortBy = null, IList<string> expand = null, string nextPage = null, string previousPage = null, string appHost = null, CancellationToken cancellationToken = default)
+    public async Task<UserAppEntityListing> GetIntegrationsUserappsAsync(int? pageSize = null, int? pageNumber = null, string sortBy = null, IList<string> expands = null, string nextPage = null, string previousPage = null, string appHost = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
 
@@ -1685,11 +1685,11 @@ public sealed class IntegrationsApi : IIntegrationsApi
             parameters.Add("sortBy", UriHelper.ParameterToString(sortBy));
         }
 
-        if (expand != null)
+        if (expands != null)
         {
-            foreach (var expandItem in expand)
+            foreach (var expand in expands)
             {
-                parameters.Add("expand", UriHelper.ParameterToString(expandItem));
+                parameters.Add("expand", UriHelper.ParameterToString(expand));
             }
         }
 
@@ -1720,7 +1720,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
     }
 
     /// <inheritdoc />
-    public async Task<Integration> UpdateIntegrationAsync(string integrationId, Integration body, int? pageSize = null, int? pageNumber = null, string sortBy = null, IList<string> expand = null, string nextPage = null, string previousPage = null, CancellationToken cancellationToken = default)
+    public async Task<Integration> UpdateIntegrationAsync(string integrationId, Integration body, int? pageSize = null, int? pageNumber = null, string sortBy = null, IList<string> expands = null, string nextPage = null, string previousPage = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(integrationId);
 
@@ -1743,11 +1743,11 @@ public sealed class IntegrationsApi : IIntegrationsApi
             parameters.Add("sortBy", UriHelper.ParameterToString(sortBy));
         }
 
-        if (expand != null)
+        if (expands != null)
         {
-            foreach (var expandItem in expand)
+            foreach (var expand in expands)
             {
-                parameters.Add("expand", UriHelper.ParameterToString(expandItem));
+                parameters.Add("expand", UriHelper.ParameterToString(expand));
             }
         }
 
@@ -1990,7 +1990,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
     }
 
     /// <inheritdoc />
-    public async Task<AsyncJob> CreateIntegrationsSpeechNuanceNuanceIntegrationIdBotJobsAsync(string nuanceIntegrationId, string botId, IList<string> expand = null, string body = null, CancellationToken cancellationToken = default)
+    public async Task<AsyncJob> CreateIntegrationsSpeechNuanceNuanceIntegrationIdBotJobsAsync(string nuanceIntegrationId, string botId, IList<string> expands = null, string body = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(nuanceIntegrationId);
 
@@ -2000,11 +2000,11 @@ public sealed class IntegrationsApi : IIntegrationsApi
 
         var parameters = new NameValueCollection();
 
-        if (expand != null)
+        if (expands != null)
         {
-            foreach (var expandItem in expand)
+            foreach (var expand in expands)
             {
-                parameters.Add("expand", UriHelper.ParameterToString(expandItem));
+                parameters.Add("expand", UriHelper.ParameterToString(expand));
             }
         }
 

@@ -40,11 +40,11 @@ public interface IIntegrationsApi
     /// <param name="pageSize">Page size</param>
     /// <param name="pageNumber">Page number</param>
     /// <param name="sortBy">Sort by field</param>
-    /// <param name="expand">Expand options</param>
+    /// <param name="expands">Expand options</param>
     /// <param name="nextPage">Next page</param>
     /// <param name="previousPage">Previous page</param>
     /// <param name="cancellationToken">Cancellation token</param>
-    Task<Integration> GetIntegrationAsync(string integrationId, int? pageSize = null, int? pageNumber = null, string sortBy = null, IList<string> expand = null, string nextPage = null, string previousPage = null, CancellationToken cancellationToken = default);
+    Task<Integration> GetIntegrationAsync(string integrationId, int? pageSize = null, int? pageNumber = null, string sortBy = null, IList<string> expands = null, string nextPage = null, string previousPage = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Get IntegrationConfigCurrent.
@@ -59,11 +59,11 @@ public interface IIntegrationsApi
     /// <param name="pageSize">Page size</param>
     /// <param name="pageNumber">Page number</param>
     /// <param name="sortBy">Sort by field</param>
-    /// <param name="expand">Expand options</param>
+    /// <param name="expands">Expand options</param>
     /// <param name="nextPage">Next page</param>
     /// <param name="previousPage">Previous page</param>
     /// <param name="cancellationToken">Cancellation token</param>
-    Task<IntegrationEntityListing> GetIntegrationsAsync(int? pageSize = null, int? pageNumber = null, string sortBy = null, IList<string> expand = null, string nextPage = null, string previousPage = null, CancellationToken cancellationToken = default);
+    Task<IntegrationEntityListing> GetIntegrationsAsync(int? pageSize = null, int? pageNumber = null, string sortBy = null, IList<string> expands = null, string nextPage = null, string previousPage = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Get Action.
@@ -213,18 +213,26 @@ public interface IIntegrationsApi
     /// <summary>
     /// Get ClientApps.
     /// </summary>
+    /// <param name="pageSize">Page size</param>
+    /// <param name="pageNumber">Page number</param>
     /// <param name="sortBy">Sort by field</param>
+    /// <param name="expands">Expand options</param>
     /// <param name="nextPage">Next page</param>
     /// <param name="previousPage">Previous page</param>
-    Task<ClientAppEntityListing> GetIntegrationsClientAppsAsync(int? pageSize = null, int? pageNumber = null, string sortBy = null, IList<string> expand = null, string nextPage = null, string previousPage = null, CancellationToken cancellationToken = default);
+    /// <param name="cancellationToken">Cancellation token</param>
+    Task<ClientAppEntityListing> GetIntegrationsClientAppsAsync(int? pageSize = null, int? pageNumber = null, string sortBy = null, IList<string> expands = null, string nextPage = null, string previousPage = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Get ClientAppsUnifiedCommunications.
     /// </summary>
+    /// <param name="pageSize">Page size</param>
+    /// <param name="pageNumber">Page number</param>
     /// <param name="sortBy">Sort by field</param>
+    /// <param name="expands">Expand options</param>
     /// <param name="nextPage">Next page</param>
     /// <param name="previousPage">Previous page</param>
-    Task<UCIntegrationListing> GetIntegrationsClientAppsUnifiedCommunicationsAsync(int? pageSize = null, int? pageNumber = null, string sortBy = null, IList<string> expand = null, string nextPage = null, string previousPage = null, CancellationToken cancellationToken = default);
+    /// <param name="cancellationToken">Cancellation token</param>
+    Task<UCIntegrationListing> GetIntegrationsClientAppsUnifiedCommunicationsAsync(int? pageSize = null, int? pageNumber = null, string sortBy = null, IList<string> expands = null, string nextPage = null, string previousPage = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Get Credential.
@@ -322,8 +330,10 @@ public interface IIntegrationsApi
     /// </summary>
     /// <param name="nuanceIntegrationId">The Nuance integration ID</param>
     /// <param name="botId">The bot ID</param>
+    /// <param name="expands">Expand options</param>
     /// <param name="targetChannel">The targetChannel</param>
-    Task<NuanceBot> GetIntegrationsSpeechNuanceIntegrationIdBotAsync(string nuanceIntegrationId, string botId, IList<string> expand = null, string targetChannel = null, CancellationToken cancellationToken = default);
+    /// <param name="cancellationToken">Cancellation token</param>
+    Task<NuanceBot> GetIntegrationsSpeechNuanceIntegrationIdBotAsync(string nuanceIntegrationId, string botId, IList<string> expands = null, string targetChannel = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Get SpeechNuanceIntegrationIdBotJob.
@@ -420,10 +430,14 @@ public interface IIntegrationsApi
     /// <summary>
     /// Get Types.
     /// </summary>
+    /// <param name="pageSize">Page size</param>
+    /// <param name="pageNumber">Page number</param>
     /// <param name="sortBy">Sort by field</param>
+    /// <param name="expands">Expand options</param>
     /// <param name="nextPage">Next page</param>
     /// <param name="previousPage">Previous page</param>
-    Task<IntegrationTypeEntityListing> GetIntegrationsTypesAsync(int? pageSize = null, int? pageNumber = null, string sortBy = null, IList<string> expand = null, string nextPage = null, string previousPage = null, CancellationToken cancellationToken = default);
+    /// <param name="cancellationToken">Cancellation token</param>
+    Task<IntegrationTypeEntityListing> GetIntegrationsTypesAsync(int? pageSize = null, int? pageNumber = null, string sortBy = null, IList<string> expands = null, string nextPage = null, string previousPage = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Get UnifiedcommunicationsClientapp.
@@ -434,29 +448,41 @@ public interface IIntegrationsApi
     /// <summary>
     /// Get UnifiedcommunicationsClientapps.
     /// </summary>
+    /// <param name="pageSize">Page size</param>
+    /// <param name="pageNumber">Page number</param>
     /// <param name="sortBy">Sort by field</param>
+    /// <param name="expands">Expand options</param>
     /// <param name="nextPage">Next page</param>
     /// <param name="previousPage">Previous page</param>
-    Task<UnifiedCommunicationsIntegrationListing> GetIntegrationsUnifiedcommunicationsClientappsAsync(int? pageSize = null, int? pageNumber = null, string sortBy = null, IList<string> expand = null, string nextPage = null, string previousPage = null, CancellationToken cancellationToken = default);
+    /// <param name="cancellationToken">Cancellation token</param>
+    Task<UnifiedCommunicationsIntegrationListing> GetIntegrationsUnifiedcommunicationsClientappsAsync(int? pageSize = null, int? pageNumber = null, string sortBy = null, IList<string> expands = null, string nextPage = null, string previousPage = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Get Userapps.
     /// </summary>
+    /// <param name="pageSize">Page size</param>
+    /// <param name="pageNumber">Page number</param>
     /// <param name="sortBy">Sort by field</param>
+    /// <param name="expands">Expand options</param>
     /// <param name="nextPage">Next page</param>
     /// <param name="previousPage">Previous page</param>
     /// <param name="appHost">The appHost</param>
-    Task<UserAppEntityListing> GetIntegrationsUserappsAsync(int? pageSize = null, int? pageNumber = null, string sortBy = null, IList<string> expand = null, string nextPage = null, string previousPage = null, string appHost = null, CancellationToken cancellationToken = default);
+    /// <param name="cancellationToken">Cancellation token</param>
+    Task<UserAppEntityListing> GetIntegrationsUserappsAsync(int? pageSize = null, int? pageNumber = null, string sortBy = null, IList<string> expands = null, string nextPage = null, string previousPage = null, string appHost = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Update Integration.
     /// </summary>
     /// <param name="integrationId">The integration ID</param>
     /// <param name="body">Request body</param>
+    /// <param name="pageSize">Page size</param>
+    /// <param name="pageNumber">Page number</param>
     /// <param name="sortBy">Sort by field</param>
+    /// <param name="expands">Expand options</param>
     /// <param name="nextPage">Next page</param>
     /// <param name="previousPage">Previous page</param>
-    Task<Integration> UpdateIntegrationAsync(string integrationId, Integration body, int? pageSize = null, int? pageNumber = null, string sortBy = null, IList<string> expand = null, string nextPage = null, string previousPage = null, CancellationToken cancellationToken = default);
+    /// <param name="cancellationToken">Cancellation token</param>
+    Task<Integration> UpdateIntegrationAsync(string integrationId, Integration body, int? pageSize = null, int? pageNumber = null, string sortBy = null, IList<string> expands = null, string nextPage = null, string previousPage = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Update Action.
@@ -542,8 +568,10 @@ public interface IIntegrationsApi
     /// </summary>
     /// <param name="nuanceIntegrationId">The Nuance integration ID</param>
     /// <param name="botId">The bot ID</param>
+    /// <param name="expands">Expand options</param>
     /// <param name="body">Request body</param>
-    Task<AsyncJob> CreateIntegrationsSpeechNuanceNuanceIntegrationIdBotJobsAsync(string nuanceIntegrationId, string botId, IList<string> expand = null, string body = null, CancellationToken cancellationToken = default);
+    /// <param name="cancellationToken">Cancellation token</param>
+    Task<AsyncJob> CreateIntegrationsSpeechNuanceNuanceIntegrationIdBotJobsAsync(string nuanceIntegrationId, string botId, IList<string> expands = null, string body = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Create SpeechNuanceIntegrationIdBotsJobs.
