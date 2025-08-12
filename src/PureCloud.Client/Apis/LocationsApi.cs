@@ -1,6 +1,5 @@
+using System.Collections.Specialized;
 using System.Net.Http.Json;
-using System.Text.Json;
-using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Options;
 using PureCloud.Client.Contracts;
 using PureCloud.Client.Http;
@@ -12,47 +11,51 @@ namespace PureCloud.Client.Apis;
 /// <inheritdoc />
 public sealed class LocationsApi : ILocationsApi
 {
-    private readonly HttpClient _httpClient;
-    private readonly JsonSerializerOptions _options;
+    private readonly IHttpClientFactory _httpClientFactory;
+    private readonly PureCloudJsonSerializerOptions _options;
 
     public LocationsApi(IHttpClientFactory httpClientFactory, IOptions<PureCloudJsonSerializerOptions> options)
     {
-        _httpClient = httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-        _options = options.Value.JsonSerializerOptions;
+        _httpClientFactory = httpClientFactory;
+        _options = options.Value;
     }
 
     /// <inheritdoc />
-    public async Task DeleteLocationAsync(string locationId, CancellationToken cancellationToken = default)
+    public async Task<bool> DeleteLocationAsync(string locationId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(locationId);
 
-        var response = await _httpClient.DeleteAsync($"api/v2/locations/{Uri.EscapeDataString(locationId)}", cancellationToken);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        response.EnsureSuccessStatusCode();
+        var response = await client.DeleteAsync($"api/v2/locations/{Uri.EscapeDataString(locationId)}", cancellationToken);
+
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
-    public async Task<LocationDefinition> GetLocationAsync(string locationId, IEnumerable<string> expand = null, CancellationToken cancellationToken = default)
+    public async Task<LocationDefinition> GetLocationAsync(string locationId, IEnumerable<string> expands = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(locationId);
 
-        var uri = $"api/v2/locations/{Uri.EscapeDataString(locationId)}";
+        var parameters = new NameValueCollection();
 
-        if (expand != null)
+        if (expands != null)
         {
-            var queryParameters = new List<KeyValuePair<string, string>>();
-            foreach (var item in expand)
+            foreach (var expand in expands)
             {
-                queryParameters.Add(new KeyValuePair<string, string>("expand", UriHelper.ParameterToString(item)));
+                parameters.Add("expand", UriHelper.ParameterToString(expand));
             }
-            uri = QueryHelpers.AddQueryString(uri, queryParameters);
         }
 
-        var response = await _httpClient.GetAsync(uri, cancellationToken);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var uri = UriHelper.GetUri($"api/v2/locations/{Uri.EscapeDataString(locationId)}", parameters);
+
+        var response = await client.GetAsync(uri, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<LocationDefinition>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<LocationDefinition>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
@@ -60,79 +63,80 @@ public sealed class LocationsApi : ILocationsApi
     {
         ArgumentException.ThrowIfNullOrEmpty(locationId);
 
-        var response = await _httpClient.GetAsync($"api/v2/locations/{Uri.EscapeDataString(locationId)}/sublocations", cancellationToken);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.GetAsync($"api/v2/locations/{Uri.EscapeDataString(locationId)}/sublocations", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<LocationEntityListing>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<LocationEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
     public async Task<LocationEntityListing> GetLocationsAsync(int? pageSize = null, int? pageNumber = null, IEnumerable<string> locationIds = null, string sortOrder = null, CancellationToken cancellationToken = default)
     {
-        var uri = "api/v2/locations";
-        var queryParameters = new List<KeyValuePair<string, string>>();
+        var parameters = new NameValueCollection();
 
         if (pageSize.HasValue)
         {
-            queryParameters.Add(new KeyValuePair<string, string>("pageSize", UriHelper.ParameterToString(pageSize.Value)));
+            parameters.Add("pageSize", UriHelper.ParameterToString(pageSize.Value));
         }
 
         if (pageNumber.HasValue)
         {
-            queryParameters.Add(new KeyValuePair<string, string>("pageNumber", UriHelper.ParameterToString(pageNumber.Value)));
+            parameters.Add("pageNumber", UriHelper.ParameterToString(pageNumber.Value));
         }
 
         if (locationIds != null)
         {
             foreach (var locationId in locationIds)
             {
-                queryParameters.Add(new KeyValuePair<string, string>("id", UriHelper.ParameterToString(locationId)));
+                parameters.Add("id", UriHelper.ParameterToString(locationId));
             }
         }
 
         if (!string.IsNullOrEmpty(sortOrder))
         {
-            queryParameters.Add(new KeyValuePair<string, string>("sortOrder", UriHelper.ParameterToString(sortOrder)));
+            parameters.Add("sortOrder", UriHelper.ParameterToString(sortOrder));
         }
 
-        if (queryParameters.Count > 0)
-        {
-            uri = QueryHelpers.AddQueryString(uri, queryParameters);
-        }
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await _httpClient.GetAsync(uri, cancellationToken);
+        var uri = UriHelper.GetUri("api/v2/locations", parameters);
+
+        var response = await client.GetAsync(uri, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<LocationEntityListing>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<LocationEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
-    public async Task<LocationsSearchResponse> GetLocationsSearchAsync(string q64, IEnumerable<string> expand = null, CancellationToken cancellationToken = default)
+    public async Task<LocationsSearchResponse> GetLocationsSearchAsync(string q64, IEnumerable<string> expands = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(q64);
 
-        var uri = "api/v2/locations/search";
-        var queryParameters = new List<KeyValuePair<string, string>>();
-        
-        queryParameters.Add(new KeyValuePair<string, string>("q64", UriHelper.ParameterToString(q64)));
+        var parameters = new NameValueCollection();
 
-        if (expand != null)
+        parameters.Add("q64", UriHelper.ParameterToString(q64));
+
+        if (expands != null)
         {
-            foreach (var item in expand)
+            foreach (var expand in expands)
             {
-                queryParameters.Add(new KeyValuePair<string, string>("expand", UriHelper.ParameterToString(item)));
+                parameters.Add("expand", UriHelper.ParameterToString(expand));
             }
         }
 
-        uri = QueryHelpers.AddQueryString(uri, queryParameters);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await _httpClient.GetAsync(uri, cancellationToken);
+        var uri = UriHelper.GetUri("api/v2/locations/search", parameters);
+
+        var response = await client.GetAsync(uri, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<LocationsSearchResponse>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<LocationsSearchResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
@@ -141,11 +145,13 @@ public sealed class LocationsApi : ILocationsApi
         ArgumentException.ThrowIfNullOrEmpty(locationId);
         ArgumentNullException.ThrowIfNull(body);
 
-        var response = await _httpClient.PatchAsJsonAsync($"api/v2/locations/{Uri.EscapeDataString(locationId)}", body, _options, cancellationToken);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PatchAsJsonAsync($"api/v2/locations/{Uri.EscapeDataString(locationId)}", body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<LocationDefinition>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<LocationDefinition>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
@@ -153,11 +159,13 @@ public sealed class LocationsApi : ILocationsApi
     {
         ArgumentNullException.ThrowIfNull(body);
 
-        var response = await _httpClient.PostAsJsonAsync("api/v2/locations", body, _options, cancellationToken);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PostAsJsonAsync("api/v2/locations", body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<LocationDefinition>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<LocationDefinition>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
@@ -165,10 +173,12 @@ public sealed class LocationsApi : ILocationsApi
     {
         ArgumentNullException.ThrowIfNull(body);
 
-        var response = await _httpClient.PostAsJsonAsync("api/v2/locations/search", body, _options, cancellationToken);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var response = await client.PostAsJsonAsync("api/v2/locations/search", body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<LocationsSearchResponse>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<LocationsSearchResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
 }

@@ -9,15 +9,15 @@ public interface ILocationsApi
     /// </summary>
     /// <param name="locationId">Location ID</param>
     /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
-    Task DeleteLocationAsync(string locationId, CancellationToken cancellationToken = default);
+    Task<bool> DeleteLocationAsync(string locationId, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Get Location by ID
     /// </summary>
     /// <param name="locationId">Location ID</param>
-    /// <param name="expand">Which fields, if any, to expand</param>
+    /// <param name="expands">Which fields, if any, to expand</param>
     /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
-    Task<LocationDefinition> GetLocationAsync(string locationId, IEnumerable<string> expand = null, CancellationToken cancellationToken = default);
+    Task<LocationDefinition> GetLocationAsync(string locationId, IEnumerable<string> expands = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Get sublocations for location ID
@@ -40,9 +40,9 @@ public interface ILocationsApi
     /// Search locations using the q64 value returned from a previous search
     /// </summary>
     /// <param name="q64">q64</param>
-    /// <param name="expand">Which fields, if any, to expand</param>
+    /// <param name="expands">Which fields, if any, to expand</param>
     /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
-    Task<LocationsSearchResponse> GetLocationsSearchAsync(string q64, IEnumerable<string> expand = null, CancellationToken cancellationToken = default);
+    Task<LocationsSearchResponse> GetLocationsSearchAsync(string q64, IEnumerable<string> expands = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Update a location
