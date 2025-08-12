@@ -27,9 +27,7 @@ public sealed class MobileDevicesApi : IMobileDevicesApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/mobiledevices/{Uri.EscapeDataString(deviceId)}", null);
-
-        var response = await client.DeleteAsync(uri, cancellationToken);
+        var response = await client.DeleteAsync($"api/v2/mobiledevices/{Uri.EscapeDataString(deviceId)}", cancellationToken);
 
         return response.IsSuccessStatusCode;
     }
@@ -41,9 +39,7 @@ public sealed class MobileDevicesApi : IMobileDevicesApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/mobiledevices/{Uri.EscapeDataString(deviceId)}", null);
-
-        var response = await client.GetAsync(uri, cancellationToken);
+        var response = await client.GetAsync($"api/v2/mobiledevices/{Uri.EscapeDataString(deviceId)}", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -88,9 +84,7 @@ public sealed class MobileDevicesApi : IMobileDevicesApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri("api/v2/mobiledevices", null);
-
-        var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PostAsJsonAsync("api/v2/mobiledevices", body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -104,9 +98,7 @@ public sealed class MobileDevicesApi : IMobileDevicesApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/mobiledevices/{Uri.EscapeDataString(deviceId)}", null);
-
-        var response = await client.PutAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PutAsJsonAsync($"api/v2/mobiledevices/{Uri.EscapeDataString(deviceId)}", body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
