@@ -23,6 +23,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
         _options = options.Value;
     }
 
+    /// <inheritdoc />
     public async Task<Integration> DeleteIntegrationAsync(string integrationId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(integrationId);
@@ -1970,6 +1971,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
         return await response.Content.ReadFromJsonAsync<CredentialInfo>(_options.JsonSerializerOptions, cancellationToken);
     }
 
+    /// <inheritdoc />
     public async Task<AsyncJob> CreateIntegrationsSpeechNuanceNuanceIntegrationIdBotJobsAsync(string nuanceIntegrationId, string botId, IList<string> expand = null, string body = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(nuanceIntegrationId);
@@ -1982,9 +1984,9 @@ public sealed class IntegrationsApi : IIntegrationsApi
 
         if (expand != null)
         {
-            foreach (var item in expand)
+            foreach (var expandItem in expand)
             {
-                parameters.Add("expand", UriHelper.ParameterToString(item));
+                parameters.Add("expand", UriHelper.ParameterToString(expandItem));
             }
         }
 
@@ -2069,19 +2071,16 @@ public sealed class IntegrationsApi : IIntegrationsApi
         return await response.Content.ReadFromJsonAsync<WebhookInvocationResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
 
+    /// <inheritdoc />
     public async Task<IntegrationConfiguration> UpdateIntegrationConfigCurrentAsync(string integrationId, IntegrationConfiguration body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(integrationId);
 
         ArgumentNullException.ThrowIfNull(body);
 
-        var parameters = new NameValueCollection();
-
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/integrations/{Uri.EscapeDataString(integrationId)}/config/current", parameters);
-
-        var response = await client.PutAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PutAsJsonAsync($"api/v2/integrations/{Uri.EscapeDataString(integrationId)}/config/current", body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 

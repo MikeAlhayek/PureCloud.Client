@@ -8,31 +8,49 @@ public interface IIntegrationsApi
     /// <summary>
     /// Delete Integration.
     /// </summary>
+    /// <param name="integrationId">The integration ID</param>
+    /// <param name="cancellationToken">Cancellation token</param>
     Task<Integration> DeleteIntegrationAsync(string integrationId, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Delete Action.
     /// </summary>
+    /// <param name="actionId">The action ID</param>
+    /// <param name="cancellationToken">Cancellation token</param>
     Task<bool> DeleteIntegrationsActionAsync(string actionId, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Delete ActionDraft.
     /// </summary>
+    /// <param name="actionId">The action ID</param>
+    /// <param name="cancellationToken">Cancellation token</param>
     Task<bool> DeleteIntegrationsActionDraftAsync(string actionId, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Delete Credential.
     /// </summary>
+    /// <param name="credentialId">The credential ID</param>
+    /// <param name="cancellationToken">Cancellation token</param>
     Task<bool> DeleteIntegrationsCredentialAsync(string credentialId, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Get Integration.
     /// </summary>
+    /// <param name="integrationId">The integration ID</param>
+    /// <param name="pageSize">Page size</param>
+    /// <param name="pageNumber">Page number</param>
+    /// <param name="sortBy">Sort by field</param>
+    /// <param name="expand">Expand options</param>
+    /// <param name="nextPage">Next page</param>
+    /// <param name="previousPage">Previous page</param>
+    /// <param name="cancellationToken">Cancellation token</param>
     Task<Integration> GetIntegrationAsync(string integrationId, int? pageSize = null, int? pageNumber = null, string sortBy = null, IList<string> expand = null, string nextPage = null, string previousPage = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Get IntegrationConfigCurrent.
     /// </summary>
+    /// <param name="integrationId">The integration ID</param>
+    /// <param name="cancellationToken">Cancellation token</param>
     Task<IntegrationConfiguration> GetIntegrationConfigCurrentAsync(string integrationId, CancellationToken cancellationToken = default);
 
     /// <summary>
