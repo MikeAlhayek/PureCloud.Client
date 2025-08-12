@@ -8,7 +8,7 @@ using PureCloud.Client.Models;
 
 namespace PureCloud.Client.Apis;
 
-public class ResponseManagementApi : IResponseManagementApiV2
+public sealed class ResponseManagementApi : IResponseManagementApiV2
 {
     private readonly IHttpClientFactory _httpClientFactory;
     private readonly PureCloudJsonSerializerOptions _options;
@@ -22,6 +22,7 @@ public class ResponseManagementApi : IResponseManagementApiV2
     }
 
     // Libraries
+    /// <inheritdoc />
     public async Task<SimpleLibraryEntityListing> GetResponseManagementLibrariesAsync(int? pageNumber = null, int? pageSize = null, string messagingTemplateFilter = null, string libraryPrefix = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
@@ -57,19 +58,21 @@ public class ResponseManagementApi : IResponseManagementApiV2
         return await response.Content.ReadFromJsonAsync<SimpleLibraryEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
 
+    /// <inheritdoc />
     public async Task<Library> GetResponseManagementLibraryAsync(string libraryId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(libraryId);
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync($"api/v2/responsemanagement/libraries/{libraryId}", cancellationToken);
+        var response = await client.GetAsync($"api/v2/responsemanagement/libraries/{Uri.EscapeDataString(libraryId)}", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<Library>(_options.JsonSerializerOptions, cancellationToken);
     }
 
+    /// <inheritdoc />
     public async Task<Library> CreateResponseManagementLibraryAsync(Library body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
@@ -83,6 +86,7 @@ public class ResponseManagementApi : IResponseManagementApiV2
         return await response.Content.ReadFromJsonAsync<Library>(_options.JsonSerializerOptions, cancellationToken);
     }
 
+    /// <inheritdoc />
     public async Task<Library> UpdateResponseManagementLibraryAsync(string libraryId, Library body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(libraryId);
@@ -90,24 +94,26 @@ public class ResponseManagementApi : IResponseManagementApiV2
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.PutAsJsonAsync($"api/v2/responsemanagement/libraries/{libraryId}", body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PutAsJsonAsync($"api/v2/responsemanagement/libraries/{Uri.EscapeDataString(libraryId)}", body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<Library>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task DeleteResponseManagementLibraryAsync(string libraryId, CancellationToken cancellationToken = default)
+    /// <inheritdoc />
+    public async Task<bool> DeleteResponseManagementLibraryAsync(string libraryId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(libraryId);
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.DeleteAsync($"api/v2/responsemanagement/libraries/{libraryId}", cancellationToken);
+        var response = await client.DeleteAsync($"api/v2/responsemanagement/libraries/{Uri.EscapeDataString(libraryId)}", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
+        return response.IsSuccessStatusCode;
     }
 
+    /// <inheritdoc />
     public async Task<SimpleLibraryEntityListing> CreateResponseManagementLibrariesBulkAsync(LibraryBatchRequest body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
@@ -122,6 +128,7 @@ public class ResponseManagementApi : IResponseManagementApiV2
     }
 
     // Responses
+    /// <inheritdoc />
     public async Task<SimpleResponseEntityListing> GetResponseManagementResponsesAsync(string libraryId, int? pageNumber = null, int? pageSize = null, string expand = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(libraryId);
@@ -156,6 +163,7 @@ public class ResponseManagementApi : IResponseManagementApiV2
         return await response.Content.ReadFromJsonAsync<SimpleResponseEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
 
+    /// <inheritdoc />
     public async Task<Response> GetResponseManagementResponseAsync(string responseId, string expand = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(responseId);
@@ -169,7 +177,7 @@ public class ResponseManagementApi : IResponseManagementApiV2
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/responsemanagement/responses/{responseId}", parameters);
+        var uri = UriHelper.GetUri($"api/v2/responsemanagement/responses/{Uri.EscapeDataString(responseId)}", parameters);
 
         var response = await client.GetAsync(uri, cancellationToken);
 
@@ -178,6 +186,7 @@ public class ResponseManagementApi : IResponseManagementApiV2
         return await response.Content.ReadFromJsonAsync<Response>(_options.JsonSerializerOptions, cancellationToken);
     }
 
+    /// <inheritdoc />
     public async Task<Response> CreateResponseManagementResponseAsync(Response body, string expand = null, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
@@ -200,6 +209,7 @@ public class ResponseManagementApi : IResponseManagementApiV2
         return await response.Content.ReadFromJsonAsync<Response>(_options.JsonSerializerOptions, cancellationToken);
     }
 
+    /// <inheritdoc />
     public async Task<Response> UpdateResponseManagementResponseAsync(string responseId, Response body, string expand = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(responseId);
@@ -214,7 +224,7 @@ public class ResponseManagementApi : IResponseManagementApiV2
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/responsemanagement/responses/{responseId}", parameters);
+        var uri = UriHelper.GetUri($"api/v2/responsemanagement/responses/{Uri.EscapeDataString(responseId)}", parameters);
 
         var response = await client.PutAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -223,17 +233,19 @@ public class ResponseManagementApi : IResponseManagementApiV2
         return await response.Content.ReadFromJsonAsync<Response>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task DeleteResponseManagementResponseAsync(string responseId, CancellationToken cancellationToken = default)
+    /// <inheritdoc />
+    public async Task<bool> DeleteResponseManagementResponseAsync(string responseId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(responseId);
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.DeleteAsync($"api/v2/responsemanagement/responses/{responseId}", cancellationToken);
+        var response = await client.DeleteAsync($"api/v2/responsemanagement/responses/{Uri.EscapeDataString(responseId)}", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
+        return response.IsSuccessStatusCode;
     }
 
+    /// <inheritdoc />
     public async Task<SimpleResponseQueryResults> QueryResponseManagementResponsesAsync(ResponseQueryRequest body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
@@ -248,19 +260,21 @@ public class ResponseManagementApi : IResponseManagementApiV2
     }
 
     // Response Assets
+    /// <inheritdoc />
     public async Task<ResponseAsset> GetResponseManagementResponseAssetAsync(string responseAssetId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(responseAssetId);
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync($"api/v2/responsemanagement/responseassets/{responseAssetId}", cancellationToken);
+        var response = await client.GetAsync($"api/v2/responsemanagement/responseassets/{Uri.EscapeDataString(responseAssetId)}", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<ResponseAsset>(_options.JsonSerializerOptions, cancellationToken);
     }
 
+    /// <inheritdoc />
     public async Task<ResponseAsset> UpdateResponseManagementResponseAssetAsync(string responseAssetId, ResponseAssetRequest body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(responseAssetId);
@@ -268,31 +282,33 @@ public class ResponseManagementApi : IResponseManagementApiV2
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.PutAsJsonAsync($"api/v2/responsemanagement/responseassets/{responseAssetId}", body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PutAsJsonAsync($"api/v2/responsemanagement/responseassets/{Uri.EscapeDataString(responseAssetId)}", body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<ResponseAsset>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    public async Task DeleteResponseManagementResponseAssetAsync(string responseAssetId, CancellationToken cancellationToken = default)
+    /// <inheritdoc />
+    public async Task<bool> DeleteResponseManagementResponseAssetAsync(string responseAssetId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(responseAssetId);
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.DeleteAsync($"api/v2/responsemanagement/responseassets/{responseAssetId}", cancellationToken);
+        var response = await client.DeleteAsync($"api/v2/responsemanagement/responseassets/{Uri.EscapeDataString(responseAssetId)}", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
+        return response.IsSuccessStatusCode;
     }
 
-    public async Task<ResponseAssetSearchResults> SearchResponseManagementResponseAssetsAsync(ResponseAssetSearchRequest body, List<string> expand = null, CancellationToken cancellationToken = default)
+    /// <inheritdoc />
+    public async Task<ResponseAssetSearchResults> SearchResponseManagementResponseAssetsAsync(ResponseAssetSearchRequest body, IEnumerable<string> expand = null, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
 
         var parameters = new NameValueCollection();
 
-        if (expand != null && expand.Count > 0)
+        if (expand != null)
         {
             parameters.Add("expand", string.Join(",", expand.Select(UriHelper.ParameterToString)));
         }
@@ -308,6 +324,7 @@ public class ResponseManagementApi : IResponseManagementApiV2
         return await response.Content.ReadFromJsonAsync<ResponseAssetSearchResults>(_options.JsonSerializerOptions, cancellationToken);
     }
 
+    /// <inheritdoc />
     public async Task<CreateResponseAssetResponse> UploadResponseManagementResponseAssetAsync(CreateResponseAssetRequest body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
@@ -321,13 +338,14 @@ public class ResponseManagementApi : IResponseManagementApiV2
         return await response.Content.ReadFromJsonAsync<CreateResponseAssetResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
 
+    /// <inheritdoc />
     public async Task<ResponseAssetStatus> GetResponseManagementResponseAssetStatusAsync(string statusId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(statusId);
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync($"api/v2/responsemanagement/responseassets/status/{statusId}", cancellationToken);
+        var response = await client.GetAsync($"api/v2/responsemanagement/responseassets/status/{Uri.EscapeDataString(statusId)}", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 

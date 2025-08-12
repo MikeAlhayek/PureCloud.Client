@@ -13,7 +13,7 @@ public interface IResponseManagementApiV2
 
     Task<Library> UpdateResponseManagementLibraryAsync(string libraryId, Library body, CancellationToken cancellationToken = default);
 
-    Task DeleteResponseManagementLibraryAsync(string libraryId, CancellationToken cancellationToken = default);
+    Task<bool> DeleteResponseManagementLibraryAsync(string libraryId, CancellationToken cancellationToken = default);
 
     Task<SimpleLibraryEntityListing> CreateResponseManagementLibrariesBulkAsync(LibraryBatchRequest body, CancellationToken cancellationToken = default);
 
@@ -26,7 +26,7 @@ public interface IResponseManagementApiV2
 
     Task<Response> UpdateResponseManagementResponseAsync(string responseId, Response body, string expand = null, CancellationToken cancellationToken = default);
 
-    Task DeleteResponseManagementResponseAsync(string responseId, CancellationToken cancellationToken = default);
+    Task<bool> DeleteResponseManagementResponseAsync(string responseId, CancellationToken cancellationToken = default);
 
     Task<SimpleResponseQueryResults> QueryResponseManagementResponsesAsync(ResponseQueryRequest body, CancellationToken cancellationToken = default);
 
@@ -35,9 +35,9 @@ public interface IResponseManagementApiV2
 
     Task<ResponseAsset> UpdateResponseManagementResponseAssetAsync(string responseAssetId, ResponseAssetRequest body, CancellationToken cancellationToken = default);
 
-    Task DeleteResponseManagementResponseAssetAsync(string responseAssetId, CancellationToken cancellationToken = default);
+    Task<bool> DeleteResponseManagementResponseAssetAsync(string responseAssetId, CancellationToken cancellationToken = default);
 
-    Task<ResponseAssetSearchResults> SearchResponseManagementResponseAssetsAsync(ResponseAssetSearchRequest body, List<string> expand = null, CancellationToken cancellationToken = default);
+    Task<ResponseAssetSearchResults> SearchResponseManagementResponseAssetsAsync(ResponseAssetSearchRequest body, IEnumerable<string> expand = null, CancellationToken cancellationToken = default);
 
     Task<CreateResponseAssetResponse> UploadResponseManagementResponseAssetAsync(CreateResponseAssetRequest body, CancellationToken cancellationToken = default);
 
