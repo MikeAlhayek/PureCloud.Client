@@ -664,10 +664,7 @@ public interface IRoutingApi
     /// <summary>
     /// Get queue assistant configuration
     /// </summary>
-    /// <param name="queueId">Queue ID</param>
-    /// <param name="cancellationToken">Cancellation token</param>
-    /// <returns>Assistant queue</returns>
-    Task<AssistantQueue> GetRoutingQueueAssistantAsync(string queueId, CancellationToken cancellationToken = default);
+
 
     /// <summary>
     /// Get details about a queue
@@ -979,10 +976,7 @@ public interface IRoutingApi
     /// <inheritdoc />
     Task<TranscriptionSettings> UpdateRoutingSettingsTranscriptionAsync(TranscriptionSettings body, CancellationToken cancellationToken = default);
 
-    /// <inheritdoc />
-    Task<SkillGroup> UpdateRoutingSkillgroupAsync(string skillGroupId, SkillGroup body, CancellationToken cancellationToken = default);
 
-    /// <inheritdoc />
     Task<SkillGroup> UpdateRoutingSkillgroupAsync(string skillGroupId, SkillGroup body, CancellationToken cancellationToken = default);
 
     /// <inheritdoc />
