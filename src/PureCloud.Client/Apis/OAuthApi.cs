@@ -8,7 +8,9 @@ using PureCloud.Client.Models;
 
 namespace PureCloud.Client.Apis;
 
-/// <inheritdoc />
+/// <summary>
+/// OAuth API for managing OAuth clients, scopes, and authorizations
+/// </summary>
 public sealed class OAuthApi : IOAuthApi
 {
     private readonly IHttpClientFactory _httpClientFactory;
@@ -20,7 +22,9 @@ public sealed class OAuthApi : IOAuthApi
         _options = options.Value;
     }
 
-    /// <inheritdoc />
+    /// <summary>
+    /// Delete OAuth Client
+    /// </summary>
     public async Task DeleteOauthClientAsync(string clientId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(clientId);
@@ -32,7 +36,9 @@ public sealed class OAuthApi : IOAuthApi
         response.EnsureSuccessStatusCode();
     }
 
-    /// <inheritdoc />
+    /// <summary>
+    /// Get a client that is authorized by the resource owner
+    /// </summary>
     public async Task<OAuthAuthorization> GetOauthAuthorizationAsync(string clientId, string acceptLanguage = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(clientId);
@@ -53,7 +59,9 @@ public sealed class OAuthApi : IOAuthApi
         return await response.Content.ReadFromJsonAsync<OAuthAuthorization>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    /// <inheritdoc />
+    /// <summary>
+    /// List clients that have been authorized, requested, or revoked by the resource owner
+    /// </summary>
     public async Task<OAuthAuthorizationListing> GetOauthAuthorizationsAsync(string acceptLanguage = null, CancellationToken cancellationToken = default)
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
@@ -72,7 +80,9 @@ public sealed class OAuthApi : IOAuthApi
         return await response.Content.ReadFromJsonAsync<OAuthAuthorizationListing>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    /// <inheritdoc />
+    /// <summary>
+    /// Get OAuth Client
+    /// </summary>
     public async Task<OAuthClient> GetOauthClientAsync(string clientId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(clientId);
@@ -86,7 +96,9 @@ public sealed class OAuthApi : IOAuthApi
         return await response.Content.ReadFromJsonAsync<OAuthClient>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    /// <inheritdoc />
+    /// <summary>
+    /// Get the results of a usage query
+    /// </summary>
     public async Task<ApiUsageQueryResult> GetOauthClientUsageQueryResultAsync(string executionId, string clientId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(executionId);
@@ -101,7 +113,9 @@ public sealed class OAuthApi : IOAuthApi
         return await response.Content.ReadFromJsonAsync<ApiUsageQueryResult>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    /// <inheritdoc />
+    /// <summary>
+    /// Get a summary of OAuth client API usage
+    /// </summary>
     public async Task<UsageExecutionResult> GetOauthClientUsageSummaryAsync(string clientId, string days = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(clientId);
@@ -124,7 +138,9 @@ public sealed class OAuthApi : IOAuthApi
         return await response.Content.ReadFromJsonAsync<UsageExecutionResult>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    /// <inheritdoc />
+    /// <summary>
+    /// The list of OAuth clients
+    /// </summary>
     public async Task<OAuthClientEntityListing> GetOauthClientsAsync(CancellationToken cancellationToken = default)
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
@@ -136,7 +152,9 @@ public sealed class OAuthApi : IOAuthApi
         return await response.Content.ReadFromJsonAsync<OAuthClientEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    /// <inheritdoc />
+    /// <summary>
+    /// An OAuth scope
+    /// </summary>
     public async Task<OAuthScope> GetOauthScopeAsync(string scopeId, string acceptLanguage = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(scopeId);
@@ -157,7 +175,9 @@ public sealed class OAuthApi : IOAuthApi
         return await response.Content.ReadFromJsonAsync<OAuthScope>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    /// <inheritdoc />
+    /// <summary>
+    /// The list of OAuth scopes
+    /// </summary>
     public async Task<OAuthScopeListing> GetOauthScopesAsync(string acceptLanguage = null, CancellationToken cancellationToken = default)
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
@@ -176,7 +196,9 @@ public sealed class OAuthApi : IOAuthApi
         return await response.Content.ReadFromJsonAsync<OAuthScopeListing>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    /// <inheritdoc />
+    /// <summary>
+    /// Regenerate Client Secret
+    /// </summary>
     public async Task<OAuthClient> CreateOauthClientSecretAsync(string clientId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(clientId);
@@ -190,7 +212,9 @@ public sealed class OAuthApi : IOAuthApi
         return await response.Content.ReadFromJsonAsync<OAuthClient>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    /// <inheritdoc />
+    /// <summary>
+    /// Query for OAuth client API usage
+    /// </summary>
     public async Task<UsageExecutionResult> CreateOauthClientUsageQueryAsync(string clientId, ApiUsageClientQuery body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(clientId);
@@ -205,7 +229,9 @@ public sealed class OAuthApi : IOAuthApi
         return await response.Content.ReadFromJsonAsync<UsageExecutionResult>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    /// <inheritdoc />
+    /// <summary>
+    /// Create OAuth client
+    /// </summary>
     public async Task<OAuthClient> CreateOauthClientAsync(OAuthClientRequest body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
@@ -219,7 +245,9 @@ public sealed class OAuthApi : IOAuthApi
         return await response.Content.ReadFromJsonAsync<OAuthClient>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    /// <inheritdoc />
+    /// <summary>
+    /// Update OAuth Client
+    /// </summary>
     public async Task<OAuthClient> UpdateOauthClientAsync(string clientId, OAuthClientRequest body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(clientId);
