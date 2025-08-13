@@ -15,9 +15,9 @@ public interface ITeamsApi
 
     Task<Team> UpdateTeamAsync(string teamId, Team body, CancellationToken cancellationToken = default);
 
-    Task DeleteTeamAsync(string teamId, CancellationToken cancellationToken = default);
+    Task<bool> DeleteTeamAsync(string teamId, CancellationToken cancellationToken = default);
 
-    Task DeleteTeamMembersAsync(string teamId, string id, CancellationToken cancellationToken = default);
+    Task<bool> DeleteTeamMembersAsync(string teamId, string id, CancellationToken cancellationToken = default);
 
     Task<TeamMemberAddListingResponse> CreateTeamMembersAsync(string teamId, TeamMembers body, CancellationToken cancellationToken = default);
 
