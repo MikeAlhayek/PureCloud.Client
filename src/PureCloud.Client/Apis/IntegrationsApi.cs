@@ -995,7 +995,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
 
 
 
-        var response = await client.GetAsync($"api/v2/integrations/speech/dialogflowcx/agents/{Uri.EscapeDataString(agentId)}", cancellationToken);
+        var response = await client.GetAsync($"api/v2/integrations/speech/DialogflowCx/agents/{Uri.EscapeDataString(agentId)}", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -1024,7 +1024,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri("api/v2/integrations/speech/dialogflowcx/agents", parameters);
+        var uri = UriHelper.GetUri("api/v2/integrations/speech/DialogflowCx/agents", parameters);
 
         var response = await client.GetAsync(uri, cancellationToken);
 
@@ -1127,7 +1127,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
 
 
 
-        var response = await client.GetAsync($"api/v2/integrations/speech/lexv2/bot/alias/{Uri.EscapeDataString(aliasId)}", cancellationToken);
+        var response = await client.GetAsync($"api/v2/integrations/speech/LexV2/bot/alias/{Uri.EscapeDataString(aliasId)}", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -1162,7 +1162,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
         }
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-        var uri = UriHelper.GetUri($"api/v2/integrations/speech/lexv2/bot/{Uri.EscapeDataString(botId)}/aliases", parameters);
+        var uri = UriHelper.GetUri($"api/v2/integrations/speech/LexV2/bot/{Uri.EscapeDataString(botId)}/aliases", parameters);
 
         var response = await client.GetAsync(uri, cancellationToken);
 
@@ -1193,7 +1193,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri("api/v2/integrations/speech/lexv2/bots", parameters);
+        var uri = UriHelper.GetUri("api/v2/integrations/speech/LexV2/bots", parameters);
 
         var response = await client.GetAsync(uri, cancellationToken);
 
@@ -1601,7 +1601,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
     }
 
     /// <inheritdoc />
-    public async Task<UnifiedCommunicationsIntegration> GetIntegrationsUnifiedcommunicationsClientappAsync(string ucIntegrationId, CancellationToken cancellationToken = default)
+    public async Task<UnifiedCommunicationsIntegration> GetIntegrationsUnifiedCommunicationsClientappAsync(string ucIntegrationId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(ucIntegrationId);
 
@@ -1617,7 +1617,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
     }
 
     /// <inheritdoc />
-    public async Task<UnifiedCommunicationsIntegrationListing> GetIntegrationsUnifiedcommunicationsClientappsAsync(int? pageSize = null, int? pageNumber = null, string sortBy = null, IList<string> expands = null, string nextPage = null, string previousPage = null, CancellationToken cancellationToken = default)
+    public async Task<UnifiedCommunicationsIntegrationListing> GetIntegrationsUnifiedCommunicationsClientAppsAsync(int? pageSize = null, int? pageNumber = null, string sortBy = null, IList<string> expands = null, string nextPage = null, string previousPage = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
 
@@ -1990,7 +1990,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
     }
 
     /// <inheritdoc />
-    public async Task<AsyncJob> CreateIntegrationsSpeechNuanceNuanceIntegrationIdBotJobsAsync(string nuanceIntegrationId, string botId, IList<string> expands = null, string body = null, CancellationToken cancellationToken = default)
+    public async Task<AsyncJob> CreateIntegrationsSpeechNuanceIntegrationIdBotJobsAsync(string nuanceIntegrationId, string botId, IList<string> expands = null, string body = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(nuanceIntegrationId);
 
@@ -2123,7 +2123,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
     }
 
     /// <inheritdoc />
-    public async Task<object> PutIntegrationsBotconnectorIntegrationIdBotsAsync(string integrationId, BotList botList, CancellationToken cancellationToken = default)
+    public async Task<object> UpdateIntegrationsBotconnectorIntegrationIdBotsAsync(string integrationId, BotList botList, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(integrationId);
 
@@ -2191,7 +2191,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
     }
 
     /// <inheritdoc />
-    public async Task<string> UpdateIntegrationsUnifiedcommunicationsThirdPartyPresencesAsync(string ucIntegrationId, IEnumerable<UCThirdPartyPresence> body, CancellationToken cancellationToken = default)
+    public async Task<string> UpdateIntegrationsUnifiedCommunicationsThirdPartyPresencesAsync(string ucIntegrationId, IEnumerable<UCThirdPartyPresence> body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(ucIntegrationId);
 

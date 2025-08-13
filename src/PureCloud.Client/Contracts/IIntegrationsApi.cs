@@ -440,13 +440,13 @@ public interface IIntegrationsApi
     Task<IntegrationTypeEntityListing> GetIntegrationsTypesAsync(int? pageSize = null, int? pageNumber = null, string sortBy = null, IList<string> expands = null, string nextPage = null, string previousPage = null, CancellationToken cancellationToken = default);
 
     /// <summary>
-    /// Get UnifiedcommunicationsClientapp.
+    /// Get UnifiedCommunicationsClientapp.
     /// </summary>
     /// <param name="ucIntegrationId">The ucintegration id</param>
-    Task<UnifiedCommunicationsIntegration> GetIntegrationsUnifiedcommunicationsClientappAsync(string ucIntegrationId, CancellationToken cancellationToken = default);
+    Task<UnifiedCommunicationsIntegration> GetIntegrationsUnifiedCommunicationsClientappAsync(string ucIntegrationId, CancellationToken cancellationToken = default);
 
     /// <summary>
-    /// Get UnifiedcommunicationsClientapps.
+    /// Get UnifiedCommunicationsClientApps.
     /// </summary>
     /// <param name="pageSize">Page size</param>
     /// <param name="pageNumber">Page number</param>
@@ -455,7 +455,7 @@ public interface IIntegrationsApi
     /// <param name="nextPage">Next page</param>
     /// <param name="previousPage">Previous page</param>
     /// <param name="cancellationToken">Cancellation token</param>
-    Task<UnifiedCommunicationsIntegrationListing> GetIntegrationsUnifiedcommunicationsClientappsAsync(int? pageSize = null, int? pageNumber = null, string sortBy = null, IList<string> expands = null, string nextPage = null, string previousPage = null, CancellationToken cancellationToken = default);
+    Task<UnifiedCommunicationsIntegrationListing> GetIntegrationsUnifiedCommunicationsClientAppsAsync(int? pageSize = null, int? pageNumber = null, string sortBy = null, IList<string> expands = null, string nextPage = null, string previousPage = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Get Userapps.
@@ -564,14 +564,14 @@ public interface IIntegrationsApi
     Task<CredentialInfo> CreateIntegrationsCredentialsAsync(Credential body = null, CancellationToken cancellationToken = default);
 
     /// <summary>
-    /// Create SpeechNuanceNuanceIntegrationIdBotJobs.
+    /// Create SpeechNuanceIntegrationIdBotJobs.
     /// </summary>
     /// <param name="nuanceIntegrationId">The Nuance integration ID</param>
     /// <param name="botId">The bot ID</param>
     /// <param name="expands">Expand options</param>
     /// <param name="body">Request body</param>
     /// <param name="cancellationToken">Cancellation token</param>
-    Task<AsyncJob> CreateIntegrationsSpeechNuanceNuanceIntegrationIdBotJobsAsync(string nuanceIntegrationId, string botId, IList<string> expands = null, string body = null, CancellationToken cancellationToken = default);
+    Task<AsyncJob> CreateIntegrationsSpeechNuanceIntegrationIdBotJobsAsync(string nuanceIntegrationId, string botId, IList<string> expands = null, string body = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Create SpeechNuanceIntegrationIdBotsJobs.
@@ -612,7 +612,7 @@ public interface IIntegrationsApi
     /// </summary>
     /// <param name="integrationId">The integration ID</param>
     /// <param name="botList">The botList</param>
-    Task<object> PutIntegrationsBotconnectorIntegrationIdBotsAsync(string integrationId, BotList botList, CancellationToken cancellationToken = default);
+    Task<object> UpdateIntegrationsBotconnectorIntegrationIdBotsAsync(string integrationId, BotList botList, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Update Credential.
@@ -635,8 +635,8 @@ public interface IIntegrationsApi
     Task<TtsSettings> UpdateIntegrationsSpeechTtsSettingsAsync(TtsSettings body, CancellationToken cancellationToken = default);
 
     /// <summary>
-    /// Update UnifiedcommunicationsThirdPartyPresences.
+    /// Update UnifiedCommunicationsThirdPartyPresences.
     /// </summary>
     /// <param name="ucIntegrationId">The ucintegration id</param>
-    Task<string> UpdateIntegrationsUnifiedcommunicationsThirdPartyPresencesAsync(string ucIntegrationId, IEnumerable<UCThirdPartyPresence> body, CancellationToken cancellationToken = default);
+    Task<string> UpdateIntegrationsUnifiedCommunicationsThirdPartyPresencesAsync(string ucIntegrationId, IEnumerable<UCThirdPartyPresence> body, CancellationToken cancellationToken = default);
 }
