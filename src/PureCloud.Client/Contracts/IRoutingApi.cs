@@ -117,8 +117,7 @@ public interface IRoutingApi
     /// </summary>
     /// <param name="body">Create queue request</param>
     /// <param name="cancellationToken">Cancellation token</param>
-    /// <returns>Queue</returns>
-    Task<Queue> CreateRoutingQueueAsync(CreateQueueRequest body, CancellationToken cancellationToken = default);
+
 
     /// <summary>
     /// Bulk add queue members
@@ -185,8 +184,7 @@ public interface IRoutingApi
     /// </summary>
     /// <param name="body">SMS address</param>
     /// <param name="cancellationToken">Cancellation token</param>
-    /// <returns>SMS address</returns>
-    Task<SmsAddress> CreateRoutingSmsAddressAsync(SmsAddress body, CancellationToken cancellationToken = default);
+
 
     /// <summary>
     /// Provision an SMS phone number
@@ -480,11 +478,7 @@ public interface IRoutingApi
 
     /// <summary>
     /// Get benefit assessment jobs (single division)
-    /// </summary>
-    /// <param name="divisionId">Division ID to filter jobs</param>
-    /// <param name="cancellationToken">Cancellation token</param>
-    /// <returns>Assessment job listing</returns>
-    Task<AssessmentJobListing> GetRoutingAssessmentsJobsAsync(string divisionId = null, CancellationToken cancellationToken = default);
+
 
     /// <summary>
     /// Get benefit assessment jobs (multiple divisions)
