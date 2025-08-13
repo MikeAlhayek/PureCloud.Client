@@ -52,7 +52,9 @@ public sealed class TextbotsApi : ITextbotsApi
             parameters.Add("pageSize", UriHelper.ParameterToString(pageSize.Value));
         }
 
-        var uri = UriHelper.GetUri("api/v2/textbots/bots/search", parameters);
+        var uri = parameters.Count > 0 
+            ? UriHelper.GetUri("api/v2/textbots/bots/search", parameters)
+            : "api/v2/textbots/bots/search";
 
         var response = await _httpClient.GetAsync(uri, cancellationToken);
 
@@ -68,7 +70,7 @@ public sealed class TextbotsApi : ITextbotsApi
 
         ArgumentNullException.ThrowIfNull(turnRequest);
 
-        var uri = UriHelper.GetUri($"api/v2/textbots/botflows/sessions/{sessionId}/turns", null);
+        var uri = $"api/v2/textbots/botflows/sessions/{Uri.EscapeDataString(sessionId)}/turns";
 
         var response = await _httpClient.PostAsJsonAsync(uri, turnRequest, _options, cancellationToken);
 
@@ -82,7 +84,7 @@ public sealed class TextbotsApi : ITextbotsApi
     {
         ArgumentNullException.ThrowIfNull(launchRequest);
 
-        var uri = UriHelper.GetUri("api/v2/textbots/botflows/sessions", null);
+        var uri = "api/v2/textbots/botflows/sessions";
 
         var response = await _httpClient.PostAsJsonAsync(uri, launchRequest, _options, cancellationToken);
 
@@ -96,7 +98,7 @@ public sealed class TextbotsApi : ITextbotsApi
     {
         ArgumentNullException.ThrowIfNull(postTextRequest);
 
-        var uri = UriHelper.GetUri("api/v2/textbots/bots/execute", null);
+        var uri = "api/v2/textbots/bots/execute";
 
         var response = await _httpClient.PostAsJsonAsync(uri, postTextRequest, _options, cancellationToken);
 
