@@ -1,4 +1,5 @@
 using System.Net.Http.Json;
+using System.Text.Json;
 using Microsoft.Extensions.Options;
 using PureCloud.Client.Contracts;
 using PureCloud.Client.Http;
@@ -11,12 +12,12 @@ namespace PureCloud.Client.Apis;
 public sealed class ScreenRecordingApi : IScreenRecordingApi
 {
     private readonly HttpClient _httpClient;
-    private readonly PureCloudJsonSerializerOptions _options;
+    private readonly JsonSerializerOptions _options;
 
     public ScreenRecordingApi(IHttpClientFactory httpClientFactory, IOptions<PureCloudJsonSerializerOptions> options)
     {
         _httpClient = httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-        _options    = options.Value;
+        _options = options.Value.JsonSerializerOptions;
     }
 
     /// <inheritdoc />
@@ -24,10 +25,10 @@ public sealed class ScreenRecordingApi : IScreenRecordingApi
     {
         var uri = UriHelper.GetUri("api/v2/screenrecording/token", null);
 
-        var response = await _httpClient.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await _httpClient.PostAsJsonAsync(uri, body, _options, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<SignedData>(_options.JsonSerializerOptions, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<SignedData>(_options, cancellationToken);
     }
 }
