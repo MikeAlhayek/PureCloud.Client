@@ -742,7 +742,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
     }
 
     /// <inheritdoc />
-    public async Task<ClientAppEntityListing> GetIntegrationsClientAppsAsync(int? pageSize = null, int? pageNumber = null, string sortBy = null, IList<string> expands = null, string nextPage = null, string previousPage = null, CancellationToken cancellationToken = default)
+    public async Task<ClientAppEntityListing> GetIntegrationsClientappsAsync(int? pageSize = null, int? pageNumber = null, string sortBy = null, IList<string> expands = null, string nextPage = null, string previousPage = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
 
@@ -791,7 +791,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
     }
 
     /// <inheritdoc />
-    public async Task<UCIntegrationListing> GetIntegrationsClientAppsUnifiedCommunicationsAsync(int? pageSize = null, int? pageNumber = null, string sortBy = null, IList<string> expands = null, string nextPage = null, string previousPage = null, CancellationToken cancellationToken = default)
+    public async Task<UCIntegrationListing> GetIntegrationsClientappsUnifiedcommunicationsAsync(int? pageSize = null, int? pageNumber = null, string sortBy = null, IList<string> expands = null, string nextPage = null, string previousPage = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
 
@@ -987,7 +987,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
     }
 
     /// <inheritdoc />
-    public async Task<DialogflowCXAgent> GetIntegrationsSpeechDialogflowCxAgentAsync(string agentId, CancellationToken cancellationToken = default)
+    public async Task<DialogflowCXAgent> GetIntegrationsSpeechDialogflowcxAgentAsync(string agentId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(agentId);
 
@@ -1003,7 +1003,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
     }
 
     /// <inheritdoc />
-    public async Task<DialogflowCXAgentSummaryEntityListing> GetIntegrationsSpeechDialogflowCxAgentsAsync(int? pageNumber = null, int? pageSize = null, string name = null, CancellationToken cancellationToken = default)
+    public async Task<DialogflowCXAgentSummaryEntityListing> GetIntegrationsSpeechDialogflowcxAgentsAsync(int? pageNumber = null, int? pageSize = null, string name = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
 
@@ -1203,7 +1203,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
     }
 
     /// <inheritdoc />
-    public async Task<NuanceBot> GetIntegrationsSpeechNuanceIntegrationIdBotAsync(string nuanceIntegrationId, string botId, IList<string> expands = null, string targetChannel = null, CancellationToken cancellationToken = default)
+    public async Task<NuanceBot> GetIntegrationsSpeechNuanceNuanceIntegrationIdBotAsync(string nuanceIntegrationId, string botId, IList<string> expands = null, string targetChannel = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(nuanceIntegrationId);
 
@@ -1236,7 +1236,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
     }
 
     /// <inheritdoc />
-    public async Task<AsyncJob> GetIntegrationsSpeechNuanceIntegrationIdBotJobAsync(string nuanceIntegrationId, string botId, string jobId, CancellationToken cancellationToken = default)
+    public async Task<AsyncJob> GetIntegrationsSpeechNuanceNuanceIntegrationIdBotJobAsync(string nuanceIntegrationId, string botId, string jobId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(nuanceIntegrationId);
 
@@ -1256,7 +1256,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
     }
 
     /// <inheritdoc />
-    public async Task<NuanceBot> GetIntegrationsSpeechNuanceIntegrationIdBotJobResultsAsync(string nuanceIntegrationId, string botId, string jobId, CancellationToken cancellationToken = default)
+    public async Task<NuanceBot> GetIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResultsAsync(string nuanceIntegrationId, string botId, string jobId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(nuanceIntegrationId);
 
@@ -1276,7 +1276,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
     }
 
     /// <inheritdoc />
-    public async Task<NuanceBotEntityListing> GetIntegrationsSpeechNuanceIntegrationIdBotsAsync(string nuanceIntegrationId, int? pageNumber = null, int? pageSize = null, bool? onlyRegisteredBots = null, CancellationToken cancellationToken = default)
+    public async Task<NuanceBotEntityListing> GetIntegrationsSpeechNuanceNuanceIntegrationIdBotsAsync(string nuanceIntegrationId, int? pageNumber = null, int? pageSize = null, bool? onlyRegisteredBots = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(nuanceIntegrationId);
 
@@ -1309,7 +1309,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
     }
 
     /// <inheritdoc />
-    public async Task<AsyncJob> GetIntegrationsSpeechNuanceIntegrationIdBotsJobAsync(string nuanceIntegrationId, string jobId, CancellationToken cancellationToken = default)
+    public async Task<AsyncJob> GetIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobAsync(string nuanceIntegrationId, string jobId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(nuanceIntegrationId);
 
@@ -1327,7 +1327,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
     }
 
     /// <inheritdoc />
-    public async Task<NuanceBotEntityListing> GetIntegrationsSpeechNuanceIntegrationIdBotsJobResultsAsync(string nuanceIntegrationId, string jobId, CancellationToken cancellationToken = default)
+    public async Task<NuanceBotEntityListing> GetIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResultsAsync(string nuanceIntegrationId, string jobId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(nuanceIntegrationId);
 
@@ -1534,7 +1534,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
     }
 
     /// <inheritdoc />
-    public async Task<JsonSchemaDocument> GetIntegrationsTypeConfigSchemaAsync(string typeId, string configType, CancellationToken cancellationToken = default)
+    public async Task<JsonSchemaDocument> GetIntegrationsTypeConfigschemaAsync(string typeId, string configType, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(typeId);
 
@@ -1601,7 +1601,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
     }
 
     /// <inheritdoc />
-    public async Task<UnifiedCommunicationsIntegration> GetIntegrationsUnifiedCommunicationsClientappAsync(string ucIntegrationId, CancellationToken cancellationToken = default)
+    public async Task<UnifiedCommunicationsIntegration> GetIntegrationsUnifiedcommunicationsClientappAsync(string ucIntegrationId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(ucIntegrationId);
 
@@ -1617,7 +1617,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
     }
 
     /// <inheritdoc />
-    public async Task<UnifiedCommunicationsIntegrationListing> GetIntegrationsUnifiedCommunicationsClientAppsAsync(int? pageSize = null, int? pageNumber = null, string sortBy = null, IList<string> expands = null, string nextPage = null, string previousPage = null, CancellationToken cancellationToken = default)
+    public async Task<UnifiedCommunicationsIntegrationListing> GetIntegrationsUnifiedcommunicationsClientappsAsync(int? pageSize = null, int? pageNumber = null, string sortBy = null, IList<string> expands = null, string nextPage = null, string previousPage = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
 
@@ -1720,7 +1720,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
     }
 
     /// <inheritdoc />
-    public async Task<Integration> UpdateIntegrationAsync(string integrationId, Integration body, int? pageSize = null, int? pageNumber = null, string sortBy = null, IList<string> expands = null, string nextPage = null, string previousPage = null, CancellationToken cancellationToken = default)
+    public async Task<Integration> PatchIntegrationAsync(string integrationId, Integration body, int? pageSize = null, int? pageNumber = null, string sortBy = null, IList<string> expands = null, string nextPage = null, string previousPage = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(integrationId);
 
@@ -1773,7 +1773,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
     }
 
     /// <inheritdoc />
-    public async Task<ActionModel> UpdateIntegrationsActionAsync(string actionId, UpdateActionInput body, CancellationToken cancellationToken = default)
+    public async Task<ActionModel> PatchIntegrationsActionAsync(string actionId, UpdateActionInput body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(actionId);
 
@@ -1791,7 +1791,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
     }
 
     /// <inheritdoc />
-    public async Task<ActionModel> UpdateIntegrationsActionDraftAsync(string actionId, UpdateDraftInput body, CancellationToken cancellationToken = default)
+    public async Task<ActionModel> PatchIntegrationsActionDraftAsync(string actionId, UpdateDraftInput body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(actionId);
 
@@ -1809,7 +1809,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
     }
 
     /// <inheritdoc />
-    public async Task<Integration> CreateIntegrationAsync(CreateIntegrationRequest body, CancellationToken cancellationToken = default)
+    public async Task<Integration> PostIntegrationsAsync(CreateIntegrationRequest body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
 
@@ -1823,7 +1823,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
     }
 
     /// <inheritdoc />
-    public async Task<ActionModel> CreateIntegrationsActionDraftAsync(string actionId, CancellationToken cancellationToken = default)
+    public async Task<ActionModel> PostIntegrationsActionDraftAsync(string actionId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(actionId);
 
@@ -1950,7 +1950,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
     }
 
     /// <inheritdoc />
-    public async Task<ActionModel> CreateIntegrationsActionAsync(PostActionInput body, CancellationToken cancellationToken = default)
+    public async Task<ActionModel> PostIntegrationsActionsAsync(PostActionInput body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
 
@@ -1964,7 +1964,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
     }
 
     /// <inheritdoc />
-    public async Task<ActionModel> CreateIntegrationsActionsDraftsAsync(PostActionInput body, CancellationToken cancellationToken = default)
+    public async Task<ActionModel> PostIntegrationsActionsDraftsAsync(PostActionInput body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
 
@@ -1978,7 +1978,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
     }
 
     /// <inheritdoc />
-    public async Task<CredentialInfo> CreateIntegrationsCredentialsAsync(Credential body = null, CancellationToken cancellationToken = default)
+    public async Task<CredentialInfo> PostIntegrationsCredentialsAsync(Credential body = null, CancellationToken cancellationToken = default)
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
@@ -1990,7 +1990,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
     }
 
     /// <inheritdoc />
-    public async Task<AsyncJob> CreateIntegrationsSpeechNuanceIntegrationIdBotJobsAsync(string nuanceIntegrationId, string botId, IList<string> expands = null, string body = null, CancellationToken cancellationToken = default)
+    public async Task<AsyncJob> PostIntegrationsSpeechNuanceNuanceIntegrationIdBotJobsAsync(string nuanceIntegrationId, string botId, IList<string> expands = null, string body = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(nuanceIntegrationId);
 
@@ -2020,7 +2020,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
     }
 
     /// <inheritdoc />
-    public async Task<AsyncJob> CreateIntegrationsSpeechNuanceIntegrationIdBotsJobsAsync(string nuanceIntegrationId, int? pageNumber = null, int? pageSize = null, bool? onlyRegisteredBots = null, CancellationToken cancellationToken = default)
+    public async Task<AsyncJob> PostIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobsAsync(string nuanceIntegrationId, int? pageNumber = null, int? pageSize = null, bool? onlyRegisteredBots = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(nuanceIntegrationId);
 
@@ -2053,7 +2053,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
     }
 
     /// <inheritdoc />
-    public async Task<object> CreateIntegrationsSpeechNuanceIntegrationIdBotsLaunchValidateAsync(string nuanceIntegrationId, BotExecutionConfiguration settings, CancellationToken cancellationToken = default)
+    public async Task<object> PostIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidateAsync(string nuanceIntegrationId, BotExecutionConfiguration settings, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(nuanceIntegrationId);
 
@@ -2071,7 +2071,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
     }
 
     /// <inheritdoc />
-    public async Task<WebhookInvocationResponse> CreateIntegrationsWebhookEventsAsync(string tokenId, object body, CancellationToken cancellationToken = default)
+    public async Task<WebhookInvocationResponse> PostIntegrationsWebhookEventsAsync(string tokenId, object body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(tokenId);
 
@@ -2089,7 +2089,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
     }
 
     /// <inheritdoc />
-    public async Task<IntegrationConfiguration> UpdateIntegrationConfigCurrentAsync(string integrationId, IntegrationConfiguration body, CancellationToken cancellationToken = default)
+    public async Task<IntegrationConfiguration> PutIntegrationConfigCurrentAsync(string integrationId, IntegrationConfiguration body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(integrationId);
 
@@ -2105,7 +2105,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
     }
 
     /// <inheritdoc />
-    public async Task<FunctionConfig> UpdateIntegrationsActionDraftFunctionAsync(string actionId, Function body, CancellationToken cancellationToken = default)
+    public async Task<FunctionConfig> PutIntegrationsActionDraftFunctionAsync(string actionId, Function body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(actionId);
 
@@ -2123,7 +2123,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
     }
 
     /// <inheritdoc />
-    public async Task<object> UpdateIntegrationsBotconnectorIntegrationIdBotsAsync(string integrationId, BotList botList, CancellationToken cancellationToken = default)
+    public async Task<object> PutIntegrationsBotconnectorIntegrationIdBotsAsync(string integrationId, BotList botList, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(integrationId);
 
@@ -2141,7 +2141,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
     }
 
     /// <inheritdoc />
-    public async Task<CredentialInfo> UpdateIntegrationsCredentialAsync(string credentialId, Credential body, CancellationToken cancellationToken = default)
+    public async Task<CredentialInfo> PutIntegrationsCredentialAsync(string credentialId, Credential body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(credentialId);
 
@@ -2159,7 +2159,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
     }
 
     /// <inheritdoc />
-    public async Task<object> UpdateIntegrationsSpeechNuanceIntegrationBotsLaunchSettingsAsync(string nuanceIntegrationId, NuanceBotLaunchSettings settings, CancellationToken cancellationToken = default)
+    public async Task<object> PutIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettingsAsync(string nuanceIntegrationId, NuanceBotLaunchSettings settings, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(nuanceIntegrationId);
 
@@ -2177,7 +2177,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
     }
 
     /// <inheritdoc />
-    public async Task<TtsSettings> UpdateIntegrationsSpeechTtsSettingsAsync(TtsSettings body, CancellationToken cancellationToken = default)
+    public async Task<TtsSettings> PutIntegrationsSpeechTtsSettingsAsync(TtsSettings body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
 
@@ -2191,7 +2191,7 @@ public sealed class IntegrationsApi : IIntegrationsApi
     }
 
     /// <inheritdoc />
-    public async Task<string> UpdateIntegrationsUnifiedCommunicationsThirdPartyPresencesAsync(string ucIntegrationId, IEnumerable<UCThirdPartyPresence> body, CancellationToken cancellationToken = default)
+    public async Task<string> PutIntegrationsUnifiedcommunicationThirdpartypresencesAsync(string ucIntegrationId, IEnumerable<UCThirdPartyPresence> body, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(ucIntegrationId);
 
