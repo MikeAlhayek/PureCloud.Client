@@ -111,6 +111,8 @@ public sealed class LanguagesApi : ILanguagesApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
+        var parameters = new NameValueCollection();
+        
         if (!string.IsNullOrEmpty(language))
         {
             parameters.Add("language", language);
@@ -132,6 +134,8 @@ public sealed class LanguagesApi : ILanguagesApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
+        var parameters = new NameValueCollection();
+        
         if (!string.IsNullOrEmpty(language))
         {
             parameters.Add("language", language);
