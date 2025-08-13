@@ -29,7 +29,7 @@ public sealed class UsageApi : IUsageApi
         ArgumentException.ThrowIfNullOrEmpty(executionId, nameof(executionId));
         ArgumentException.ThrowIfNullOrEmpty(clientId, nameof(clientId));
 
-        var uri = UriHelper.GetUri($"/api/v2/oauth/clients/{clientId}/usage/query/results/{executionId}", null);
+        var uri = UriHelper.GetUri($"/api/v2/oauth/clients/{Uri.EscapeDataString(clientId)}/usage/query/results/{Uri.EscapeDataString(executionId)}", null);
         var response = await _httpClient.GetAsync(uri, cancellationToken);
         response.EnsureSuccessStatusCode();
 
@@ -45,10 +45,10 @@ public sealed class UsageApi : IUsageApi
         var parameters = new NameValueCollection();
         if (!string.IsNullOrEmpty(days))
         {
-            parameters.Add("days", days);
+            parameters.Add("days", UriHelper.ParameterToString(days));
         }
 
-        var uri = UriHelper.GetUri($"/api/v2/oauth/clients/{clientId}/usage/summary", parameters);
+        var uri = UriHelper.GetUri($"/api/v2/oauth/clients/{Uri.EscapeDataString(clientId)}/usage/summary", parameters);
         var response = await _httpClient.GetAsync(uri, cancellationToken);
         response.EnsureSuccessStatusCode();
 
@@ -61,7 +61,7 @@ public sealed class UsageApi : IUsageApi
     {
         ArgumentException.ThrowIfNullOrEmpty(executionId, nameof(executionId));
 
-        var uri = UriHelper.GetUri($"/api/v2/usage/query/{executionId}/results", null);
+        var uri = UriHelper.GetUri($"/api/v2/usage/query/{Uri.EscapeDataString(executionId)}/results", null);
         var response = await _httpClient.GetAsync(uri, cancellationToken);
         response.EnsureSuccessStatusCode();
 
@@ -77,14 +77,14 @@ public sealed class UsageApi : IUsageApi
         var parameters = new NameValueCollection();
         if (!string.IsNullOrEmpty(after))
         {
-            parameters.Add("after", after);
+            parameters.Add("after", UriHelper.ParameterToString(after));
         }
         if (pageSize.HasValue)
         {
-            parameters.Add("pageSize", pageSize.Value.ToString());
+            parameters.Add("pageSize", UriHelper.ParameterToString(pageSize.Value));
         }
 
-        var uri = UriHelper.GetUri($"/api/v2/usage/simplesearch/{executionId}/results", parameters);
+        var uri = UriHelper.GetUri($"/api/v2/usage/simplesearch/{Uri.EscapeDataString(executionId)}/results", parameters);
         var response = await _httpClient.GetAsync(uri, cancellationToken);
         response.EnsureSuccessStatusCode();
 
@@ -98,7 +98,7 @@ public sealed class UsageApi : IUsageApi
         ArgumentException.ThrowIfNullOrEmpty(clientId, nameof(clientId));
         ArgumentNullException.ThrowIfNull(body, nameof(body));
 
-        var uri = UriHelper.GetUri($"/api/v2/oauth/clients/{clientId}/usage/query", null);
+        var uri = UriHelper.GetUri($"/api/v2/oauth/clients/{Uri.EscapeDataString(clientId)}/usage/query", null);
         var response = await _httpClient.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
         response.EnsureSuccessStatusCode();
 
