@@ -220,7 +220,7 @@ public interface IIntegrationsApi
     /// <param name="nextPage">Next page</param>
     /// <param name="previousPage">Previous page</param>
     /// <param name="cancellationToken">Cancellation token</param>
-    Task<ClientAppEntityListing> GetIntegrationsClientAppsAsync(int? pageSize = null, int? pageNumber = null, string sortBy = null, IList<string> expands = null, string nextPage = null, string previousPage = null, CancellationToken cancellationToken = default);
+    Task<ClientAppEntityListing> GetIntegrationsClientappsAsync(int? pageSize = null, int? pageNumber = null, string sortBy = null, IList<string> expands = null, string nextPage = null, string previousPage = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Get ClientAppsUnifiedCommunications.
@@ -232,7 +232,7 @@ public interface IIntegrationsApi
     /// <param name="nextPage">Next page</param>
     /// <param name="previousPage">Previous page</param>
     /// <param name="cancellationToken">Cancellation token</param>
-    Task<UCIntegrationListing> GetIntegrationsClientAppsUnifiedCommunicationsAsync(int? pageSize = null, int? pageNumber = null, string sortBy = null, IList<string> expands = null, string nextPage = null, string previousPage = null, CancellationToken cancellationToken = default);
+    Task<UCIntegrationListing> GetIntegrationsClientappsUnifiedcommunicationsAsync(int? pageSize = null, int? pageNumber = null, string sortBy = null, IList<string> expands = null, string nextPage = null, string previousPage = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Get Credential.
@@ -277,13 +277,13 @@ public interface IIntegrationsApi
     /// Get SpeechDialogflowCxAgent.
     /// </summary>
     /// <param name="agentId">The agent id</param>
-    Task<DialogflowCXAgent> GetIntegrationsSpeechDialogflowCxAgentAsync(string agentId, CancellationToken cancellationToken = default);
+    Task<DialogflowCXAgent> GetIntegrationsSpeechDialogflowcxAgentAsync(string agentId, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Get SpeechDialogflowCxAgents.
     /// </summary>
     /// <param name="name">The name</param>
-    Task<DialogflowCXAgentSummaryEntityListing> GetIntegrationsSpeechDialogflowCxAgentsAsync(int? pageNumber = null, int? pageSize = null, string name = null, CancellationToken cancellationToken = default);
+    Task<DialogflowCXAgentSummaryEntityListing> GetIntegrationsSpeechDialogflowcxAgentsAsync(int? pageNumber = null, int? pageSize = null, string name = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Get SpeechLexBotAlias.
@@ -333,7 +333,7 @@ public interface IIntegrationsApi
     /// <param name="expands">Expand options</param>
     /// <param name="targetChannel">The targetChannel</param>
     /// <param name="cancellationToken">Cancellation token</param>
-    Task<NuanceBot> GetIntegrationsSpeechNuanceIntegrationIdBotAsync(string nuanceIntegrationId, string botId, IList<string> expands = null, string targetChannel = null, CancellationToken cancellationToken = default);
+    Task<NuanceBot> GetIntegrationsSpeechNuanceNuanceIntegrationIdBotAsync(string nuanceIntegrationId, string botId, IList<string> expands = null, string targetChannel = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Get SpeechNuanceIntegrationIdBotJob.
@@ -341,7 +341,7 @@ public interface IIntegrationsApi
     /// <param name="nuanceIntegrationId">The Nuance integration ID</param>
     /// <param name="botId">The bot ID</param>
     /// <param name="jobId">The job id</param>
-    Task<AsyncJob> GetIntegrationsSpeechNuanceIntegrationIdBotJobAsync(string nuanceIntegrationId, string botId, string jobId, CancellationToken cancellationToken = default);
+    Task<AsyncJob> GetIntegrationsSpeechNuanceNuanceIntegrationIdBotJobAsync(string nuanceIntegrationId, string botId, string jobId, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Get SpeechNuanceIntegrationIdBotJobResults.
@@ -349,27 +349,27 @@ public interface IIntegrationsApi
     /// <param name="nuanceIntegrationId">The Nuance integration ID</param>
     /// <param name="botId">The bot ID</param>
     /// <param name="jobId">The job id</param>
-    Task<NuanceBot> GetIntegrationsSpeechNuanceIntegrationIdBotJobResultsAsync(string nuanceIntegrationId, string botId, string jobId, CancellationToken cancellationToken = default);
+    Task<NuanceBot> GetIntegrationsSpeechNuanceNuanceIntegrationIdBotJobResultsAsync(string nuanceIntegrationId, string botId, string jobId, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Get SpeechNuanceIntegrationIdBots.
     /// </summary>
     /// <param name="nuanceIntegrationId">The Nuance integration ID</param>
-    Task<NuanceBotEntityListing> GetIntegrationsSpeechNuanceIntegrationIdBotsAsync(string nuanceIntegrationId, int? pageNumber = null, int? pageSize = null, bool? onlyRegisteredBots = null, CancellationToken cancellationToken = default);
+    Task<NuanceBotEntityListing> GetIntegrationsSpeechNuanceNuanceIntegrationIdBotsAsync(string nuanceIntegrationId, int? pageNumber = null, int? pageSize = null, bool? onlyRegisteredBots = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Get SpeechNuanceIntegrationIdBotsJob.
     /// </summary>
     /// <param name="nuanceIntegrationId">The Nuance integration ID</param>
     /// <param name="jobId">The job id</param>
-    Task<AsyncJob> GetIntegrationsSpeechNuanceIntegrationIdBotsJobAsync(string nuanceIntegrationId, string jobId, CancellationToken cancellationToken = default);
+    Task<AsyncJob> GetIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobAsync(string nuanceIntegrationId, string jobId, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Get SpeechNuanceIntegrationIdBotsJobResults.
     /// </summary>
     /// <param name="nuanceIntegrationId">The Nuance integration ID</param>
     /// <param name="jobId">The job id</param>
-    Task<NuanceBotEntityListing> GetIntegrationsSpeechNuanceIntegrationIdBotsJobResultsAsync(string nuanceIntegrationId, string jobId, CancellationToken cancellationToken = default);
+    Task<NuanceBotEntityListing> GetIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobResultsAsync(string nuanceIntegrationId, string jobId, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Get SpeechSttEngine.
@@ -425,7 +425,7 @@ public interface IIntegrationsApi
     /// </summary>
     /// <param name="typeId">The type id</param>
     /// <param name="configType">The configType</param>
-    Task<JsonSchemaDocument> GetIntegrationsTypeConfigSchemaAsync(string typeId, string configType, CancellationToken cancellationToken = default);
+    Task<JsonSchemaDocument> GetIntegrationsTypeConfigschemaAsync(string typeId, string configType, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Get Types.
@@ -443,7 +443,7 @@ public interface IIntegrationsApi
     /// Get UnifiedCommunicationsClientapp.
     /// </summary>
     /// <param name="ucIntegrationId">The ucintegration id</param>
-    Task<UnifiedCommunicationsIntegration> GetIntegrationsUnifiedCommunicationsClientappAsync(string ucIntegrationId, CancellationToken cancellationToken = default);
+    Task<UnifiedCommunicationsIntegration> GetIntegrationsUnifiedcommunicationsClientappAsync(string ucIntegrationId, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Get UnifiedCommunicationsClientApps.
@@ -455,7 +455,7 @@ public interface IIntegrationsApi
     /// <param name="nextPage">Next page</param>
     /// <param name="previousPage">Previous page</param>
     /// <param name="cancellationToken">Cancellation token</param>
-    Task<UnifiedCommunicationsIntegrationListing> GetIntegrationsUnifiedCommunicationsClientAppsAsync(int? pageSize = null, int? pageNumber = null, string sortBy = null, IList<string> expands = null, string nextPage = null, string previousPage = null, CancellationToken cancellationToken = default);
+    Task<UnifiedCommunicationsIntegrationListing> GetIntegrationsUnifiedcommunicationsClientappsAsync(int? pageSize = null, int? pageNumber = null, string sortBy = null, IList<string> expands = null, string nextPage = null, string previousPage = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Get Userapps.
@@ -482,33 +482,33 @@ public interface IIntegrationsApi
     /// <param name="nextPage">Next page</param>
     /// <param name="previousPage">Previous page</param>
     /// <param name="cancellationToken">Cancellation token</param>
-    Task<Integration> UpdateIntegrationAsync(string integrationId, Integration body, int? pageSize = null, int? pageNumber = null, string sortBy = null, IList<string> expands = null, string nextPage = null, string previousPage = null, CancellationToken cancellationToken = default);
+    Task<Integration> PatchIntegrationAsync(string integrationId, Integration body, int? pageSize = null, int? pageNumber = null, string sortBy = null, IList<string> expands = null, string nextPage = null, string previousPage = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Update Action.
     /// </summary>
     /// <param name="actionId">The action ID</param>
     /// <param name="body">Request body</param>
-    Task<ActionModel> UpdateIntegrationsActionAsync(string actionId, UpdateActionInput body, CancellationToken cancellationToken = default);
+    Task<ActionModel> PatchIntegrationsActionAsync(string actionId, UpdateActionInput body, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Update ActionDraft.
     /// </summary>
     /// <param name="actionId">The action ID</param>
     /// <param name="body">Request body</param>
-    Task<ActionModel> UpdateIntegrationsActionDraftAsync(string actionId, UpdateDraftInput body, CancellationToken cancellationToken = default);
+    Task<ActionModel> PatchIntegrationsActionDraftAsync(string actionId, UpdateDraftInput body, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Create Integration.
     /// </summary>
     /// <param name="body">Request body</param>
-    Task<Integration> CreateIntegrationAsync(CreateIntegrationRequest body, CancellationToken cancellationToken = default);
+    Task<Integration> PostIntegrationsAsync(CreateIntegrationRequest body, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Create ActionDraft.
     /// </summary>
     /// <param name="actionId">The action ID</param>
-    Task<ActionModel> CreateIntegrationsActionDraftAsync(string actionId, CancellationToken cancellationToken = default);
+    Task<ActionModel> PostIntegrationsActionDraftAsync(string actionId, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Create ActionDraftFunctionUpload.
@@ -549,19 +549,19 @@ public interface IIntegrationsApi
     /// Create Action.
     /// </summary>
     /// <param name="body">Request body</param>
-    Task<ActionModel> CreateIntegrationsActionAsync(PostActionInput body, CancellationToken cancellationToken = default);
+    Task<ActionModel> PostIntegrationsActionsAsync(PostActionInput body, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Create ActionsDrafts.
     /// </summary>
     /// <param name="body">Request body</param>
-    Task<ActionModel> CreateIntegrationsActionsDraftsAsync(PostActionInput body, CancellationToken cancellationToken = default);
+    Task<ActionModel> PostIntegrationsActionsDraftsAsync(PostActionInput body, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Create Credentials.
     /// </summary>
     /// <param name="body">Request body</param>
-    Task<CredentialInfo> CreateIntegrationsCredentialsAsync(Credential body = null, CancellationToken cancellationToken = default);
+    Task<CredentialInfo> PostIntegrationsCredentialsAsync(Credential body = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Create SpeechNuanceIntegrationIdBotJobs.
@@ -571,72 +571,72 @@ public interface IIntegrationsApi
     /// <param name="expands">Expand options</param>
     /// <param name="body">Request body</param>
     /// <param name="cancellationToken">Cancellation token</param>
-    Task<AsyncJob> CreateIntegrationsSpeechNuanceIntegrationIdBotJobsAsync(string nuanceIntegrationId, string botId, IList<string> expands = null, string body = null, CancellationToken cancellationToken = default);
+    Task<AsyncJob> PostIntegrationsSpeechNuanceNuanceIntegrationIdBotJobsAsync(string nuanceIntegrationId, string botId, IList<string> expands = null, string body = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Create SpeechNuanceIntegrationIdBotsJobs.
     /// </summary>
     /// <param name="nuanceIntegrationId">The Nuance integration ID</param>
-    Task<AsyncJob> CreateIntegrationsSpeechNuanceIntegrationIdBotsJobsAsync(string nuanceIntegrationId, int? pageNumber = null, int? pageSize = null, bool? onlyRegisteredBots = null, CancellationToken cancellationToken = default);
+    Task<AsyncJob> PostIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobsAsync(string nuanceIntegrationId, int? pageNumber = null, int? pageSize = null, bool? onlyRegisteredBots = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Create SpeechNuanceIntegrationIdBotsLaunchValidate.
     /// </summary>
     /// <param name="nuanceIntegrationId">The Nuance integration ID</param>
     /// <param name="settings">The settings</param>
-    Task<object> CreateIntegrationsSpeechNuanceIntegrationIdBotsLaunchValidateAsync(string nuanceIntegrationId, BotExecutionConfiguration settings, CancellationToken cancellationToken = default);
+    Task<object> PostIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchValidateAsync(string nuanceIntegrationId, BotExecutionConfiguration settings, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Create WebhookEvents.
     /// </summary>
     /// <param name="tokenId">The token ID</param>
     /// <param name="body">Request body</param>
-    Task<WebhookInvocationResponse> CreateIntegrationsWebhookEventsAsync(string tokenId, object body, CancellationToken cancellationToken = default);
+    Task<WebhookInvocationResponse> PostIntegrationsWebhookEventsAsync(string tokenId, object body, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Update IntegrationConfigCurrent.
     /// </summary>
     /// <param name="integrationId">The integration ID</param>
     /// <param name="body">Request body</param>
-    Task<IntegrationConfiguration> UpdateIntegrationConfigCurrentAsync(string integrationId, IntegrationConfiguration body, CancellationToken cancellationToken = default);
+    Task<IntegrationConfiguration> PutIntegrationConfigCurrentAsync(string integrationId, IntegrationConfiguration body, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Update ActionDraftFunction.
     /// </summary>
     /// <param name="actionId">The action ID</param>
     /// <param name="body">Request body</param>
-    Task<FunctionConfig> UpdateIntegrationsActionDraftFunctionAsync(string actionId, Function body, CancellationToken cancellationToken = default);
+    Task<FunctionConfig> PutIntegrationsActionDraftFunctionAsync(string actionId, Function body, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Update BotconnectorIntegrationIdBots.
     /// </summary>
     /// <param name="integrationId">The integration ID</param>
     /// <param name="botList">The botList</param>
-    Task<object> UpdateIntegrationsBotconnectorIntegrationIdBotsAsync(string integrationId, BotList botList, CancellationToken cancellationToken = default);
+    Task<object> PutIntegrationsBotconnectorIntegrationIdBotsAsync(string integrationId, BotList botList, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Update Credential.
     /// </summary>
     /// <param name="credentialId">The credential ID</param>
     /// <param name="body">Request body</param>
-    Task<CredentialInfo> UpdateIntegrationsCredentialAsync(string credentialId, Credential body, CancellationToken cancellationToken = default);
+    Task<CredentialInfo> PutIntegrationsCredentialAsync(string credentialId, Credential body, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Update SpeechNuanceIntegrationBotsLaunchSettings.
     /// </summary>
     /// <param name="nuanceIntegrationId">The Nuance integration ID</param>
     /// <param name="settings">The settings</param>
-    Task<object> UpdateIntegrationsSpeechNuanceIntegrationBotsLaunchSettingsAsync(string nuanceIntegrationId, NuanceBotLaunchSettings settings, CancellationToken cancellationToken = default);
+    Task<object> PutIntegrationsSpeechNuanceNuanceIntegrationIdBotsLaunchSettingsAsync(string nuanceIntegrationId, NuanceBotLaunchSettings settings, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Update SpeechTtsSettings.
     /// </summary>
     /// <param name="body">Request body</param>
-    Task<TtsSettings> UpdateIntegrationsSpeechTtsSettingsAsync(TtsSettings body, CancellationToken cancellationToken = default);
+    Task<TtsSettings> PutIntegrationsSpeechTtsSettingsAsync(TtsSettings body, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Update UnifiedCommunicationsThirdPartyPresences.
     /// </summary>
     /// <param name="ucIntegrationId">The ucintegration id</param>
-    Task<string> UpdateIntegrationsUnifiedCommunicationsThirdPartyPresencesAsync(string ucIntegrationId, IEnumerable<UCThirdPartyPresence> body, CancellationToken cancellationToken = default);
+    Task<string> PutIntegrationsUnifiedcommunicationThirdpartypresencesAsync(string ucIntegrationId, IEnumerable<UCThirdPartyPresence> body, CancellationToken cancellationToken = default);
 }
