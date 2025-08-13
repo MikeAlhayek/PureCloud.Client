@@ -880,6 +880,7 @@
     <Compile Include="Models\ClientAppEntityListing.cs" />
     <Compile Include="Models\ClientApp.IntendedState.cs" />
     <Compile Include="Models\CobrowseWebMessagingSession.cs" />
+    <Compile Include="Models\CobrowseWebMessagingSession.CommunicationType.cs" />
     <Compile Include="Models\CobrowseSettings.cs" />
     <Compile Include="Models\CoachingAnnotation.cs" />
     <Compile Include="Models\CoachingAnnotation.AccessType.cs" />
