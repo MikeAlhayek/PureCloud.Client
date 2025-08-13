@@ -174,7 +174,7 @@ public sealed class LanguagesApi : ILanguagesApi
     }
 
     /// <inheritdoc />
-    [Obsolete("This endpoint is deprecated. Please see the Routing API. (POST /api/v2/routing/languages)")]
+    [Obsolete("This endpoint is deprecated. Please see the Routing API")]
     public async Task<Language> PostLanguagesAsync(Language body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body, nameof(body));
