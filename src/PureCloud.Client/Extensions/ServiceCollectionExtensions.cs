@@ -171,8 +171,6 @@ public static class ServiceCollectionExtensions
 
         services.TryAddScoped<IRoutingApi, RoutingApi>();
 
-        services.TryAddScoped<IPresenceApi, PresenceApi>();
-
         services.TryAddScoped<IRecordingApi, RecordingApi>();
 
         services.TryAddScoped<IResponseManagementApiV2, ResponseManagementApi>();
@@ -182,8 +180,6 @@ public static class ServiceCollectionExtensions
         services.TryAddScoped<ISearchApi, SearchApi>();
 
         services.TryAddScoped<IScreenRecordingApi, ScreenRecordingApi>();
-
-        services.TryAddScoped<IScriptsApi, ScriptsApi>();
 
         services.TryAddScoped<ISettingsApi, SettingsApi>();
 
