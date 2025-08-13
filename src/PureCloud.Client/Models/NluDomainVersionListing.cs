@@ -58,26 +58,4 @@ public sealed class NluDomainVersionListing
     /// Gets or Sets PageCount
     /// </summary>
     public int? PageCount { get; set; }
-
-    /// <summary>
-    /// Returns the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-
-    /// <summary>
-    /// Returns true if objects are equal
-    /// </summary>
-    /// <param name="obj">Object to be compared</param>
-    /// <returns>Boolean</returns>
-
-    /// <summary>
-    /// Returns true if NluDomainVersionListing instances are equal
-    /// </summary>
-    /// <param name="other">Instance of NluDomainVersionListing to be compared</param>
-    /// <returns>Boolean</returns>
-
-    /// <summary>
-    /// Gets the hash code
-    /// </summary>
-    /// <returns>Hash code</returns>
 }

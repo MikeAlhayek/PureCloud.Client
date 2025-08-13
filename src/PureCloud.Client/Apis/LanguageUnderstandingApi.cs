@@ -165,7 +165,7 @@ public sealed class LanguageUnderstandingApi : ILanguageUnderstandingApi
     }
 
     /// <inheritdoc />
-    public async Task<NluFeedbackResponse> GetLanguageUnderstandingDomainFeedbackAsync(string domainId, string feedbackId, IEnumerable<string> fields = null, CancellationToken cancellationToken = default)
+    public async Task<NluFeedbackResponse> GetLanguageUnderstandingDomainFeedbackByIdAsync(string domainId, string feedbackId, IEnumerable<string> fields = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(domainId);
         ArgumentException.ThrowIfNullOrEmpty(feedbackId);

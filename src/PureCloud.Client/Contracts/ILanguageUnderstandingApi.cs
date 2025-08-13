@@ -84,7 +84,7 @@ public interface ILanguageUnderstandingApi
     /// <param name="fields">Fields and properties to get, comma-separated</param>
     /// <param name="cancellationToken">Cancellation token.</param>
     /// <returns>NLU Feedback Response.</returns>
-    Task<NluFeedbackResponse> GetLanguageUnderstandingDomainFeedbackAsync(string domainId, string feedbackId, IEnumerable<string> fields = null, CancellationToken cancellationToken = default);
+    Task<NluFeedbackResponse> GetLanguageUnderstandingDomainFeedbackByIdAsync(string domainId, string feedbackId, IEnumerable<string> fields = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Find an NLU Domain Version.
