@@ -2,7 +2,6 @@ using System.Net.Http.Json;
 using System.Text.Json;
 using Microsoft.Extensions.Options;
 using PureCloud.Client.Contracts;
-using PureCloud.Client.Http;
 using PureCloud.Client.Json;
 using PureCloud.Client.Models;
 
@@ -23,9 +22,7 @@ public sealed class ScreenRecordingApi : IScreenRecordingApi
     /// <inheritdoc />
     public async Task<SignedData> CreateScreenrecordingTokenAsync(ScreenRecordingUserAuthenticatedInfo body = null, CancellationToken cancellationToken = default)
     {
-        var uri = UriHelper.GetUri("api/v2/screenrecording/token", null);
-
-        var response = await _httpClient.PostAsJsonAsync(uri, body, _options, cancellationToken);
+        var response = await _httpClient.PostAsJsonAsync("api/v2/screenrecording/token", body, _options, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
