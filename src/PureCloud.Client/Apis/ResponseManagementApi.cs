@@ -259,7 +259,6 @@ public sealed class ResponseManagementApi : IResponseManagementApiV2
         return await response.Content.ReadFromJsonAsync<SimpleResponseQueryResults>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    // Response Assets
     /// <inheritdoc />
     public async Task<ResponseAsset> GetResponseManagementResponseAssetAsync(string responseAssetId, CancellationToken cancellationToken = default)
     {
