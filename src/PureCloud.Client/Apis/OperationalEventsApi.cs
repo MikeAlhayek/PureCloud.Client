@@ -26,8 +26,7 @@ public sealed class OperationalEventsApi : IOperationalEventsApi
         ArgumentException.ThrowIfNullOrEmpty(eventDefinitionId, nameof(eventDefinitionId));
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-        var uri = UriHelper.GetUri($"api/v2/usage/events/definitions/{Uri.EscapeDataString(eventDefinitionId)}", null);
-        var response = await client.GetAsync(uri, cancellationToken);
+        var response = await client.GetAsync($"api/v2/usage/events/definitions/{Uri.EscapeDataString(eventDefinitionId)}", cancellationToken);
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<EventDefinition>(_options.JsonSerializerOptions, cancellationToken);
@@ -37,8 +36,7 @@ public sealed class OperationalEventsApi : IOperationalEventsApi
     public async Task<EventDefinitionListing> GetUsageEventsDefinitionsAsync(CancellationToken cancellationToken = default)
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-        var uri = UriHelper.GetUri("api/v2/usage/events/definitions", null);
-        var response = await client.GetAsync(uri, cancellationToken);
+        var response = await client.GetAsync("api/v2/usage/events/definitions", cancellationToken);
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<EventDefinitionListing>(_options.JsonSerializerOptions, cancellationToken);
@@ -50,8 +48,7 @@ public sealed class OperationalEventsApi : IOperationalEventsApi
         ArgumentNullException.ThrowIfNull(body, nameof(body));
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-        var uri = UriHelper.GetUri("api/v2/usage/events/aggregates/query", null);
-        var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PostAsJsonAsync("api/v2/usage/events/aggregates/query", body, _options.JsonSerializerOptions, cancellationToken);
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<EventAggregatesResponse>(_options.JsonSerializerOptions, cancellationToken);
