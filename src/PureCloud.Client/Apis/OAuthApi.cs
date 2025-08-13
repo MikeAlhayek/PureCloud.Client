@@ -260,7 +260,7 @@ public sealed class OAuthApi : IOAuthApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.PostAsJsonAsync($"api/v2/oauth/clients/{Uri.EscapeDataString(clientId)}/usage/query", body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PostAsJsonAsync($"api/v2/oauth/clients/{Uri.EscapeDataString(clientId)}/usage/query", body, _options, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -276,7 +276,7 @@ public sealed class OAuthApi : IOAuthApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.PostAsJsonAsync("api/v2/oauth/clients", body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PostAsJsonAsync("api/v2/oauth/clients", body, _options, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -293,7 +293,7 @@ public sealed class OAuthApi : IOAuthApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.PutAsJsonAsync($"api/v2/oauth/clients/{Uri.EscapeDataString(clientId)}", body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PutAsJsonAsync($"api/v2/oauth/clients/{Uri.EscapeDataString(clientId)}", body, _options, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
