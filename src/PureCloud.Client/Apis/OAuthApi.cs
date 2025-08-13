@@ -25,15 +25,17 @@ public sealed class OAuthApi : IOAuthApi
     /// <summary>
     /// Delete OAuth Client
     /// </summary>
-    public async Task DeleteOauthClientAsync(string clientId, CancellationToken cancellationToken = default)
+    public async Task<bool> DeleteOauthClientAsync(string clientId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(clientId);
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.DeleteAsync($"api/v2/oauth/clients/{Uri.EscapeDataString(clientId)}", cancellationToken);
+        var uri = UriHelper.GetUri($"api/v2/oauth/clients/{Uri.EscapeDataString(clientId)}", new NameValueCollection());
 
-        response.EnsureSuccessStatusCode();
+        var response = await client.DeleteAsync(uri, cancellationToken);
+
+        return response.IsSuccessfulStatusCode;
     }
 
     /// <summary>
@@ -43,9 +45,13 @@ public sealed class OAuthApi : IOAuthApi
     {
         ArgumentException.ThrowIfNullOrEmpty(clientId);
 
+        var parameters = new NameValueCollection();
+
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        using var request = new HttpRequestMessage(HttpMethod.Get, $"api/v2/oauth/authorizations/{Uri.EscapeDataString(clientId)}");
+        var uri = UriHelper.GetUri($"api/v2/oauth/authorizations/{Uri.EscapeDataString(clientId)}", parameters);
+
+        using var request = new HttpRequestMessage(HttpMethod.Get, uri);
         
         if (!string.IsNullOrEmpty(acceptLanguage))
         {
@@ -64,9 +70,13 @@ public sealed class OAuthApi : IOAuthApi
     /// </summary>
     public async Task<OAuthAuthorizationListing> GetOauthAuthorizationsAsync(string acceptLanguage = null, CancellationToken cancellationToken = default)
     {
+        var parameters = new NameValueCollection();
+
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        using var request = new HttpRequestMessage(HttpMethod.Get, "api/v2/oauth/authorizations");
+        var uri = UriHelper.GetUri("api/v2/oauth/authorizations", parameters);
+
+        using var request = new HttpRequestMessage(HttpMethod.Get, uri);
         
         if (!string.IsNullOrEmpty(acceptLanguage))
         {
@@ -87,9 +97,13 @@ public sealed class OAuthApi : IOAuthApi
     {
         ArgumentException.ThrowIfNullOrEmpty(clientId);
 
+        var parameters = new NameValueCollection();
+
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync($"api/v2/oauth/clients/{Uri.EscapeDataString(clientId)}", cancellationToken);
+        var uri = UriHelper.GetUri($"api/v2/oauth/clients/{Uri.EscapeDataString(clientId)}", parameters);
+
+        var response = await client.GetAsync(uri, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -104,9 +118,13 @@ public sealed class OAuthApi : IOAuthApi
         ArgumentException.ThrowIfNullOrEmpty(executionId);
         ArgumentException.ThrowIfNullOrEmpty(clientId);
 
+        var parameters = new NameValueCollection();
+
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync($"api/v2/oauth/clients/{Uri.EscapeDataString(clientId)}/usage/query/results/{Uri.EscapeDataString(executionId)}", cancellationToken);
+        var uri = UriHelper.GetUri($"api/v2/oauth/clients/{Uri.EscapeDataString(clientId)}/usage/query/results/{Uri.EscapeDataString(executionId)}", parameters);
+
+        var response = await client.GetAsync(uri, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -143,9 +161,13 @@ public sealed class OAuthApi : IOAuthApi
     /// </summary>
     public async Task<OAuthClientEntityListing> GetOauthClientsAsync(CancellationToken cancellationToken = default)
     {
+        var parameters = new NameValueCollection();
+
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync("api/v2/oauth/clients", cancellationToken);
+        var uri = UriHelper.GetUri("api/v2/oauth/clients", parameters);
+
+        var response = await client.GetAsync(uri, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -159,9 +181,13 @@ public sealed class OAuthApi : IOAuthApi
     {
         ArgumentException.ThrowIfNullOrEmpty(scopeId);
 
+        var parameters = new NameValueCollection();
+
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        using var request = new HttpRequestMessage(HttpMethod.Get, $"api/v2/oauth/scopes/{Uri.EscapeDataString(scopeId)}");
+        var uri = UriHelper.GetUri($"api/v2/oauth/scopes/{Uri.EscapeDataString(scopeId)}", parameters);
+
+        using var request = new HttpRequestMessage(HttpMethod.Get, uri);
         
         if (!string.IsNullOrEmpty(acceptLanguage))
         {
@@ -180,9 +206,13 @@ public sealed class OAuthApi : IOAuthApi
     /// </summary>
     public async Task<OAuthScopeListing> GetOauthScopesAsync(string acceptLanguage = null, CancellationToken cancellationToken = default)
     {
+        var parameters = new NameValueCollection();
+
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        using var request = new HttpRequestMessage(HttpMethod.Get, "api/v2/oauth/scopes");
+        var uri = UriHelper.GetUri("api/v2/oauth/scopes", parameters);
+
+        using var request = new HttpRequestMessage(HttpMethod.Get, uri);
         
         if (!string.IsNullOrEmpty(acceptLanguage))
         {
@@ -203,9 +233,13 @@ public sealed class OAuthApi : IOAuthApi
     {
         ArgumentException.ThrowIfNullOrEmpty(clientId);
 
+        var parameters = new NameValueCollection();
+
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.PostAsync($"api/v2/oauth/clients/{Uri.EscapeDataString(clientId)}/secret", null, cancellationToken);
+        var uri = UriHelper.GetUri($"api/v2/oauth/clients/{Uri.EscapeDataString(clientId)}/secret", parameters);
+
+        var response = await client.PostAsync(uri, null, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -220,9 +254,13 @@ public sealed class OAuthApi : IOAuthApi
         ArgumentException.ThrowIfNullOrEmpty(clientId);
         ArgumentNullException.ThrowIfNull(body);
 
+        var parameters = new NameValueCollection();
+
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.PostAsJsonAsync($"api/v2/oauth/clients/{Uri.EscapeDataString(clientId)}/usage/query", body, _options.JsonSerializerOptions, cancellationToken);
+        var uri = UriHelper.GetUri($"api/v2/oauth/clients/{Uri.EscapeDataString(clientId)}/usage/query", parameters);
+
+        var response = await client.PostAsJsonAsync(uri, body, _options, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -236,9 +274,13 @@ public sealed class OAuthApi : IOAuthApi
     {
         ArgumentNullException.ThrowIfNull(body);
 
+        var parameters = new NameValueCollection();
+
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.PostAsJsonAsync("api/v2/oauth/clients", body, _options.JsonSerializerOptions, cancellationToken);
+        var uri = UriHelper.GetUri("api/v2/oauth/clients", parameters);
+
+        var response = await client.PostAsJsonAsync(uri, body, _options, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -253,9 +295,13 @@ public sealed class OAuthApi : IOAuthApi
         ArgumentException.ThrowIfNullOrEmpty(clientId);
         ArgumentNullException.ThrowIfNull(body);
 
+        var parameters = new NameValueCollection();
+
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.PutAsJsonAsync($"api/v2/oauth/clients/{Uri.EscapeDataString(clientId)}", body, _options.JsonSerializerOptions, cancellationToken);
+        var uri = UriHelper.GetUri($"api/v2/oauth/clients/{Uri.EscapeDataString(clientId)}", parameters);
+
+        var response = await client.PutAsJsonAsync(uri, body, _options, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 

@@ -10,7 +10,7 @@ public interface IOAuthApi
     /// <summary>
     /// Delete OAuth Client
     /// </summary>
-    Task DeleteOauthClientAsync(string clientId, CancellationToken cancellationToken = default);
+    Task<bool> DeleteOauthClientAsync(string clientId, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Get a client that is authorized by the resource owner
