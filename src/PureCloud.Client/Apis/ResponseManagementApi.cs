@@ -309,7 +309,7 @@ public sealed class ResponseManagementApi : IResponseManagementApiV2
 
         if (expand != null)
         {
-            parameters.Add("expand", string.Join(",", expand.Select(UriHelper.ParameterToString)));
+            parameters.Add("expand", UriHelper.ParameterToString(expand));
         }
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
