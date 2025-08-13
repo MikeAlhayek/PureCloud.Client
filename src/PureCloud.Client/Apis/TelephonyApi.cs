@@ -38,7 +38,7 @@ public sealed class TelephonyApi : ITelephonyApi
     {
         ArgumentException.ThrowIfNullOrEmpty(conversationId);
 
-        var uri = UriHelper.GetUri($"api/v2/telephony/sipmessages/conversations/{conversationId}", null);
+        var uri = UriHelper.GetUri($"api/v2/telephony/sipmessages/conversations/{Uri.EscapeDataString(conversationId)}", null);
 
         var response = await _httpClient.GetAsync(uri, cancellationToken);
 
@@ -62,7 +62,7 @@ public sealed class TelephonyApi : ITelephonyApi
             }
         }
 
-        var uri = UriHelper.GetUri($"api/v2/telephony/sipmessages/conversations/{conversationId}/headers", parameters);
+        var uri = UriHelper.GetUri($"api/v2/telephony/sipmessages/conversations/{Uri.EscapeDataString(conversationId)}/headers", parameters);
 
         var response = await _httpClient.GetAsync(uri, cancellationToken);
 
@@ -114,7 +114,7 @@ public sealed class TelephonyApi : ITelephonyApi
     {
         ArgumentException.ThrowIfNullOrEmpty(downloadId);
 
-        var uri = UriHelper.GetUri($"api/v2/telephony/siptraces/download/{downloadId}", null);
+        var uri = UriHelper.GetUri($"api/v2/telephony/siptraces/download/{Uri.EscapeDataString(downloadId)}", null);
 
         var response = await _httpClient.GetAsync(uri, cancellationToken);
 

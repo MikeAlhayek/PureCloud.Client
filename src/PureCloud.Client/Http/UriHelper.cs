@@ -22,7 +22,8 @@ public static class UriHelper
             }
         }
 
-        return query.ToString();
+        builder.Query = query.ToString();
+        return builder.Uri.ToString();
     }
 
     public static string ParameterToString(object obj)
