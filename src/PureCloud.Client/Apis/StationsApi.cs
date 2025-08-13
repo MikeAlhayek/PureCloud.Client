@@ -21,15 +21,15 @@ public sealed class StationsApi : IStationsApi
     }
 
     /// <inheritdoc />
-    public async Task DeleteStationAssociatedUserAsync(string stationId, CancellationToken cancellationToken = default)
+    public async Task<bool> DeleteStationAssociatedUserAsync(string stationId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(stationId);
 
-        var uri = UriHelper.GetUri($"api/v2/stations/{stationId}/associateduser", null);
+        var uri = UriHelper.GetUri($"api/v2/stations/{Uri.EscapeDataString(stationId)}/associateduser", null);
 
         var response = await _httpClient.DeleteAsync(uri, cancellationToken);
 
-        response.EnsureSuccessStatusCode();
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
@@ -37,7 +37,7 @@ public sealed class StationsApi : IStationsApi
     {
         ArgumentException.ThrowIfNullOrEmpty(stationId);
 
-        var uri = UriHelper.GetUri($"api/v2/stations/{stationId}", null);
+        var uri = UriHelper.GetUri($"api/v2/stations/{Uri.EscapeDataString(stationId)}", null);
 
         var response = await _httpClient.GetAsync(uri, cancellationToken);
 
