@@ -55,7 +55,12 @@ public sealed class LanguagesApi : ILanguagesApi
 
     /// <inheritdoc />
     [Obsolete("This endpoint is deprecated. Please see the Routing API (GET /api/v2/routing/languages)")]
-    public async Task<LanguageEntityListing> GetLanguagesAsync(int? pageSize = null, int? pageNumber = null, string sortOrder = null, string name = null, CancellationToken cancellationToken = default)
+    public async Task<LanguageEntityListing> GetLanguagesAsync(
+        int? pageSize = null, 
+        int? pageNumber = null, 
+        string sortOrder = null, 
+        string name = null, 
+        CancellationToken cancellationToken = default)
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
@@ -105,7 +110,9 @@ public sealed class LanguagesApi : ILanguagesApi
     }
 
     /// <inheritdoc />
-    public async Task<Dictionary<string, object>> GetLanguagesTranslationsBuiltinAsync(string language, CancellationToken cancellationToken = default)
+    public async Task<Dictionary<string, object>> GetLanguagesTranslationsBuiltinAsync(
+        string language, 
+        CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(language);
 
@@ -128,7 +135,9 @@ public sealed class LanguagesApi : ILanguagesApi
     }
 
     /// <inheritdoc />
-    public async Task<Dictionary<string, object>> GetLanguagesTranslationsOrganizationAsync(string language, CancellationToken cancellationToken = default)
+    public async Task<Dictionary<string, object>> GetLanguagesTranslationsOrganizationAsync(
+        string language, 
+        CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(language);
 
