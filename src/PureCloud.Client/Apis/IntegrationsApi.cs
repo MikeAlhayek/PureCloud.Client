@@ -2207,8 +2207,4 @@ public sealed class IntegrationsApi : IIntegrationsApi
 
         return await response.Content.ReadFromJsonAsync<string>(_options.JsonSerializerOptions, cancellationToken);
     }
-
-
-
 }
-

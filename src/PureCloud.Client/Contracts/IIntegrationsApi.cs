@@ -96,6 +96,7 @@ public interface IIntegrationsApi
     /// </summary>
     /// <param name="actionId">The action ID</param>
     /// <param name="fileName">The file name</param>
+    /// <param name="flatten">Flatten parameter</param>
     Task<JsonSchemaDocument> GetIntegrationsActionDraftSchemaAsync(string actionId, string fileName, bool? flatten = null, CancellationToken cancellationToken = default);
 
     /// <summary>
@@ -122,6 +123,7 @@ public interface IIntegrationsApi
     /// </summary>
     /// <param name="actionId">The action ID</param>
     /// <param name="fileName">The file name</param>
+    /// <param name="flatten">Flatten parameter</param>
     Task<JsonSchemaDocument> GetIntegrationsActionSchemaAsync(string actionId, string fileName, bool? flatten = null, CancellationToken cancellationToken = default);
 
     /// <summary>
@@ -134,6 +136,8 @@ public interface IIntegrationsApi
     /// <summary>
     /// Get Actions.
     /// </summary>
+    /// <param name="pageSize">Page size</param>
+    /// <param name="pageNumber">Page number</param>
     /// <param name="nextPage">Next page</param>
     /// <param name="previousPage">Previous page</param>
     /// <param name="sortBy">Sort by field</param>
@@ -148,6 +152,8 @@ public interface IIntegrationsApi
     /// <summary>
     /// Get ActionsCategories.
     /// </summary>
+    /// <param name="pageSize">Page size</param>
+    /// <param name="pageNumber">Page number</param>
     /// <param name="nextPage">Next page</param>
     /// <param name="previousPage">Previous page</param>
     /// <param name="sortBy">Sort by field</param>
@@ -170,6 +176,8 @@ public interface IIntegrationsApi
     /// <summary>
     /// Get ActionsDrafts.
     /// </summary>
+    /// <param name="pageSize">Page size</param>
+    /// <param name="pageNumber">Page number</param>
     /// <param name="nextPage">Next page</param>
     /// <param name="previousPage">Previous page</param>
     /// <param name="sortBy">Sort by field</param>
@@ -196,6 +204,8 @@ public interface IIntegrationsApi
     /// </summary>
     /// <param name="integrationId">The integration ID</param>
     /// <param name="botId">The bot ID</param>
+    /// <param name="pageNumber">Page number</param>
+    /// <param name="pageSize">Page size</param>
     Task<BotConnectorBotVersionSummaryEntityListing> GetIntegrationsBotconnectorIntegrationIdBotVersionsAsync(string integrationId, string botId, int? pageNumber = null, int? pageSize = null, CancellationToken cancellationToken = default);
 
     /// <summary>
@@ -208,6 +218,8 @@ public interface IIntegrationsApi
     /// Get BotconnectorIntegrationIdBotsSummaries.
     /// </summary>
     /// <param name="integrationId">The integration ID</param>
+    /// <param name="pageNumber">Page number</param>
+    /// <param name="pageSize">Page size</param>
     Task<BotConnectorBotSummaryEntityListing> GetIntegrationsBotconnectorIntegrationIdBotsSummariesAsync(string integrationId, int? pageNumber = null, int? pageSize = null, CancellationToken cancellationToken = default);
 
     /// <summary>
@@ -243,6 +255,8 @@ public interface IIntegrationsApi
     /// <summary>
     /// Get Credentials.
     /// </summary>
+    /// <param name="pageNumber">Page number</param>
+    /// <param name="pageSize">Page size</param>
     Task<CredentialInfoListing> GetIntegrationsCredentialsAsync(int? pageNumber = null, int? pageSize = null, CancellationToken cancellationToken = default);
 
     /// <summary>
@@ -253,6 +267,8 @@ public interface IIntegrationsApi
     /// <summary>
     /// Get SpeechAudioconnector.
     /// </summary>
+    /// <param name="pageNumber">Page number</param>
+    /// <param name="pageSize">Page size</param>
     Task<AudioConnectorIntegrationEntityListing> GetIntegrationsSpeechAudioconnectorAsync(int? pageNumber = null, int? pageSize = null, CancellationToken cancellationToken = default);
 
     /// <summary>
@@ -270,6 +286,8 @@ public interface IIntegrationsApi
     /// <summary>
     /// Get SpeechDialogflowAgents.
     /// </summary>
+    /// <param name="pageNumber">Page number</param>
+    /// <param name="pageSize">Page size</param>
     /// <param name="name">The name</param>
     Task<DialogflowAgentSummaryEntityListing> GetIntegrationsSpeechDialogflowAgentsAsync(int? pageNumber = null, int? pageSize = null, string name = null, CancellationToken cancellationToken = default);
 
@@ -282,6 +300,8 @@ public interface IIntegrationsApi
     /// <summary>
     /// Get SpeechDialogflowCxAgents.
     /// </summary>
+    /// <param name="pageNumber">Page number</param>
+    /// <param name="pageSize">Page size</param>
     /// <param name="name">The name</param>
     Task<DialogflowCXAgentSummaryEntityListing> GetIntegrationsSpeechDialogflowcxAgentsAsync(int? pageNumber = null, int? pageSize = null, string name = null, CancellationToken cancellationToken = default);
 
@@ -295,6 +315,8 @@ public interface IIntegrationsApi
     /// Get SpeechLexBotBotIdAliases.
     /// </summary>
     /// <param name="botId">The bot ID</param>
+    /// <param name="pageNumber">Page number</param>
+    /// <param name="pageSize">Page size</param>
     /// <param name="status">The status</param>
     /// <param name="name">The name</param>
     Task<LexBotAliasEntityListing> GetIntegrationsSpeechLexBotBotIdAliasesAsync(string botId, int? pageNumber = null, int? pageSize = null, string status = null, string name = null, CancellationToken cancellationToken = default);
@@ -302,6 +324,8 @@ public interface IIntegrationsApi
     /// <summary>
     /// Get SpeechLexBots.
     /// </summary>
+    /// <param name="pageNumber">Page number</param>
+    /// <param name="pageSize">Page size</param>
     /// <param name="name">The name</param>
     Task<LexBotEntityListing> GetIntegrationsSpeechLexBotsAsync(int? pageNumber = null, int? pageSize = null, string name = null, CancellationToken cancellationToken = default);
 
@@ -315,6 +339,8 @@ public interface IIntegrationsApi
     /// Get SpeechLexV2BotBotIdAliases.
     /// </summary>
     /// <param name="botId">The bot ID</param>
+    /// <param name="pageNumber">Page number</param>
+    /// <param name="pageSize">Page size</param>
     /// <param name="status">The status</param>
     /// <param name="name">The name</param>
     Task<LexV2BotAliasEntityListing> GetIntegrationsSpeechLexV2BotBotIdAliasesAsync(string botId, int? pageNumber = null, int? pageSize = null, string status = null, string name = null, CancellationToken cancellationToken = default);
@@ -322,6 +348,8 @@ public interface IIntegrationsApi
     /// <summary>
     /// Get SpeechLexV2Bots.
     /// </summary>
+    /// <param name="pageNumber">Page number</param>
+    /// <param name="pageSize">Page size</param>
     /// <param name="name">The name</param>
     Task<LexV2BotEntityListing> GetIntegrationsSpeechLexV2BotsAsync(int? pageNumber = null, int? pageSize = null, string name = null, CancellationToken cancellationToken = default);
 
@@ -355,6 +383,9 @@ public interface IIntegrationsApi
     /// Get SpeechNuanceIntegrationIdBots.
     /// </summary>
     /// <param name="nuanceIntegrationId">The Nuance integration ID</param>
+    /// <param name="pageNumber">Page number</param>
+    /// <param name="pageSize">Page size</param>
+    /// <param name="onlyRegisteredBots">Only registered bots</param>
     Task<NuanceBotEntityListing> GetIntegrationsSpeechNuanceNuanceIntegrationIdBotsAsync(string nuanceIntegrationId, int? pageNumber = null, int? pageSize = null, bool? onlyRegisteredBots = null, CancellationToken cancellationToken = default);
 
     /// <summary>
@@ -380,6 +411,8 @@ public interface IIntegrationsApi
     /// <summary>
     /// Get SpeechSttEngines.
     /// </summary>
+    /// <param name="pageNumber">Page number</param>
+    /// <param name="pageSize">Page size</param>
     /// <param name="name">The name</param>
     Task<SttEngineEntityListing> GetIntegrationsSpeechSttEnginesAsync(int? pageNumber = null, int? pageSize = null, string name = null, CancellationToken cancellationToken = default);
 
@@ -387,6 +420,7 @@ public interface IIntegrationsApi
     /// Get SpeechTtsEngine.
     /// </summary>
     /// <param name="engineId">The engine id</param>
+    /// <param name="includeVoices">Include voices</param>
     Task<TtsEngineEntity> GetIntegrationsSpeechTtsEngineAsync(string engineId, bool? includeVoices = null, CancellationToken cancellationToken = default);
 
     /// <summary>
@@ -400,11 +434,16 @@ public interface IIntegrationsApi
     /// Get SpeechTtsEngineVoices.
     /// </summary>
     /// <param name="engineId">The engine id</param>
+    /// <param name="pageNumber">Page number</param>
+    /// <param name="pageSize">Page size</param>
     Task<TtsVoiceEntityListing> GetIntegrationsSpeechTtsEngineVoicesAsync(string engineId, int? pageNumber = null, int? pageSize = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Get SpeechTtsEngines.
     /// </summary>
+    /// <param name="pageNumber">Page number</param>
+    /// <param name="pageSize">Page size</param>
+    /// <param name="includeVoices">Include voices</param>
     /// <param name="name">The name</param>
     /// <param name="language">The language</param>
     Task<TtsEngineEntityListing> GetIntegrationsSpeechTtsEnginesAsync(int? pageNumber = null, int? pageSize = null, bool? includeVoices = null, string name = null, string language = null, CancellationToken cancellationToken = default);
@@ -529,6 +568,7 @@ public interface IIntegrationsApi
     /// </summary>
     /// <param name="actionId">The action ID</param>
     /// <param name="body">Request body</param>
+    /// <param name="flatten">Flatten parameter</param>
     Task<TestExecutionResult> PostIntegrationsActionDraftTestAsync(string actionId, object body, bool? flatten = null, CancellationToken cancellationToken = default);
 
     /// <summary>
@@ -536,6 +576,7 @@ public interface IIntegrationsApi
     /// </summary>
     /// <param name="actionId">The action ID</param>
     /// <param name="body">Request body</param>
+    /// <param name="flatten">Flatten parameter</param>
     Task<object> PostIntegrationsActionExecuteAsync(string actionId, object body, bool? flatten = null, CancellationToken cancellationToken = default);
 
     /// <summary>
@@ -543,6 +584,7 @@ public interface IIntegrationsApi
     /// </summary>
     /// <param name="actionId">The action ID</param>
     /// <param name="body">Request body</param>
+    /// <param name="flatten">Flatten parameter</param>
     Task<TestExecutionResult> PostIntegrationsActionTestAsync(string actionId, object body, bool? flatten = null, CancellationToken cancellationToken = default);
 
     /// <summary>
@@ -577,6 +619,9 @@ public interface IIntegrationsApi
     /// Create SpeechNuanceIntegrationIdBotsJobs.
     /// </summary>
     /// <param name="nuanceIntegrationId">The Nuance integration ID</param>
+    /// <param name="pageNumber">Page number</param>
+    /// <param name="pageSize">Page size</param>
+    /// <param name="onlyRegisteredBots">Only registered bots</param>
     Task<AsyncJob> PostIntegrationsSpeechNuanceNuanceIntegrationIdBotsJobsAsync(string nuanceIntegrationId, int? pageNumber = null, int? pageSize = null, bool? onlyRegisteredBots = null, CancellationToken cancellationToken = default);
 
     /// <summary>
@@ -638,5 +683,6 @@ public interface IIntegrationsApi
     /// Update UnifiedCommunicationsThirdPartyPresences.
     /// </summary>
     /// <param name="ucIntegrationId">The ucintegration id</param>
+    /// <param name="body">Request body</param>
     Task<string> PutIntegrationsUnifiedcommunicationThirdpartypresencesAsync(string ucIntegrationId, IEnumerable<UCThirdPartyPresence> body, CancellationToken cancellationToken = default);
 }
