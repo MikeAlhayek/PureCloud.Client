@@ -27,9 +27,9 @@ public sealed class TextbotsApi : ITextbotsApi
 
         if (botType != null)
         {
-            foreach (var item in botType)
+            foreach (var type in botType)
             {
-                parameters.Add("botType", UriHelper.ParameterToString(item));
+                parameters.Add("botType", UriHelper.ParameterToString(type));
             }
         }
 
@@ -40,9 +40,9 @@ public sealed class TextbotsApi : ITextbotsApi
 
         if (botId != null)
         {
-            foreach (var item in botId)
+            foreach (var id in botId)
             {
-                parameters.Add("botId", UriHelper.ParameterToString(item));
+                parameters.Add("botId", UriHelper.ParameterToString(id));
             }
         }
 
@@ -71,9 +71,7 @@ public sealed class TextbotsApi : ITextbotsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = $"api/v2/textbots/botflows/sessions/{Uri.EscapeDataString(sessionId)}/turns";
-
-        var response = await client.PostAsJsonAsync(uri, turnRequest, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PostAsJsonAsync($"api/v2/textbots/botflows/sessions/{Uri.EscapeDataString(sessionId)}/turns", turnRequest, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
