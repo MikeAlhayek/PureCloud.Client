@@ -24,9 +24,7 @@ public sealed class TelephonyApi : ITelephonyApi
     /// <inheritdoc />
     public async Task<MediaRegions> GetMediaRegionsAsync(CancellationToken cancellationToken = default)
     {
-        var uri = "api/v2/telephony/mediaregions";
-
-        var response = await _httpClient.GetAsync(uri, cancellationToken);
+        var response = await _httpClient.GetAsync("api/v2/telephony/mediaregions", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -38,9 +36,7 @@ public sealed class TelephonyApi : ITelephonyApi
     {
         ArgumentException.ThrowIfNullOrEmpty(conversationId);
 
-        var uri = $"api/v2/telephony/sipmessages/conversations/{Uri.EscapeDataString(conversationId)}";
-
-        var response = await _httpClient.GetAsync(uri, cancellationToken);
+        var response = await _httpClient.GetAsync($"api/v2/telephony/sipmessages/conversations/{Uri.EscapeDataString(conversationId)}", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -62,9 +58,7 @@ public sealed class TelephonyApi : ITelephonyApi
             }
         }
 
-        var uri = UriHelper.GetUri($"api/v2/telephony/sipmessages/conversations/{Uri.EscapeDataString(conversationId)}/headers", parameters);
-
-        var response = await _httpClient.GetAsync(uri, cancellationToken);
+        var response = await _httpClient.GetAsync(UriHelper.GetUri($"api/v2/telephony/sipmessages/conversations/{Uri.EscapeDataString(conversationId)}/headers", parameters), cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -100,9 +94,7 @@ public sealed class TelephonyApi : ITelephonyApi
             parameters.Add("conversationId", UriHelper.ParameterToString(conversationId));
         }
 
-        var uri = UriHelper.GetUri("api/v2/telephony/siptraces", parameters);
-
-        var response = await _httpClient.GetAsync(uri, cancellationToken);
+        var response = await _httpClient.GetAsync(UriHelper.GetUri("api/v2/telephony/siptraces", parameters), cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -114,9 +106,7 @@ public sealed class TelephonyApi : ITelephonyApi
     {
         ArgumentException.ThrowIfNullOrEmpty(downloadId);
 
-        var uri = $"api/v2/telephony/siptraces/download/{Uri.EscapeDataString(downloadId)}";
-
-        var response = await _httpClient.GetAsync(uri, cancellationToken);
+        var response = await _httpClient.GetAsync($"api/v2/telephony/siptraces/download/{Uri.EscapeDataString(downloadId)}", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -128,9 +118,7 @@ public sealed class TelephonyApi : ITelephonyApi
     {
         ArgumentNullException.ThrowIfNull(request);
 
-        string uri = "api/v2/telephony/siptraces/download";
-
-        var response = await _httpClient.PostAsJsonAsync(uri, request, _options, cancellationToken);
+        var response = await _httpClient.PostAsJsonAsync("api/v2/telephony/siptraces/download", request, _options, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
