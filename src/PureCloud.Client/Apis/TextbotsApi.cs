@@ -53,9 +53,7 @@ public sealed class TextbotsApi : ITextbotsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = parameters.Count > 0 
-            ? UriHelper.GetUri("api/v2/textbots/bots/search", parameters)
-            : "api/v2/textbots/bots/search";
+        var uri = UriHelper.GetUri("api/v2/textbots/bots/search", parameters);
 
         var response = await client.GetAsync(uri, cancellationToken);
 
@@ -89,9 +87,7 @@ public sealed class TextbotsApi : ITextbotsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = "api/v2/textbots/botflows/sessions";
-
-        var response = await client.PostAsJsonAsync(uri, launchRequest, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PostAsJsonAsync("api/v2/textbots/botflows/sessions", launchRequest, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -105,9 +101,7 @@ public sealed class TextbotsApi : ITextbotsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = "api/v2/textbots/bots/execute";
-
-        var response = await client.PostAsJsonAsync(uri, postTextRequest, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PostAsJsonAsync("api/v2/textbots/bots/execute", postTextRequest, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
