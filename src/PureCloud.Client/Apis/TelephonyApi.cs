@@ -24,7 +24,7 @@ public sealed class TelephonyApi : ITelephonyApi
     /// <inheritdoc />
     public async Task<MediaRegions> GetMediaRegionsAsync(CancellationToken cancellationToken = default)
     {
-        var uri = UriHelper.GetUri("api/v2/telephony/mediaregions", null);
+        var uri = "api/v2/telephony/mediaregions";
 
         var response = await _httpClient.GetAsync(uri, cancellationToken);
 
@@ -38,7 +38,7 @@ public sealed class TelephonyApi : ITelephonyApi
     {
         ArgumentException.ThrowIfNullOrEmpty(conversationId);
 
-        var uri = UriHelper.GetUri($"api/v2/telephony/sipmessages/conversations/{Uri.EscapeDataString(conversationId)}", null);
+        var uri = $"api/v2/telephony/sipmessages/conversations/{Uri.EscapeDataString(conversationId)}";
 
         var response = await _httpClient.GetAsync(uri, cancellationToken);
 
@@ -62,7 +62,9 @@ public sealed class TelephonyApi : ITelephonyApi
             }
         }
 
-        var uri = UriHelper.GetUri($"api/v2/telephony/sipmessages/conversations/{Uri.EscapeDataString(conversationId)}/headers", parameters);
+        var uri = parameters.Count > 0 
+            ? UriHelper.GetUri($"api/v2/telephony/sipmessages/conversations/{Uri.EscapeDataString(conversationId)}/headers", parameters)
+            : $"api/v2/telephony/sipmessages/conversations/{Uri.EscapeDataString(conversationId)}/headers";
 
         var response = await _httpClient.GetAsync(uri, cancellationToken);
 
@@ -114,7 +116,7 @@ public sealed class TelephonyApi : ITelephonyApi
     {
         ArgumentException.ThrowIfNullOrEmpty(downloadId);
 
-        var uri = UriHelper.GetUri($"api/v2/telephony/siptraces/download/{Uri.EscapeDataString(downloadId)}", null);
+        var uri = $"api/v2/telephony/siptraces/download/{Uri.EscapeDataString(downloadId)}";
 
         var response = await _httpClient.GetAsync(uri, cancellationToken);
 
@@ -128,7 +130,7 @@ public sealed class TelephonyApi : ITelephonyApi
     {
         ArgumentNullException.ThrowIfNull(request);
 
-        var uri = UriHelper.GetUri("api/v2/telephony/siptraces/download", null);
+        var uri = "api/v2/telephony/siptraces/download";
 
         var response = await _httpClient.PostAsJsonAsync(uri, request, _options, cancellationToken);
 
