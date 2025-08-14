@@ -62,9 +62,7 @@ public sealed class TelephonyApi : ITelephonyApi
             }
         }
 
-        var uri = parameters.Count > 0 
-            ? UriHelper.GetUri($"api/v2/telephony/sipmessages/conversations/{Uri.EscapeDataString(conversationId)}/headers", parameters)
-            : $"api/v2/telephony/sipmessages/conversations/{Uri.EscapeDataString(conversationId)}/headers";
+        var uri = UriHelper.GetUri($"api/v2/telephony/sipmessages/conversations/{Uri.EscapeDataString(conversationId)}/headers", parameters);
 
         var response = await _httpClient.GetAsync(uri, cancellationToken);
 
@@ -130,7 +128,7 @@ public sealed class TelephonyApi : ITelephonyApi
     {
         ArgumentNullException.ThrowIfNull(request);
 
-        var uri = "api/v2/telephony/siptraces/download";
+        string uri = "api/v2/telephony/siptraces/download";
 
         var response = await _httpClient.PostAsJsonAsync(uri, request, _options, cancellationToken);
 
