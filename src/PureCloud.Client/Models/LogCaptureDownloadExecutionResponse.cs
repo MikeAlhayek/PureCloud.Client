@@ -8,8 +8,7 @@ public sealed class LogCaptureDownloadExecutionResponse
     /// <summary>
     /// Execution state of the download.
     /// </summary>
-    /// <value>Execution state of the download.</value>
-    public LogCaptureDownloadExecutionResponseStateEnum? State { get; set; }
+    public LogCaptureDownloadExecutionResponseState? State { get; set; }
 
     /// <summary>
     /// Id of file download job.
@@ -41,3 +40,4 @@ public sealed class LogCaptureDownloadExecutionResponse
     /// <value>Details of the user that created the job</value>
     public AddressableEntityRef User { get; set; }
 }
+

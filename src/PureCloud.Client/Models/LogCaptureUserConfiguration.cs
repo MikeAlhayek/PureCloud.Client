@@ -8,8 +8,7 @@ public sealed class LogCaptureUserConfiguration
     /// <summary>
     /// Indicates the method by which the logs were captured.
     /// </summary>
-    /// <value>Indicates the method by which the logs were captured.</value>
-    public LogCaptureUserConfigurationCaptureMethodEnum? CaptureMethod { get; set; }
+    public LogCaptureUserConfigurationCaptureMethod? CaptureMethod { get; set; }
 
     /// <summary>
     /// The globally unique identifier for the object.
@@ -35,3 +34,4 @@ public sealed class LogCaptureUserConfiguration
     /// <value>The URI for this object</value>
     public string SelfUri { get; set; }
 }
+
