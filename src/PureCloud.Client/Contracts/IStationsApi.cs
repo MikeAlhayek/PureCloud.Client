@@ -4,7 +4,7 @@ namespace PureCloud.Client.Contracts;
 
 public interface IStationsApi
 {
-    Task DeleteStationAssociatedUserAsync(string stationId, CancellationToken cancellationToken = default);
+    Task<bool> DeleteStationAssociatedUserAsync(string stationId, CancellationToken cancellationToken = default);
 
     Task<Station> GetStationAsync(string stationId, CancellationToken cancellationToken = default);
 
