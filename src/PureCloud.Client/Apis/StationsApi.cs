@@ -91,7 +91,7 @@ public sealed class StationsApi : IStationsApi
             parameters.Add("lineAppearanceId", UriHelper.ParameterToString(lineAppearanceId));
         }
 
-        var uri = parameters.Count > 0 ? UriHelper.GetUri("api/v2/stations", parameters) : "api/v2/stations";
+        var uri = UriHelper.GetUri("api/v2/stations", parameters);
 
         var response = await _httpClient.GetAsync(uri, cancellationToken);
 
