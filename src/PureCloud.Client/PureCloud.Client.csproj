@@ -2499,8 +2499,6 @@
     <Compile Include="Models\MessageMediaAttachment.cs" />
     <Compile Include="Models\MessageStickerAttachment.cs" />
     <Compile Include="Models\MissingStubs.cs" />
-    <Compile Include="Models\MobileDevices\DirectoryUserDevicesListing.cs" />
-    <Compile Include="Models\MobileDevices\UserDevice.cs" />
     <Compile Include="Models\Operand.cs" />
     <Compile Include="Models\Operand.Type.cs" />
     <Compile Include="Models\OperandPosition.cs" />
