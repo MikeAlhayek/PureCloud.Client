@@ -177,7 +177,7 @@ public sealed class LanguagesApi : ILanguagesApi
     [Obsolete("This endpoint is deprecated. Please see the Routing API")]
     public async Task<Language> PostLanguagesAsync(Language body, CancellationToken cancellationToken = default)
     {
-        ArgumentNullException.ThrowIfNull(body, nameof(body));
+        ArgumentNullException.ThrowIfNull(body);
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
