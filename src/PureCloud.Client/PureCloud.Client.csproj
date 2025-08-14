@@ -2492,6 +2492,7 @@
     <Compile Include="Models\Library.ResponseType.cs" />
     <Compile Include="Models\LibraryBatchRequest.cs" />
     <Compile Include="Models\LogCaptureDownloadExecutionResponse.State.cs" />
+    <Compile Include="Models\LogCaptureQueryRequest.SortOrder.cs" />
     <Compile Include="Models\LogCaptureUserConfiguration.CaptureMethod.cs" />
     <Compile Include="Models\MessageMediaAttachment.cs" />
     <Compile Include="Models\MessageStickerAttachment.cs" />

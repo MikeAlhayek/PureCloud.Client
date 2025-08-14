@@ -40,3 +40,4 @@ public sealed class LogCaptureDownloadExecutionResponse
     /// <value>Details of the user that created the job</value>
     public AddressableEntityRef User { get; set; }
 }
+

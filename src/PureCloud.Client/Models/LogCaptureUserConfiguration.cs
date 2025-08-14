@@ -34,3 +34,4 @@ public sealed class LogCaptureUserConfiguration
     /// <value>The URI for this object</value>
     public string SelfUri { get; set; }
 }
+

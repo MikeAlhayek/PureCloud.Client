@@ -17,3 +17,4 @@ public sealed class LogCaptureQueryRequest
     /// </summary>
     public string UserId { get; set; }
 }
+

@@ -140,3 +140,4 @@ public sealed class LogCaptureApi : ILogCaptureApi
         return await response.Content.ReadFromJsonAsync<LogCaptureUserConfiguration>(_options.JsonSerializerOptions, cancellationToken);
     }
 }
+

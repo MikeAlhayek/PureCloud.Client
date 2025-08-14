@@ -4,5 +4,6 @@ public enum LogCaptureDownloadExecutionResponseState
 {
     Running,
     Failed,
-    Succeeded
+    Succeeded,
 }
+
