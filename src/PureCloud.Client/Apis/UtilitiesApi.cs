@@ -21,7 +21,11 @@ public sealed class UtilitiesApi : IUtilitiesApi
         _options = options.Value.JsonSerializerOptions;
     }
 
-    /// <inheritdoc />
+    /// <summary>
+    /// Get the current system date/time
+    /// </summary>
+    /// <param name="cancellationToken">A cancellation token to cancel the operation</param>
+    /// <returns>Task of ServerDate</returns>
     public async Task<ServerDate> GetDateAsync(CancellationToken cancellationToken = default)
     {
         var uri = UriHelper.GetUri("/api/v2/date", null);
@@ -33,7 +37,11 @@ public sealed class UtilitiesApi : IUtilitiesApi
         return await response.Content.ReadFromJsonAsync<ServerDate>(_options, cancellationToken);
     }
 
-    /// <inheritdoc />
+    /// <summary>
+    /// Get public ip address ranges for Genesys Cloud
+    /// </summary>
+    /// <param name="cancellationToken">A cancellation token to cancel the operation</param>
+    /// <returns>Task of IpAddressRangeListing</returns>
     public async Task<IpAddressRangeListing> GetIprangesAsync(CancellationToken cancellationToken = default)
     {
         var uri = UriHelper.GetUri("/api/v2/ipranges", null);
@@ -45,7 +53,13 @@ public sealed class UtilitiesApi : IUtilitiesApi
         return await response.Content.ReadFromJsonAsync<IpAddressRangeListing>(_options, cancellationToken);
     }
 
-    /// <inheritdoc />
+    /// <summary>
+    /// Get time zones list
+    /// </summary>
+    /// <param name="pageSize">Page size (optional, default to 25)</param>
+    /// <param name="pageNumber">Page number (optional, default to 1)</param>
+    /// <param name="cancellationToken">A cancellation token to cancel the operation</param>
+    /// <returns>Task of TimeZoneEntityListing</returns>
     public async Task<TimeZoneEntityListing> GetTimezonesAsync(int? pageSize = null, int? pageNumber = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
@@ -69,7 +83,12 @@ public sealed class UtilitiesApi : IUtilitiesApi
         return await response.Content.ReadFromJsonAsync<TimeZoneEntityListing>(_options, cancellationToken);
     }
 
-    /// <inheritdoc />
+    /// <summary>
+    /// Returns the information about an X509 PEM encoded certificate or certificate chain.
+    /// </summary>
+    /// <param name="body">Certificate</param>
+    /// <param name="cancellationToken">A cancellation token to cancel the operation</param>
+    /// <returns>Task of ParsedCertificate</returns>
     public async Task<ParsedCertificate> CreateCertificateDetailsAsync(Certificate body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
