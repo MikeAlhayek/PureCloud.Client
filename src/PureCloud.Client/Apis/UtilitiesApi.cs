@@ -58,10 +58,6 @@ public sealed class UtilitiesApi : IUtilitiesApi
     /// <returns>Task of TimeZoneEntityListing</returns>
     public async Task<TimeZoneEntityListing> GetTimezonesAsync(int? pageSize = null, int? pageNumber = null, CancellationToken cancellationToken = default)
     {
-        var uri = "/api/v2/timezones";
-
-        if (pageSize.HasValue || pageNumber.HasValue)
-        {
             var parameters = new NameValueCollection();
 
             if (pageSize.HasValue)
@@ -74,8 +70,7 @@ public sealed class UtilitiesApi : IUtilitiesApi
                 parameters.Add("pageNumber", UriHelper.ParameterToString(pageNumber.Value));
             }
 
-            uri = UriHelper.GetUri(uri, parameters);
-        }
+        uri = UriHelper.GetUri("/api/v2/timezones", parameters);
 
         var response = await _httpClient.GetAsync(uri, cancellationToken);
 
