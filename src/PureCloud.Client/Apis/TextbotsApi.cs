@@ -27,9 +27,9 @@ public sealed class TextbotsApi : ITextbotsApi
 
         if (botType != null)
         {
-            foreach (var type in botType)
+            foreach (var botTypeItem in botType)
             {
-                parameters.Add("botType", UriHelper.ParameterToString(type));
+                parameters.Add("botType", UriHelper.ParameterToString(botTypeItem));
             }
         }
 
@@ -40,9 +40,9 @@ public sealed class TextbotsApi : ITextbotsApi
 
         if (botId != null)
         {
-            foreach (var id in botId)
+            foreach (var botIdItem in botId)
             {
-                parameters.Add("botId", UriHelper.ParameterToString(id));
+                parameters.Add("botId", UriHelper.ParameterToString(botIdItem));
             }
         }
 
