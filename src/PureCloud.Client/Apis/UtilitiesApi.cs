@@ -70,7 +70,7 @@ public sealed class UtilitiesApi : IUtilitiesApi
                 parameters.Add("pageNumber", UriHelper.ParameterToString(pageNumber.Value));
             }
 
-        uri = UriHelper.GetUri("/api/v2/timezones", parameters);
+        var uri = UriHelper.GetUri("/api/v2/timezones", parameters);
 
         var response = await _httpClient.GetAsync(uri, cancellationToken);
 
