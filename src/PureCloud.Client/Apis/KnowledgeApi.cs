@@ -27,9 +27,9 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}", UriKind.Relative);
 
-        var response = await client.GetAsync(uri, cancellationToken);
+
+        var response = await client.GetAsync(new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}", UriKind.Relative), cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -43,9 +43,9 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri("api/v2/knowledge/knowledgebases", UriKind.Relative);
 
-        var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
+
+        var response = await client.PostAsJsonAsync(new Uri("api/v2/knowledge/knowledgebases", UriKind.Relative), body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -63,9 +63,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/sources/salesforce/{Uri.EscapeDataString(sourceId)}", UriKind.Relative);
-
-        var response = await client.PutAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PutAsJsonAsync(new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/sources/salesforce/{Uri.EscapeDataString(sourceId)}", UriKind.Relative), body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -79,9 +77,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}", UriKind.Relative);
-
-        var response = await client.DeleteAsync(uri, cancellationToken);
+        var response = await client.DeleteAsync(new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}", UriKind.Relative), cancellationToken);
 
         return response.IsSuccessStatusCode;
     }
@@ -214,9 +210,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/categories", UriKind.Relative);
-
-        var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PostAsJsonAsync(new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/categories", UriKind.Relative), body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -234,7 +228,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/categories/{Uri.EscapeDataString(categoryId)}", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/categories/{Uri.EscapeDataString(categoryId)}", null);
 
         var response = await client.PatchAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -252,7 +246,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/categories/{Uri.EscapeDataString(categoryId)}", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/categories/{Uri.EscapeDataString(categoryId)}", null);
 
         var response = await client.DeleteAsync(uri, cancellationToken);
 
@@ -389,7 +383,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/documents", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/documents", null);
 
         var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -409,7 +403,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/documents/{Uri.EscapeDataString(documentId)}", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/documents/{Uri.EscapeDataString(documentId)}", null);
 
         var response = await client.PatchAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -427,7 +421,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/documents/{Uri.EscapeDataString(documentId)}", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/documents/{Uri.EscapeDataString(documentId)}", null);
 
         var response = await client.DeleteAsync(uri, cancellationToken);
 
@@ -486,7 +480,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/labels", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/labels", null);
 
         var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -504,7 +498,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/labels/{Uri.EscapeDataString(labelId)}", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/labels/{Uri.EscapeDataString(labelId)}", null);
 
         var response = await client.DeleteAsync(uri, cancellationToken);
 
@@ -548,7 +542,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/import/jobs", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/import/jobs", null);
 
         var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -564,7 +558,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/search", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/search", null);
 
         var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -676,7 +670,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/guest/sessions/{Uri.EscapeDataString(sessionId)}/documents/{Uri.EscapeDataString(documentId)}", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/guest/sessions/{Uri.EscapeDataString(sessionId)}/documents/{Uri.EscapeDataString(documentId)}", null);
 
         var response = await client.GetAsync(uri, cancellationToken);
 
@@ -694,7 +688,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/categories/{Uri.EscapeDataString(categoryId)}", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/categories/{Uri.EscapeDataString(categoryId)}", null);
 
         var response = await client.GetAsync(uri, cancellationToken);
 
@@ -712,7 +706,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/labels/{Uri.EscapeDataString(labelId)}", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/labels/{Uri.EscapeDataString(labelId)}", null);
 
         var response = await client.GetAsync(uri, cancellationToken);
 
@@ -807,7 +801,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/documents/{Uri.EscapeDataString(documentId)}/feedback/{Uri.EscapeDataString(feedbackId)}", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/documents/{Uri.EscapeDataString(documentId)}/feedback/{Uri.EscapeDataString(feedbackId)}", null);
 
         var response = await client.GetAsync(uri, cancellationToken);
 
@@ -942,7 +936,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/documents/{Uri.EscapeDataString(documentId)}/versions/{Uri.EscapeDataString(versionId)}/variations/{Uri.EscapeDataString(variationId)}", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/documents/{Uri.EscapeDataString(documentId)}/versions/{Uri.EscapeDataString(versionId)}/variations/{Uri.EscapeDataString(variationId)}", null);
 
         var response = await client.GetAsync(uri, cancellationToken);
 
@@ -1040,7 +1034,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/export/jobs/{Uri.EscapeDataString(exportJobId)}", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/export/jobs/{Uri.EscapeDataString(exportJobId)}", null);
 
         var response = await client.GetAsync(uri, cancellationToken);
 
@@ -1105,7 +1099,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/languages/{Uri.EscapeDataString(languageCode)}/categories/{Uri.EscapeDataString(categoryId)}", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/languages/{Uri.EscapeDataString(languageCode)}/categories/{Uri.EscapeDataString(categoryId)}", null);
 
         var response = await client.GetAsync(uri, cancellationToken);
 
@@ -1125,7 +1119,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/languages/{Uri.EscapeDataString(languageCode)}/documents/{Uri.EscapeDataString(documentId)}", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/languages/{Uri.EscapeDataString(languageCode)}/documents/{Uri.EscapeDataString(documentId)}", null);
 
         var response = await client.GetAsync(uri, cancellationToken);
 
@@ -1147,7 +1141,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/languages/{Uri.EscapeDataString(languageCode)}/documents/{Uri.EscapeDataString(documentId)}/uploads/{Uri.EscapeDataString(uploadId)}", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/languages/{Uri.EscapeDataString(languageCode)}/documents/{Uri.EscapeDataString(documentId)}/uploads/{Uri.EscapeDataString(uploadId)}", null);
 
         var response = await client.GetAsync(uri, cancellationToken);
 
@@ -1235,7 +1229,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/languages/{Uri.EscapeDataString(languageCode)}/documents/imports/{Uri.EscapeDataString(importId)}", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/languages/{Uri.EscapeDataString(languageCode)}/documents/imports/{Uri.EscapeDataString(importId)}", null);
 
         var response = await client.GetAsync(uri, cancellationToken);
 
@@ -1255,7 +1249,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/languages/{Uri.EscapeDataString(languageCode)}/trainings/{Uri.EscapeDataString(trainingId)}", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/languages/{Uri.EscapeDataString(languageCode)}/trainings/{Uri.EscapeDataString(trainingId)}", null);
 
         var response = await client.GetAsync(uri, cancellationToken);
 
@@ -1386,7 +1380,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/operations/users/query", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/operations/users/query", null);
 
         var response = await client.GetAsync(uri, cancellationToken);
 
@@ -1527,7 +1521,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/synchronize/jobs/{Uri.EscapeDataString(syncJobId)}", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/synchronize/jobs/{Uri.EscapeDataString(syncJobId)}", null);
 
         var response = await client.GetAsync(uri, cancellationToken);
 
@@ -1676,7 +1670,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/uploads/urls/jobs/{Uri.EscapeDataString(jobId)}", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/uploads/urls/jobs/{Uri.EscapeDataString(jobId)}", null);
 
         var response = await client.GetAsync(uri, cancellationToken);
 
@@ -1694,7 +1688,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}", null);
 
         var response = await client.PatchAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -1714,7 +1708,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/documents/{Uri.EscapeDataString(documentId)}/feedback/{Uri.EscapeDataString(feedbackId)}", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/documents/{Uri.EscapeDataString(documentId)}/feedback/{Uri.EscapeDataString(feedbackId)}", null);
 
         var response = await client.PatchAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -1736,7 +1730,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/documents/{Uri.EscapeDataString(documentId)}/variations/{Uri.EscapeDataString(documentVariationId)}", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/documents/{Uri.EscapeDataString(documentId)}/variations/{Uri.EscapeDataString(documentVariationId)}", null);
 
         var response = await client.PatchAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -1756,7 +1750,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/import/jobs/{Uri.EscapeDataString(importJobId)}", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/import/jobs/{Uri.EscapeDataString(importJobId)}", null);
 
         var response = await client.PatchAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -1776,7 +1770,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/labels/{Uri.EscapeDataString(labelId)}", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/labels/{Uri.EscapeDataString(labelId)}", null);
 
         var response = await client.PatchAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -1798,7 +1792,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/languages/{Uri.EscapeDataString(languageCode)}/categories/{Uri.EscapeDataString(categoryId)}", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/languages/{Uri.EscapeDataString(languageCode)}/categories/{Uri.EscapeDataString(categoryId)}", null);
 
         var response = await client.PatchAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -1820,7 +1814,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/languages/{Uri.EscapeDataString(languageCode)}/documents/{Uri.EscapeDataString(documentId)}", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/languages/{Uri.EscapeDataString(languageCode)}/documents/{Uri.EscapeDataString(documentId)}", null);
 
         var response = await client.PatchAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -1840,7 +1834,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/languages/{Uri.EscapeDataString(languageCode)}/documents", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/languages/{Uri.EscapeDataString(languageCode)}/documents", null);
 
         var response = await client.PatchAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -1862,7 +1856,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/languages/{Uri.EscapeDataString(languageCode)}/documents/imports/{Uri.EscapeDataString(importId)}", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/languages/{Uri.EscapeDataString(languageCode)}/documents/imports/{Uri.EscapeDataString(importId)}", null);
 
         var response = await client.PatchAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -1882,7 +1876,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/synchronize/jobs/{Uri.EscapeDataString(syncJobId)}", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/synchronize/jobs/{Uri.EscapeDataString(syncJobId)}", null);
 
         var response = await client.PatchAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -1904,7 +1898,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/unanswered/groups/{Uri.EscapeDataString(groupId)}/phrasegroups/{Uri.EscapeDataString(phraseGroupId)}", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/unanswered/groups/{Uri.EscapeDataString(groupId)}/phrasegroups/{Uri.EscapeDataString(phraseGroupId)}", null);
 
         var response = await client.PatchAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -1920,7 +1914,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri("api/v2/knowledge/documentuploads", UriKind.Relative);
+        var uri = UriHelper.GetUri("api/v2/knowledge/documentuploads", null);
 
         var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -1938,7 +1932,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/guest/sessions/{Uri.EscapeDataString(sessionId)}/documents/{Uri.EscapeDataString(documentId)}/feedback", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/guest/sessions/{Uri.EscapeDataString(sessionId)}/documents/{Uri.EscapeDataString(documentId)}/feedback", null);
 
         var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -1956,7 +1950,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/guest/sessions/{Uri.EscapeDataString(sessionId)}/documents/answers", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/guest/sessions/{Uri.EscapeDataString(sessionId)}/documents/answers", null);
 
         var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -1998,7 +1992,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/guest/sessions/{Uri.EscapeDataString(sessionId)}/documents/search/suggestions", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/guest/sessions/{Uri.EscapeDataString(sessionId)}/documents/search/suggestions", null);
 
         var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -2014,7 +2008,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri("api/v2/knowledge/guest/sessions", UriKind.Relative);
+        var uri = UriHelper.GetUri("api/v2/knowledge/guest/sessions", null);
 
         var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -2034,7 +2028,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/languages/{Uri.EscapeDataString(languageCode)}/categories/{Uri.EscapeDataString(categoryId)}", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/languages/{Uri.EscapeDataString(languageCode)}/categories/{Uri.EscapeDataString(categoryId)}", null);
 
         var response = await client.DeleteAsync(uri, cancellationToken);
 
@@ -2052,7 +2046,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/languages/{Uri.EscapeDataString(languageCode)}/documents/{Uri.EscapeDataString(documentId)}", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/languages/{Uri.EscapeDataString(languageCode)}/documents/{Uri.EscapeDataString(documentId)}", null);
 
         var response = await client.DeleteAsync(uri, cancellationToken);
 
@@ -2094,7 +2088,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/documents/{Uri.EscapeDataString(documentId)}/variations/{Uri.EscapeDataString(documentVariationId)}", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/documents/{Uri.EscapeDataString(documentId)}/variations/{Uri.EscapeDataString(documentVariationId)}", null);
 
         var response = await client.DeleteAsync(uri, cancellationToken);
 
@@ -2109,7 +2103,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/export/jobs/{Uri.EscapeDataString(exportJobId)}", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/export/jobs/{Uri.EscapeDataString(exportJobId)}", null);
 
         var response = await client.DeleteAsync(uri, cancellationToken);
 
@@ -2124,7 +2118,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/import/jobs/{Uri.EscapeDataString(importJobId)}", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/import/jobs/{Uri.EscapeDataString(importJobId)}", null);
 
         var response = await client.DeleteAsync(uri, cancellationToken);
 
@@ -2140,7 +2134,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/languages/{Uri.EscapeDataString(languageCode)}/documents/imports/{Uri.EscapeDataString(importId)}", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/languages/{Uri.EscapeDataString(languageCode)}/documents/imports/{Uri.EscapeDataString(importId)}", null);
 
         var response = await client.DeleteAsync(uri, cancellationToken);
 
@@ -2155,7 +2149,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/sources/salesforce/{Uri.EscapeDataString(sourceId)}", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/sources/salesforce/{Uri.EscapeDataString(sourceId)}", null);
 
         var response = await client.DeleteAsync(uri, cancellationToken);
 
@@ -2170,7 +2164,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/sources/servicenow/{Uri.EscapeDataString(sourceId)}", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/sources/servicenow/{Uri.EscapeDataString(sourceId)}", null);
 
         var response = await client.DeleteAsync(uri, cancellationToken);
 
@@ -2185,7 +2179,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/synchronize/jobs/{Uri.EscapeDataString(syncJobId)}", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/synchronize/jobs/{Uri.EscapeDataString(syncJobId)}", null);
 
         var response = await client.DeleteAsync(uri, cancellationToken);
 
@@ -2201,7 +2195,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/guest/sessions/{Uri.EscapeDataString(sessionId)}/documents/search/{Uri.EscapeDataString(searchId)}", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/guest/sessions/{Uri.EscapeDataString(sessionId)}/documents/search/{Uri.EscapeDataString(searchId)}", null);
 
         var response = await client.PatchAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -2217,7 +2211,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/categories/{Uri.EscapeDataString(categoryId)}", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/categories/{Uri.EscapeDataString(categoryId)}", null);
 
         var response = await client.PatchAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -2235,7 +2229,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/documents/{Uri.EscapeDataString(documentId)}", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/documents/{Uri.EscapeDataString(documentId)}", null);
 
         var response = await client.PatchAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -2253,7 +2247,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/documents/search/{Uri.EscapeDataString(searchId)}", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/documents/search/{Uri.EscapeDataString(searchId)}", null);
 
         var response = await client.PatchAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -2269,7 +2263,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/parse/jobs/{Uri.EscapeDataString(parseJobId)}", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/parse/jobs/{Uri.EscapeDataString(parseJobId)}", null);
 
         var response = await client.PatchAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -2286,7 +2280,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/guest/sessions/{Uri.EscapeDataString(sessionId)}/documents/{Uri.EscapeDataString(documentId)}/copies", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/guest/sessions/{Uri.EscapeDataString(sessionId)}/documents/{Uri.EscapeDataString(documentId)}/copies", null);
 
         var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -2301,7 +2295,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/guest/sessions/{Uri.EscapeDataString(sessionId)}/documents/{Uri.EscapeDataString(documentId)}/views", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/guest/sessions/{Uri.EscapeDataString(sessionId)}/documents/{Uri.EscapeDataString(documentId)}/views", null);
 
         var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -2316,7 +2310,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/guest/sessions/{Uri.EscapeDataString(sessionId)}/documents/presentations", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/guest/sessions/{Uri.EscapeDataString(sessionId)}/documents/presentations", null);
 
         var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -2333,7 +2327,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/categories", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/categories", null);
 
         var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -2350,7 +2344,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/documents/{Uri.EscapeDataString(documentId)}/copies", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/documents/{Uri.EscapeDataString(documentId)}/copies", null);
 
         var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -2366,7 +2360,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/documents/{Uri.EscapeDataString(documentId)}/feedback", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/documents/{Uri.EscapeDataString(documentId)}/feedback", null);
 
         var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -2384,7 +2378,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/documents/{Uri.EscapeDataString(documentId)}/variations", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/documents/{Uri.EscapeDataString(documentId)}/variations", null);
 
         var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -2402,7 +2396,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/documents/{Uri.EscapeDataString(documentId)}/versions", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/documents/{Uri.EscapeDataString(documentId)}/versions", null);
 
         var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -2419,7 +2413,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/documents/{Uri.EscapeDataString(documentId)}/views", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/documents/{Uri.EscapeDataString(documentId)}/views", null);
 
         var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -2434,7 +2428,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/documents/answers", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/documents/answers", null);
 
         var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -2451,7 +2445,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/documents", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/documents", null);
 
         var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -2468,7 +2462,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/documents/bulk/remove", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/documents/bulk/remove", null);
 
         var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -2485,7 +2479,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/documents/bulk/update", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/documents/bulk/update", null);
 
         var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -2502,7 +2496,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/documents/presentations", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/documents/presentations", null);
 
         var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -2518,7 +2512,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/documents/search", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/documents/search", null);
 
         var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -2534,7 +2528,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/documents/search/suggestions", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/documents/search/suggestions", null);
 
         var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -2551,7 +2545,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/documents/versions/bulk/add", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/documents/versions/bulk/add", null);
 
         var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -2568,7 +2562,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/export/jobs", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/export/jobs", null);
 
         var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -2585,7 +2579,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/import/jobs", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/import/jobs", null);
 
         var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -2602,7 +2596,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/labels", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/labels", null);
 
         var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -2620,7 +2614,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/languages/{Uri.EscapeDataString(languageCode)}/categories", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/languages/{Uri.EscapeDataString(languageCode)}/categories", null);
 
         var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -2638,7 +2632,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/languages/{Uri.EscapeDataString(languageCode)}/documents/uploads", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/languages/{Uri.EscapeDataString(languageCode)}/documents/uploads", null);
 
         var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -2656,7 +2650,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/languages/{Uri.EscapeDataString(languageCode)}/documents", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/languages/{Uri.EscapeDataString(languageCode)}/documents", null);
 
         var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -2674,7 +2668,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/languages/{Uri.EscapeDataString(languageCode)}/documents/imports", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/languages/{Uri.EscapeDataString(languageCode)}/documents/imports", null);
 
         var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -2692,7 +2686,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/languages/{Uri.EscapeDataString(languageCode)}/trainings/{Uri.EscapeDataString(trainingId)}/promote", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/languages/{Uri.EscapeDataString(languageCode)}/trainings/{Uri.EscapeDataString(trainingId)}/promote", null);
 
         var response = await client.PostAsJsonAsync(uri, null, _options.JsonSerializerOptions, cancellationToken);
 
@@ -2709,7 +2703,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/languages/{Uri.EscapeDataString(languageCode)}/trainings", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/languages/{Uri.EscapeDataString(languageCode)}/trainings", null);
 
         var response = await client.PostAsJsonAsync(uri, null, _options.JsonSerializerOptions, cancellationToken);
 
@@ -2726,7 +2720,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/parse/jobs/{Uri.EscapeDataString(parseJobId)}/import", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/parse/jobs/{Uri.EscapeDataString(parseJobId)}/import", null);
 
         var response = await client.PostAsJsonAsync(uri, null, _options.JsonSerializerOptions, cancellationToken);
 
@@ -2743,7 +2737,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/parse/jobs", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/parse/jobs", null);
 
         var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -2759,7 +2753,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/search", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/search", null);
 
         var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -2776,7 +2770,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/sources/salesforce", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/sources/salesforce", null);
 
         var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -2793,7 +2787,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/sources/salesforce/{Uri.EscapeDataString(sourceId)}/sync", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/sources/salesforce/{Uri.EscapeDataString(sourceId)}/sync", null);
 
         var response = await client.PostAsJsonAsync(uri, null, _options.JsonSerializerOptions, cancellationToken);
 
@@ -2810,7 +2804,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/sources/servicenow", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/sources/servicenow", null);
 
         var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -2827,7 +2821,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/sources/servicenow/{Uri.EscapeDataString(sourceId)}/sync", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/sources/servicenow/{Uri.EscapeDataString(sourceId)}/sync", null);
 
         var response = await client.PostAsJsonAsync(uri, null, _options.JsonSerializerOptions, cancellationToken);
 
@@ -2844,7 +2838,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/synchronize/jobs", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/synchronize/jobs", null);
 
         var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -2861,7 +2855,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/uploads/urls/jobs", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/uploads/urls/jobs", null);
 
         var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -2877,7 +2871,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri("api/v2/knowledge/knowledgebases", UriKind.Relative);
+        var uri = UriHelper.GetUri("api/v2/knowledge/knowledgebases", null);
 
         var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -2895,7 +2889,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/sources/salesforce/{Uri.EscapeDataString(sourceId)}", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/sources/salesforce/{Uri.EscapeDataString(sourceId)}", null);
 
         var response = await client.PutAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -2913,7 +2907,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/sources/servicenow/{Uri.EscapeDataString(sourceId)}", UriKind.Relative);
+        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/sources/servicenow/{Uri.EscapeDataString(sourceId)}", null);
 
         var response = await client.PutAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
