@@ -27,7 +27,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{knowledgeBaseId}", null);
+        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}", UriKind.Relative);
 
         var response = await client.GetAsync(uri, cancellationToken);
 
@@ -43,7 +43,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri("api/v2/knowledge/knowledgebases", null);
+        var uri = new Uri("api/v2/knowledge/knowledgebases", UriKind.Relative);
 
         var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -63,7 +63,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/salesforce/{sourceId}", null);
+        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/sources/salesforce/{Uri.EscapeDataString(sourceId)}", UriKind.Relative);
 
         var response = await client.PutAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -73,19 +73,17 @@ public sealed class KnowledgeApi : IKnowledgeApi
     }
 
     /// <inheritdoc />
-    public async Task<KnowledgeBase> DeleteKnowledgeKnowledgebaseAsync(string knowledgeBaseId, CancellationToken cancellationToken = default)
+    public async Task<bool> DeleteKnowledgeKnowledgebaseAsync(string knowledgeBaseId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(knowledgeBaseId);
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{knowledgeBaseId}", null);
+        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}", UriKind.Relative);
 
         var response = await client.DeleteAsync(uri, cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-
-        return await response.Content.ReadFromJsonAsync<KnowledgeBase>(_options.JsonSerializerOptions, cancellationToken);
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
@@ -216,7 +214,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/categories", null);
+        var uri = new Uri($"api/v2/knowledge/knowledgebases/{Uri.EscapeDataString(knowledgeBaseId)}/categories", UriKind.Relative);
 
         var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -258,9 +256,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var response = await client.DeleteAsync(uri, cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-
-        return true;
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
@@ -435,9 +431,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var response = await client.DeleteAsync(uri, cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-
-        return true;
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
@@ -514,9 +508,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var response = await client.DeleteAsync(uri, cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-
-        return true;
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
@@ -2032,7 +2024,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
     }
 
     /// <inheritdoc />
-    public async Task<KnowledgeCategory> DeleteKnowledgeKnowledgebaseLanguageCategoryAsync(string categoryId, string knowledgeBaseId, string languageCode, CancellationToken cancellationToken = default)
+    public async Task<bool> DeleteKnowledgeKnowledgebaseLanguageCategoryAsync(string categoryId, string knowledgeBaseId, string languageCode, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(categoryId);
 
@@ -2046,13 +2038,11 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var response = await client.DeleteAsync(uri, cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-
-        return await response.Content.ReadFromJsonAsync<KnowledgeCategory>(_options.JsonSerializerOptions, cancellationToken);
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
-    public async Task<KnowledgeDocument> DeleteKnowledgeKnowledgebaseLanguageDocumentAsync(string documentId, string knowledgeBaseId, string languageCode, CancellationToken cancellationToken = default)
+    public async Task<bool> DeleteKnowledgeKnowledgebaseLanguageDocumentAsync(string documentId, string knowledgeBaseId, string languageCode, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(documentId);
 
@@ -2066,9 +2056,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var response = await client.DeleteAsync(uri, cancellationToken);
 
-        response.EnsureSuccessStatusCode();
-
-        return await response.Content.ReadFromJsonAsync<KnowledgeDocument>(_options.JsonSerializerOptions, cancellationToken);
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
@@ -2098,7 +2086,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
     }
 
     /// <inheritdoc />
-    public async Task DeleteKnowledgeKnowledgebaseDocumentVariationAsync(string knowledgeBaseId, string documentId, string documentVariationId, CancellationToken cancellationToken = default)
+    public async Task<bool> DeleteKnowledgeKnowledgebaseDocumentVariationAsync(string knowledgeBaseId, string documentId, string documentVariationId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(knowledgeBaseId);
         ArgumentException.ThrowIfNullOrEmpty(documentId);
@@ -2110,11 +2098,11 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var response = await client.DeleteAsync(uri, cancellationToken);
 
-        response.EnsureSuccessStatusCode();
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
-    public async Task DeleteKnowledgeKnowledgebaseExportJobAsync(string knowledgeBaseId, string exportJobId, CancellationToken cancellationToken = default)
+    public async Task<bool> DeleteKnowledgeKnowledgebaseExportJobAsync(string knowledgeBaseId, string exportJobId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(knowledgeBaseId);
         ArgumentException.ThrowIfNullOrEmpty(exportJobId);
@@ -2125,11 +2113,11 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var response = await client.DeleteAsync(uri, cancellationToken);
 
-        response.EnsureSuccessStatusCode();
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
-    public async Task DeleteKnowledgeKnowledgebaseImportJobAsync(string knowledgeBaseId, string importJobId, CancellationToken cancellationToken = default)
+    public async Task<bool> DeleteKnowledgeKnowledgebaseImportJobAsync(string knowledgeBaseId, string importJobId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(knowledgeBaseId);
         ArgumentException.ThrowIfNullOrEmpty(importJobId);
@@ -2140,11 +2128,11 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var response = await client.DeleteAsync(uri, cancellationToken);
 
-        response.EnsureSuccessStatusCode();
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
-    public async Task DeleteKnowledgeKnowledgebaseLanguageDocumentsImportAsync(string knowledgeBaseId, string languageCode, string importId, CancellationToken cancellationToken = default)
+    public async Task<bool> DeleteKnowledgeKnowledgebaseLanguageDocumentsImportAsync(string knowledgeBaseId, string languageCode, string importId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(knowledgeBaseId);
         ArgumentException.ThrowIfNullOrEmpty(languageCode);
@@ -2156,11 +2144,11 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var response = await client.DeleteAsync(uri, cancellationToken);
 
-        response.EnsureSuccessStatusCode();
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
-    public async Task DeleteKnowledgeKnowledgebaseSourcesSalesforceSourceIdAsync(string knowledgeBaseId, string sourceId, CancellationToken cancellationToken = default)
+    public async Task<bool> DeleteKnowledgeKnowledgebaseSourcesSalesforceSourceIdAsync(string knowledgeBaseId, string sourceId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(knowledgeBaseId);
         ArgumentException.ThrowIfNullOrEmpty(sourceId);
@@ -2171,11 +2159,11 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var response = await client.DeleteAsync(uri, cancellationToken);
 
-        response.EnsureSuccessStatusCode();
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
-    public async Task DeleteKnowledgeKnowledgebaseSourcesServicenowSourceIdAsync(string knowledgeBaseId, string sourceId, CancellationToken cancellationToken = default)
+    public async Task<bool> DeleteKnowledgeKnowledgebaseSourcesServicenowSourceIdAsync(string knowledgeBaseId, string sourceId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(knowledgeBaseId);
         ArgumentException.ThrowIfNullOrEmpty(sourceId);
@@ -2186,11 +2174,11 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var response = await client.DeleteAsync(uri, cancellationToken);
 
-        response.EnsureSuccessStatusCode();
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
-    public async Task DeleteKnowledgeKnowledgebaseSynchronizeJobAsync(string knowledgeBaseId, string syncJobId, CancellationToken cancellationToken = default)
+    public async Task<bool> DeleteKnowledgeKnowledgebaseSynchronizeJobAsync(string knowledgeBaseId, string syncJobId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(knowledgeBaseId);
         ArgumentException.ThrowIfNullOrEmpty(syncJobId);
@@ -2201,7 +2189,7 @@ public sealed class KnowledgeApi : IKnowledgeApi
 
         var response = await client.DeleteAsync(uri, cancellationToken);
 
-        response.EnsureSuccessStatusCode();
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
