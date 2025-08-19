@@ -21,6 +21,7 @@ public sealed class WidgetsApi : IWidgetsApi
     }
 
     /// <inheritdoc />
+
     [Obsolete]
     public async Task<WidgetDeploymentEntityListing> GetWidgetDeploymentsAsync(CancellationToken cancellationToken = default)
     {
@@ -36,6 +37,7 @@ public sealed class WidgetsApi : IWidgetsApi
     }
 
     /// <inheritdoc />
+
     [Obsolete]
     public async Task<WidgetDeployment> GetWidgetDeploymentAsync(string deploymentId, CancellationToken cancellationToken = default)
     {
@@ -43,7 +45,7 @@ public sealed class WidgetsApi : IWidgetsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/widgets/deployments/{deploymentId}", null);
+        var uri = UriHelper.GetUri($"api/v2/widgets/deployments/{Uri.EscapeDataString(deploymentId)}", null);
 
         var response = await client.GetAsync(uri, cancellationToken);
 
@@ -53,6 +55,8 @@ public sealed class WidgetsApi : IWidgetsApi
     }
 
     /// <inheritdoc />
+
+    [Obsolete]
     public async Task<WidgetDeployment> CreateWidgetDeploymentAsync(WidgetDeployment deployment, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(deployment);
@@ -69,6 +73,7 @@ public sealed class WidgetsApi : IWidgetsApi
     }
 
     /// <inheritdoc />
+
     [Obsolete]
     public async Task<WidgetDeployment> UpdateWidgetDeploymentAsync(string deploymentId, WidgetDeployment deployment, CancellationToken cancellationToken = default)
     {
@@ -77,7 +82,7 @@ public sealed class WidgetsApi : IWidgetsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/widgets/deployments/{deploymentId}", null);
+        var uri = UriHelper.GetUri($"api/v2/widgets/deployments/{Uri.EscapeDataString(deploymentId)}", null);
 
         var response = await client.PutAsJsonAsync(uri, deployment, _options.JsonSerializerOptions, cancellationToken);
 
@@ -87,17 +92,18 @@ public sealed class WidgetsApi : IWidgetsApi
     }
 
     /// <inheritdoc />
+
     [Obsolete]
-    public async Task DeleteWidgetDeploymentAsync(string deploymentId, CancellationToken cancellationToken = default)
+    public async Task<bool> DeleteWidgetDeploymentAsync(string deploymentId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(deploymentId);
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/widgets/deployments/{deploymentId}", null);
+        var uri = UriHelper.GetUri($"api/v2/widgets/deployments/{Uri.EscapeDataString(deploymentId)}", null);
 
         var response = await client.DeleteAsync(uri, cancellationToken);
 
-        response.EnsureSuccessStatusCode();
+        return response.IsSuccessStatusCode;
     }
 }
