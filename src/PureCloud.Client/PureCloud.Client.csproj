@@ -5179,6 +5179,17 @@
     <Compile Include="Models\WebMessagingMessage.Status.cs" />
     <Compile Include="Models\WebMessagingMessage.Type.cs" />
     <Compile Include="Models\WebMessagingMessageEntityList.cs" />
+    <Compile Include="Models\WebMessagingChannel.cs" />
+    <Compile Include="Models\WebMessagingContent.cs" />
+    <Compile Include="Models\WebMessagingEvent.cs" />
+    <Compile Include="Models\Reason.cs" />
+    <Compile Include="Models\WebMessagingRecipient.cs" />
+    <Compile Include="Models\WebMessagingAttachment.cs" />
+    <Compile Include="Models\WebMessagingGeneric.cs" />
+    <Compile Include="Models\WebMessagingEventCoBrowse.cs" />
+    <Compile Include="Models\WebMessagingButtonResponse.cs" />
+    <Compile Include="Models\WebMessagingQuickReply.cs" />
+    <Compile Include="Models\WebMessagingEventPresence.cs" />
     <Compile Include="Models\WhatsAppId.cs" />
     <Compile Include="Models\Widget.cs" />
     <Compile Include="Models\Widget.MediaTypes.cs" />
