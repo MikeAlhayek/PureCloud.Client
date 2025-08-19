@@ -28,9 +28,7 @@ public sealed class UtilitiesApi : IUtilitiesApi
     /// <returns>Task of ServerDate</returns>
     public async Task<ServerDate> GetDateAsync(CancellationToken cancellationToken = default)
     {
-        var uri = UriHelper.GetUri("/api/v2/date", null);
-
-        var response = await _httpClient.GetAsync(uri, cancellationToken);
+        var response = await _httpClient.GetAsync("/api/v2/date", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -44,9 +42,7 @@ public sealed class UtilitiesApi : IUtilitiesApi
     /// <returns>Task of IpAddressRangeListing</returns>
     public async Task<IpAddressRangeListing> GetIprangesAsync(CancellationToken cancellationToken = default)
     {
-        var uri = UriHelper.GetUri("/api/v2/ipranges", null);
-
-        var response = await _httpClient.GetAsync(uri, cancellationToken);
+        var response = await _httpClient.GetAsync("/api/v2/ipranges", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -62,19 +58,24 @@ public sealed class UtilitiesApi : IUtilitiesApi
     /// <returns>Task of TimeZoneEntityListing</returns>
     public async Task<TimeZoneEntityListing> GetTimezonesAsync(int? pageSize = null, int? pageNumber = null, CancellationToken cancellationToken = default)
     {
-        var parameters = new NameValueCollection();
+        var uri = "/api/v2/timezones";
 
-        if (pageSize.HasValue)
+        if (pageSize.HasValue || pageNumber.HasValue)
         {
-            parameters.Add("pageSize", UriHelper.ParameterToString(pageSize.Value));
-        }
+            var parameters = new NameValueCollection();
 
-        if (pageNumber.HasValue)
-        {
-            parameters.Add("pageNumber", UriHelper.ParameterToString(pageNumber.Value));
-        }
+            if (pageSize.HasValue)
+            {
+                parameters.Add("pageSize", UriHelper.ParameterToString(pageSize.Value));
+            }
 
-        var uri = UriHelper.GetUri("/api/v2/timezones", parameters);
+            if (pageNumber.HasValue)
+            {
+                parameters.Add("pageNumber", UriHelper.ParameterToString(pageNumber.Value));
+            }
+
+            uri = UriHelper.GetUri(uri, parameters);
+        }
 
         var response = await _httpClient.GetAsync(uri, cancellationToken);
 
@@ -93,9 +94,7 @@ public sealed class UtilitiesApi : IUtilitiesApi
     {
         ArgumentNullException.ThrowIfNull(body);
 
-        var uri = UriHelper.GetUri("/api/v2/certificate/details", null);
-
-        var response = await _httpClient.PostAsJsonAsync(uri, body, _options, cancellationToken);
+        var response = await _httpClient.PostAsJsonAsync("/api/v2/certificate/details", body, _options, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
