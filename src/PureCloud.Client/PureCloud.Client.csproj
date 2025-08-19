@@ -402,6 +402,7 @@
     <Compile Include="Models\DocumentBodyBlock.cs" />
     <Compile Include="Models\DocumentBodyResponse.cs" />
     <Compile Include="Models\DocumentFaq.cs" />
+    <Compile Include="Models\DocumentVariationListing.cs" />
     <Compile Include="Models\DocumentVariationRequest.cs" />
     <Compile Include="Models\DocumentVariationResponse.cs" />
     <Compile Include="Models\DocumentVariationResponseListing.cs" />
@@ -2675,6 +2676,7 @@
     <Compile Include="Models\KnowledgeDocumentFeedbackResponse.cs" />
     <Compile Include="Models\KnowledgeDocumentFeedbackResponseListing.cs" />
     <Compile Include="Models\KnowledgeDocumentVersion.cs" />
+    <Compile Include="Models\KnowledgeDocumentVariation.cs" />
     <Compile Include="Models\KnowledgeDocumentVersionListing.cs" />
     <Compile Include="Models\KnowledgeDocumentVersionVariation.cs" />
     <Compile Include="Models\KnowledgeDocumentVersionVariationListing.cs" />
