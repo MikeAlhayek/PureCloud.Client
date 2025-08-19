@@ -5173,6 +5173,12 @@
     <Compile Include="Models\WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.cs" />
     <Compile Include="Models\WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.RoutingStatus.cs" />
     <Compile Include="Models\WfmUserScheduleAdherenceUpdatedTopicUserScheduleAdherenceUpdate.AdherenceState.cs" />
+    <Compile Include="Models\WebMessagingMessage.cs" />
+    <Compile Include="Models\WebMessagingMessage.Direction.cs" />
+    <Compile Include="Models\WebMessagingMessage.OriginatingEntity.cs" />
+    <Compile Include="Models\WebMessagingMessage.Status.cs" />
+    <Compile Include="Models\WebMessagingMessage.Type.cs" />
+    <Compile Include="Models\WebMessagingMessageEntityList.cs" />
     <Compile Include="Models\WhatsAppId.cs" />
     <Compile Include="Models\Widget.cs" />
     <Compile Include="Models\Widget.MediaTypes.cs" />
