@@ -55,13 +55,11 @@ public sealed class UsageApi : IUsageApi
 
             return await response.Content.ReadFromJsonAsync<UsageExecutionResult>(_options.JsonSerializerOptions, cancellationToken);
         }
-        else
-        {
-            var response = await client.GetAsync($"api/v2/oauth/clients/{Uri.EscapeDataString(clientId)}/usage/summary", cancellationToken);
-            response.EnsureSuccessStatusCode();
 
-            return await response.Content.ReadFromJsonAsync<UsageExecutionResult>(_options.JsonSerializerOptions, cancellationToken);
-        }
+        var directResponse = await client.GetAsync($"api/v2/oauth/clients/{Uri.EscapeDataString(clientId)}/usage/summary", cancellationToken);
+        directResponse.EnsureSuccessStatusCode();
+
+        return await directResponse.Content.ReadFromJsonAsync<UsageExecutionResult>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
@@ -104,13 +102,11 @@ public sealed class UsageApi : IUsageApi
 
             return await response.Content.ReadFromJsonAsync<ApiUsageQueryResult>(_options.JsonSerializerOptions, cancellationToken);
         }
-        else
-        {
-            var response = await client.GetAsync($"api/v2/usage/simplesearch/{Uri.EscapeDataString(executionId)}/results", cancellationToken);
-            response.EnsureSuccessStatusCode();
 
-            return await response.Content.ReadFromJsonAsync<ApiUsageQueryResult>(_options.JsonSerializerOptions, cancellationToken);
-        }
+        var directResponse = await client.GetAsync($"api/v2/usage/simplesearch/{Uri.EscapeDataString(executionId)}/results", cancellationToken);
+        directResponse.EnsureSuccessStatusCode();
+
+        return await directResponse.Content.ReadFromJsonAsync<ApiUsageQueryResult>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
