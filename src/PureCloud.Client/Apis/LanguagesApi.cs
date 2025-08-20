@@ -68,22 +68,22 @@ public sealed class LanguagesApi : ILanguagesApi
         
         if (pageSize.HasValue)
         {
-            parameters.Add("pageSize", pageSize.Value.ToString());
+            parameters.Add("pageSize", UriHelper.ParameterToString(pageSize.Value));
         }
         
         if (pageNumber.HasValue)
         {
-            parameters.Add("pageNumber", pageNumber.Value.ToString());
+            parameters.Add("pageNumber", UriHelper.ParameterToString(pageNumber.Value));
         }
             
         if (!string.IsNullOrEmpty(sortOrder))
         {
-            parameters.Add("sortOrder", sortOrder);
+            parameters.Add("sortOrder", UriHelper.ParameterToString(sortOrder));
         }
             
         if (!string.IsNullOrEmpty(name))
         {
-            parameters.Add("name", name);
+            parameters.Add("name", UriHelper.ParameterToString(name));
         }
 
         var uri = UriHelper.GetUri("api/v2/languages", parameters);
@@ -122,7 +122,7 @@ public sealed class LanguagesApi : ILanguagesApi
         
         if (!string.IsNullOrEmpty(language))
         {
-            parameters.Add("language", language);
+            parameters.Add("language", UriHelper.ParameterToString(language));
         }
 
         var uri = UriHelper.GetUri("api/v2/languages/translations/builtin", parameters);
@@ -147,7 +147,7 @@ public sealed class LanguagesApi : ILanguagesApi
         
         if (!string.IsNullOrEmpty(language))
         {
-            parameters.Add("language", language);
+            parameters.Add("language", UriHelper.ParameterToString(language));
         }
 
         var uri = UriHelper.GetUri("api/v2/languages/translations/organization", parameters);
