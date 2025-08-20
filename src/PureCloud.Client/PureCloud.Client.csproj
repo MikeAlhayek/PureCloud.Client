@@ -2486,8 +2486,6 @@
     <Compile Include="Models\MessageMediaAttachment.cs" />
     <Compile Include="Models\MessageStickerAttachment.cs" />
     <Compile Include="Models\MissingStubs.cs" />
-    <Compile Include="Models\MobileDevices\DirectoryUserDevicesListing.cs" />
-    <Compile Include="Models\MobileDevices\UserDevice.cs" />
     <Compile Include="Models\Operand.cs" />
     <Compile Include="Models\Operand.Type.cs" />
     <Compile Include="Models\OperandPosition.cs" />
@@ -4160,7 +4158,7 @@
     <Compile Include="Models\ConjunctionEnum.cs" />
     <Compile Include="Models\DomainRole.cs" />
     <Compile Include="Models\Geolocation.cs" />
-    <Compile Include="Models\Groups\Group.cs" />
+    <Compile Include="Models\Group.cs" />
     <Compile Include="Models\Groups\GroupContact.cs" />
     <Compile Include="Models\Groups\GroupContactMediaType.cs" />
     <Compile Include="Models\Groups\GroupContactType.cs" />
