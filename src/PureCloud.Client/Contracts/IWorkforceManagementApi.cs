@@ -68,7 +68,7 @@ public interface IWorkforceManagementApi
     /// <param name="userId">List of user IDs</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>List of user schedule adherence records as JSON string (simplified for now)</returns>
-    Task<string> GetAdherenceAsync(List<string> userId, CancellationToken cancellationToken = default);
+    Task<string> GetAdherenceAsync(IEnumerable<string> userId, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Get work plans for a management unit
@@ -78,7 +78,7 @@ public interface IWorkforceManagementApi
     /// <param name="exclude">Exclude specific data from the work plans</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Work plan list as JSON string (simplified for now)</returns>
-    Task<string> GetWorkPlansAsync(string managementUnitId, IEnumerable<string> expands = null, List<string> exclude = null, CancellationToken cancellationToken = default);
+    Task<string> GetWorkPlansAsync(string managementUnitId, IEnumerable<string> expands = null, IEnumerable<string> exclude = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Create a new work plan
@@ -2264,3 +2264,4 @@ public interface IWorkforceManagementApi
     /// <returns>Continuous forecast session (temporarily simplified as string)</returns>
     Task<string> GetBusinessUnitMainForecastContinuousForecastSessionAsync(string businessUnitId, CancellationToken cancellationToken = default);
 }
+

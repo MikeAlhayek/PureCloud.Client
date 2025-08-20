@@ -9,7 +9,7 @@ using PureCloud.Client.Models;
 namespace PureCloud.Client.Apis;
 
 /// <inheritdoc />
-public class WorkforceManagementApi : IWorkforceManagementApi
+public sealed class WorkforceManagementApi : IWorkforceManagementApi
 {
     private readonly IHttpClientFactory _httpClientFactory;
     private readonly PureCloudJsonSerializerOptions _options;
@@ -168,7 +168,7 @@ public class WorkforceManagementApi : IWorkforceManagementApi
     }
 
     /// <inheritdoc />
-    public async Task<string> GetAdherenceAsync(List<string> userId, CancellationToken cancellationToken = default)
+    public async Task<string> GetAdherenceAsync(IEnumerable<string> userId, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(userId);
 
@@ -191,7 +191,7 @@ public class WorkforceManagementApi : IWorkforceManagementApi
     }
 
     /// <inheritdoc />
-    public async Task<string> GetWorkPlansAsync(string managementUnitId, IEnumerable<string> expands = null, List<string> exclude = null, CancellationToken cancellationToken = default)
+    public async Task<string> GetWorkPlansAsync(string managementUnitId, IEnumerable<string> expands = null, IEnumerable<string> exclude = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(managementUnitId);
 
@@ -4719,3 +4719,4 @@ public class WorkforceManagementApi : IWorkforceManagementApi
         return await response.Content.ReadAsStringAsync(cancellationToken);
     }
 }
+
