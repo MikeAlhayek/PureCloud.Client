@@ -1,139 +1,19 @@
-using System.Text;
-using System.Text.Json.Serialization;
-
 namespace PureCloud.Client.Models;
 
-/// <summary>
-/// ComparisonPeriodListing
-/// </summary>
-
-public partial class ComparisonPeriodListing : IEquatable<ComparisonPeriodListing>
+public sealed class ComparisonPeriodListing
 {
     /// <summary>
-    /// Initializes a new instance of the <see cref="ComparisonPeriodListing" /> class.
+    /// Total number of comparison periods
     /// </summary>
-    /// <param name="Total">Total.</param>
-    /// <param name="Entities">Entities.</param>
-    /// <param name="SelfUri">SelfUri.</param>
-    public ComparisonPeriodListing(long? Total = null, List<ComparisonPeriod> Entities = null, string SelfUri = null)
-    {
-        this.Total = Total;
-        this.Entities = Entities;
-        this.SelfUri = SelfUri;
-
-    }
-
-
-
-    /// <summary>
-    /// Gets or Sets Total
-    /// </summary>
-    [JsonPropertyName("total")]
     public long? Total { get; set; }
 
-
+    /// <summary>
+    /// List of comparison periods
+    /// </summary>
+    public IEnumerable<ComparisonPeriod> Entities { get; set; }
 
     /// <summary>
-    /// Gets or Sets Entities
+    /// The URI for this object
     /// </summary>
-    [JsonPropertyName("entities")]
-    public List<ComparisonPeriod> Entities { get; set; }
-
-
-
-    /// <summary>
-    /// Gets or Sets SelfUri
-    /// </summary>
-    [JsonPropertyName("selfUri")]
     public string SelfUri { get; set; }
-
-
-    /// <summary>
-    /// Returns the string presentation of the object
-    /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()
-    {
-        var sb = new StringBuilder();
-        sb.Append("class ComparisonPeriodListing {\n");
-
-        sb.Append("  Total: ").Append(Total).Append("\n");
-        sb.Append("  Entities: ").Append(Entities).Append("\n");
-        sb.Append("  SelfUri: ").Append(SelfUri).Append("\n");
-        sb.Append("}\n");
-        return sb.ToString();
-    }
-
-
-    /// <summary>
-    /// Returns true if objects are equal
-    /// </summary>
-    /// <param name="obj">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object obj)
-    {
-        // credit: http://stackoverflow.com/a/10454552/677735
-        return Equals(obj as ComparisonPeriodListing);
-    }
-
-    /// <summary>
-    /// Returns true if ComparisonPeriodListing instances are equal
-    /// </summary>
-    /// <param name="other">Instance of ComparisonPeriodListing to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(ComparisonPeriodListing other)
-    {
-        // credit: http://stackoverflow.com/a/10454552/677735
-        if (other == null)
-        {
-            return false;
-        }
-
-        return true &&
-            (
-                Total == other.Total ||
-                Total != null &&
-                Total.Equals(other.Total)
-            ) &&
-            (
-                Entities == other.Entities ||
-                Entities != null &&
-                Entities.SequenceEqual(other.Entities)
-            ) &&
-            (
-                SelfUri == other.SelfUri ||
-                SelfUri != null &&
-                SelfUri.Equals(other.SelfUri)
-            );
-    }
-
-    /// <summary>
-    /// Gets the hash code
-    /// </summary>
-    /// <returns>Hash code</returns>
-    public override int GetHashCode()
-    {
-        // credit: http://stackoverflow.com/a/263416/677735
-        unchecked // Overflow is fine, just wrap
-        {
-            int hash = 41;
-            // Suitable nullity checks etc, of course :)
-            if (Total != null)
-            {
-                hash = hash * 59 + Total.GetHashCode();
-            }
-
-            if (Entities != null)
-            {
-                hash = hash * 59 + Entities.GetHashCode();
-            }
-
-            if (SelfUri != null)
-            {
-                hash = hash * 59 + SelfUri.GetHashCode();
-            }
-
-            return hash;
-        }
-    }
 }

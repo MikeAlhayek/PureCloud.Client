@@ -1,6 +1,5 @@
 namespace PureCloud.Client.Models;
 
-public sealed class QueueComparisonPeriod
-{
-    // TODO: Add properties based on legacy API requirements
-}
+// DEPRECATED: This model was incorrectly created as a simplified version.
+// Use the existing ComparisonPeriod model instead for queue comparison period functionality.
+// This file is kept for backward compatibility but should not be used.
