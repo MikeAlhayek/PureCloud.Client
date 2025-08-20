@@ -28,7 +28,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync($"/api/v2/telephony/providers/edges/{Uri.EscapeDataString(edgeId)}", cancellationToken);
+        var response = await client.GetAsync($"api/v2/telephony/providers/edges/{Uri.EscapeDataString(edgeId)}", cancellationToken);
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<Edge>(_options.JsonSerializerOptions, cancellationToken);
@@ -41,7 +41,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.DeleteAsync($"/api/v2/telephony/providers/edges/{Uri.EscapeDataString(edgeId)}", cancellationToken);
+        var response = await client.DeleteAsync($"api/v2/telephony/providers/edges/{Uri.EscapeDataString(edgeId)}", cancellationToken);
 
         return response.IsSuccessStatusCode;
     }
@@ -53,7 +53,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.PostAsJsonAsync("/api/v2/telephony/providers/edges", body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PostAsJsonAsync("api/v2/telephony/providers/edges", body, _options.JsonSerializerOptions, cancellationToken);
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<Edge>(_options.JsonSerializerOptions, cancellationToken);
@@ -67,7 +67,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.PutAsJsonAsync($"/api/v2/telephony/providers/edges/{Uri.EscapeDataString(edgeId)}", body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PutAsJsonAsync($"api/v2/telephony/providers/edges/{Uri.EscapeDataString(edgeId)}", body, _options.JsonSerializerOptions, cancellationToken);
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<Edge>(_options.JsonSerializerOptions, cancellationToken);
@@ -80,7 +80,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync($"/api/v2/telephony/providers/edges/didpools/{Uri.EscapeDataString(didPoolId)}", cancellationToken);
+        var response = await client.GetAsync($"api/v2/telephony/providers/edges/didpools/{Uri.EscapeDataString(didPoolId)}", cancellationToken);
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<DIDPool>(_options.JsonSerializerOptions, cancellationToken);
@@ -93,7 +93,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.PostAsJsonAsync("/api/v2/telephony/providers/edges/didpools", body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PostAsJsonAsync("api/v2/telephony/providers/edges/didpools", body, _options.JsonSerializerOptions, cancellationToken);
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<DIDPool>(_options.JsonSerializerOptions, cancellationToken);
@@ -107,7 +107,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.PutAsJsonAsync($"/api/v2/telephony/providers/edges/didpools/{Uri.EscapeDataString(didPoolId)}", body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PutAsJsonAsync($"api/v2/telephony/providers/edges/didpools/{Uri.EscapeDataString(didPoolId)}", body, _options.JsonSerializerOptions, cancellationToken);
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<DIDPool>(_options.JsonSerializerOptions, cancellationToken);
@@ -120,7 +120,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.DeleteAsync($"/api/v2/telephony/providers/edges/didpools/{Uri.EscapeDataString(didPoolId)}", cancellationToken);
+        var response = await client.DeleteAsync($"api/v2/telephony/providers/edges/didpools/{Uri.EscapeDataString(didPoolId)}", cancellationToken);
 
         return response.IsSuccessStatusCode;
     }
@@ -132,7 +132,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync($"/api/v2/telephony/providers/edges/sites/{Uri.EscapeDataString(siteId)}", cancellationToken);
+        var response = await client.GetAsync($"api/v2/telephony/providers/edges/sites/{Uri.EscapeDataString(siteId)}", cancellationToken);
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<Site>(_options.JsonSerializerOptions, cancellationToken);
@@ -145,7 +145,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.PostAsJsonAsync("/api/v2/telephony/providers/edges/sites", body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PostAsJsonAsync("api/v2/telephony/providers/edges/sites", body, _options.JsonSerializerOptions, cancellationToken);
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<Site>(_options.JsonSerializerOptions, cancellationToken);
@@ -159,7 +159,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.PutAsJsonAsync($"/api/v2/telephony/providers/edges/sites/{Uri.EscapeDataString(siteId)}", body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PutAsJsonAsync($"api/v2/telephony/providers/edges/sites/{Uri.EscapeDataString(siteId)}", body, _options.JsonSerializerOptions, cancellationToken);
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<Site>(_options.JsonSerializerOptions, cancellationToken);
@@ -172,7 +172,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.DeleteAsync($"/api/v2/telephony/providers/edges/sites/{Uri.EscapeDataString(siteId)}", cancellationToken);
+        var response = await client.DeleteAsync($"api/v2/telephony/providers/edges/sites/{Uri.EscapeDataString(siteId)}", cancellationToken);
 
         return response.IsSuccessStatusCode;
     }
@@ -184,7 +184,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync($"/api/v2/telephony/providers/edges/certificateauthorities/{Uri.EscapeDataString(certificateId)}", cancellationToken);
+        var response = await client.GetAsync($"api/v2/telephony/providers/edges/certificateauthorities/{Uri.EscapeDataString(certificateId)}", cancellationToken);
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<DomainCertificateAuthority>(_options.JsonSerializerOptions, cancellationToken);
@@ -197,7 +197,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.PostAsJsonAsync("/api/v2/telephony/providers/edges/certificateauthorities", body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PostAsJsonAsync("api/v2/telephony/providers/edges/certificateauthorities", body, _options.JsonSerializerOptions, cancellationToken);
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<DomainCertificateAuthority>(_options.JsonSerializerOptions, cancellationToken);
@@ -211,7 +211,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.PutAsJsonAsync($"/api/v2/telephony/providers/edges/certificateauthorities/{Uri.EscapeDataString(certificateId)}", body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PutAsJsonAsync($"api/v2/telephony/providers/edges/certificateauthorities/{Uri.EscapeDataString(certificateId)}", body, _options.JsonSerializerOptions, cancellationToken);
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<DomainCertificateAuthority>(_options.JsonSerializerOptions, cancellationToken);
@@ -224,7 +224,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.DeleteAsync($"/api/v2/telephony/providers/edges/certificateauthorities/{Uri.EscapeDataString(certificateId)}", cancellationToken);
+        var response = await client.DeleteAsync($"api/v2/telephony/providers/edges/certificateauthorities/{Uri.EscapeDataString(certificateId)}", cancellationToken);
 
         return response.IsSuccessStatusCode;
     }
@@ -236,7 +236,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync($"/api/v2/telephony/providers/edges/extensionpools/{Uri.EscapeDataString(extensionPoolId)}", cancellationToken);
+        var response = await client.GetAsync($"api/v2/telephony/providers/edges/extensionpools/{Uri.EscapeDataString(extensionPoolId)}", cancellationToken);
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<ExtensionPool>(_options.JsonSerializerOptions, cancellationToken);
@@ -249,7 +249,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.PostAsJsonAsync("/api/v2/telephony/providers/edges/extensionpools", body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PostAsJsonAsync("api/v2/telephony/providers/edges/extensionpools", body, _options.JsonSerializerOptions, cancellationToken);
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<ExtensionPool>(_options.JsonSerializerOptions, cancellationToken);
@@ -263,7 +263,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.PutAsJsonAsync($"/api/v2/telephony/providers/edges/extensionpools/{Uri.EscapeDataString(extensionPoolId)}", body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PutAsJsonAsync($"api/v2/telephony/providers/edges/extensionpools/{Uri.EscapeDataString(extensionPoolId)}", body, _options.JsonSerializerOptions, cancellationToken);
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<ExtensionPool>(_options.JsonSerializerOptions, cancellationToken);
@@ -276,7 +276,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.DeleteAsync($"/api/v2/telephony/providers/edges/extensionpools/{Uri.EscapeDataString(extensionPoolId)}", cancellationToken);
+        var response = await client.DeleteAsync($"api/v2/telephony/providers/edges/extensionpools/{Uri.EscapeDataString(extensionPoolId)}", cancellationToken);
 
         return response.IsSuccessStatusCode;
     }
@@ -323,7 +323,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri("/api/v2/telephony/providers/edges", parameters);
+        var uri = UriHelper.GetUri("api/v2/telephony/providers/edges", parameters);
         var response = await client.GetAsync(uri, cancellationToken);
         response.EnsureSuccessStatusCode();
 
@@ -337,7 +337,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync($"/api/v2/telephony/providers/edges/{Uri.EscapeDataString(edgeId)}/diagnostic/nslookup", cancellationToken);
+        var response = await client.GetAsync($"api/v2/telephony/providers/edges/{Uri.EscapeDataString(edgeId)}/diagnostic/nslookup", cancellationToken);
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<EdgeNetworkDiagnosticResponse>(_options.JsonSerializerOptions, cancellationToken);
@@ -350,7 +350,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync($"/api/v2/telephony/providers/edges/{Uri.EscapeDataString(edgeId)}/diagnostic/ping", cancellationToken);
+        var response = await client.GetAsync($"api/v2/telephony/providers/edges/{Uri.EscapeDataString(edgeId)}/diagnostic/ping", cancellationToken);
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<EdgeNetworkDiagnosticResponse>(_options.JsonSerializerOptions, cancellationToken);
@@ -363,7 +363,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync($"/api/v2/telephony/providers/edges/{Uri.EscapeDataString(edgeId)}/diagnostic/route", cancellationToken);
+        var response = await client.GetAsync($"api/v2/telephony/providers/edges/{Uri.EscapeDataString(edgeId)}/diagnostic/route", cancellationToken);
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<EdgeNetworkDiagnosticResponse>(_options.JsonSerializerOptions, cancellationToken);
@@ -376,7 +376,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync($"/api/v2/telephony/providers/edges/{Uri.EscapeDataString(edgeId)}/diagnostic/tracepath", cancellationToken);
+        var response = await client.GetAsync($"api/v2/telephony/providers/edges/{Uri.EscapeDataString(edgeId)}/diagnostic/tracepath", cancellationToken);
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<EdgeNetworkDiagnosticResponse>(_options.JsonSerializerOptions, cancellationToken);
@@ -400,7 +400,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"/api/v2/telephony/providers/edges/{Uri.EscapeDataString(edgeId)}/logicalinterfaces/{Uri.EscapeDataString(interfaceId)}", parameters);
+        var uri = UriHelper.GetUri($"api/v2/telephony/providers/edges/{Uri.EscapeDataString(edgeId)}/logicalinterfaces/{Uri.EscapeDataString(interfaceId)}", parameters);
         var response = await client.GetAsync(uri, cancellationToken);
         response.EnsureSuccessStatusCode();
 
@@ -424,7 +424,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"/api/v2/telephony/providers/edges/{Uri.EscapeDataString(edgeId)}/logicalinterfaces", parameters);
+        var uri = UriHelper.GetUri($"api/v2/telephony/providers/edges/{Uri.EscapeDataString(edgeId)}/logicalinterfaces", parameters);
         var response = await client.GetAsync(uri, cancellationToken);
         response.EnsureSuccessStatusCode();
 
@@ -439,7 +439,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.DeleteAsync($"/api/v2/telephony/providers/edges/{Uri.EscapeDataString(edgeId)}/logicalinterfaces/{Uri.EscapeDataString(interfaceId)}", cancellationToken);
+        var response = await client.DeleteAsync($"api/v2/telephony/providers/edges/{Uri.EscapeDataString(edgeId)}/logicalinterfaces/{Uri.EscapeDataString(interfaceId)}", cancellationToken);
 
         return response.IsSuccessStatusCode;
     }
@@ -452,7 +452,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync($"/api/v2/telephony/providers/edges/{Uri.EscapeDataString(edgeId)}/logs/jobs/{Uri.EscapeDataString(jobId)}", cancellationToken);
+        var response = await client.GetAsync($"api/v2/telephony/providers/edges/{Uri.EscapeDataString(edgeId)}/logs/jobs/{Uri.EscapeDataString(jobId)}", cancellationToken);
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<EdgeLogsJob>(_options.JsonSerializerOptions, cancellationToken);
@@ -465,7 +465,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync($"/api/v2/telephony/providers/edges/{Uri.EscapeDataString(edgeId)}/metrics", cancellationToken);
+        var response = await client.GetAsync($"api/v2/telephony/providers/edges/{Uri.EscapeDataString(edgeId)}/metrics", cancellationToken);
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<EdgeMetrics>(_options.JsonSerializerOptions, cancellationToken);
@@ -479,7 +479,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync($"/api/v2/telephony/providers/edges/{Uri.EscapeDataString(edgeId)}/physicalinterfaces/{Uri.EscapeDataString(interfaceId)}", cancellationToken);
+        var response = await client.GetAsync($"api/v2/telephony/providers/edges/{Uri.EscapeDataString(edgeId)}/physicalinterfaces/{Uri.EscapeDataString(interfaceId)}", cancellationToken);
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<DomainPhysicalInterface>(_options.JsonSerializerOptions, cancellationToken);
@@ -492,7 +492,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync($"/api/v2/telephony/providers/edges/{Uri.EscapeDataString(edgeId)}/physicalinterfaces", cancellationToken);
+        var response = await client.GetAsync($"api/v2/telephony/providers/edges/{Uri.EscapeDataString(edgeId)}/physicalinterfaces", cancellationToken);
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<PhysicalInterfaceEntityListing>(_options.JsonSerializerOptions, cancellationToken);
@@ -505,7 +505,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.DeleteAsync($"/api/v2/telephony/providers/edges/{Uri.EscapeDataString(edgeId)}/softwareupdate", cancellationToken);
+        var response = await client.DeleteAsync($"api/v2/telephony/providers/edges/{Uri.EscapeDataString(edgeId)}/softwareupdate", cancellationToken);
 
         return response.IsSuccessStatusCode;
     }
@@ -517,7 +517,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync($"/api/v2/telephony/providers/edges/{Uri.EscapeDataString(edgeId)}/softwareupdate", cancellationToken);
+        var response = await client.GetAsync($"api/v2/telephony/providers/edges/{Uri.EscapeDataString(edgeId)}/softwareupdate", cancellationToken);
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<DomainEdgeSoftwareUpdateDto>(_options.JsonSerializerOptions, cancellationToken);
@@ -530,7 +530,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync($"/api/v2/telephony/providers/edges/{Uri.EscapeDataString(edgeId)}/softwareversions", cancellationToken);
+        var response = await client.GetAsync($"api/v2/telephony/providers/edges/{Uri.EscapeDataString(edgeId)}/softwareversions", cancellationToken);
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<DomainEdgeSoftwareVersionDtoEntityListing>(_options.JsonSerializerOptions, cancellationToken);
@@ -544,7 +544,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync($"/api/v2/telephony/providers/edges/{Uri.EscapeDataString(edgeId)}/lines/{Uri.EscapeDataString(lineId)}", cancellationToken);
+        var response = await client.GetAsync($"api/v2/telephony/providers/edges/{Uri.EscapeDataString(edgeId)}/lines/{Uri.EscapeDataString(lineId)}", cancellationToken);
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<Line>(_options.JsonSerializerOptions, cancellationToken);
@@ -569,7 +569,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"/api/v2/telephony/providers/edges/{Uri.EscapeDataString(edgeId)}/lines", parameters);
+        var uri = UriHelper.GetUri($"api/v2/telephony/providers/edges/{Uri.EscapeDataString(edgeId)}/lines", parameters);
         var response = await client.GetAsync(uri, cancellationToken);
         response.EnsureSuccessStatusCode();
 
@@ -581,7 +581,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.DeleteAsync("/api/v2/telephony/providers/edges/alertablepresences", cancellationToken);
+        var response = await client.DeleteAsync("api/v2/telephony/providers/edges/alertablepresences", cancellationToken);
 
         return response.IsSuccessStatusCode;
     }
@@ -593,7 +593,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync($"/api/v2/telephony/providers/edges/{Uri.EscapeDataString(edgeId)}/setuppackage", cancellationToken);
+        var response = await client.GetAsync($"api/v2/telephony/providers/edges/{Uri.EscapeDataString(edgeId)}/setuppackage", cancellationToken);
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<VmPairingInfo>(_options.JsonSerializerOptions, cancellationToken);
@@ -638,7 +638,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"/api/v2/telephony/providers/edges/{Uri.EscapeDataString(edgeId)}/trunks", parameters);
+        var uri = UriHelper.GetUri($"api/v2/telephony/providers/edges/{Uri.EscapeDataString(edgeId)}/trunks", parameters);
         var response = await client.GetAsync(uri, cancellationToken);
         response.EnsureSuccessStatusCode();
 
@@ -657,7 +657,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri("/api/v2/telephony/providers/edges/alertablepresences", parameters);
+        var uri = UriHelper.GetUri("api/v2/telephony/providers/edges/alertablepresences", parameters);
         var response = await client.GetAsync(uri, cancellationToken);
         response.EnsureSuccessStatusCode();
 
@@ -669,7 +669,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync("/api/v2/telephony/providers/edges/certificateauthorities", cancellationToken);
+        var response = await client.GetAsync("api/v2/telephony/providers/edges/certificateauthorities", cancellationToken);
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<CertificateAuthorityEntityListing>(_options.JsonSerializerOptions, cancellationToken);
@@ -682,7 +682,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync($"/api/v2/telephony/providers/edges/dids/{Uri.EscapeDataString(didId)}", cancellationToken);
+        var response = await client.GetAsync($"api/v2/telephony/providers/edges/dids/{Uri.EscapeDataString(didId)}", cancellationToken);
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<DID>(_options.JsonSerializerOptions, cancellationToken);
@@ -693,7 +693,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync("/api/v2/telephony/providers/edges/dids", cancellationToken);
+        var response = await client.GetAsync("api/v2/telephony/providers/edges/dids", cancellationToken);
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<DIDEntityListing>(_options.JsonSerializerOptions, cancellationToken);
@@ -704,7 +704,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync("/api/v2/telephony/providers/edges/didpools", cancellationToken);
+        var response = await client.GetAsync("api/v2/telephony/providers/edges/didpools", cancellationToken);
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<DIDPoolEntityListing>(_options.JsonSerializerOptions, cancellationToken);
@@ -727,7 +727,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"/api/v2/telephony/providers/edges/edgegroups/{Uri.EscapeDataString(edgeGroupId)}", parameters);
+        var uri = UriHelper.GetUri($"api/v2/telephony/providers/edges/edgegroups/{Uri.EscapeDataString(edgeGroupId)}", parameters);
         var response = await client.GetAsync(uri, cancellationToken);
         response.EnsureSuccessStatusCode();
 
@@ -766,7 +766,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri("/api/v2/telephony/providers/edges/edgegroups", parameters);
+        var uri = UriHelper.GetUri("api/v2/telephony/providers/edges/edgegroups", parameters);
         var response = await client.GetAsync(uri, cancellationToken);
         response.EnsureSuccessStatusCode();
 
@@ -800,7 +800,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri("/api/v2/telephony/providers/edges/extensionpools", parameters);
+        var uri = UriHelper.GetUri("api/v2/telephony/providers/edges/extensionpools", parameters);
         var response = await client.GetAsync(uri, cancellationToken);
         response.EnsureSuccessStatusCode();
 
@@ -814,7 +814,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync($"/api/v2/telephony/providers/edges/linebasesettings/{Uri.EscapeDataString(lineBaseId)}", cancellationToken);
+        var response = await client.GetAsync($"api/v2/telephony/providers/edges/linebasesettings/{Uri.EscapeDataString(lineBaseId)}", cancellationToken);
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<LineBase>(_options.JsonSerializerOptions, cancellationToken);
@@ -847,7 +847,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri("/api/v2/telephony/providers/edges/linebasesettings", parameters);
+        var uri = UriHelper.GetUri("api/v2/telephony/providers/edges/linebasesettings", parameters);
         var response = await client.GetAsync(uri, cancellationToken);
         response.EnsureSuccessStatusCode();
 
@@ -861,7 +861,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync($"/api/v2/telephony/providers/edges/phones/{Uri.EscapeDataString(phoneId)}", cancellationToken);
+        var response = await client.GetAsync($"api/v2/telephony/providers/edges/phones/{Uri.EscapeDataString(phoneId)}", cancellationToken);
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<Phone>(_options.JsonSerializerOptions, cancellationToken);
@@ -874,7 +874,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync($"/api/v2/telephony/providers/edges/phonebasesettings/{Uri.EscapeDataString(phoneBaseId)}", cancellationToken);
+        var response = await client.GetAsync($"api/v2/telephony/providers/edges/phonebasesettings/{Uri.EscapeDataString(phoneBaseId)}", cancellationToken);
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<PhoneBase>(_options.JsonSerializerOptions, cancellationToken);
@@ -912,7 +912,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri("/api/v2/telephony/providers/edges/phonebasesettings", parameters);
+        var uri = UriHelper.GetUri("api/v2/telephony/providers/edges/phonebasesettings", parameters);
         var response = await client.GetAsync(uri, cancellationToken);
         response.EnsureSuccessStatusCode();
 
@@ -1017,7 +1017,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri("/api/v2/telephony/providers/edges/phones", parameters);
+        var uri = UriHelper.GetUri("api/v2/telephony/providers/edges/phones", parameters);
         var response = await client.GetAsync(uri, cancellationToken);
         response.EnsureSuccessStatusCode();
 
@@ -1031,7 +1031,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync($"/api/v2/telephony/providers/edges/phones/template?phoneMetabaseId={Uri.EscapeDataString(phoneMetabaseId)}", cancellationToken);
+        var response = await client.GetAsync($"api/v2/telephony/providers/edges/phones/template?phoneMetabaseId={Uri.EscapeDataString(phoneMetabaseId)}", cancellationToken);
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<PhoneMetaBaseEntityListing>(_options.JsonSerializerOptions, cancellationToken);
@@ -1087,7 +1087,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri("/api/v2/telephony/providers/edges/sites", parameters);
+        var uri = UriHelper.GetUri("api/v2/telephony/providers/edges/sites", parameters);
         var response = await client.GetAsync(uri, cancellationToken);
         response.EnsureSuccessStatusCode();
 
@@ -1102,7 +1102,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync($"/api/v2/telephony/providers/edges/sites/{Uri.EscapeDataString(siteId)}/outboundroutes/{Uri.EscapeDataString(outboundRouteId)}", cancellationToken);
+        var response = await client.GetAsync($"api/v2/telephony/providers/edges/sites/{Uri.EscapeDataString(siteId)}/outboundroutes/{Uri.EscapeDataString(outboundRouteId)}", cancellationToken);
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<OutboundRouteBase>(_options.JsonSerializerOptions, cancellationToken);
@@ -1142,7 +1142,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"/api/v2/telephony/providers/edges/sites/{Uri.EscapeDataString(siteId)}/outboundroutes", parameters);
+        var uri = UriHelper.GetUri($"api/v2/telephony/providers/edges/sites/{Uri.EscapeDataString(siteId)}/outboundroutes", parameters);
         var response = await client.GetAsync(uri, cancellationToken);
         response.EnsureSuccessStatusCode();
 
@@ -1166,7 +1166,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri("/api/v2/telephony/providers/edges/timezones", parameters);
+        var uri = UriHelper.GetUri("api/v2/telephony/providers/edges/timezones", parameters);
         var response = await client.GetAsync(uri, cancellationToken);
         response.EnsureSuccessStatusCode();
 
@@ -1180,7 +1180,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync($"/api/v2/telephony/providers/edges/trunks/{Uri.EscapeDataString(trunkId)}", cancellationToken);
+        var response = await client.GetAsync($"api/v2/telephony/providers/edges/trunks/{Uri.EscapeDataString(trunkId)}", cancellationToken);
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<Trunk>(_options.JsonSerializerOptions, cancellationToken);
@@ -1200,7 +1200,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"/api/v2/telephony/providers/edges/trunkbasesettings/{Uri.EscapeDataString(trunkBaseSettingsId)}", parameters);
+        var uri = UriHelper.GetUri($"api/v2/telephony/providers/edges/trunkbasesettings/{Uri.EscapeDataString(trunkBaseSettingsId)}", parameters);
         var response = await client.GetAsync(uri, cancellationToken);
         response.EnsureSuccessStatusCode();
 
@@ -1262,7 +1262,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri("/api/v2/telephony/providers/edges/trunkbasesettings", parameters);
+        var uri = UriHelper.GetUri("api/v2/telephony/providers/edges/trunkbasesettings", parameters);
         var response = await client.GetAsync(uri, cancellationToken);
         response.EnsureSuccessStatusCode();
 
@@ -1291,7 +1291,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri("/api/v2/telephony/providers/edges/trunkbasesettings/availablemetabases", parameters);
+        var uri = UriHelper.GetUri("api/v2/telephony/providers/edges/trunkbasesettings/availablemetabases", parameters);
         var response = await client.GetAsync(uri, cancellationToken);
         response.EnsureSuccessStatusCode();
 
@@ -1305,7 +1305,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync($"/api/v2/telephony/providers/edges/trunkbasesettings/template?trunkMetabaseId={Uri.EscapeDataString(trunkMetabaseId)}", cancellationToken);
+        var response = await client.GetAsync($"api/v2/telephony/providers/edges/trunkbasesettings/template?trunkMetabaseId={Uri.EscapeDataString(trunkMetabaseId)}", cancellationToken);
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<TrunkMetrics>(_options.JsonSerializerOptions, cancellationToken);
@@ -1321,7 +1321,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri("/api/v2/telephony/providers/edges/trunks/metrics", parameters);
+        var uri = UriHelper.GetUri("api/v2/telephony/providers/edges/trunks/metrics", parameters);
         var response = await client.GetAsync(uri, cancellationToken);
         response.EnsureSuccessStatusCode();
 
@@ -1335,7 +1335,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.DeleteAsync($"/api/v2/telephony/providers/edges/edgegroups/{Uri.EscapeDataString(edgeGroupId)}", cancellationToken);
+        var response = await client.DeleteAsync($"api/v2/telephony/providers/edges/edgegroups/{Uri.EscapeDataString(edgeGroupId)}", cancellationToken);
 
         return response.IsSuccessStatusCode;
     }
@@ -1347,7 +1347,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.DeleteAsync($"/api/v2/telephony/providers/edges/phones/{Uri.EscapeDataString(phoneId)}", cancellationToken);
+        var response = await client.DeleteAsync($"api/v2/telephony/providers/edges/phones/{Uri.EscapeDataString(phoneId)}", cancellationToken);
 
         return response.IsSuccessStatusCode;
     }
@@ -1359,7 +1359,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.DeleteAsync($"/api/v2/telephony/providers/edges/phonebasesettings/{Uri.EscapeDataString(phoneBaseId)}", cancellationToken);
+        var response = await client.DeleteAsync($"api/v2/telephony/providers/edges/phonebasesettings/{Uri.EscapeDataString(phoneBaseId)}", cancellationToken);
 
         return response.IsSuccessStatusCode;
     }
@@ -1372,7 +1372,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.DeleteAsync($"/api/v2/telephony/providers/edges/sites/{Uri.EscapeDataString(siteId)}/outboundroutes/{Uri.EscapeDataString(outboundRouteId)}", cancellationToken);
+        var response = await client.DeleteAsync($"api/v2/telephony/providers/edges/sites/{Uri.EscapeDataString(siteId)}/outboundroutes/{Uri.EscapeDataString(outboundRouteId)}", cancellationToken);
 
         return response.IsSuccessStatusCode;
     }
@@ -1384,7 +1384,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.DeleteAsync($"/api/v2/telephony/providers/edges/trunkbasesettings/{Uri.EscapeDataString(trunkBaseSettingsId)}", cancellationToken);
+        var response = await client.DeleteAsync($"api/v2/telephony/providers/edges/trunkbasesettings/{Uri.EscapeDataString(trunkBaseSettingsId)}", cancellationToken);
 
         return response.IsSuccessStatusCode;
     }
@@ -1394,7 +1394,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync("/api/v2/telephony/providers/edges/edgeversionreport", cancellationToken);
+        var response = await client.GetAsync("api/v2/telephony/providers/edges/edgeversionreport", cancellationToken);
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<EdgeVersionReport>(_options.JsonSerializerOptions, cancellationToken);
@@ -1405,7 +1405,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync("/api/v2/telephony/providers/edges/expired", cancellationToken);
+        var response = await client.GetAsync("api/v2/telephony/providers/edges/expired", cancellationToken);
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<ExpiredEdgeListing>(_options.JsonSerializerOptions, cancellationToken);
@@ -1418,7 +1418,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync($"/api/v2/telephony/providers/edges/extensions/{Uri.EscapeDataString(extensionId)}", cancellationToken);
+        var response = await client.GetAsync($"api/v2/telephony/providers/edges/extensions/{Uri.EscapeDataString(extensionId)}", cancellationToken);
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<Extension>(_options.JsonSerializerOptions, cancellationToken);
@@ -1431,7 +1431,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync($"/api/v2/telephony/providers/edges/lines/{Uri.EscapeDataString(lineId)}", cancellationToken);
+        var response = await client.GetAsync($"api/v2/telephony/providers/edges/lines/{Uri.EscapeDataString(lineId)}", cancellationToken);
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<Line>(_options.JsonSerializerOptions, cancellationToken);
@@ -1444,7 +1444,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync($"/api/v2/telephony/providers/edges/lines/template?lineMetabaseId={Uri.EscapeDataString(lineMetabaseId)}", cancellationToken);
+        var response = await client.GetAsync($"api/v2/telephony/providers/edges/lines/template?lineMetabaseId={Uri.EscapeDataString(lineMetabaseId)}", cancellationToken);
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<Line>(_options.JsonSerializerOptions, cancellationToken);
@@ -1457,7 +1457,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync($"/api/v2/telephony/providers/edges/mediastatistics/conversations/{Uri.EscapeDataString(conversationId)}", cancellationToken);
+        var response = await client.GetAsync($"api/v2/telephony/providers/edges/mediastatistics/conversations/{Uri.EscapeDataString(conversationId)}", cancellationToken);
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<MediaStatisticsListing>(_options.JsonSerializerOptions, cancellationToken);
@@ -1470,7 +1470,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync($"/api/v2/telephony/providers/edges/metrics?edgeIds={Uri.EscapeDataString(edgeIds)}", cancellationToken);
+        var response = await client.GetAsync($"api/v2/telephony/providers/edges/metrics?edgeIds={Uri.EscapeDataString(edgeIds)}", cancellationToken);
         response.EnsureSuccessStatusCode();
 
         var result = await response.Content.ReadFromJsonAsync<IEnumerable<EdgeMetrics>>(_options.JsonSerializerOptions, cancellationToken);
@@ -1485,7 +1485,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync($"/api/v2/telephony/providers/edges/phonebasesettings/template?phoneMetabaseId={Uri.EscapeDataString(phoneMetabaseId)}", cancellationToken);
+        var response = await client.GetAsync($"api/v2/telephony/providers/edges/phonebasesettings/template?phoneMetabaseId={Uri.EscapeDataString(phoneMetabaseId)}", cancellationToken);
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<PhoneBase>(_options.JsonSerializerOptions, cancellationToken);
@@ -1498,7 +1498,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync($"/api/v2/telephony/providers/edges/physicalinterfaces?edgeIds={Uri.EscapeDataString(edgeIds)}", cancellationToken);
+        var response = await client.GetAsync($"api/v2/telephony/providers/edges/physicalinterfaces?edgeIds={Uri.EscapeDataString(edgeIds)}", cancellationToken);
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<PhysicalInterfaceEntityListing>(_options.JsonSerializerOptions, cancellationToken);
@@ -1511,7 +1511,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync($"/api/v2/telephony/providers/edges/sites/{Uri.EscapeDataString(siteId)}/numberplans", cancellationToken);
+        var response = await client.GetAsync($"api/v2/telephony/providers/edges/sites/{Uri.EscapeDataString(siteId)}/numberplans", cancellationToken);
         response.EnsureSuccessStatusCode();
 
         var result = await response.Content.ReadFromJsonAsync<IEnumerable<NumberPlan>>(_options.JsonSerializerOptions, cancellationToken);
@@ -1526,7 +1526,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync($"/api/v2/telephony/providers/edges/sites/{Uri.EscapeDataString(siteId)}/siteconnections", cancellationToken);
+        var response = await client.GetAsync($"api/v2/telephony/providers/edges/sites/{Uri.EscapeDataString(siteId)}/siteconnections", cancellationToken);
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<SiteConnections>(_options.JsonSerializerOptions, cancellationToken);
@@ -1539,7 +1539,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync($"/api/v2/telephony/providers/edges/trunks/{Uri.EscapeDataString(trunkId)}/metrics", cancellationToken);
+        var response = await client.GetAsync($"api/v2/telephony/providers/edges/trunks/{Uri.EscapeDataString(trunkId)}/metrics", cancellationToken);
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<TrunkMetrics>(_options.JsonSerializerOptions, cancellationToken);
@@ -1552,7 +1552,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync($"/api/v2/telephony/providers/edges/trunkbasesettings/template?trunkMetabaseId={Uri.EscapeDataString(trunkMetabaseId)}", cancellationToken);
+        var response = await client.GetAsync($"api/v2/telephony/providers/edges/trunkbasesettings/template?trunkMetabaseId={Uri.EscapeDataString(trunkMetabaseId)}", cancellationToken);
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<TrunkBase>(_options.JsonSerializerOptions, cancellationToken);
@@ -1563,7 +1563,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = "/api/v2/telephony/providers/edges/trunkswithrecording";
+        var uri = "api/v2/telephony/providers/edges/trunkswithrecording";
         if (!string.IsNullOrEmpty(trunkType))
         {
             uri += $"?trunkType={Uri.EscapeDataString(trunkType)}";
@@ -1582,7 +1582,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.PostAsJsonAsync("/api/v2/telephony/providers/edges/addressvalidation", body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PostAsJsonAsync("api/v2/telephony/providers/edges/addressvalidation", body, _options.JsonSerializerOptions, cancellationToken);
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<ValidateAddressResponse>(_options.JsonSerializerOptions, cancellationToken);
@@ -1595,7 +1595,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.PostAsJsonAsync($"/api/v2/telephony/providers/edges/{Uri.EscapeDataString(edgeId)}/reboot", body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PostAsJsonAsync($"api/v2/telephony/providers/edges/{Uri.EscapeDataString(edgeId)}/reboot", body, _options.JsonSerializerOptions, cancellationToken);
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadAsStringAsync(cancellationToken);
@@ -1608,7 +1608,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.PostAsync($"/api/v2/telephony/providers/edges/phones/{Uri.EscapeDataString(phoneId)}/reboot", null, cancellationToken);
+        var response = await client.PostAsync($"api/v2/telephony/providers/edges/phones/{Uri.EscapeDataString(phoneId)}/reboot", null, cancellationToken);
         response.EnsureSuccessStatusCode();
     }
 
@@ -1621,7 +1621,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.PostAsJsonAsync($"/api/v2/telephony/providers/edges/{Uri.EscapeDataString(edgeId)}/logs/jobs/{Uri.EscapeDataString(jobId)}/upload", body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PostAsJsonAsync($"api/v2/telephony/providers/edges/{Uri.EscapeDataString(edgeId)}/logs/jobs/{Uri.EscapeDataString(jobId)}/upload", body, _options.JsonSerializerOptions, cancellationToken);
         response.EnsureSuccessStatusCode();
     }
 
@@ -1633,7 +1633,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.PostAsJsonAsync($"/api/v2/telephony/providers/edges/{Uri.EscapeDataString(edgeId)}/logs/jobs", body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PostAsJsonAsync($"api/v2/telephony/providers/edges/{Uri.EscapeDataString(edgeId)}/logs/jobs", body, _options.JsonSerializerOptions, cancellationToken);
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<EdgeLogsJobResponse>(_options.JsonSerializerOptions, cancellationToken);
@@ -1647,7 +1647,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.PostAsJsonAsync($"/api/v2/telephony/providers/edges/{Uri.EscapeDataString(edgeId)}/softwareupdate", body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PostAsJsonAsync($"api/v2/telephony/providers/edges/{Uri.EscapeDataString(edgeId)}/softwareupdate", body, _options.JsonSerializerOptions, cancellationToken);
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<DomainEdgeSoftwareUpdateDto>(_options.JsonSerializerOptions, cancellationToken);
@@ -1660,7 +1660,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.PostAsJsonAsync($"/api/v2/telephony/providers/edges/{Uri.EscapeDataString(edgeId)}/statuscode", body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PostAsJsonAsync($"api/v2/telephony/providers/edges/{Uri.EscapeDataString(edgeId)}/statuscode", body, _options.JsonSerializerOptions, cancellationToken);
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadAsStringAsync(cancellationToken);
@@ -1673,7 +1673,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.PostAsync($"/api/v2/telephony/providers/edges/{Uri.EscapeDataString(edgeId)}/unpair", null, cancellationToken);
+        var response = await client.PostAsync($"api/v2/telephony/providers/edges/{Uri.EscapeDataString(edgeId)}/unpair", null, cancellationToken);
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadAsStringAsync(cancellationToken);
@@ -1687,7 +1687,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.PostAsJsonAsync($"/api/v2/telephony/providers/edges/{Uri.EscapeDataString(edgeId)}/diagnostic/nslookup", body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PostAsJsonAsync($"api/v2/telephony/providers/edges/{Uri.EscapeDataString(edgeId)}/diagnostic/nslookup", body, _options.JsonSerializerOptions, cancellationToken);
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<EdgeNetworkDiagnostic>(_options.JsonSerializerOptions, cancellationToken);
@@ -1701,7 +1701,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.PostAsJsonAsync($"/api/v2/telephony/providers/edges/{Uri.EscapeDataString(edgeId)}/diagnostic/ping", body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PostAsJsonAsync($"api/v2/telephony/providers/edges/{Uri.EscapeDataString(edgeId)}/diagnostic/ping", body, _options.JsonSerializerOptions, cancellationToken);
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<EdgeNetworkDiagnostic>(_options.JsonSerializerOptions, cancellationToken);
@@ -1715,7 +1715,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.PostAsJsonAsync($"/api/v2/telephony/providers/edges/{Uri.EscapeDataString(edgeId)}/diagnostic/route", body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PostAsJsonAsync($"api/v2/telephony/providers/edges/{Uri.EscapeDataString(edgeId)}/diagnostic/route", body, _options.JsonSerializerOptions, cancellationToken);
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<EdgeNetworkDiagnostic>(_options.JsonSerializerOptions, cancellationToken);
@@ -1729,7 +1729,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.PostAsJsonAsync($"/api/v2/telephony/providers/edges/{Uri.EscapeDataString(edgeId)}/diagnostic/tracepath", body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PostAsJsonAsync($"api/v2/telephony/providers/edges/{Uri.EscapeDataString(edgeId)}/diagnostic/tracepath", body, _options.JsonSerializerOptions, cancellationToken);
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<EdgeNetworkDiagnostic>(_options.JsonSerializerOptions, cancellationToken);
@@ -1742,7 +1742,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.PostAsJsonAsync("/api/v2/telephony/providers/edges/phones/reboot", body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PostAsJsonAsync("api/v2/telephony/providers/edges/phones/reboot", body, _options.JsonSerializerOptions, cancellationToken);
         response.EnsureSuccessStatusCode();
     }
 
@@ -1753,7 +1753,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.PostAsJsonAsync("/api/v2/telephony/providers/edges/sites/search", body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PostAsJsonAsync("api/v2/telephony/providers/edges/sites/search", body, _options.JsonSerializerOptions, cancellationToken);
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<SitesSearchResponse>(_options.JsonSerializerOptions, cancellationToken);
@@ -1767,7 +1767,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.PostAsJsonAsync($"/api/v2/telephony/providers/edges/{Uri.EscapeDataString(edgeId)}/logicalinterfaces", body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PostAsJsonAsync($"api/v2/telephony/providers/edges/{Uri.EscapeDataString(edgeId)}/logicalinterfaces", body, _options.JsonSerializerOptions, cancellationToken);
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<DomainLogicalInterface>(_options.JsonSerializerOptions, cancellationToken);
@@ -1782,7 +1782,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.PutAsJsonAsync($"/api/v2/telephony/providers/edges/{Uri.EscapeDataString(edgeId)}/logicalinterfaces/{Uri.EscapeDataString(interfaceId)}", body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PutAsJsonAsync($"api/v2/telephony/providers/edges/{Uri.EscapeDataString(edgeId)}/logicalinterfaces/{Uri.EscapeDataString(interfaceId)}", body, _options.JsonSerializerOptions, cancellationToken);
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<DomainLogicalInterface>(_options.JsonSerializerOptions, cancellationToken);
@@ -1796,7 +1796,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.PostAsJsonAsync($"/api/v2/telephony/providers/edges/sites/{Uri.EscapeDataString(siteId)}/outboundroutes", body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PostAsJsonAsync($"api/v2/telephony/providers/edges/sites/{Uri.EscapeDataString(siteId)}/outboundroutes", body, _options.JsonSerializerOptions, cancellationToken);
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<OutboundRouteBase>(_options.JsonSerializerOptions, cancellationToken);
@@ -1809,7 +1809,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.PostAsJsonAsync("/api/v2/telephony/providers/edges/phones", body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PostAsJsonAsync("api/v2/telephony/providers/edges/phones", body, _options.JsonSerializerOptions, cancellationToken);
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<Phone>(_options.JsonSerializerOptions, cancellationToken);
@@ -1822,7 +1822,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.PostAsJsonAsync("/api/v2/telephony/providers/edges/phonebasesettings", body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PostAsJsonAsync("api/v2/telephony/providers/edges/phonebasesettings", body, _options.JsonSerializerOptions, cancellationToken);
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<PhoneBase>(_options.JsonSerializerOptions, cancellationToken);
@@ -1835,7 +1835,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.PostAsJsonAsync("/api/v2/telephony/providers/edges/edgegroups", body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PostAsJsonAsync("api/v2/telephony/providers/edges/edgegroups", body, _options.JsonSerializerOptions, cancellationToken);
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<EdgeGroup>(_options.JsonSerializerOptions, cancellationToken);
@@ -1848,7 +1848,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.PostAsJsonAsync("/api/v2/telephony/providers/edges/trunkbasesettings", body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PostAsJsonAsync("api/v2/telephony/providers/edges/trunkbasesettings", body, _options.JsonSerializerOptions, cancellationToken);
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<TrunkBase>(_options.JsonSerializerOptions, cancellationToken);
@@ -1862,7 +1862,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.PutAsJsonAsync($"/api/v2/telephony/providers/edges/edgegroups/{Uri.EscapeDataString(edgeGroupId)}", body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PutAsJsonAsync($"api/v2/telephony/providers/edges/edgegroups/{Uri.EscapeDataString(edgeGroupId)}", body, _options.JsonSerializerOptions, cancellationToken);
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<EdgeGroup>(_options.JsonSerializerOptions, cancellationToken);
@@ -1876,7 +1876,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.PutAsJsonAsync($"/api/v2/telephony/providers/edges/phones/{Uri.EscapeDataString(phoneId)}", body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PutAsJsonAsync($"api/v2/telephony/providers/edges/phones/{Uri.EscapeDataString(phoneId)}", body, _options.JsonSerializerOptions, cancellationToken);
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<Phone>(_options.JsonSerializerOptions, cancellationToken);
@@ -1890,7 +1890,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.PutAsJsonAsync($"/api/v2/telephony/providers/edges/phonebasesettings/{Uri.EscapeDataString(phoneBaseId)}", body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PutAsJsonAsync($"api/v2/telephony/providers/edges/phonebasesettings/{Uri.EscapeDataString(phoneBaseId)}", body, _options.JsonSerializerOptions, cancellationToken);
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<PhoneBase>(_options.JsonSerializerOptions, cancellationToken);
@@ -1905,7 +1905,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.PutAsJsonAsync($"/api/v2/telephony/providers/edges/sites/{Uri.EscapeDataString(siteId)}/outboundroutes/{Uri.EscapeDataString(outboundRouteId)}", body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PutAsJsonAsync($"api/v2/telephony/providers/edges/sites/{Uri.EscapeDataString(siteId)}/outboundroutes/{Uri.EscapeDataString(outboundRouteId)}", body, _options.JsonSerializerOptions, cancellationToken);
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<OutboundRouteBase>(_options.JsonSerializerOptions, cancellationToken);
@@ -1919,7 +1919,7 @@ public sealed class TelephonyProvidersEdgeApi : ITelephonyProvidersEdgeApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.PutAsJsonAsync($"/api/v2/telephony/providers/edges/trunkbasesettings/{Uri.EscapeDataString(trunkBaseSettingsId)}", body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PutAsJsonAsync($"api/v2/telephony/providers/edges/trunkbasesettings/{Uri.EscapeDataString(trunkBaseSettingsId)}", body, _options.JsonSerializerOptions, cancellationToken);
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<TrunkBase>(_options.JsonSerializerOptions, cancellationToken);
