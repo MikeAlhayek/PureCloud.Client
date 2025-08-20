@@ -22,7 +22,7 @@ public sealed class WebMessagingApi : IWebMessagingApi
     }
 
     /// <inheritdoc />
-
+    
     public async Task<WebMessagingMessageEntityList> GetWebMessagingMessagesAsync(int? pageSize = null, int? pageNumber = null, CancellationToken cancellationToken = default)
     {
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
