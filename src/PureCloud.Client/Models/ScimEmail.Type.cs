@@ -3,9 +3,9 @@ using System.Runtime.Serialization;
 namespace PureCloud.Client.Models;
 
 /// <summary>
-/// Gets or Sets Status
+/// The type of email address. "value" is immutable if "type" is set to "other".
 /// </summary>
-public enum StationStatus
+public enum ScimEmailTypeEnum
 {
     /// <summary>
     /// Your SDK version is out of date and an unknown enum value was encountered. 
@@ -16,14 +16,14 @@ public enum StationStatus
     OutdatedSdkVersion,
 
     /// <summary>
-    /// Enum Available for "AVAILABLE"
+    /// Enum Work for "work"
     /// </summary>
-    [EnumMember(Value = "AVAILABLE")]
-    Available,
+    [EnumMember(Value = "work")]
+    Work,
 
     /// <summary>
-    /// Enum Associated for "ASSOCIATED"
+    /// Enum Other for "other"
     /// </summary>
-    [EnumMember(Value = "ASSOCIATED")]
-    Associated
+    [EnumMember(Value = "other")]
+    Other
 }
