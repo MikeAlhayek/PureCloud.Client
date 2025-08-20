@@ -8,5 +8,5 @@ public sealed class BusinessUnitListing
     /// <summary>
     /// Gets or Sets Entities
     /// </summary>
-    public List<BusinessUnitListItem> Entities { get; set; }
+    public IEnumerable<BusinessUnitListItem> Entities { get; set; }
 }
