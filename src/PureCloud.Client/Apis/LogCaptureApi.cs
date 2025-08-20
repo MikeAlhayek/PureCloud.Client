@@ -1,6 +1,5 @@
 using System.Collections.Specialized;
 using System.Net.Http.Json;
-using System.Text.Json;
 using Microsoft.Extensions.Options;
 using PureCloud.Client.Contracts;
 using PureCloud.Client.Http;
@@ -12,57 +11,59 @@ namespace PureCloud.Client.Apis;
 /// <inheritdoc />
 public sealed class LogCaptureApi : ILogCaptureApi
 {
-    private readonly HttpClient _httpClient;
-    private readonly JsonSerializerOptions _options;
+    private readonly IHttpClientFactory _httpClientFactory;
+    private readonly PureCloudJsonSerializerOptions _options;
 
-    public LogCaptureApi(IHttpClientFactory httpClientFactory, IOptions<PureCloudJsonSerializerOptions> options)
+    public LogCaptureApi(
+        IHttpClientFactory httpClientFactory,
+        IOptions<PureCloudJsonSerializerOptions> options)
     {
-        _httpClient = httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-        _options = options.Value.JsonSerializerOptions;
+        _httpClientFactory = httpClientFactory;
+        _options = options.Value;
     }
 
     /// <inheritdoc />
-    public async Task DeleteLogCaptureBrowserUserAsync(string userId, CancellationToken cancellationToken = default)
+    public async Task<bool> DeleteDiagnosticsLogcaptureBrowserUserAsync(string userId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(userId);
 
-        var uri = UriHelper.GetUri($"/api/v2/diagnostics/logcapture/browser/users/{userId}", null);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await _httpClient.DeleteAsync(uri, cancellationToken);
+        var response = await client.DeleteAsync($"api/v2/diagnostics/logcapture/browser/users/{Uri.EscapeDataString(userId)}", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
-    public async Task<LogCaptureDownloadExecutionResponse> GetLogCaptureDownloadJobAsync(string jobId, CancellationToken cancellationToken = default)
+    public async Task<LogCaptureDownloadExecutionResponse> GetDiagnosticsLogcaptureBrowserEntriesDownloadJobAsync(string jobId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(jobId);
 
-        var uri = UriHelper.GetUri($"/api/v2/diagnostics/logcapture/browser/entries/download/jobs/{jobId}", null);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await _httpClient.GetAsync(uri, cancellationToken);
+        var response = await client.GetAsync($"api/v2/diagnostics/logcapture/browser/entries/download/jobs/{Uri.EscapeDataString(jobId)}", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<LogCaptureDownloadExecutionResponse>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<LogCaptureDownloadExecutionResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
-    public async Task<LogCaptureUserConfiguration> GetLogCaptureBrowserUserAsync(string userId, CancellationToken cancellationToken = default)
+    public async Task<LogCaptureUserConfiguration> GetDiagnosticsLogcaptureBrowserUserAsync(string userId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(userId);
 
-        var uri = UriHelper.GetUri($"/api/v2/diagnostics/logcapture/browser/users/{userId}", null);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await _httpClient.GetAsync(uri, cancellationToken);
+        var response = await client.GetAsync($"api/v2/diagnostics/logcapture/browser/users/{Uri.EscapeDataString(userId)}", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<LogCaptureUserConfiguration>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<LogCaptureUserConfiguration>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
-    public async Task<PagelessEntityListing> GetLogCaptureBrowserUsersAsync(bool? includeExpired = null, CancellationToken cancellationToken = default)
+    public async Task<PagelessEntityListing> GetDiagnosticsLogcaptureBrowserUsersAsync(bool? includeExpired = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
 
@@ -71,29 +72,31 @@ public sealed class LogCaptureApi : ILogCaptureApi
             parameters.Add("includeExpired", UriHelper.ParameterToString(includeExpired.Value));
         }
 
-        var uri = UriHelper.GetUri("/api/v2/diagnostics/logcapture/browser/users", parameters);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await _httpClient.GetAsync(uri, cancellationToken);
+        var uri = UriHelper.GetUri("api/v2/diagnostics/logcapture/browser/users", parameters);
+
+        var response = await client.GetAsync(uri, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<PagelessEntityListing>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<PagelessEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
-    public async Task<LogCaptureDownloadExecutionResponse> CreateLogCaptureDownloadJobAsync(LogCaptureQueryRequest body = null, CancellationToken cancellationToken = default)
+    public async Task<LogCaptureDownloadExecutionResponse> CreateDiagnosticsLogcaptureBrowserEntriesDownloadJobsAsync(LogCaptureQueryRequest body = null, CancellationToken cancellationToken = default)
     {
-        var uri = UriHelper.GetUri("/api/v2/diagnostics/logcapture/browser/entries/download/jobs", null);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await _httpClient.PostAsJsonAsync(uri, body, _options, cancellationToken);
+        var response = await client.PostAsJsonAsync("api/v2/diagnostics/logcapture/browser/entries/download/jobs", body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<LogCaptureDownloadExecutionResponse>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<LogCaptureDownloadExecutionResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
-    public async Task<LogCaptureQueryResponse> CreateLogCaptureEntriesQueryAsync(string before = null, string after = null, string pageSize = null, LogCaptureQueryRequest body = null, CancellationToken cancellationToken = default)
+    public async Task<LogCaptureQueryResponse> CreateDiagnosticsLogcaptureBrowserEntriesQueryAsync(string before = null, string after = null, string pageSize = null, LogCaptureQueryRequest body = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
 
@@ -112,26 +115,29 @@ public sealed class LogCaptureApi : ILogCaptureApi
             parameters.Add("pageSize", UriHelper.ParameterToString(pageSize));
         }
 
-        var uri = UriHelper.GetUri("/api/v2/diagnostics/logcapture/browser/entries/query", parameters);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await _httpClient.PostAsJsonAsync(uri, body, _options, cancellationToken);
+        var uri = UriHelper.GetUri("api/v2/diagnostics/logcapture/browser/entries/query", parameters);
+
+        var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<LogCaptureQueryResponse>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<LogCaptureQueryResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
-    public async Task<LogCaptureUserConfiguration> CreateLogCaptureBrowserUserAsync(string userId, LogCaptureUserConfiguration body = null, CancellationToken cancellationToken = default)
+    public async Task<LogCaptureUserConfiguration> CreateDiagnosticsLogcaptureBrowserUserAsync(string userId, LogCaptureUserConfiguration body = null, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(userId);
 
-        var uri = UriHelper.GetUri($"/api/v2/diagnostics/logcapture/browser/users/{userId}", null);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await _httpClient.PostAsJsonAsync(uri, body, _options, cancellationToken);
+        var response = await client.PostAsJsonAsync($"api/v2/diagnostics/logcapture/browser/users/{Uri.EscapeDataString(userId)}", body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<LogCaptureUserConfiguration>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<LogCaptureUserConfiguration>(_options.JsonSerializerOptions, cancellationToken);
     }
 }
+
