@@ -60,7 +60,7 @@ public interface IWidgetsApi
     /// </remarks>
     /// <param name="deploymentId">Widget Config Id</param>
     /// <param name="cancellationToken">Cancellation token</param>
-    /// <returns>Task</returns>
+    /// <returns>Task&lt;bool&gt;</returns>
     [Obsolete]
-    Task DeleteWidgetDeploymentAsync(string deploymentId, CancellationToken cancellationToken = default);
+    Task<bool> DeleteWidgetDeploymentAsync(string deploymentId, CancellationToken cancellationToken = default);
 }
