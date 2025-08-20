@@ -22,10 +22,9 @@ public sealed class UtilitiesApi : IUtilitiesApi
     }
 
     /// <inheritdoc />
-
     public async Task<ServerDate> GetDateAsync(CancellationToken cancellationToken = default)
     {
-        var response = await _httpClient.GetAsync("/api/v2/date", cancellationToken);
+        var response = await _httpClient.GetAsync("api/v2/date", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -33,10 +32,9 @@ public sealed class UtilitiesApi : IUtilitiesApi
     }
 
     /// <inheritdoc />
-
     public async Task<IpAddressRangeListing> GetIprangesAsync(CancellationToken cancellationToken = default)
     {
-        var response = await _httpClient.GetAsync("/api/v2/ipranges", cancellationToken);
+        var response = await _httpClient.GetAsync("api/v2/ipranges", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -44,7 +42,6 @@ public sealed class UtilitiesApi : IUtilitiesApi
     }
 
     /// <inheritdoc />
-
     public async Task<TimeZoneEntityListing> GetTimezonesAsync(int? pageSize = null, int? pageNumber = null, CancellationToken cancellationToken = default)
     {
             var parameters = new NameValueCollection();
@@ -59,7 +56,7 @@ public sealed class UtilitiesApi : IUtilitiesApi
                 parameters.Add("pageNumber", UriHelper.ParameterToString(pageNumber.Value));
             }
 
-        var uri = UriHelper.GetUri("/api/v2/timezones", parameters);
+        var uri = UriHelper.GetUri("api/v2/timezones", parameters);
 
         var response = await _httpClient.GetAsync(uri, cancellationToken);
 
@@ -69,12 +66,11 @@ public sealed class UtilitiesApi : IUtilitiesApi
     }
 
     /// <inheritdoc />
-
     public async Task<ParsedCertificate> CreateCertificateDetailsAsync(Certificate body, CancellationToken cancellationToken = default)
     {
         ArgumentNullException.ThrowIfNull(body);
 
-        var response = await _httpClient.PostAsJsonAsync("/api/v2/certificate/details", body, _options, cancellationToken);
+        var response = await _httpClient.PostAsJsonAsync("api/v2/certificate/details", body, _options, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
