@@ -213,8 +213,6 @@ public static class ServiceCollectionExtensions
 
         services.TryAddScoped<ITaskManagementApi, TaskManagementApi>();
 
-        services.TryAddScoped<ITokensApi, TokensApi>();
-
         services.TryAddScoped<IUserApi, UserApi>();
 
         services.TryAddScoped<IVoicemailApi, VoicemailApi>();
@@ -222,6 +220,8 @@ public static class ServiceCollectionExtensions
         services.TryAddScoped<IWebChatApi, WebChatApi>();
 
         services.TryAddScoped<IWebMessagingApi, WebMessagingApi>();
+
+        services.TryAddScoped<IWebDeploymentsApi, WebDeploymentsApi>();
 
         services.TryAddScoped<IWidgetsApi, WidgetsApi>();
 
