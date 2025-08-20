@@ -21,7 +21,6 @@ public sealed class ResponseManagementApi : IResponseManagementApiV2
         _options = options.Value;
     }
 
-    // Libraries
     /// <inheritdoc />
     public async Task<SimpleLibraryEntityListing> GetResponseManagementLibrariesAsync(int? pageNumber = null, int? pageSize = null, string messagingTemplateFilter = null, string libraryPrefix = null, CancellationToken cancellationToken = default)
     {
@@ -127,7 +126,6 @@ public sealed class ResponseManagementApi : IResponseManagementApiV2
         return await response.Content.ReadFromJsonAsync<SimpleLibraryEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
 
-    // Responses
     /// <inheritdoc />
     public async Task<SimpleResponseEntityListing> GetResponseManagementResponsesAsync(string libraryId, int? pageNumber = null, int? pageSize = null, string expand = null, CancellationToken cancellationToken = default)
     {
