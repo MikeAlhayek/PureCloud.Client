@@ -38,7 +38,7 @@ public sealed class TokensApi : ITokensApi
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<TokenInfo>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<TokenInfo>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
@@ -60,11 +60,11 @@ public sealed class TokensApi : ITokensApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.PutAsJsonAsync("api/v2/tokens/timeout", body, _options, cancellationToken);
+        var response = await client.PutAsJsonAsync("api/v2/tokens/timeout", body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<IdleTokenTimeout>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<IdleTokenTimeout>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
@@ -86,7 +86,7 @@ public sealed class TokensApi : ITokensApi
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<IdleTokenTimeout>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<IdleTokenTimeout>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
