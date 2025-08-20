@@ -672,6 +672,19 @@
     <Compile Include="Models\AttemptLimits.cs" />
     <Compile Include="Models\AttemptLimits.ResetPeriod.cs" />
     <Compile Include="Models\AttemptLimitsEntityListing.cs" />
+    <Compile Include="Models\EmbeddedIntegration.cs" />
+    <Compile Include="Models\FeatureState.cs" />
+    <Compile Include="Models\FreeTrialLimit.cs" />
+    <Compile Include="Models\FreeTrialLimitDocs.cs" />
+    <Compile Include="Models\FreeTrialNamespace.cs" />
+    <Compile Include="Models\IpAddressAuthentication.cs" />
+    <Compile Include="Models\LimitDocumentation.cs" />
+    <Compile Include="Models\LimitDocs.cs" />
+    <Compile Include="Models\Limit.cs" />
+    <Compile Include="Models\LimitsEntityListing.cs" />
+    <Compile Include="Models\NamespaceDocs.cs" />
+    <Compile Include="Models\OrgWhitelistSettings.cs" />
+    <Compile Include="Models\PagedNamespaceListing.cs" />
     <Compile Include="Models\Attachment.cs" />
     <Compile Include="Models\AttendanceStatus.cs" />
     <Compile Include="Models\AttendanceStatus.HasEvaluation.cs" />
@@ -2974,7 +2987,6 @@
     <Compile Include="Models\LexV2BotEntityListing.cs" />
     <Compile Include="Models\LexV2Intent.cs" />
     <Compile Include="Models\LexV2Slot.cs" />
-    <Compile Include="Models\Limit.cs" />
     <Compile Include="Models\LimitNamespace.cs" />
     <Compile Include="Models\LineId.cs" />
     <Compile Include="Models\LineUserId.cs" />
@@ -5536,6 +5548,7 @@
     <Compile Include="Models\SIPSearchPublicRequest.cs" />
     <Compile Include="Models\SipDownloadResponse.cs" />
     <Compile Include="Models\SignedUrlResponse.cs" />
+    <Compile Include="Models\Organizations\OrganizationFeatures.cs" />
     <Compile Include="Address.cs" />
     <Compile Include="PureCloudRegionHosts.cs" />
     <Compile Include="PureCloudConstants.cs" />
