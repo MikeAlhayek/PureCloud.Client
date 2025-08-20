@@ -35,7 +35,7 @@ public sealed class TeamsApi : ITeamsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/teams/{teamId}", parameters);
+        var uri = UriHelper.GetUri($"api/v2/teams/{Uri.EscapeDataString(teamId)}", parameters);
 
         var response = await client.GetAsync(uri, cancellationToken);
 
@@ -73,7 +73,7 @@ public sealed class TeamsApi : ITeamsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/teams/{teamId}/members", parameters);
+        var uri = UriHelper.GetUri($"api/v2/teams/{Uri.EscapeDataString(teamId)}/members", parameters);
 
         var response = await client.GetAsync(uri, cancellationToken);
 
@@ -146,7 +146,7 @@ public sealed class TeamsApi : ITeamsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.PatchAsJsonAsync($"api/v2/teams/{teamId}", body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PatchAsJsonAsync($"api/v2/teams/{Uri.EscapeDataString(teamId)}", body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -154,19 +154,19 @@ public sealed class TeamsApi : ITeamsApi
     }
 
     /// <inheritdoc />
-    public async Task DeleteTeamAsync(string teamId, CancellationToken cancellationToken = default)
+    public async Task<bool> DeleteTeamAsync(string teamId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(teamId);
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.DeleteAsync($"api/v2/teams/{teamId}", cancellationToken);
+        var response = await client.DeleteAsync($"api/v2/teams/{Uri.EscapeDataString(teamId)}", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
-    public async Task DeleteTeamMembersAsync(string teamId, string id, CancellationToken cancellationToken = default)
+    public async Task<bool> DeleteTeamMembersAsync(string teamId, string id, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(teamId);
 
@@ -178,11 +178,11 @@ public sealed class TeamsApi : ITeamsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/teams/{teamId}/members", parameters);
+        var uri = UriHelper.GetUri($"api/v2/teams/{Uri.EscapeDataString(teamId)}/members", parameters);
 
         var response = await client.DeleteAsync(uri, cancellationToken);
 
-        response.EnsureSuccessStatusCode();
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
@@ -194,7 +194,7 @@ public sealed class TeamsApi : ITeamsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.PostAsJsonAsync($"api/v2/teams/{teamId}/members", body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PostAsJsonAsync($"api/v2/teams/{Uri.EscapeDataString(teamId)}/members", body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
