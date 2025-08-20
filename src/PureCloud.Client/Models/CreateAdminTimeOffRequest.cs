@@ -62,13 +62,13 @@ public sealed class CreateAdminTimeOffRequest
     /// A set of dates in yyyy-MM-dd format. Should be interpreted in the management unit's configured time zone
     /// </summary>
     /// <value>A set of dates in yyyy-MM-dd format. Should be interpreted in the management unit's configured time zone</value>
-    public List<string> FullDayManagementUnitDates { get; set; }
+    public IEnumerable<string> FullDayManagementUnitDates { get; set; }
 
     /// <summary>
     /// A set of start date-times in ISO-8601 format for partial day requests
     /// </summary>
     /// <value>A set of start date-times in ISO-8601 format for partial day requests</value>
-    public List<DateTime?> PartialDayStartDateTimes { get; set; }
+    public IEnumerable<DateTime?> PartialDayStartDateTimes { get; set; }
 
     /// <summary>
     /// The daily duration of this time off request in minutes
@@ -80,13 +80,13 @@ public sealed class CreateAdminTimeOffRequest
     /// Daily durations for each day of this time off request in minutes
     /// </summary>
     /// <value>Daily durations for each day of this time off request in minutes</value>
-    public List<int?> DurationMinutes { get; set; }
+    public IEnumerable<int?> DurationMinutes { get; set; }
 
     /// <summary>
     /// Payable minutes for each day of this time off request
     /// </summary>
     /// <value>Payable minutes for each day of this time off request</value>
-    public List<int?> PayableMinutes { get; set; }
+    public IEnumerable<int?> PayableMinutes { get; set; }
 
     /// <summary>
     /// Whether this is a paid time off request

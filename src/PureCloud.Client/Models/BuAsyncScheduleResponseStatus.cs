@@ -1,4 +1,4 @@
-using System.Text.Json.Serialization;
+using System.Runtime.Serialization;
 
 namespace PureCloud.Client.Models;
 
@@ -8,26 +8,34 @@ namespace PureCloud.Client.Models;
 public enum BuAsyncScheduleResponseStatus
 {
     /// <summary>
+    /// Your SDK version is out of date and an unknown enum value was encountered. 
+    /// Please upgrade the SDK using the command "Upgrade-Package PureCloudApiSdk" 
+    /// in the Package Manager Console
+    /// </summary>
+    [EnumMember(Value = "OUTDATED_SDK_VERSION")]
+    OutdatedSdkVersion,
+
+    /// <summary>
     /// Processing
     /// </summary>
-    [JsonPropertyName("Processing")]
+    [EnumMember(Value = "Processing")]
     Processing,
 
     /// <summary>
     /// Complete
     /// </summary>
-    [JsonPropertyName("Complete")]
+    [EnumMember(Value = "Complete")]
     Complete,
 
     /// <summary>
     /// Canceled
     /// </summary>
-    [JsonPropertyName("Canceled")]
+    [EnumMember(Value = "Canceled")]
     Canceled,
 
     /// <summary>
     /// Error
     /// </summary>
-    [JsonPropertyName("Error")]
+    [EnumMember(Value = "Error")]
     Error
 }
