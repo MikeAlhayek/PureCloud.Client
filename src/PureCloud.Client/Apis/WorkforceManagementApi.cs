@@ -256,8 +256,6 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-
-
         var response = await client.GetAsync(uri, cancellationToken);
 
         response.EnsureSuccessStatusCode();
@@ -749,8 +747,6 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-
-
         var response = await client.GetAsync(uri, cancellationToken);
 
         response.EnsureSuccessStatusCode();
@@ -960,8 +956,6 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-
-
         var response = await client.DeleteAsync(uri, cancellationToken);
 
         return response.IsSuccessStatusCode;
@@ -1021,8 +1015,6 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-
-
         var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
@@ -1065,8 +1057,6 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-
-
         var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
@@ -1080,8 +1070,6 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
         var uri = "api/v2/workforcemanagement/adherence/historical/bulk";
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-
-
 
         var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -1150,8 +1138,6 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-
-
         var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
@@ -1168,8 +1154,6 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-
-
         var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
@@ -1185,8 +1169,6 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
         var uri = "api/v2/workforcemanagement/alternativeshifts/offers/search/jobs";
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-
-
 
         var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -1277,8 +1259,6 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-
-
         var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
@@ -1292,8 +1272,6 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
         var uri = "api/v2/workforcemanagement/agents/integrations/hris/query";
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-
-
 
         var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -1311,8 +1289,6 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-
-
         var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
@@ -1326,8 +1302,6 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
         var uri = "api/v2/workforcemanagement/agentschedules/mine";
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-
-
 
         var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -2011,8 +1985,6 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-
-
         var response = await client.GetAsync(uri, cancellationToken);
 
         response.EnsureSuccessStatusCode();
@@ -2028,8 +2000,6 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
         var uri = "api/v2/workforcemanagement/notifications/subscriptions";
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-
-
 
         var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -2436,8 +2406,6 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-
-
         var response = await client.GetAsync(uri, cancellationToken);
 
         response.EnsureSuccessStatusCode();
@@ -2451,8 +2419,6 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
         var uri = "api/v2/workforcemanagement/calendar/url/ics";
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-
-
 
         var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -3390,8 +3356,6 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-
-
         var response = await client.PostAsJsonAsync(uri, body, cancellationToken);
 
         response.EnsureSuccessStatusCode();
@@ -3480,8 +3444,6 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-
-
         var response = await client.PostAsJsonAsync(uri, body, cancellationToken);
 
         response.EnsureSuccessStatusCode();
@@ -3497,8 +3459,6 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
         var uri = "api/v2/workforcemanagement/timeoffbalance/jobs";
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-
-
 
         var response = await client.PostAsJsonAsync(uri, body, cancellationToken);
 
@@ -3516,8 +3476,6 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-
-
         var response = await client.PostAsJsonAsync(uri, body, cancellationToken);
 
         response.EnsureSuccessStatusCode();
@@ -3534,8 +3492,6 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-
-
         var response = await client.PostAsJsonAsync(uri, body, cancellationToken);
 
         response.EnsureSuccessStatusCode();
@@ -3551,8 +3507,6 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
         var uri = "api/v2/workforcemanagement/timeoffrequests/integrationstatus/query";
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-
-
 
         var response = await client.PostAsJsonAsync(uri, body, cancellationToken);
 
@@ -3703,8 +3657,6 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-
-
         var response = await client.PostAsJsonAsync(uri, body, cancellationToken);
 
         response.EnsureSuccessStatusCode();
@@ -3750,8 +3702,6 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-
-
         var response = await client.PostAsJsonAsync(uri, body, cancellationToken);
 
         response.EnsureSuccessStatusCode();
@@ -3767,8 +3717,6 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
         var uri = "api/v2/workforcemanagement/notifications/update";
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-
-
 
         var response = await client.PostAsJsonAsync(uri, body, cancellationToken);
 
@@ -3848,8 +3796,6 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-
-
         var response = await client.GetAsync(uri, cancellationToken);
 
         response.EnsureSuccessStatusCode();
@@ -3879,8 +3825,6 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
         var uri = "api/v2/workforcemanagement/historicaldata/importstatus";
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-
-
 
         var response = await client.GetAsync(uri, cancellationToken);
 
@@ -4369,8 +4313,6 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-
-
         var response = await client.PatchAsJsonAsync(uri, body, cancellationToken);
 
         response.EnsureSuccessStatusCode();
@@ -4386,8 +4328,6 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
         var uri = "api/v2/workforcemanagement/historicaldata/deletejob";
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-
-
 
         var response = await client.PostAsJsonAsync(uri, body, cancellationToken);
 
@@ -4405,8 +4345,6 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-
-
         var response = await client.PostAsJsonAsync(uri, body, cancellationToken);
 
         response.EnsureSuccessStatusCode();
@@ -4422,8 +4360,6 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
         var uri = "api/v2/workforcemanagement/integrations/hris/timeofftypes/jobs";
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-
-
 
         var response = await client.PostAsJsonAsync(uri, body, cancellationToken);
 
@@ -4441,8 +4377,6 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-
-
         var response = await client.PostAsJsonAsync(uri, body, cancellationToken);
 
         response.EnsureSuccessStatusCode();
@@ -4458,8 +4392,6 @@ public sealed class WorkforceManagementApi : IWorkforceManagementApi
         var uri = "api/v2/workforcemanagement/timeoffrequests";
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-
-
 
         var response = await client.PostAsJsonAsync(uri, body, cancellationToken);
 
