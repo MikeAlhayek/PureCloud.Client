@@ -12,6 +12,7 @@ public sealed class PagelessEntityListing
 
     /// <summary>
     /// Gets or Sets Entities
+    /// </summary>
     public IEnumerable<AddressableEntity> Entities { get; set; }
 
     /// <summary>

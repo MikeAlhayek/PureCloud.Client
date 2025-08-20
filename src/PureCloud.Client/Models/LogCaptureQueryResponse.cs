@@ -25,3 +25,4 @@ public sealed class LogCaptureQueryResponse
     /// </summary>
     public string PreviousUri { get; set; }
 }
+
