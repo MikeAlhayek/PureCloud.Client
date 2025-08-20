@@ -1245,8 +1245,8 @@ public interface IRoutingApi
     /// <param name="userId">Userid parameter</param>
     /// <param name="body">Body parameter</param>
     /// <param name="cancellationToken">Cancellation token</param>
-    /// <returns>UserUtilization</returns>
-    Task<UserUtilization> UpdateRoutingUserUtilizationAsync(string userId, UtilizationRequest body, CancellationToken cancellationToken = default);
+    /// <returns>AgentMaxUtilizationResponse</returns>
+    Task<AgentMaxUtilizationResponse> UpdateRoutingUserUtilizationAsync(string userId, UtilizationRequest body, CancellationToken cancellationToken = default);
     /// <summary>
     /// Update utilization
     /// </summary>

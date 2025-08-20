@@ -349,7 +349,6 @@
     <Compile Include="Models\ContactCenterSettings.cs" />
     <Compile Include="Models\TranscriptionSettings.cs" />
     <Compile Include="Models\SkillEntityListing.cs" />
-    <Compile Include="Models\UserUtilization.cs" />
     <Compile Include="Models\UserQueueEntityListing.cs" />
     <Compile Include="Models\UserRoutingLanguageEntityListing.cs" />
     <Compile Include="Models\UserSkillEntityListing.cs" />
