@@ -1,75 +1,52 @@
-using System.Text;
-
 namespace PureCloud.Client.Models;
 
 /// <summary>
 /// PagedNamespaceListing
 /// </summary>
-
-public partial class PagedNamespaceListing : IEquatable<PagedNamespaceListing>
+public sealed class PagedNamespaceListing
 {
     /// <summary>
-    /// Initializes a new instance of the <see cref="PagedNamespaceListing" /> class.
+    /// Gets or Sets Entities
     /// </summary>
-    public PagedNamespaceListing()
-    {
-
-    }
-
+    public IEnumerable<string> Entities { get; set; }
 
     /// <summary>
-    /// Returns the string presentation of the object
+    /// Gets or Sets PageSize
     /// </summary>
-    /// <returns>String presentation of the object</returns>
-    public override string ToString()
-    {
-        var sb = new StringBuilder();
-        sb.Append("class PagedNamespaceListing {\n");
-
-        sb.Append("}\n");
-        return sb.ToString();
-    }
-
+    public int? PageSize { get; set; }
 
     /// <summary>
-    /// Returns true if objects are equal
+    /// Gets or Sets PageNumber
     /// </summary>
-    /// <param name="obj">Object to be compared</param>
-    /// <returns>Boolean</returns>
-    public override bool Equals(object obj)
-    {
-        // credit: http://stackoverflow.com/a/10454552/677735
-        return Equals(obj as PagedNamespaceListing);
-    }
+    public int? PageNumber { get; set; }
 
     /// <summary>
-    /// Returns true if PagedNamespaceListing instances are equal
+    /// Gets or Sets Total
     /// </summary>
-    /// <param name="other">Instance of PagedNamespaceListing to be compared</param>
-    /// <returns>Boolean</returns>
-    public bool Equals(PagedNamespaceListing other)
-    {
-        // credit: http://stackoverflow.com/a/10454552/677735
-        if (other == null)
-        {
-            return false;
-        }
-
-        return true && false;
-    }
+    public long? Total { get; set; }
 
     /// <summary>
-    /// Gets the hash code
+    /// Gets or Sets FirstUri
     /// </summary>
-    /// <returns>Hash code</returns>
-    public override int GetHashCode()
-    {
-        // credit: http://stackoverflow.com/a/263416/677735
-        unchecked // Overflow is fine, just wrap
-        {
-            int hash = 41;
-            // Suitable nullity checks etc, of course :)
-            return hash;
-        }
-    }
+    public string FirstUri { get; set; }
+
+    /// <summary>
+    /// Gets or Sets LastUri
+    /// </summary>
+    public string LastUri { get; set; }
+
+    /// <summary>
+    /// Gets or Sets SelfUri
+    /// </summary>
+    public string SelfUri { get; set; }
+
+    /// <summary>
+    /// Gets or Sets NextUri
+    /// </summary>
+    public string NextUri { get; set; }
+
+    /// <summary>
+    /// Gets or Sets PreviousUri
+    /// </summary>
+    public string PreviousUri { get; set; }
 }
