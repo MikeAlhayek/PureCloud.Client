@@ -20,7 +20,6 @@ public sealed class WidgetsApi : IWidgetsApi
     }
 
     /// <inheritdoc />
-
     [Obsolete]
     public async Task<WidgetDeploymentEntityListing> GetWidgetDeploymentsAsync(CancellationToken cancellationToken = default)
     {
@@ -34,7 +33,6 @@ public sealed class WidgetsApi : IWidgetsApi
     }
 
     /// <inheritdoc />
-
     [Obsolete]
     public async Task<WidgetDeployment> GetWidgetDeploymentAsync(string deploymentId, CancellationToken cancellationToken = default)
     {
@@ -50,7 +48,6 @@ public sealed class WidgetsApi : IWidgetsApi
     }
 
     /// <inheritdoc />
-
     [Obsolete]
     public async Task<WidgetDeployment> CreateWidgetDeploymentAsync(WidgetDeployment deployment, CancellationToken cancellationToken = default)
     {
@@ -66,7 +63,6 @@ public sealed class WidgetsApi : IWidgetsApi
     }
 
     /// <inheritdoc />
-
     [Obsolete]
     public async Task<WidgetDeployment> UpdateWidgetDeploymentAsync(string deploymentId, WidgetDeployment deployment, CancellationToken cancellationToken = default)
     {
@@ -83,7 +79,6 @@ public sealed class WidgetsApi : IWidgetsApi
     }
 
     /// <inheritdoc />
-
     [Obsolete]
     public async Task<bool> DeleteWidgetDeploymentAsync(string deploymentId, CancellationToken cancellationToken = default)
     {
