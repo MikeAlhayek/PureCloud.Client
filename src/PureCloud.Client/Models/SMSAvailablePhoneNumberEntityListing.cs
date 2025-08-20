@@ -1,13 +1,9 @@
-using System.Text;
-using System.Text.Json.Serialization;
-
 namespace PureCloud.Client.Models;
 
-/// <summary>
-/// SMSAvailablePhoneNumberEntityListing
-/// </summary>
-
-public partial class SMSAvailablePhoneNumberEntityListing : IEquatable<SMSAvailablePhoneNumberEntityListing>
+public sealed class SMSAvailablePhoneNumberEntityListing
+{
+    public IEnumerable<SmsAvailablePhoneNumber>? Entities { get; set; }
+}
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="SMSAvailablePhoneNumberEntityListing" /> class.
