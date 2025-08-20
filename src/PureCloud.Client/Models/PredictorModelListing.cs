@@ -1,11 +1,11 @@
 namespace PureCloud.Client.Models;
 
-public sealed class QueueMemberEntityListing
+public sealed class PredictorModelListing
 {
     /// <summary>
     /// Gets or Sets Entities
     /// </summary>
-    public IEnumerable<QueueMember> Entities { get; set; }
+    public IEnumerable<PredictorModel> Entities { get; set; }
 
     /// <summary>
     /// Gets or Sets PageSize

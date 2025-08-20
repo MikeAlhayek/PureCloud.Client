@@ -1,11 +1,11 @@
 namespace PureCloud.Client.Models;
 
-public sealed class QueueMemberEntityListing
+public sealed class WrapupCodeDivisionViewEntityListing
 {
     /// <summary>
     /// Gets or Sets Entities
     /// </summary>
-    public IEnumerable<QueueMember> Entities { get; set; }
+    public IEnumerable<WrapupCodeDivisionView> Entities { get; set; }
 
     /// <summary>
     /// Gets or Sets PageSize

@@ -1,11 +1,13 @@
+using PureCloud.Client.Models.Queues;
+
 namespace PureCloud.Client.Models;
 
-public sealed class QueueMemberEntityListing
+public sealed class UserQueueEntityListing
 {
     /// <summary>
     /// Gets or Sets Entities
     /// </summary>
-    public IEnumerable<QueueMember> Entities { get; set; }
+    public IEnumerable<UserQueue> Entities { get; set; }
 
     /// <summary>
     /// Gets or Sets PageSize
