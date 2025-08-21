@@ -21,15 +21,15 @@ public sealed class TextbotsApi : ITextbotsApi
     }
 
     /// <inheritdoc />
-    public async Task<BotSearchResponseEntityListing> GetTextbotsBotsSearchAsync(IEnumerable<string> botType = null, string botName = null, IEnumerable<string> botId = null, int? pageSize = null, CancellationToken cancellationToken = default)
+    public async Task<BotSearchResponseEntityListing> GetTextbotsBotsSearchAsync(IEnumerable<string> botTypes = null, string botName = null, IEnumerable<string> botIds = null, int? pageSize = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
 
-        if (botType != null)
+        if (botTypes != null)
         {
-            foreach (var botTypeItem in botType)
+            foreach (var botType in botTypes)
             {
-                parameters.Add("botType", UriHelper.ParameterToString(botTypeItem));
+                parameters.Add("botType", UriHelper.ParameterToString(botType));
             }
         }
 
@@ -38,11 +38,11 @@ public sealed class TextbotsApi : ITextbotsApi
             parameters.Add("botName", UriHelper.ParameterToString(botName));
         }
 
-        if (botId != null)
+        if (botIds != null)
         {
-            foreach (var botIdItem in botId)
+            foreach (var botId in botIds)
             {
-                parameters.Add("botId", UriHelper.ParameterToString(botIdItem));
+                parameters.Add("botId", UriHelper.ParameterToString(botId));
             }
         }
 
