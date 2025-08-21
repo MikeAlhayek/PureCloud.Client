@@ -4,7 +4,7 @@ namespace PureCloud.Client.Contracts;
 
 public interface ITextbotsApi
 {
-    Task<BotSearchResponseEntityListing> GetTextbotsBotsSearchAsync(IEnumerable<string> botType = null, string botName = null, IEnumerable<string> botId = null, int? pageSize = null, CancellationToken cancellationToken = default);
+    Task<BotSearchResponseEntityListing> GetTextbotsBotsSearchAsync(IEnumerable<string> botTypes = null, string botName = null, IEnumerable<string> botIds = null, int? pageSize = null, CancellationToken cancellationToken = default);
 
     Task<TextBotFlowTurnResponse> CreateTextbotsBotflowsSessionTurnsAsync(string sessionId, TextBotFlowTurnRequest turnRequest, CancellationToken cancellationToken = default);
 
