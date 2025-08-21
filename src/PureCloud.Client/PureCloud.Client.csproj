@@ -328,7 +328,10 @@
     <Compile Include="Models\EdgeEntityListing.cs" />
     <Compile Include="Models\EdgeGroup.cs" />
     <Compile Include="Models\EdgeInterface.cs" />
-    <Compile Include="Models\EngineIntegration.cs" />
+    <Compile Include="Models\EdgeNetworkDiagnosticResponse.cs" />
+    <Compile Include="Models\EdgeVersionReport.cs" />
+    <Compile Include="Models\EdgeVersionInformation.cs" />
+    <Compile Include="Models\ExpiredEdgeListing.cs" />
     <Compile Include="Models\IdleTokenTimeout.cs" />
     <Compile Include="Models\LanguageReference.cs" />
     <Compile Include="Models\ListItemComponent.cs" />
@@ -346,6 +349,7 @@
     <Compile Include="Models\NotificationTemplateHeader.cs" />
     <Compile Include="Models\NotificationTemplateHeader.Type.cs" />
     <Compile Include="Models\NotificationTemplateParameter.cs" />
+    <Compile Include="Models\NumberPlan.cs" />
     <Compile Include="Models\OpenContentAttachment.cs" />
     <Compile Include="Models\OpenContentAttachment.MediaType.cs" />
     <Compile Include="Models\RecipientAdditionalIdentifier.cs" />
@@ -360,8 +364,10 @@
     <Compile Include="Models\DomainCertificateAuthority.Type.cs" />
     <Compile Include="Models\DomainCertificateAuthority.Services.cs" />
     <Compile Include="Models\CertificateDetails.cs" />
+    <Compile Include="Models\Extension.cs" />
     <Compile Include="Models\ExtensionPool.cs" />
     <Compile Include="Models\ExtensionPool.State.cs" />
+    <Compile Include="Models\ExtensionPoolEntityListing.cs" />
     <Compile Include="Models\Conversations\ConversationContentButtonResponse.cs" />
     <Compile Include="Models\Conversations\ConversationContentButtonResponse.Type.cs" />
     <Compile Include="Models\Conversations\ConversationContentCard.cs" />
@@ -1850,6 +1856,7 @@
     <Compile Include="Models\EdgeChangeTopicEdgeOnline.Status.cs" />
     <Compile Include="Models\EdgeLogicalInterfacesChangeTopicDomainLogicalInterfaceChange.cs" />
     <Compile Include="Models\EdgeLogicalInterfacesChangeTopicErrorInfo.cs" />
+    <Compile Include="Models\EdgeMetrics.cs" />
     <Compile Include="Models\EdgeMetricsTopicEdgeMetricDisk.cs" />
     <Compile Include="Models\EdgeMetricsTopicEdgeMetricMemory.cs" />
     <Compile Include="Models\EdgeMetricsTopicEdgeMetricNetworks.cs" />
@@ -3013,6 +3020,7 @@
     <Compile Include="Models\LexV2Intent.cs" />
     <Compile Include="Models\LexV2Slot.cs" />
     <Compile Include="Models\LimitNamespace.cs" />
+    <Compile Include="Models\Line.cs" />
     <Compile Include="Models\LineId.cs" />
     <Compile Include="Models\LineUserId.cs" />
     <Compile Include="Models\LinkConfiguration.cs" />
@@ -3272,6 +3280,7 @@
     <Compile Include="Models\PhoneChangeTopicEdgeReference.cs" />
     <Compile Include="Models\PhoneChangeTopicLineStatus.cs" />
     <Compile Include="Models\PhoneChangeTopicPhone.cs" />
+    <Compile Include="Models\PhoneBase.cs" />
     <Compile Include="Models\PhoneChangeTopicPhoneStatus.cs" />
     <Compile Include="Models\PhoneChangeTopicPhoneStatus.OperationalStatus.cs" />
     <Compile Include="Models\PhoneChangeTopicProvisionInfo.cs" />
@@ -3281,7 +3290,7 @@
     <Compile Include="Models\PhoneNumberColumn.cs" />
     <Compile Include="Models\PhoneTransferEvent.cs" />
     <Compile Include="Models\PhoneTransferEvent.TransferType.cs" />
-    <Compile Include="Models\PINConfiguration.cs" />
+    <Compile Include="Models\PhysicalInterfaceEntityListing.cs" />
     <Compile Include="Models\PingIdentity.cs" />
     <Compile Include="Models\PingIdentity.SsoBinding.cs" />
     <Compile Include="Models\PingIdentity.NameIdentifierFormat.cs" />
@@ -4438,9 +4447,9 @@
     <Compile Include="Models\Locations\LocationDefinitionStateEnum.cs" />
     <Compile Include="Models\Locations\LocationEmergencyNumber.cs" />
     <Compile Include="Models\Locations\LocationEmergencyNumberType.cs" />
-    <Compile Include="Models\MediaSummary.cs" />
-    <Compile Include="Models\MediaSummaryDetail.cs" />
     <Compile Include="Models\MediaResult.cs" />
+    <Compile Include="Models\MediaStatisticsListing.cs" />
+    <Compile Include="Models\MediaSummary.cs" />
     <Compile Include="Models\OAuthAuthorization.cs" />
     <Compile Include="Models\OAuthAuthorizationListing.cs" />
     <Compile Include="Models\OAuthClient.cs" />
@@ -4586,6 +4595,7 @@
     <Compile Include="Models\TrunkInstanceTopicTrunkMetricsNetworkTypeIp.cs" />
     <Compile Include="Models\TrunkInstanceTopicTrunkMetricsOptions.cs" />
     <Compile Include="Models\TrunkInstanceTopicTrunkMetricsRegisters.cs" />
+    <Compile Include="Models\TrunkMetrics.cs" />
     <Compile Include="Models\TrunkMetricsTopicTrunkMetrics.cs" />
     <Compile Include="Models\TrunkMetricsTopicTrunkMetricsCalls.cs" />
     <Compile Include="Models\TrunkMetricsTopicTrunkMetricsQoS.cs" />
