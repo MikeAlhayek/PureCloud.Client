@@ -129,6 +129,8 @@ public static class ServiceCollectionExtensions
 
         services.TryAddScoped<ILanguagesApi, LanguagesApi>();
 
+        services.TryAddScoped<ILanguageUnderstandingApi, LanguageUnderstandingApi>();
+
         services.TryAddScoped<ILearningApi, LearningApi>();
 
         services.TryAddScoped<ILicenseApi, LicenseApi>();
@@ -212,8 +214,6 @@ public static class ServiceCollectionExtensions
         services.TryAddScoped<ITeamsApi, TeamsApi>();
 
         services.TryAddScoped<ITaskManagementApi, TaskManagementApi>();
-
-        services.TryAddScoped<ITokensApi, TokensApi>();
 
         services.TryAddScoped<IUserApi, UserApi>();
 

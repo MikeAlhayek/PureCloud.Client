@@ -24,9 +24,7 @@ public sealed class UtilitiesApi : IUtilitiesApi
     /// <inheritdoc />
     public async Task<ServerDate> GetDateAsync(CancellationToken cancellationToken = default)
     {
-        var uri = UriHelper.GetUri("/api/v2/date", null);
-
-        var response = await _httpClient.GetAsync(uri, cancellationToken);
+        var response = await _httpClient.GetAsync("api/v2/date", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -36,9 +34,7 @@ public sealed class UtilitiesApi : IUtilitiesApi
     /// <inheritdoc />
     public async Task<IpAddressRangeListing> GetIprangesAsync(CancellationToken cancellationToken = default)
     {
-        var uri = UriHelper.GetUri("/api/v2/ipranges", null);
-
-        var response = await _httpClient.GetAsync(uri, cancellationToken);
+        var response = await _httpClient.GetAsync("api/v2/ipranges", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -48,19 +44,19 @@ public sealed class UtilitiesApi : IUtilitiesApi
     /// <inheritdoc />
     public async Task<TimeZoneEntityListing> GetTimezonesAsync(int? pageSize = null, int? pageNumber = null, CancellationToken cancellationToken = default)
     {
-        var parameters = new NameValueCollection();
+            var parameters = new NameValueCollection();
 
-        if (pageSize.HasValue)
-        {
-            parameters.Add("pageSize", UriHelper.ParameterToString(pageSize.Value));
-        }
+            if (pageSize.HasValue)
+            {
+                parameters.Add("pageSize", UriHelper.ParameterToString(pageSize.Value));
+            }
 
-        if (pageNumber.HasValue)
-        {
-            parameters.Add("pageNumber", UriHelper.ParameterToString(pageNumber.Value));
-        }
+            if (pageNumber.HasValue)
+            {
+                parameters.Add("pageNumber", UriHelper.ParameterToString(pageNumber.Value));
+            }
 
-        var uri = UriHelper.GetUri("/api/v2/timezones", parameters);
+        var uri = UriHelper.GetUri("api/v2/timezones", parameters);
 
         var response = await _httpClient.GetAsync(uri, cancellationToken);
 
@@ -74,9 +70,7 @@ public sealed class UtilitiesApi : IUtilitiesApi
     {
         ArgumentNullException.ThrowIfNull(body);
 
-        var uri = UriHelper.GetUri("/api/v2/certificate/details", null);
-
-        var response = await _httpClient.PostAsJsonAsync(uri, body, _options, cancellationToken);
+        var response = await _httpClient.PostAsJsonAsync("api/v2/certificate/details", body, _options, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 

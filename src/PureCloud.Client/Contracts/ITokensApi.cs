@@ -18,7 +18,28 @@ public interface ITokensApi
     /// <param name="userId">User ID</param>
     /// <param name="cancellationToken">Cancellation token</param>
     /// <returns>Task</returns>
-    Task DeleteTokenAsync(string userId, CancellationToken cancellationToken = default);
+    Task<bool> DeleteTokenAsync(string userId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Delete auth token used to make the request
+    /// </summary>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Task</returns>
+    Task<bool> DeleteTokensMeAsync(CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get the current Idle Token Timeout Value
+    /// </summary>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Current idle token timeout settings</returns>
+    Task<IdleTokenTimeout> GetTokensTimeoutAsync(CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Verify user token
+    /// </summary>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>Task</returns>
+    Task<bool> HeadTokensMeAsync(CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Update or Enable/Disable the Idle Token Timeout
