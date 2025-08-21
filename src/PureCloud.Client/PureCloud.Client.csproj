@@ -54,6 +54,7 @@
     <Compile Include="Apis\JourneyApi.cs" />
     <Compile Include="Apis\KnowledgeApi.cs" />
     <Compile Include="Apis\LanguagesApi.cs" />
+    <Compile Include="Apis\LanguageUnderstandingApi.cs" />
     <Compile Include="Apis\LearningApi.cs" />
     <Compile Include="Apis\LicenseApi.cs" />
     <Compile Include="Apis\LocationsApi.cs" />
@@ -133,6 +134,7 @@
     <Compile Include="Contracts\IJourneyApi.cs" />
     <Compile Include="Contracts\IKnowledgeApi.cs" />
     <Compile Include="Contracts\ILanguagesApi.cs" />
+    <Compile Include="Contracts\ILanguageUnderstandingApi.cs" />
     <Compile Include="Contracts\ILearningApi.cs" />
     <Compile Include="Contracts\ILicenseApi.cs" />
     <Compile Include="Contracts\ILocationsApi.cs" />
@@ -334,12 +336,14 @@
     <Compile Include="Models\NotificationTemplateHeader.cs" />
     <Compile Include="Models\NotificationTemplateHeader.Type.cs" />
     <Compile Include="Models\NotificationTemplateParameter.cs" />
+    <Compile Include="Models\NumberPlan.cs" />
     <Compile Include="Models\OpenContentAttachment.cs" />
     <Compile Include="Models\OpenContentAttachment.MediaType.cs" />
     <Compile Include="Models\RecipientAdditionalIdentifier.cs" />
     <Compile Include="Models\RecipientAdditionalIdentifier.Type.cs" />
     <Compile Include="Models\Teams\TeamEntityListing.cs" />
     <Compile Include="Models\TextBotPromptSegment.Type.cs" />
+    <Compile Include="Models\TopicPhrase.cs" />
     <Compile Include="Models\TrunkBase.cs" />
     <Compile Include="Models\TrunkBaseAssignment.cs" />
     <Compile Include="Models\DomainCertificateAuthority.cs" />
@@ -347,8 +351,10 @@
     <Compile Include="Models\DomainCertificateAuthority.Type.cs" />
     <Compile Include="Models\DomainCertificateAuthority.Services.cs" />
     <Compile Include="Models\CertificateDetails.cs" />
+    <Compile Include="Models\Extension.cs" />
     <Compile Include="Models\ExtensionPool.cs" />
     <Compile Include="Models\ExtensionPool.State.cs" />
+    <Compile Include="Models\ExtensionPoolEntityListing.cs" />
     <Compile Include="Models\Conversations\ConversationContentButtonResponse.cs" />
     <Compile Include="Models\Conversations\ConversationContentButtonResponse.Type.cs" />
     <Compile Include="Models\Conversations\ConversationContentCard.cs" />
@@ -1791,6 +1797,7 @@
     <Compile Include="Models\EdgeChangeTopicEdgeOnline.Status.cs" />
     <Compile Include="Models\EdgeLogicalInterfacesChangeTopicDomainLogicalInterfaceChange.cs" />
     <Compile Include="Models\EdgeLogicalInterfacesChangeTopicErrorInfo.cs" />
+    <Compile Include="Models\EdgeMetrics.cs" />
     <Compile Include="Models\EdgeMetricsTopicEdgeMetricDisk.cs" />
     <Compile Include="Models\EdgeMetricsTopicEdgeMetricMemory.cs" />
     <Compile Include="Models\EdgeMetricsTopicEdgeMetricNetworks.cs" />
@@ -1844,6 +1851,7 @@
     <Compile Include="Models\EndConsultTransferEvent.cs" />
     <Compile Include="Models\EndTransferEvent.cs" />
     <Compile Include="Models\EndTransferEvent.FinalState.cs" />
+    <Compile Include="Models\EngineIntegration.cs" />
     <Compile Include="Models\EnrichFieldRule.cs" />
     <Compile Include="Models\EnrichFieldRule.ArrayAction.cs" />
     <Compile Include="Models\EnrichFieldRule.Action.cs" />
@@ -2310,6 +2318,7 @@
     <Compile Include="Models\HistoryListing.cs" />
     <Compile Include="Models\HistoryListing.ActionStatus.cs" />
     <Compile Include="Models\HistoryListing.ActionName.cs" />
+    <Compile Include="Models\HistoryHeadersTranslation.cs" />
     <Compile Include="Models\HoldUpdatedEvent.cs" />
     <Compile Include="Models\HomerRecord.cs" />
     <Compile Include="Models\IdentifierClaimRequest.cs" />
@@ -2363,6 +2372,7 @@
     <Compile Include="Models\IntegrationTypeEntityListing.cs" />
     <Compile Include="Models\Intent.cs" />
     <Compile Include="Models\IntentDefinition.cs" />
+    <Compile Include="Models\IntentFeedback.cs" />
     <Compile Include="Models\InternalMessage.cs" />
     <Compile Include="Models\InternalMessageDetails.cs" />
     <Compile Include="Models\InternalMessageDisconnectType.cs" />
@@ -2792,6 +2802,7 @@
     <Compile Include="Models\LexV2Slot.cs" />
     <Compile Include="Models\Limit.cs" />
     <Compile Include="Models\LimitNamespace.cs" />
+    <Compile Include="Models\Line.cs" />
     <Compile Include="Models\LineId.cs" />
     <Compile Include="Models\LineUserId.cs" />
     <Compile Include="Models\LinkConfiguration.cs" />
@@ -2850,6 +2861,15 @@
     <Compile Include="Models\Metrics.UnitType.cs" />
     <Compile Include="Models\MetricValueTrendAverage.cs" />
     <Compile Include="Models\MinLength.cs" />
+    <Compile Include="Models\MinedIntentsListing.cs" />
+    <Compile Include="Models\Miner.cs" />
+    <Compile Include="Models\MinerErrorInfo.cs" />
+    <Compile Include="Models\MinerExecuteRequest.cs" />
+    <Compile Include="Models\MinerIntent.cs" />
+    <Compile Include="Models\MinerListing.cs" />
+    <Compile Include="Models\MinerTopic.cs" />
+    <Compile Include="Models\MinerTopicPhrase.cs" />
+    <Compile Include="Models\MinerTopicsListing.cs" />
     <Compile Include="Models\MobileNotificationSettings.cs" />
     <Compile Include="Models\MobileNotificationSettings.When.cs" />
     <Compile Include="Models\MobileSettings.cs" />
@@ -2866,11 +2886,27 @@
     <Compile Include="Models\NamedEntityTypeMechanism.Type.cs" />
     <Compile Include="Models\NetworkConnectivity.cs" />
     <Compile Include="Models\NluConfig.cs" />
+    <Compile Include="Models\NluConfusionMatrixColumn.cs" />
+    <Compile Include="Models\NluConfusionMatrixRow.cs" />
+    <Compile Include="Models\NluDetectionContext.cs" />
+    <Compile Include="Models\NluDetectionInput.cs" />
+    <Compile Include="Models\NluDetectionOutput.cs" />
+    <Compile Include="Models\NluDetectionRequest.cs" />
+    <Compile Include="Models\NluDetectionResponse.cs" />
     <Compile Include="Models\NluDomain.cs" />
+    <Compile Include="Models\NluDomainListing.cs" />
     <Compile Include="Models\NluDomainVersion.cs" />
     <Compile Include="Models\NluDomainVersion.EvaluationStatus.cs" />
     <Compile Include="Models\NluDomainVersion.TrainingStatus.cs" />
+    <Compile Include="Models\NluDomainVersionListing.cs" />
+    <Compile Include="Models\NluDomainVersionQualityReport.cs" />
+    <Compile Include="Models\NluDomainVersionTrainingResponse.cs" />
+    <Compile Include="Models\NluFeedbackListing.cs" />
+    <Compile Include="Models\NluFeedbackRequest.cs" />
+    <Compile Include="Models\NluFeedbackResponse.cs" />
     <Compile Include="Models\NluInfo.cs" />
+    <Compile Include="Models\NluQualityReportSummary.cs" />
+    <Compile Include="Models\NluQualityReportSummaryMetric.cs" />
     <Compile Include="Models\NluUtterance.cs" />
     <Compile Include="Models\NluUtterance.Source.cs" />
     <Compile Include="Models\NluUtteranceSegment.cs" />
@@ -3026,6 +3062,7 @@
     <Compile Include="Models\PhoneChangeTopicEdgeReference.cs" />
     <Compile Include="Models\PhoneChangeTopicLineStatus.cs" />
     <Compile Include="Models\PhoneChangeTopicPhone.cs" />
+    <Compile Include="Models\PhoneBase.cs" />
     <Compile Include="Models\PhoneChangeTopicPhoneStatus.cs" />
     <Compile Include="Models\PhoneChangeTopicPhoneStatus.OperationalStatus.cs" />
     <Compile Include="Models\PhoneChangeTopicProvisionInfo.cs" />
@@ -3326,6 +3363,7 @@
     <Compile Include="Models\QueueConversationCallEventTopicJourneyCustomerSession.cs" />
     <Compile Include="Models\QueueConversationCallEventTopicLimit.Namespace.cs" />
     <Compile Include="Models\Organizations\DomainOrganizationRole.cs" />
+    <Compile Include="Models\Organizations\NluOrganization.cs" />
     <Compile Include="Models\Organizations\Organization.cs" />
     <Compile Include="Models\Organizations\OrganizationPresence.cs" />
     <Compile Include="Models\Organizations\OrganizationPresenceDefinition.cs" />
@@ -3994,6 +4032,7 @@
     <Compile Include="Models\SummaryAsyncAggregationQuery.GroupBy.cs" />
     <Compile Include="Models\SummaryGenerationConfig.cs" />
     <Compile Include="Models\SupportedLanguage.cs" />
+    <Compile Include="Models\SupportedLanguagesInfoDefinition.cs" />
     <Compile Include="Models\SupportedContent.cs" />
     <Compile Include="Models\SupportedContentListing.cs" />
     <Compile Include="Models\SupportedContentReference.cs" />
@@ -4003,6 +4042,11 @@
     <Compile Include="Models\SupportCenterLabelFilter.cs" />
     <Compile Include="Models\SupportCenterScreen.cs" />
     <Compile Include="Models\SupportCenterStyleSetting.cs" />
+    <Compile Include="Models\SupportedContentListing.cs" />
+    <Compile Include="Models\SupportedContentReference.cs" />
+    <Compile Include="Models\SupportedDialectsEntityListing.cs" />
+    <Compile Include="Models\SupportedDialectsTranscriptionEngine.cs" />
+    <Compile Include="Models\SupportedEntityTypeStatus.cs" />
     <Compile Include="Models\SurveyAggregateDataContainer.cs" />
     <Compile Include="Models\SurveyAggregateQueryClause.cs" />
     <Compile Include="Models\SurveyAggregateQueryClause.Type.cs" />
@@ -4170,9 +4214,9 @@
     <Compile Include="Models\Locations\LocationDefinitionStateEnum.cs" />
     <Compile Include="Models\Locations\LocationEmergencyNumber.cs" />
     <Compile Include="Models\Locations\LocationEmergencyNumberType.cs" />
-    <Compile Include="Models\MediaSummary.cs" />
-    <Compile Include="Models\MediaSummaryDetail.cs" />
     <Compile Include="Models\MediaResult.cs" />
+    <Compile Include="Models\MediaStatisticsListing.cs" />
+    <Compile Include="Models\MediaSummary.cs" />
     <Compile Include="Models\OAuthAuthorization.cs" />
     <Compile Include="Models\OAuthAuthorizationListing.cs" />
     <Compile Include="Models\OAuthClient.cs" />
@@ -4255,6 +4299,7 @@
     <Compile Include="Models\TrunkInstanceTopicTrunkMetricsNetworkTypeIp.cs" />
     <Compile Include="Models\TrunkInstanceTopicTrunkMetricsOptions.cs" />
     <Compile Include="Models\TrunkInstanceTopicTrunkMetricsRegisters.cs" />
+    <Compile Include="Models\TrunkMetrics.cs" />
     <Compile Include="Models\TrunkMetricsTopicTrunkMetrics.cs" />
     <Compile Include="Models\TrunkMetricsTopicTrunkMetricsCalls.cs" />
     <Compile Include="Models\TrunkMetricsTopicTrunkMetricsQoS.cs" />
@@ -4304,6 +4349,7 @@
     <Compile Include="Models\LearningCoverArtUploadUrlRequest.ContentType.cs" />
     <Compile Include="Models\LearningCoverArtUploadUrlRequest.ServerSideEncryption.cs" />
     <Compile Include="Models\UrlResponse.cs" />
+    <Compile Include="Models\Utterance.cs" />
     <Compile Include="Models\ApiUsageClientQuery.cs" />
     <Compile Include="Models\ApiUsageClientQuery.Granularity.cs" />
     <Compile Include="Models\ApiUsageClientQuery.Metrics.cs" />
@@ -5112,7 +5158,6 @@
     <Compile Include="Models\Station.cs" />
     <Compile Include="Models\Station.Status.cs" />
     <Compile Include="Models\StationEntityListing.cs" />
-
     <Compile Include="Models\TrustEntityListing.cs" />
     <Compile Include="Models\Trustee.cs" />
     <Compile Include="Models\TrustCreate.cs" />
@@ -5124,7 +5169,6 @@
     <Compile Include="Models\TrustRequest.cs" />
     <Compile Include="Models\TrustRequestCreate.cs" />
     <Compile Include="Models\TrustUpdate.cs" />
-
     <Compile Include="Models\CreateTriggerRequest.cs" />
     <Compile Include="Models\MatchCriteria.cs" />
     <Compile Include="Models\MatchCriteriaTestResult.cs" />
