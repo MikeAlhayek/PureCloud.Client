@@ -1,5 +1,3 @@
-using System.Runtime.Serialization;
-
 namespace PureCloud.Client.Models;
 
 /// <summary>
@@ -11,40 +9,13 @@ public sealed class CreateAdminTimeOffRequest
     /// The status of this time off request
     /// </summary>
     /// <value>The status of this time off request</value>
-    public enum StatusEnum
-    {
-        /// <summary>
-        /// Your SDK version is out of date and an unknown enum value was encountered. 
-        /// Please upgrade the SDK using the command "Upgrade-Package PureCloudApiSdk" 
-        /// in the Package Manager Console
-        /// </summary>
-        [EnumMember(Value = "OUTDATED_SDK_VERSION")]
-        OutdatedSdkVersion,
-
-        /// <summary>
-        /// Enum Pending for "PENDING"
-        /// </summary>
-        [EnumMember(Value = "PENDING")]
-        Pending,
-
-        /// <summary>
-        /// Enum Approved for "APPROVED"
-        /// </summary>
-        [EnumMember(Value = "APPROVED")]
-        Approved
-    }
-
-    /// <summary>
-    /// The status of this time off request
-    /// </summary>
-    /// <value>The status of this time off request</value>
-    public StatusEnum? Status { get; set; }
+    public CreateAdminTimeOffRequestStatus? Status { get; set; }
 
     /// <summary>
     /// A set of IDs for users to associate with this time off request
     /// </summary>
     /// <value>A set of IDs for users to associate with this time off request</value>
-    public List<UserReference> Users { get; set; }
+    public IEnumerable<UserReference> Users { get; set; }
 
     /// <summary>
     /// The ID of the activity code associated with this time off request

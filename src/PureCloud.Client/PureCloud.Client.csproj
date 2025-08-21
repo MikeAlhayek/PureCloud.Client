@@ -1518,6 +1518,7 @@
     <Compile Include="Models\CreateActivityCodeRequest.cs" />
     <Compile Include="Models\SecondaryPresence.cs" />
     <Compile Include="Models\CreateAdminTimeOffRequest.cs" />
+    <Compile Include="Models\CreateAdminTimeOffRequest.Status.cs" />
     <Compile Include="Models\CreateBenefitAssessmentRequest.cs" />
     <Compile Include="Models\CreateCoachingAppointmentRequest.cs" />
     <Compile Include="Models\CreateGeneralProgramTestPhraseDetectedPhrase.cs" />
