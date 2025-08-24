@@ -4,7 +4,7 @@ namespace PureCloud.Client.Contracts;
 
 public interface IProcessAutomationApi
 {
-    Task DeleteTriggerAsync(string triggerId, CancellationToken cancellationToken = default);
+    Task<bool> DeleteTriggerAsync(string triggerId, CancellationToken cancellationToken = default);
 
     Task<Trigger> GetTriggerAsync(string triggerId, CancellationToken cancellationToken = default);
 
