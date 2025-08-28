@@ -68,6 +68,23 @@ public interface IWebChatApi
     Task<WebChatMessageEntityList> GetWebchatGuestConversationMessagesAsync(string conversationId, string after = null, string before = null, string sortOrder = null, int? maxResults = null, CancellationToken cancellationToken = default);
 
     /// <summary>
+    /// Get a media request in the conversation
+    /// </summary>
+    /// <param name="conversationId">Conversation Id</param>
+    /// <param name="mediaRequestId">Media Request Id</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>WebChat guest media request</returns>
+    Task<WebChatGuestMediaRequest> GetWebchatGuestConversationMediaRequestAsync(string conversationId, string mediaRequestId, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get all media requests to the guest in the conversation
+    /// </summary>
+    /// <param name="conversationId">Conversation Id</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>WebChat guest media request entity list</returns>
+    Task<WebChatGuestMediaRequestEntityList> GetWebchatGuestConversationMediaRequestsAsync(string conversationId, CancellationToken cancellationToken = default);
+
+    /// <summary>
     /// Create WebChat deployment
     /// </summary>
     /// <param name="body">Deployment</param>
@@ -103,6 +120,16 @@ public interface IWebChatApi
     Task<WebChatTyping> CreateWebchatGuestConversationMemberTypingAsync(string conversationId, string memberId, CancellationToken cancellationToken = default);
 
     /// <summary>
+    /// Update a media request in the conversation
+    /// </summary>
+    /// <param name="conversationId">Conversation Id</param>
+    /// <param name="mediaRequestId">Media Request Id</param>
+    /// <param name="body">Media Request</param>
+    /// <param name="cancellationToken">Cancellation token</param>
+    /// <returns>WebChat guest media request</returns>
+    Task<WebChatGuestMediaRequest> UpdateWebchatGuestConversationMediaRequestAsync(string conversationId, string mediaRequestId, WebChatGuestMediaRequest body, CancellationToken cancellationToken = default);
+
+    /// <summary>
     /// Update WebChat deployment settings
     /// </summary>
     /// <param name="body">WebChat settings</param>
@@ -124,8 +151,8 @@ public interface IWebChatApi
     /// </summary>
     /// <param name="deploymentId">Deployment Id</param>
     /// <param name="cancellationToken">Cancellation token</param>
-    /// <returns>Task</returns>
-    Task DeleteWebchatDeploymentAsync(string deploymentId, CancellationToken cancellationToken = default);
+    /// <returns>True if successful</returns>
+    Task<bool> DeleteWebchatDeploymentAsync(string deploymentId, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Remove a member from a chat conversation
@@ -133,13 +160,13 @@ public interface IWebChatApi
     /// <param name="conversationId">Conversation Id</param>
     /// <param name="memberId">Member Id</param>
     /// <param name="cancellationToken">Cancellation token</param>
-    /// <returns>Task</returns>
-    Task DeleteWebchatGuestConversationMemberAsync(string conversationId, string memberId, CancellationToken cancellationToken = default);
+    /// <returns>True if successful</returns>
+    Task<bool> DeleteWebchatGuestConversationMemberAsync(string conversationId, string memberId, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Remove WebChat deployment settings
     /// </summary>
     /// <param name="cancellationToken">Cancellation token</param>
-    /// <returns>Task</returns>
-    Task DeleteWebchatSettingsAsync(CancellationToken cancellationToken = default);
+    /// <returns>True if successful</returns>
+    Task<bool> DeleteWebchatSettingsAsync(CancellationToken cancellationToken = default);
 }

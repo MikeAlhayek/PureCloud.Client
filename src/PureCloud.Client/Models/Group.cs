@@ -1,6 +1,6 @@
 using PureCloud.Client.Models.Users;
 
-namespace PureCloud.Client.Models.Groups;
+namespace PureCloud.Client.Models;
 
 public sealed class Group
 {

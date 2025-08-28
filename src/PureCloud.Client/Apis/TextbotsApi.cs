@@ -1,6 +1,5 @@
 using System.Collections.Specialized;
 using System.Net.Http.Json;
-using System.Text.Json;
 using Microsoft.Extensions.Options;
 using PureCloud.Client.Contracts;
 using PureCloud.Client.Http;
@@ -12,25 +11,25 @@ namespace PureCloud.Client.Apis;
 /// <inheritdoc />
 public sealed class TextbotsApi : ITextbotsApi
 {
-    private readonly HttpClient _httpClient;
-    private readonly JsonSerializerOptions _options;
+    private readonly IHttpClientFactory _httpClientFactory;
+    private readonly PureCloudJsonSerializerOptions _options;
 
     public TextbotsApi(IHttpClientFactory httpClientFactory, IOptions<PureCloudJsonSerializerOptions> options)
     {
-        _httpClient = httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
-        _options = options.Value.JsonSerializerOptions;
+        _httpClientFactory = httpClientFactory;
+        _options = options.Value;
     }
 
     /// <inheritdoc />
-    public async Task<BotSearchResponseEntityListing> GetTextbotsBotsSearchAsync(IEnumerable<string> botType = null, string botName = null, IEnumerable<string> botId = null, int? pageSize = null, CancellationToken cancellationToken = default)
+    public async Task<BotSearchResponseEntityListing> GetTextbotsBotsSearchAsync(IEnumerable<string> botTypes = null, string botName = null, IEnumerable<string> botIds = null, int? pageSize = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
 
-        if (botType != null)
+        if (botTypes != null)
         {
-            foreach (var item in botType)
+            foreach (var botType in botTypes)
             {
-                parameters.Add("botType", UriHelper.ParameterToString(item));
+                parameters.Add("botType", UriHelper.ParameterToString(botType));
             }
         }
 
@@ -39,11 +38,11 @@ public sealed class TextbotsApi : ITextbotsApi
             parameters.Add("botName", UriHelper.ParameterToString(botName));
         }
 
-        if (botId != null)
+        if (botIds != null)
         {
-            foreach (var item in botId)
+            foreach (var botId in botIds)
             {
-                parameters.Add("botId", UriHelper.ParameterToString(item));
+                parameters.Add("botId", UriHelper.ParameterToString(botId));
             }
         }
 
@@ -52,13 +51,15 @@ public sealed class TextbotsApi : ITextbotsApi
             parameters.Add("pageSize", UriHelper.ParameterToString(pageSize.Value));
         }
 
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
         var uri = UriHelper.GetUri("api/v2/textbots/bots/search", parameters);
 
-        var response = await _httpClient.GetAsync(uri, cancellationToken);
+        var response = await client.GetAsync(uri, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<BotSearchResponseEntityListing>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<BotSearchResponseEntityListing>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
@@ -68,13 +69,13 @@ public sealed class TextbotsApi : ITextbotsApi
 
         ArgumentNullException.ThrowIfNull(turnRequest);
 
-        var uri = UriHelper.GetUri($"api/v2/textbots/botflows/sessions/{sessionId}/turns", null);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await _httpClient.PostAsJsonAsync(uri, turnRequest, _options, cancellationToken);
+        var response = await client.PostAsJsonAsync($"api/v2/textbots/botflows/sessions/{Uri.EscapeDataString(sessionId)}/turns", turnRequest, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<TextBotFlowTurnResponse>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<TextBotFlowTurnResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
@@ -82,13 +83,13 @@ public sealed class TextbotsApi : ITextbotsApi
     {
         ArgumentNullException.ThrowIfNull(launchRequest);
 
-        var uri = UriHelper.GetUri("api/v2/textbots/botflows/sessions", null);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await _httpClient.PostAsJsonAsync(uri, launchRequest, _options, cancellationToken);
+        var response = await client.PostAsJsonAsync("api/v2/textbots/botflows/sessions", launchRequest, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<TextBotFlowLaunchResponse>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<TextBotFlowLaunchResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
 
     /// <inheritdoc />
@@ -96,12 +97,12 @@ public sealed class TextbotsApi : ITextbotsApi
     {
         ArgumentNullException.ThrowIfNull(postTextRequest);
 
-        var uri = UriHelper.GetUri("api/v2/textbots/bots/execute", null);
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await _httpClient.PostAsJsonAsync(uri, postTextRequest, _options, cancellationToken);
+        var response = await client.PostAsJsonAsync("api/v2/textbots/bots/execute", postTextRequest, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
-        return await response.Content.ReadFromJsonAsync<PostTextResponse>(_options, cancellationToken);
+        return await response.Content.ReadFromJsonAsync<PostTextResponse>(_options.JsonSerializerOptions, cancellationToken);
     }
 }
