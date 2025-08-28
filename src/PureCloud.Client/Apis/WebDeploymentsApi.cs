@@ -27,7 +27,7 @@ public sealed class WebDeploymentsApi : IWebDeploymentsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.DeleteAsync($"/api/v2/webdeployments/configurations/{Uri.EscapeDataString(configurationId)}", cancellationToken);
+        var response = await client.DeleteAsync($"api/v2/webdeployments/configurations/{Uri.EscapeDataString(configurationId)}", cancellationToken);
 
         return response.IsSuccessStatusCode;
     }
@@ -39,7 +39,7 @@ public sealed class WebDeploymentsApi : IWebDeploymentsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.DeleteAsync($"/api/v2/webdeployments/deployments/{Uri.EscapeDataString(deploymentId)}", cancellationToken);
+        var response = await client.DeleteAsync($"api/v2/webdeployments/deployments/{Uri.EscapeDataString(deploymentId)}", cancellationToken);
 
         return response.IsSuccessStatusCode;
     }
@@ -52,7 +52,7 @@ public sealed class WebDeploymentsApi : IWebDeploymentsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.DeleteAsync($"/api/v2/webdeployments/deployments/{Uri.EscapeDataString(deploymentId)}/cobrowse/{Uri.EscapeDataString(sessionId)}", cancellationToken);
+        var response = await client.DeleteAsync($"api/v2/webdeployments/deployments/{Uri.EscapeDataString(deploymentId)}/cobrowse/{Uri.EscapeDataString(sessionId)}", cancellationToken);
 
         return response.IsSuccessStatusCode;
     }
@@ -74,7 +74,7 @@ public sealed class WebDeploymentsApi : IWebDeploymentsApi
         
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri("/api/v2/webdeployments/token/revoke", parameters);
+        var uri = UriHelper.GetUri("api/v2/webdeployments/token/revoke", parameters);
         
         var response = await client.DeleteAsync(uri, cancellationToken);
         
@@ -91,7 +91,7 @@ public sealed class WebDeploymentsApi : IWebDeploymentsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync($"/api/v2/webdeployments/configurations/{Uri.EscapeDataString(configurationId)}/versions/{Uri.EscapeDataString(versionId)}", cancellationToken);
+        var response = await client.GetAsync($"api/v2/webdeployments/configurations/{Uri.EscapeDataString(configurationId)}/versions/{Uri.EscapeDataString(versionId)}", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -105,7 +105,7 @@ public sealed class WebDeploymentsApi : IWebDeploymentsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync($"/api/v2/webdeployments/configurations/{Uri.EscapeDataString(configurationId)}/versions", cancellationToken);
+        var response = await client.GetAsync($"api/v2/webdeployments/configurations/{Uri.EscapeDataString(configurationId)}/versions", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -119,7 +119,7 @@ public sealed class WebDeploymentsApi : IWebDeploymentsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync($"/api/v2/webdeployments/configurations/{Uri.EscapeDataString(configurationId)}/versions/draft", cancellationToken);
+        var response = await client.GetAsync($"api/v2/webdeployments/configurations/{Uri.EscapeDataString(configurationId)}/versions/draft", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -138,7 +138,7 @@ public sealed class WebDeploymentsApi : IWebDeploymentsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri("/api/v2/webdeployments/configurations", parameters);
+        var uri = UriHelper.GetUri("api/v2/webdeployments/configurations", parameters);
 
         var response = await client.GetAsync(uri, cancellationToken);
 
@@ -164,7 +164,7 @@ public sealed class WebDeploymentsApi : IWebDeploymentsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"/api/v2/webdeployments/deployments/{Uri.EscapeDataString(deploymentId)}", parameters);
+        var uri = UriHelper.GetUri($"api/v2/webdeployments/deployments/{Uri.EscapeDataString(deploymentId)}", parameters);
 
         var response = await client.GetAsync(uri, cancellationToken);
 
@@ -181,7 +181,7 @@ public sealed class WebDeploymentsApi : IWebDeploymentsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync($"/api/v2/webdeployments/deployments/{Uri.EscapeDataString(deploymentId)}/cobrowse/{Uri.EscapeDataString(sessionId)}", cancellationToken);
+        var response = await client.GetAsync($"api/v2/webdeployments/deployments/{Uri.EscapeDataString(deploymentId)}/cobrowse/{Uri.EscapeDataString(sessionId)}", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -208,7 +208,7 @@ public sealed class WebDeploymentsApi : IWebDeploymentsApi
             }
         }
 
-        var uri = UriHelper.GetUri($"/api/v2/webdeployments/deployments/{Uri.EscapeDataString(deploymentId)}/configurations", parameters);
+        var uri = UriHelper.GetUri($"api/v2/webdeployments/deployments/{Uri.EscapeDataString(deploymentId)}/configurations", parameters);
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
@@ -230,7 +230,7 @@ public sealed class WebDeploymentsApi : IWebDeploymentsApi
 
 
 
-        var response = await client.GetAsync($"/api/v2/webdeployments/deployments/{Uri.EscapeDataString(deploymentId)}/identityresolution", cancellationToken);
+        var response = await client.GetAsync($"api/v2/webdeployments/deployments/{Uri.EscapeDataString(deploymentId)}/identityresolution", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -250,7 +250,7 @@ public sealed class WebDeploymentsApi : IWebDeploymentsApi
             }
         }
 
-        var uri = UriHelper.GetUri("/api/v2/webdeployments/deployments", parameters);
+        var uri = UriHelper.GetUri("api/v2/webdeployments/deployments", parameters);
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
@@ -272,7 +272,7 @@ public sealed class WebDeploymentsApi : IWebDeploymentsApi
 
 
 
-        var response = await client.PostAsync($"/api/v2/webdeployments/configurations/{Uri.EscapeDataString(configurationId)}/versions/draft/publish", null, cancellationToken);
+        var response = await client.PostAsync($"api/v2/webdeployments/configurations/{Uri.EscapeDataString(configurationId)}/versions/draft/publish", null, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -284,7 +284,7 @@ public sealed class WebDeploymentsApi : IWebDeploymentsApi
     {
         ArgumentNullException.ThrowIfNull(configurationVersion);
 
-        var uri = "/api/v2/webdeployments/configurations";
+        var uri = "api/v2/webdeployments/configurations";
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
@@ -302,7 +302,7 @@ public sealed class WebDeploymentsApi : IWebDeploymentsApi
     {
         ArgumentNullException.ThrowIfNull(deployment);
 
-        var uri = "/api/v2/webdeployments/deployments";
+        var uri = "api/v2/webdeployments/deployments";
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
@@ -320,7 +320,7 @@ public sealed class WebDeploymentsApi : IWebDeploymentsApi
     {
         ArgumentNullException.ThrowIfNull(body);
 
-        var uri = "/api/v2/webdeployments/token/oauthcodegrantjwtexchange";
+        var uri = "api/v2/webdeployments/token/oauthcodegrantjwtexchange";
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
@@ -336,7 +336,7 @@ public sealed class WebDeploymentsApi : IWebDeploymentsApi
     /// <inheritdoc />
     public async Task<SignedData> CreateWebdeploymentsTokenRefreshAsync(WebDeploymentsRefreshJWTRequest body = null, CancellationToken cancellationToken = default)
     {
-        var uri = "/api/v2/webdeployments/token/refresh";
+        var uri = "api/v2/webdeployments/token/refresh";
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
@@ -359,7 +359,7 @@ public sealed class WebDeploymentsApi : IWebDeploymentsApi
 
 
 
-        var response = await client.PutAsJsonAsync($"/api/v2/webdeployments/configurations/{Uri.EscapeDataString(configurationId)}/versions/draft", configurationVersion, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PutAsJsonAsync($"api/v2/webdeployments/configurations/{Uri.EscapeDataString(configurationId)}/versions/draft", configurationVersion, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -376,7 +376,7 @@ public sealed class WebDeploymentsApi : IWebDeploymentsApi
 
 
 
-        var response = await client.PutAsJsonAsync($"/api/v2/webdeployments/deployments/{Uri.EscapeDataString(deploymentId)}", deployment, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PutAsJsonAsync($"api/v2/webdeployments/deployments/{Uri.EscapeDataString(deploymentId)}", deployment, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -393,7 +393,7 @@ public sealed class WebDeploymentsApi : IWebDeploymentsApi
 
 
 
-        var response = await client.PutAsJsonAsync($"/api/v2/webdeployments/deployments/{Uri.EscapeDataString(deploymentId)}/identityresolution", body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PutAsJsonAsync($"api/v2/webdeployments/deployments/{Uri.EscapeDataString(deploymentId)}/identityresolution", body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
