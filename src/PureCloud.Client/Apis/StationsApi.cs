@@ -25,9 +25,7 @@ public sealed class StationsApi : IStationsApi
     {
         ArgumentException.ThrowIfNullOrEmpty(stationId);
 
-        var uri = $"api/v2/stations/{Uri.EscapeDataString(stationId)}/associateduser";
-
-        var response = await _httpClient.DeleteAsync(uri, cancellationToken);
+        var response = await _httpClient.DeleteAsync($"api/v2/stations/{Uri.EscapeDataString(stationId)}/associateduser", cancellationToken);
 
         return response.IsSuccessStatusCode;
     }
@@ -37,9 +35,7 @@ public sealed class StationsApi : IStationsApi
     {
         ArgumentException.ThrowIfNullOrEmpty(stationId);
 
-        var uri = $"api/v2/stations/{Uri.EscapeDataString(stationId)}";
-
-        var response = await _httpClient.GetAsync(uri, cancellationToken);
+        var response = await _httpClient.GetAsync($"api/v2/stations/{Uri.EscapeDataString(stationId)}", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -91,9 +87,7 @@ public sealed class StationsApi : IStationsApi
             parameters.Add("lineAppearanceId", UriHelper.ParameterToString(lineAppearanceId));
         }
 
-        var uri = UriHelper.GetUri("api/v2/stations", parameters);
-
-        var response = await _httpClient.GetAsync(uri, cancellationToken);
+        var response = await _httpClient.GetAsync(UriHelper.GetUri("api/v2/stations", parameters), cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
