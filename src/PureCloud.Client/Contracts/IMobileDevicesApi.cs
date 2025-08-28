@@ -7,7 +7,7 @@ public interface IMobileDevicesApi
     /// <summary>
     /// Delete device
     /// </summary>
-    Task DeleteMobileDeviceAsync(string deviceId, CancellationToken cancellationToken = default);
+    Task<bool> DeleteMobileDeviceAsync(string deviceId, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Get device

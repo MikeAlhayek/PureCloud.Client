@@ -1,4 +1,5 @@
 using System.Collections.Specialized;
+using System.Linq;
 using System.Net.Http.Json;
 using Microsoft.Extensions.Options;
 using PureCloud.Client.Contracts;
@@ -21,15 +22,15 @@ public sealed class NotificationsApi : INotificationsApi
     }
 
     /// <inheritdoc />
-    public async Task<AvailableTopicEntityListing> GetNotificationsAvailableTopicsAsync(IEnumerable<string> expand = null, bool? includePreview = null, CancellationToken cancellationToken = default)
+    public async Task<AvailableTopicEntityListing> GetNotificationsAvailableTopicsAsync(IEnumerable<string> expands = null, bool? includePreview = null, CancellationToken cancellationToken = default)
     {
         var parameters = new NameValueCollection();
 
-        if (expand?.Any() == true)
+        if (expands != null)
         {
-            foreach (var item in expand)
+            foreach (var expand in expands)
             {
-                parameters.Add("expand", UriHelper.ParameterToString(item));
+                parameters.Add("expand", UriHelper.ParameterToString(expand));
             }
         }
 
@@ -89,7 +90,7 @@ public sealed class NotificationsApi : INotificationsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync($"api/v2/notifications/channels/{channelId}/subscriptions", cancellationToken);
+        var response = await client.GetAsync($"api/v2/notifications/channels/{Uri.EscapeDataString(channelId)}/subscriptions", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -111,7 +112,7 @@ public sealed class NotificationsApi : INotificationsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/notifications/channels/{channelId}/subscriptions", parameters);
+        var uri = UriHelper.GetUri($"api/v2/notifications/channels/{Uri.EscapeDataString(channelId)}/subscriptions", parameters);
 
         var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -135,7 +136,7 @@ public sealed class NotificationsApi : INotificationsApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var uri = UriHelper.GetUri($"api/v2/notifications/channels/{channelId}/subscriptions", parameters);
+        var uri = UriHelper.GetUri($"api/v2/notifications/channels/{Uri.EscapeDataString(channelId)}/subscriptions", parameters);
 
         var response = await client.PutAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
 
@@ -145,14 +146,28 @@ public sealed class NotificationsApi : INotificationsApi
     }
 
     /// <inheritdoc />
-    public async Task DeleteNotificationsChannelSubscriptionsAsync(string channelId, CancellationToken cancellationToken = default)
+    public async Task<bool> DeleteNotificationsChannelSubscriptionsAsync(string channelId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(channelId);
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.DeleteAsync($"api/v2/notifications/channels/{channelId}/subscriptions", cancellationToken);
+        var response = await client.DeleteAsync($"api/v2/notifications/channels/{Uri.EscapeDataString(channelId)}/subscriptions", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
+        return response.IsSuccessStatusCode;
+    }
+
+    /// <inheritdoc />
+    public async Task<bool> VerifyNotificationsChannelAsync(string channelId, CancellationToken cancellationToken = default)
+    {
+        ArgumentException.ThrowIfNullOrEmpty(channelId);
+
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+
+        var request = new HttpRequestMessage(HttpMethod.Head, $"api/v2/notifications/channels/{Uri.EscapeDataString(channelId)}");
+
+        var response = await client.SendAsync(request, cancellationToken);
+
+        return response.IsSuccessStatusCode;
     }
 }
