@@ -115,11 +115,9 @@ public sealed class ObjectsApi : IObjectsApi
     {
         ArgumentNullException.ThrowIfNull(body);
 
-        var uri = "api/v2/authorization/divisions";
-
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PostAsJsonAsync("api/v2/authorization/divisions", body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -133,11 +131,9 @@ public sealed class ObjectsApi : IObjectsApi
 
         ArgumentNullException.ThrowIfNull(body);
 
-        var uri = $"api/v2/authorization/divisions/{Uri.EscapeDataString(divisionId)}";
-
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.PutAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PutAsJsonAsync($"api/v2/authorization/divisions/{Uri.EscapeDataString(divisionId)}", body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -222,11 +218,9 @@ public sealed class ObjectsApi : IObjectsApi
         ArgumentException.ThrowIfNullOrEmpty(objectType);
         ArgumentNullException.ThrowIfNull(body);
 
-        var uri = $"api/v2/authorization/divisions/{Uri.EscapeDataString(divisionId)}/objects/{Uri.EscapeDataString(objectType)}";
-
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PostAsJsonAsync($"api/v2/authorization/divisions/{Uri.EscapeDataString(divisionId)}/objects/{Uri.EscapeDataString(objectType)}", body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
     }
@@ -282,11 +276,9 @@ public sealed class ObjectsApi : IObjectsApi
 
         ArgumentNullException.ThrowIfNull(body);
 
-        var uri = $"api/v2/authorization/divisions/{Uri.EscapeDataString(divisionId)}/restore";
-
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PostAsJsonAsync($"api/v2/authorization/divisions/{Uri.EscapeDataString(divisionId)}/restore", body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
