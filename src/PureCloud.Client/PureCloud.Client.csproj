@@ -95,9 +95,9 @@
     <Compile Include="Apis\UtilitiesApi.cs" />
     <Compile Include="Apis\VoicemailApi.cs" />
     <Compile Include="Apis\WebChatApi.cs" />
-    <Compile Include="Apis\WebDeploymentsApi.cs" />
     <Compile Include="Apis\WebMessagingApi.cs" />
     <Compile Include="Apis\WidgetsApi.cs" />
+    <Compile Include="Apis\WorkforceManagementApi.cs" />
     <Compile Include="Configuration.cs" />
     <Compile Include="Contracts\IAgentAssistantsApi.cs" />
     <Compile Include="Contracts\IAgentCopilotApi.cs" />
@@ -177,9 +177,9 @@
     <Compile Include="Contracts\IUtilitiesApi.cs" />
     <Compile Include="Contracts\IVoicemailApi.cs" />
     <Compile Include="Contracts\IWebChatApi.cs" />
-    <Compile Include="Contracts\IWebDeploymentsApi.cs" />
     <Compile Include="Contracts\IWebMessagingApi.cs" />
     <Compile Include="Contracts\IWidgetsApi.cs" />
+    <Compile Include="Contracts\IWorkforceManagementApi.cs" />
     <Compile Include="Extensions\AuthExtensions.cs" />
     <Compile Include="Extensions\NotificationHandlerExtensions.cs" />
     <Compile Include="Extensions\ServiceCollectionExtensions.cs" />
@@ -214,6 +214,9 @@
     <Compile Include="Models\ActionTargetListing.cs" />
     <Compile Include="Models\ActionTemplate.cs" />
     <Compile Include="Models\ActionTemplateListing.cs" />
+    <Compile Include="Models\ActivityCode.cs" />
+    <Compile Include="Models\ActivityCode.Category.cs" />
+    <Compile Include="Models\ActivityCodeContainer.cs" />
     <Compile Include="Models\AppEventResponse.cs" />
     <Compile Include="Models\AppEventRequest.cs" />
     <Compile Include="Models\AcdEndDetailEventTopicAcdEndEvent.cs" />
@@ -829,6 +832,26 @@
     <Compile Include="Models\BotSummary.cs" />
     <Compile Include="Models\BotVersionSummary.cs" />
     <Compile Include="Models\Browser.cs" />
+    <Compile Include="Models\BuAsyncScheduleResponse.cs" />
+    <Compile Include="Models\BusinessUnitListing.cs" />
+    <Compile Include="Models\BusinessUnitListItem.cs" />
+    <Compile Include="Models\BusinessUnitResponse.cs" />
+    <Compile Include="Models\BusinessUnitSettingsResponse.cs" />
+    <Compile Include="Models\BuScheduleMetadata.cs" />
+    <Compile Include="Models\BuScheduleListItem.cs" />
+    <Compile Include="Models\BuScheduleListing.cs" />
+    <Compile Include="Models\BuShortTermForecastingSettings.cs" />
+    <Compile Include="Models\BuSchedulingSettingsResponse.cs" />
+    <Compile Include="Models\BuSchedulingSettingsRequest.ActivitySmoothingType.cs" />
+    <Compile Include="Models\BuNotificationSettingsResponse.cs" />
+    <Compile Include="Models\BuScheduleNotificationsSettingsResponse.cs" />
+    <Compile Include="Models\BuShortTermForecastReference.cs" />
+    <Compile Include="Models\ScheduleGenerationResultSummary.cs" />
+    <Compile Include="Models\BuManagementUnitScheduleSummary.cs" />
+    <Compile Include="Models\ManagementUnitReference.cs" />
+    <Compile Include="Models\SchedulerMessageTypeSeverity.cs" />
+    <Compile Include="Models\SchedulerMessageSeverityCount.cs" />
+    <Compile Include="Models\BuAsyncScheduleResponseStatus.cs" />
     <Compile Include="Models\BulkContactsEnrichRequest.cs" />
     <Compile Include="Models\BulkContactsEnrichResponse.cs" />
     <Compile Include="Models\BulkContactsRequest.cs" />
@@ -1565,6 +1588,10 @@
     <Compile Include="Models\CopilotRule.cs" />
     <Compile Include="Models\Coretype.cs" />
     <Compile Include="Models\CoretypeListing.cs" />
+    <Compile Include="Models\CreateActivityCodeRequest.cs" />
+    <Compile Include="Models\SecondaryPresence.cs" />
+    <Compile Include="Models\CreateAdminTimeOffRequest.cs" />
+    <Compile Include="Models\CreateAdminTimeOffRequest.Status.cs" />
     <Compile Include="Models\CreateBenefitAssessmentRequest.cs" />
     <Compile Include="Models\CreateCoachingAppointmentRequest.cs" />
     <Compile Include="Models\CreateGeneralProgramTestPhraseDetectedPhrase.cs" />
@@ -2283,6 +2310,7 @@
     <Compile Include="Models\GamificationScorecardChangeTopicPunctualityEvent.cs" />
     <Compile Include="Models\GamificationScorecardChangeTopicScorecardChange.cs" />
     <Compile Include="Models\GamificationStatus.cs" />
+    <Compile Include="Models\GenerateBuForecastRequest.cs" />
     <Compile Include="Models\GDPRJourneyCustomer.cs" />
     <Compile Include="Models\GDPRRequest.cs" />
     <Compile Include="Models\GDPRRequest.Status.cs" />
@@ -4210,8 +4238,6 @@
     <Compile Include="Models\SourceLastSync.cs" />
     <Compile Include="Models\SourcePlanningGroupRequest.cs" />
     <Compile Include="Models\SourceSyncResponse.cs" />
-    <Compile Include="Models\SynchronizeJob.cs" />
-    <Compile Include="Models\SynchronizeRequest.cs" />
     <Compile Include="Models\WfmVersionedEntityMetadata.cs" />
     <Compile Include="Models\StatEventCampaignTopicIntervalMetrics.cs" />
     <Compile Include="Models\StatEventCampaignTopicMetricStats.cs" />
@@ -5377,27 +5403,7 @@
     <Compile Include="Models\Workbin.cs" />
     <Compile Include="Models\WorkbinChangeListing.cs" />
     <Compile Include="Models\WorkbinCreate.cs" />
-    <Compile Include="Models\WorkbinDelta.cs" />
-    <Compile Include="Models\WorkbinQueryEntityListing.cs" />
-    <Compile Include="Models\WorkbinQueryRequest.cs" />
-    <Compile Include="Models\WorkbinQuerySort.cs" />
-    <Compile Include="Models\WorkbinReference.cs" />
     <Compile Include="Models\WorkbinUpdate.cs" />
-    <Compile Include="Models\WorkbinVersion.cs" />
-    <Compile Include="Models\WorkbinVersionListing.cs" />
-    <Compile Include="Models\BulkJob.cs" />
-    <Compile Include="Models\BulkJobAddRequest.cs" />
-    <Compile Include="Models\BulkJobAddResponse.cs" />
-    <Compile Include="Models\BulkJobAddResult.cs" />
-    <Compile Include="Models\BulkJobAddWorkitemSummary.cs" />
-    <Compile Include="Models\BulkJobEntity.cs" />
-    <Compile Include="Models\BulkJobError.cs" />
-    <Compile Include="Models\BulkJobTerminateRequest.cs" />
-    <Compile Include="Models\BulkJobTerminateResult.cs" />
-    <Compile Include="Models\BulkJobTerminateResultEntity.cs" />
-    <Compile Include="Models\BulkJobTerminateResultsResponse.cs" />
-    <Compile Include="Models\BulkJobUpdate.cs" />
-    <Compile Include="Models\BulkJobsListing.cs" />
     <Compile Include="Models\WorkdayMetric.cs" />
     <Compile Include="Models\WorkdayMetricListing.cs" />
     <Compile Include="Models\WorkdayPeriod.cs" />
@@ -5617,7 +5623,6 @@
     <Compile Include="Models\SIPSearchPublicRequest.cs" />
     <Compile Include="Models\SipDownloadResponse.cs" />
     <Compile Include="Models\SignedUrlResponse.cs" />
-    <Compile Include="Models\Organizations\OrganizationFeatures.cs" />
     <Compile Include="Address.cs" />
     <Compile Include="PureCloudRegionHosts.cs" />
     <Compile Include="PureCloudConstants.cs" />
@@ -5631,10 +5636,13 @@
     <Compile Include="Notifications\NotificationClientResilienceOptions.cs" />
     <Compile Include="Notifications\NotificationData.cs" />
     <Compile Include="Notifications\SubscriptionBuilder.cs" />
-    <Compile Include="Models\SearchUpdateRequest.cs" />
     <Compile Include="Services\MemoryTokenStore.cs" />
     <Compile Include="Services\PureCloudOptionsConfigurations.cs" />
     <Compile Include="Services\TokenService.cs" />
+    <Compile Include="Models\SetWrapperSyncTimeOffProperty.cs" />
+    <Compile Include="Models\WfmServiceGoalImpactSettings.cs" />
+    <Compile Include="Models\WfmServiceGoalImpact.cs" />
+    <Compile Include="Models\BuScheduleNotificationsCategorySettings.cs" />
   </ItemGroup>
 
   <ItemGroup>
