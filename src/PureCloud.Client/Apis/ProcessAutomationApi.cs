@@ -21,15 +21,15 @@ public sealed class ProcessAutomationApi : IProcessAutomationApi
     }
 
     /// <inheritdoc />
-    public async Task DeleteTriggerAsync(string triggerId, CancellationToken cancellationToken = default)
+    public async Task<bool> DeleteTriggerAsync(string triggerId, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrEmpty(triggerId);
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.DeleteAsync($"api/v2/processautomation/triggers/{triggerId}", cancellationToken);
+        var response = await client.DeleteAsync($"api/v2/processautomation/triggers/{Uri.EscapeDataString(triggerId)}", cancellationToken);
 
-        response.EnsureSuccessStatusCode();
+        return response.IsSuccessStatusCode;
     }
 
     /// <inheritdoc />
@@ -39,7 +39,7 @@ public sealed class ProcessAutomationApi : IProcessAutomationApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.GetAsync($"api/v2/processautomation/triggers/{triggerId}", cancellationToken);
+        var response = await client.GetAsync($"api/v2/processautomation/triggers/{Uri.EscapeDataString(triggerId)}", cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -130,7 +130,7 @@ public sealed class ProcessAutomationApi : IProcessAutomationApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.PostAsJsonAsync($"api/v2/processautomation/triggers/{triggerId}/test", body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PostAsJsonAsync($"api/v2/processautomation/triggers/{Uri.EscapeDataString(triggerId)}/test", body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -158,7 +158,7 @@ public sealed class ProcessAutomationApi : IProcessAutomationApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.PostAsJsonAsync($"api/v2/processautomation/triggers/topics/{topicName}/test", body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PostAsJsonAsync($"api/v2/processautomation/triggers/topics/{Uri.EscapeDataString(topicName)}/test", body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
@@ -173,7 +173,7 @@ public sealed class ProcessAutomationApi : IProcessAutomationApi
 
         var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
 
-        var response = await client.PutAsJsonAsync($"api/v2/processautomation/triggers/{triggerId}", body, _options.JsonSerializerOptions, cancellationToken);
+        var response = await client.PutAsJsonAsync($"api/v2/processautomation/triggers/{Uri.EscapeDataString(triggerId)}", body, _options.JsonSerializerOptions, cancellationToken);
 
         response.EnsureSuccessStatusCode();
 
