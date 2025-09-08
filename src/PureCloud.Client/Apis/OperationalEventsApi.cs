@@ -11,12 +11,12 @@ namespace PureCloud.Client.Apis;
 /// <inheritdoc />
 public sealed class OperationalEventsApi : IOperationalEventsApi
 {
-    private readonly HttpClient _httpClient;
+    private readonly IHttpClientFactory _httpClientFactory;
     private readonly PureCloudJsonSerializerOptions _options;
 
     public OperationalEventsApi(IHttpClientFactory httpClientFactory, IOptions<PureCloudJsonSerializerOptions> options)
     {
-        _httpClient = httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+        _httpClientFactory = httpClientFactory;
         _options = options.Value;
     }
 
@@ -25,10 +25,8 @@ public sealed class OperationalEventsApi : IOperationalEventsApi
     {
         ArgumentException.ThrowIfNullOrEmpty(eventDefinitionId, nameof(eventDefinitionId));
 
-        var uri = UriHelper.GetUri($"api/v2/usage/events/definitions/{eventDefinitionId}", null);
-
-        var response = await _httpClient.GetAsync(uri, cancellationToken);
-
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+        var response = await client.GetAsync($"api/v2/usage/events/definitions/{Uri.EscapeDataString(eventDefinitionId)}", cancellationToken);
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<EventDefinition>(_options.JsonSerializerOptions, cancellationToken);
@@ -37,10 +35,8 @@ public sealed class OperationalEventsApi : IOperationalEventsApi
     /// <inheritdoc />
     public async Task<EventDefinitionListing> GetUsageEventsDefinitionsAsync(CancellationToken cancellationToken = default)
     {
-        var uri = UriHelper.GetUri("api/v2/usage/events/definitions", null);
-
-        var response = await _httpClient.GetAsync(uri, cancellationToken);
-
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+        var response = await client.GetAsync("api/v2/usage/events/definitions", cancellationToken);
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<EventDefinitionListing>(_options.JsonSerializerOptions, cancellationToken);
@@ -51,10 +47,8 @@ public sealed class OperationalEventsApi : IOperationalEventsApi
     {
         ArgumentNullException.ThrowIfNull(body, nameof(body));
 
-        var uri = UriHelper.GetUri("api/v2/usage/events/aggregates/query", null);
-
-        var response = await _httpClient.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
-
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
+        var response = await client.PostAsJsonAsync("api/v2/usage/events/aggregates/query", body, _options.JsonSerializerOptions, cancellationToken);
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<EventAggregatesResponse>(_options.JsonSerializerOptions, cancellationToken);
@@ -82,10 +76,9 @@ public sealed class OperationalEventsApi : IOperationalEventsApi
             parameters.Add("pageSize", UriHelper.ParameterToString(pageSize));
         }
 
+        var client = _httpClientFactory.CreateClient(PureCloudConstants.PureCloudClientName);
         var uri = UriHelper.GetUri("api/v2/usage/events/query", parameters);
-
-        var response = await _httpClient.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
-
+        var response = await client.PostAsJsonAsync(uri, body, _options.JsonSerializerOptions, cancellationToken);
         response.EnsureSuccessStatusCode();
 
         return await response.Content.ReadFromJsonAsync<EventQueryResponse>(_options.JsonSerializerOptions, cancellationToken);
